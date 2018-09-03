@@ -1,0 +1,277 @@
+{include file="../../../application/admin/view/public/head" /}
+<div class="page-container">
+    <form class="layui-form layui-form-pane" action="">
+        <div class="layui-tab">
+            <ul class="layui-tab-title">
+                <li class="layui-this">视频采集设置</li>
+                <li>文章采集设置</li>
+                <li>采集词库设置</li>
+            </ul>
+
+            <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">数据状态：</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="collect[vod][status]" value="0" title="未审" {if condition="$config['collect']['vod']['status'] neq 1"}checked {/if}>
+                        <input type="radio" name="collect[vod][status]" value="1" title="已审" {if condition="$config['collect']['vod']['status'] eq 1"}checked {/if}>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">随机点击量：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="collect[vod][hits_start]" placeholder="最小值" value="{$config['collect']['vod']['hits_start']}" class="layui-input">
+                    </div>
+                    <div class="layui-input-inline">
+                        <input type="text" name="collect[vod][hits_end]" placeholder="最大值" value="{$config['collect']['vod']['hits_end']}" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">随机顶踩：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="collect[vod][updown_start]" placeholder="最小值" value="{$config['collect']['vod']['updown_start']}" class="layui-input">
+                    </div>
+                    <div class="layui-input-inline">
+                        <input type="text" name="collect[vod][updown_end]" placeholder="最大值" value="{$config['collect']['vod']['updown_end']}" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">随机评分数：</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="collect[vod][score]" value="0" title="关闭" {if condition="$config['collect']['vod']['score'] neq 1"}checked {/if}>
+                        <input type="radio" name="collect[vod][score]" value="1" title="开启" {if condition="$config['collect']['vod']['score'] eq 1"}checked {/if}>
+                    </div>
+                </div>
+
+
+
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">自动同步图片：</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="collect[vod][pic]" value="0" title="关闭" {if condition="$config['collect']['vod']['pic'] neq 1"}checked {/if}>
+                        <input type="radio" name="collect[vod][pic]" value="1" title="开启" {if condition="$config['collect']['vod']['pic'] eq 1"}checked {/if}>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">自动生成TAG：</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="collect[vod][tag]" value="0" title="关闭" {if condition="$config['collect']['vod']['tag'] neq 1"}checked {/if}>
+                        <input type="radio" name="collect[vod][tag]" value="1" title="开启" {if condition="$config['collect']['vod']['tag'] eq 1"}checked {/if}>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">介绍随机插入语句：</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="collect[vod][psernd]" value="0" title="关闭" {if condition="$config['collect']['vod']['psernd'] neq 1"}checked {/if}>
+                        <input type="radio" name="collect[vod][psernd]" value="1" title="开启" {if condition="$config['collect']['vod']['psernd'] eq 1"}checked {/if}>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">介绍同义词替换：</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="collect[vod][psesyn]" value="0" title="关闭" {if condition="$config['collect']['vod']['psesyn'] neq 1"}checked {/if}>
+                        <input type="radio" name="collect[vod][psesyn]" value="1" title="开启" {if condition="$config['collect']['vod']['psesyn'] eq 1"}checked {/if}>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">
+                        入库重复规则：</label>
+                    <div class="layui-input-block">
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][inrule][]" value="a" title="标题" checked disabled>
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][inrule][]" value="b" title="分类" {if condition="strpos($config['collect']['vod']['inrule'],'b') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][inrule][]" value="c" title="年代" {if condition="strpos($config['collect']['vod']['inrule'],'c') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][inrule][]" value="d" title="地区" {if condition="strpos($config['collect']['vod']['inrule'],'d') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][inrule][]" value="e" title="语言" {if condition="strpos($config['collect']['vod']['inrule'],'e') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][inrule][]" value="f" title="主演" {if condition="strpos($config['collect']['vod']['inrule'],'f') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][inrule][]" value="g" title="导演" {if condition="strpos($config['collect']['vod']['inrule'],'g') >0"}checked {/if}>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">
+                        二次更新规则：</label>
+                    <div class="layui-input-block">
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][uprule][]" value="a" title="播放地址" {if condition="strpos($config['collect']['vod']['uprule'],'a') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][uprule][]" value="b" title="下载地址" {if condition="strpos($config['collect']['vod']['uprule'],'b') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][uprule][]" value="c" title="连载数" {if condition="strpos($config['collect']['vod']['uprule'],'c') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][uprule][]" value="d" title="备注" {if condition="strpos($config['collect']['vod']['uprule'],'d') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][uprule][]" value="e" title="导演" {if condition="strpos($config['collect']['vod']['uprule'],'e') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][uprule][]" value="f" title="主演" {if condition="strpos($config['collect']['vod']['uprule'],'f') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][uprule][]" value="g" title="年代" {if condition="strpos($config['collect']['vod']['uprule'],'g') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][uprule][]" value="h" title="地区" {if condition="strpos($config['collect']['vod']['uprule'],'h') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][uprule][]" value="i" title="语言" {if condition="strpos($config['collect']['vod']['uprule'],'i') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][uprule][]" value="j" title="图片" {if condition="strpos($config['collect']['vod']['uprule'],'j') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][uprule][]" value="k" title="介绍" {if condition="strpos($config['collect']['vod']['uprule'],'k') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][uprule][]" value="l" title="TAG" {if condition="strpos($config['collect']['vod']['uprule'],'l') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][uprule][]" value="m" title="副标题" {if condition="strpos($config['collect']['vod']['uprule'],'m') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[vod][uprule][]" value="n" title="扩展分类" {if condition="strpos($config['collect']['vod']['uprule'],'n') >0"}checked {/if}>
+                    </div>
+                </div>
+
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">数据过滤：</label>
+                    <div class="layui-input-block">
+                        <textarea name="collect[vod][filter]" class="layui-textarea" placeholder="多个数据请用逗号分隔">{$config['collect']['vod']['filter']}</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-tab-item">
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">数据状态：</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="collect[art][status]" value="0" title="未审" {if condition="$config['collect']['art']['status'] neq 1"}checked {/if}>
+                        <input type="radio" name="collect[art][status]" value="1" title="已审" {if condition="$config['collect']['art']['status'] eq 1"}checked {/if}>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">随机点击量：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="collect[art][hits_start]" placeholder="最小值" value="{$config['collect']['art']['hits_start']}" class="layui-input">
+                    </div>
+                    <div class="layui-input-inline">
+                        <input type="text" name="collect[art][hits_end]" placeholder="最大值" value="{$config['collect']['art']['hits_end']}" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">随机顶踩：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="collect[art][updown_start]" placeholder="最小值" value="{$config['collect']['art']['updown_start']}" class="layui-input">
+                    </div>
+                    <div class="layui-input-inline">
+                        <input type="text" name="collect[art][updown_end]" placeholder="最大值" value="{$config['collect']['art']['updown_end']}" class="layui-input">
+                    </div>
+                </div>
+
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">随机评分数：</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="collect[art][score]" value="0" title="关闭" {if condition="$config['collect']['art']['score'] neq 1"}checked {/if}>
+                        <input type="radio" name="collect[art][score]" value="1" title="开启" {if condition="$config['collect']['art']['score'] eq 1"}checked {/if}>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">自动同步图片：</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="collect[art][pic]" value="0" title="关闭" {if condition="$config['collect']['art']['pic'] neq 1"}checked {/if}>
+                        <input type="radio" name="collect[art][pic]" value="1" title="开启" {if condition="$config['collect']['art']['pic'] eq 1"}checked {/if}>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">自动生成TAG：</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="collect[art][tag]" value="0" title="关闭" {if condition="$config['collect']['art']['tag'] neq 1"}checked {/if}>
+                        <input type="radio" name="collect[art][tag]" value="1" title="开启" {if condition="$config['collect']['art']['tag'] eq 1"}checked {/if}>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">介绍随机插入语句：</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="collect[art][psernd]" value="0" title="关闭" {if condition="$config['collect']['art']['psernd'] neq 1"}checked {/if}>
+                        <input type="radio" name="collect[art][psernd]" value="1" title="开启" {if condition="$config['collect']['art']['psernd'] eq 1"}checked {/if}>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">介绍同义词替换：</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="collect[art][psesyn]" value="0" title="关闭" {if condition="$config['collect']['art']['psesyn'] neq 1"}checked {/if}>
+                        <input type="radio" name="collect[art][psesyn]" value="1" title="开启" {if condition="$config['collect']['art']['psesyn'] eq 1"}checked {/if}>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">入库重复规则：</label>
+                    <div class="layui-input-block">
+                        <input type="checkbox" lay-skin="primary" name="collect[art][inrule][]" value="a" title="标题" checked disabled>
+                        <input type="checkbox" lay-skin="primary" name="collect[art][inrule][]" value="b" title="分类" {if condition="strpos($config['collect']['art']['inrule'],'b') >0"}checked {/if}>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">二次更新规则：</label>
+                    <div class="layui-input-block">
+                        <input type="checkbox" lay-skin="primary" name="collect[art][uprule][]" value="a" title="介绍" {if condition="strpos($config['collect']['art']['uprule'],'a') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[art][uprule][]" value="b" title="作者" {if condition="strpos($config['collect']['art']['uprule'],'b') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[art][uprule][]" value="c" title="来源" {if condition="strpos($config['collect']['art']['uprule'],'c') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[art][uprule][]" value="d" title="图片" {if condition="strpos($config['collect']['art']['uprule'],'d') >0"}checked {/if}>
+                        <input type="checkbox" lay-skin="primary" name="collect[art][uprule][]" value="e" title="TAG" {if condition="strpos($config['collect']['art']['uprule'],'e') >0"}checked {/if}>
+
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">数据过滤：</label>
+                    <div class="layui-input-block">
+                        <textarea name="collect[art][filter]" class="layui-textarea" placeholder="多个数据请用逗号分隔">{$config['collect']['art']['filter']}</textarea>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="layui-tab-item">
+                <blockquote class="layui-elem-quote layui-quote-nm">
+                    同义词：每行一个，不要有空行，格式：要替换=替换后，不允许出现#号。<br>
+                    随机词库：字符段一般20条左右即可，可以是笑话小故事，也可以加入超链接。<br>
+                    此项功能影响采集性能，请不要一次加入太多词条 。适当的伪原创有助于搜索引擎收录。该功能只在新增数据时有效。<br>
+                    不使用替换功能请在【采集参数设置中禁用】。
+                </blockquote>
+
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">视频同义词库：</label>
+                    <div class="layui-input-block">
+                        <textarea name="collect[vod][thesaurus]" class="layui-textarea">{$config['collect']['vod']['thesaurus']|mac_replace_text}</textarea>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">视频随机词库：</label>
+                    <div class="layui-input-block">
+                        <textarea name="collect[vod][words]" class="layui-textarea">{$config['collect']['vod']['words']|mac_replace_text}</textarea>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文章同义词库：</label>
+                    <div class="layui-input-block">
+                        <textarea name="collect[art][thesaurus]" class="layui-textarea">{$config['collect']['art']['thesaurus']|mac_replace_text}</textarea>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文章随机词库：</label>
+                    <div class="layui-input-block">
+                        <textarea name="collect[art][words]" class="layui-textarea">{$config['collect']['art']['words']|mac_replace_text}</textarea>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="layui-form-item center">
+            <div class="layui-input-block">
+                <button type="submit" class="layui-btn" lay-submit="" lay-filter="formSubmit">保 存</button>
+                <button class="layui-btn layui-btn-warm" type="reset">还 原</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{include file="../../../application/admin/view/public/foot" /}
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>

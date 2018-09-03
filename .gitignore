@@ -1,0 +1,4 @@
+runtime/cache/
+runtime/log/
+runtime/temp/
+banana/application/database.php
