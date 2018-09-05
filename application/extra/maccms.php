@@ -39,7 +39,7 @@ return array (
   ),
   'app' => 
   array (
-    'cache_type' => '1',
+    'cache_type' => '0',
     'cache_host' => '127.0.0.1',
     'cache_port' => '11211',
     'cache_password' => '',
