@@ -1,0 +1,38 @@
+<div class="foornav"> 
+	<a href="/"  class="menu-itema"><span><img src="{$maccms.path_tpl}images/index.png"/>首页</span></a>
+	 {maccms:type ids="parent" order="asc" by="sort" mid="1" }
+ 
+	<a href="{:mac_url_type($vo)}" ><span><img src="{$maccms.path_tpl}images/video.png"/>{$vo.type_name}</span></a>
+     {/maccms:type}
+ 
+</div>
+
+<footer class="footer">
+	<div class="container clearfix">
+		<div class="uk-float-left footer-logo">
+			<a href="/" target="_blank" class="uk-display-block"></a>
+		</div>
+		<div class="uk-float-right footer-r clearfix">
+			<div class="vip uk-float-left">
+				<ul>
+					<li><a href="javascript:void(0);" target="_blank" class="uk-display-block margin-top-10">商务合作</a></li>
+					<li><a href="{:url('user/reg')}" target="_blank" class="uk-display-block margin-top-10">会员注册</a></li>
+				</ul>
+			</div>
+			<div class="contact-us uk-float-left">
+				<h3>联系我们</h3>
+				<div class="cs-qq">
+					<div class="cs-pic"></div>
+					<a class="uk-display-block cs-qq-btn" href="tencent://message/?uin=2640963460&amp;Site=qq&amp;Menu=yes">
+						<span class="uk-display-block uk-float-left icon-cs-qq"></span>
+						<span>2640963460</span>
+					</a>
+					<a class="uk-display-block cs-qq-btn cs-qq-btn-2" href="tencent://message/?uin=2683596790&amp;Site=qq&amp;Menu=yes">
+						<span class="uk-display-block uk-float-left icon-cs-qq"></span>
+						<span>2683596790</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+<p style="padding: 0 4px;">免责声明:本站所有视频均来自互联网收集而来，版权归原创者所有，如果侵犯了你的权益，请通知我们，我们会及时删除侵权内容，谢谢合作！<br/>&copy; 2017 <a href="/">{$maccms.site_name}</a>&nbsp; <a href="http://www.miitbeian.gov.cn">{$maccms.site_icp}</a><br/></p></footer>
