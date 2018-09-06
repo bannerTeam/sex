@@ -1,2 +1,4 @@
 runtime/
 application/database.php
+.project
+.settings/org.eclipse.core.resources.prefs
