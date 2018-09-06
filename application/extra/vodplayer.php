@@ -9,7 +9,7 @@ return array (
     'ps' => '0',
     'parse' => '',
     'sort' => '450',
-    'tip' => '<a href="//union.maccms.com/html/xigua.html" target="_blank">需要下载西瓜影音播放器</a>',
+    'tip' => '<a ahref="//union.maccms.com/html/xigua.html" target="_blank">需要下载西瓜影音播放器</a>',
     'id' => 'xigua',
   ),
   'xfplay' => 
@@ -21,7 +21,7 @@ return array (
     'des' => 'xfplay.com',
     'parse' => '',
     'ps' => '0',
-    'tip' => '<a href="//union.maccms.com/html/xfplay.html" target="_blank">需要下载先锋影音播放器</a>',
+    'tip' => '<a ahref="//union.maccms.com/html/xfplay.html" target="_blank">需要下载先锋影音播放器</a>',
     'id' => 'xfplay',
   ),
   'jjvod' => 
@@ -33,7 +33,7 @@ return array (
     'des' => 'jijizy.com',
     'parse' => '',
     'ps' => '0',
-    'tip' => '<a href="//union.maccms.com/html/jjvod.html" target="_blank">需要下载吉吉影音播放器</a>',
+    'tip' => '<a ahref="//union.maccms.com/html/jjvod.html" target="_blank">需要下载吉吉影音播放器</a>',
     'id' => 'jjvod',
   ),
   'fvod' => 
@@ -45,7 +45,7 @@ return array (
     'des' => 'www.feilao.com',
     'parse' => '',
     'ps' => '0',
-    'tip' => '<a href="//union.maccms.com/html/fvod.html" target="_blank">需要下载肥佬影音播放器</a>',
+    'tip' => '<a ahref="//union.maccms.com/html/fvod.html" target="_blank">需要下载肥佬影音播放器</a>',
     'id' => 'fvod',
   ),
   'ffhd' => 
@@ -57,7 +57,7 @@ return array (
     'des' => 'www.feifan.com',
     'parse' => '',
     'ps' => '0',
-    'tip' => '<a href="//union.maccms.com/html/ffhd.html" target="_blank">需要下载非凡影音播放器</a>',
+    'tip' => '<a ahref="//union.maccms.com/html/ffhd.html" target="_blank">需要下载非凡影音播放器</a>',
     'id' => 'ffhd',
   ),
   'niba' => 
@@ -69,7 +69,7 @@ return array (
     'des' => 'www.nbplay.com',
     'parse' => '',
     'ps' => '0',
-    'tip' => '<a href="//union.maccms.com/html/niba.html" target="_blank">需要下载泥巴影音播放器</a>',
+    'tip' => '<a ahref="//union.maccms.com/html/niba.html" target="_blank">需要下载泥巴影音播放器</a>',
     'id' => 'niba',
   ),
   'kkhd' => 
@@ -81,7 +81,7 @@ return array (
     'des' => 'www.kekeplay.com',
     'parse' => '',
     'ps' => '0',
-    'tip' => '<a href="//union.maccms.com/html/kkhd.html" target="_blank">需要下载可可影音播放器</a>',
+    'tip' => '<a ahref="//union.maccms.com/html/kkhd.html" target="_blank">需要下载可可影音播放器</a>',
     'id' => 'kkhd',
   ),
   'kankan' => 
@@ -93,7 +93,7 @@ return array (
     'des' => 'www.kankan.com',
     'parse' => '',
     'ps' => '0',
-    'tip' => '<a href="//union.maccms.com/html/kankan.html" target="_blank">需要下载迅雷看看播放器</a>',
+    'tip' => '<a ahref="//union.maccms.com/html/kankan.html" target="_blank">需要下载迅雷看看播放器</a>',
     'id' => 'kankan',
   ),
   'gvod' => 
@@ -105,7 +105,7 @@ return array (
     'des' => 'gvod.xunlei.com',
     'parse' => '',
     'ps' => '0',
-    'tip' => '<a href="//union.maccms.com/html/gvod.html" target="_blank">需要下载讯播GVOD播放器</a>',
+    'tip' => '<a ahref="//union.maccms.com/html/gvod.html" target="_blank">需要下载讯播GVOD播放器</a>',
     'id' => 'gvod',
   ),
   'cool' => 
@@ -117,7 +117,7 @@ return array (
     'des' => 'mycoolplay.com',
     'parse' => '',
     'ps' => '0',
-    'tip' => '<a href="//union.maccms.com/html/cool.html" target="_blank">需要下载酷播播放器</a>',
+    'tip' => '<a ahref="//union.maccms.com/html/cool.html" target="_blank">需要下载酷播播放器</a>',
     'id' => 'cool',
   ),
   'qvod' => 
@@ -129,7 +129,7 @@ return array (
     'des' => 'qvod.com',
     'parse' => '',
     'ps' => '0',
-    'tip' => '<a href="//union.maccms.com/html/qvod.html" target="_blank">需要下载快播QVOD播放器</a>',
+    'tip' => '<a ahref="//union.maccms.com/html/qvod.html" target="_blank">需要下载快播QVOD播放器</a>',
     'id' => 'qvod',
   ),
   'baidu' => 
@@ -141,7 +141,7 @@ return array (
     'des' => 'play.baidu.com',
     'parse' => '',
     'ps' => '0',
-    'tip' => '<a href="//union.maccms.com/html/baidu.html" target="_blank">需要下载百度影音播放器</a>',
+    'tip' => '<a ahref="//union.maccms.com/html/baidu.html" target="_blank">需要下载百度影音播放器</a>',
     'id' => 'baidu',
   ),
   'youku' => 

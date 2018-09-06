@@ -3,7 +3,7 @@ var d = new Date();
 var h = d.getHours();
 var list = {
 		'ads':{
-		'des': '【重要通知：206稳定云解析最新整合插件下载！20180313更新】-【<a href="http://206dy.com/cms/maccms.zip"><font color=red>点击下载整合插件</font></a>】',
+		'des': '',
 		'rows':[
           	{
 			'status':'ok',
@@ -149,11 +149,11 @@ $.each(list, function(k1, v1){
 	
 	html +="<table width='98%' class='table'><tbody>";
 	if(k1=='ads'){
-		html += "<tr class='table_title red'><td colspan='7' class='td'><span style='float:left'>&nbsp;离线资源采集平台>>> 业务QQ：479025&nbsp;</span><span style='float:right'>由资源站提供数据接口,保持同步更新&nbsp;</span></td></tr>";
+		html += "";
 	//	v1.rows.sort(function(){return Math.random()-0.5;});
 	//	v1.rows.sort(function(){return Math.random()-0.5;});
 	}
-	html += "<tr class='table_title'><td colspan='7' class='td'><span style='float:left'>&nbsp;"+v1.des+"</span><span style='float:right'>&nbsp;</span></td></tr>";
+	//html += "<tr class='table_title'><td colspan='7' class='td'><span style='float:left'>&nbsp;"+v1.des+"</span><span style='float:right'>&nbsp;</span></td></tr>";
 	
 	$.each(v1.rows, function(k2, v2){
 		urlone = url.replace('{xt}',v2.xt).replace('{ct}',v2.ct).replace('{group}',v2.group).replace('{flag}',v2.flag).replace('{apiurl}',v2.apiurl);

@@ -24,7 +24,7 @@ return array (
     'site_description' => '提供最新最快的影视资讯和在线播放',
     'site_icp' => 'icp123',
     'site_qq' => '123456',
-    'site_email' => '123456@maccms.com',
+    'site_email' => '123456@xxxx.com',
     'install_dir' => '/',
     'template_dir' => 'datll_wapian',
     'html_dir' => 'html',

@@ -26,7 +26,7 @@ class Init
             $TMP_ADSDIR = $config['site']['mob_ads_dir'];
         }
 
-        define('MAC_URL','http://www.maccms.com/');
+        define('MAC_URL','http://www.xxxx.com/');
         define('MAC_NAME','大香蕉');
         define('MAC_PATH', $config['site']['install_dir'] .'');
         define('MAC_MOB', $TMP_ISWAP);

@@ -4,10 +4,10 @@ namespace app\index\controller;
 class Index extends Base
 {
     public function index()
-    {
-        header('Location: /index.php/vod/show/page/1/id/1.html');
-        exit;
-        $param = mac_param_url();
+    {        
+//         header('Location: /index.php/vod/show/page/1/id/1.html');
+//         exit;
+//         $param = mac_param_url();
         return $this->fetch( 'index/index');
     }
 

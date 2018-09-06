@@ -216,16 +216,16 @@ return array(
         '102' => array("show"=>1,'name' => '执行SQL语句', 'controller' => 'database',		'action' => 'sql'),
         '103' => array("show"=>1,'name' => '数据批量替换', 'controller' => 'database',		'action' => 'rep'),
     )),
-    '11' => array('name' => '应用', 'icon' => 'xe621', 'sub' => array(
-        '111' => array("show"=>1,'name' => '应用市场', 'controller' => 'addon',		'action' => 'index', 'param'=>''),
-
-        '11100' => array("show"=>0,'name' => '--应用插件列表', 'controller' => 'addon',		'action' => 'downloaded'),
-        '11101' => array("show"=>0,'name' => '--应用插件安装', 'controller' => 'addon',		'action' => 'install'),
-        '11102' => array("show"=>0,'name' => '--应用插件卸载', 'controller' => 'addon',		'action' => 'uninstall'),
-        '11103' => array("show"=>0,'name' => '--应用插件配置', 'controller' => 'addon',		'action' => 'config'),
-        '11104' => array("show"=>0,'name' => '--应用插件状态', 'controller' => 'addon',		'action' => 'state'),
-        '11105' => array("show"=>0,'name' => '--应用插件上传', 'controller' => 'addon',		'action' => 'local'),
-        '11106' => array("show"=>0,'name' => '--应用插件升级', 'controller' => 'addon',		'action' => 'upgrade'),
-    )),
+//  '11' => array('name' => '应用', 'icon' => 'xe621', 'sub' => array(
+//      '111' => array("show"=>1,'name' => '应用市场', 'controller' => 'addon',		'action' => 'index', 'param'=>''),
+//
+//      '11100' => array("show"=>0,'name' => '--应用插件列表', 'controller' => 'addon',		'action' => 'downloaded'),
+//      '11101' => array("show"=>0,'name' => '--应用插件安装', 'controller' => 'addon',		'action' => 'install'),
+//      '11102' => array("show"=>0,'name' => '--应用插件卸载', 'controller' => 'addon',		'action' => 'uninstall'),
+//      '11103' => array("show"=>0,'name' => '--应用插件配置', 'controller' => 'addon',		'action' => 'config'),
+//      '11104' => array("show"=>0,'name' => '--应用插件状态', 'controller' => 'addon',		'action' => 'state'),
+//      '11105' => array("show"=>0,'name' => '--应用插件上传', 'controller' => 'addon',		'action' => 'local'),
+//      '11106' => array("show"=>0,'name' => '--应用插件升级', 'controller' => 'addon',		'action' => 'upgrade'),
+//  )),
 
 );
