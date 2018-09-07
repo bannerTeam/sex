@@ -4762,3 +4762,12 @@ input, select {
     text-overflow: ellipsis;
     display: block;
 }
+
+
+.mac_pages{line-height: 50px !important;}
+.mac_pages .page_info .page_link,.mac_pages .page_info .page_current {   
+    padding: 5px 15px 6px 15px !important;;
+}
+.mac_pages .page_info .page_link:hover{
+	background: #1db69a !important; color: #FFFFFF !important;
+}

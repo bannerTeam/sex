@@ -15,20 +15,33 @@
 </head>
 <body class="home blog">
 {include file="public/head"}
-
-幻灯片开始
-<div id="wrapper">
-  <div class="fullwidthbanner-container">
-    <div class="fullwidthbanner">
-      <ul>
-        {maccms:vod order="desc"   by="level" level="9"  type="all"  }
-        <li class="datll_li" data-transition="flyin" data-slotamount="15" data-masterspeed="300" data-link="{:mac_url_vod_detail($vo)} "> <img src="{$vo.vod_pic_slide}" alt="{$vo.vod_name}" style="max-height: 460px;"/> </li>
-        {/maccms:vod}
-      </ul>
-    </div>
-  </div>
+<style>
+	.v-advertise {
+    text-align: center;
+    width: 100%;
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+	</style>
+<div class="v-advertise">
+    <div class="v-advertise-one">
+                    <a href="http://bcbm.bcbm66666.com:890/1832284.html" target="_blank">
+                <img style="width:1200px;height: 60px;" src="http://img.cksource.space/advertising/2018-06-19/2018-06-19-17-12-33_Cn3Oyr7nZ0.gif">
+             </a>            <a href="https://xiaocongbao.com/s1/ekeg" target="_blank">
+                <img style="width:1200px;height: 60px;" src="http://img.cksource.space/advertising/2018-07-16/2018-07-16-19-37-47_ZSY4cH20Pi.gif">
+             </a>            <a href="http://t2.9797game.com/" target="_blank">
+                <img style="width:1200px;height: 60px;" src="http://img.cksource.space/advertising/2018-07-03/2018-07-03-01-29-40_eZdI0kSTZr.gif">
+             </a>            <a href="https://c83rutdv.com/?213293" target="_blank">
+                <img style="width:1200px;height: 60px;" src="http://img.cksource.space/advertising/2018-08-15/2018-08-15-18-24-15_GUuiLVyOwU.gif">
+             </a>            <a href="http://baicai.bc88.space/prize" target="_blank">
+                <img style="width:1200px;height: 60px;" src="http://img.cksource.space/advertising/2017-03-16/2017-03-16-15-58-28_FdDyapRGBA.jpg">
+             </a>            <a href="http://android.download.v2app.space/v300.apk" target="_blank">
+                <img style="width:1200px;height: 60px;" src="http://img.cksource.space/advertising/2018-07-19/2018-07-19-17-40-41_gf7YQbkXVv.gif">
+             </a>
+    </div>    
+    
 </div>
-幻灯片结束
+
 <section class="container">
   <div class="index_film">
     <div class="single-strong">热门推荐<!--<span class="chak"><a href="[matrix:link]">查看更多</a></span>--></div>
@@ -54,13 +67,15 @@
       </div>
     </div>
   </div>
+  
 {maccms:type parent="current" order="asc" by="sort" mid="1" id="vo1"}
-  <div class="Film_list">
+<div style="height: 20px; clear: both;"></div>
+  <div class="Film_list" style="width:895px;">
     <div class="single-strong">最新{$vo1.type_name} <span class="chak"><a href="{:mac_url_type($vo)} ">查看更多</a></span></div>
     <div class="b-listtab-main">
       <div class="s-tab-main">
         <ul class="list g-clear">
-          {maccms:vod num="10" type="'.$vo1['type_id'].'" order="desc" by="time"}
+          {maccms:vod num="9" type="'.$vo1['type_id'].'" order="desc" by="time"}
           <li class='item'><a class='js-tongjic' href='{:mac_url_vod_detail($vo)} ' title='{$vo.vod_name}'>
             <div class='cover g-playicon'> <img src='{:mac_url_img($vo.vod_pic)}' alt='{$vo.vod_name}' /> <span class='pay'>{$vo.type.type_name} </span><span class='hint'>{$vo.vod_remarks}</span> </div>
             <div class='detail'>
@@ -73,7 +88,7 @@
       </div>
     </div>
   </div>
-  <div class="hot_film">
+  <div class="hot_film" style="float: right;">
     <div class="single-strong">{$vo1.type_name}排行榜</div>
 
 	  {if condition="$vo1.type_id == 1"}
@@ -122,5 +137,57 @@
 <!--<script type="text/javascript"> document.body.oncontextmenu=document.body.ondragstart= document.body.onselectstart=document.body.onbeforecopy=function(){return false;};
 document.body.onselect=document.body.oncopy=document.body.onmouseup=function(){document.selection.empty();}; </script>-->
 {$maccms.site_tj}
+
+<style>
+.b-listtab-main .item{ overflow: hidden;}
+</style>
+<script>
+	
+	(function ($) {
+    var loadImg = function (url, fn) {
+        var img = new Image();
+        img.src = url;
+        if (img.complete) {
+            fn.call(img);
+        } else {
+            img.onload = function () {
+                fn.call(img);
+                img.onload = null;
+            };
+        };
+    };
+
+    $.fn.imgAutoSize = function (padding) {
+				
+        var maxWidth = this.innerWidth() - (padding || 0);
+				var maxHeight = this.innerHeight() - (padding || 0);
+				var ratio = maxWidth/maxHeight,ratio_n = 1;
+        return this.find('img').each(function (i, img) {
+            loadImg(this.src, function () {
+								ratio_n = (this.width/this.height);								
+								if(ratio > ratio_n){
+									if (this.width > maxWidth) {
+	                    var height = maxWidth / this.width * this.height,
+	                        width = maxWidth;	
+	                    img.width = width;
+	                    img.height = height;
+	                };
+								}else{
+									if (this.height > maxHeight) {										
+	                    var height = maxHeight;
+	                    img.height = height;
+	                };
+								}
+                
+            });
+        });
+    };
+
+})(jQuery); 
+
+$('.cover').imgAutoSize();
+
+	
+</script>
 </body>
 </html>
