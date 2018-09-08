@@ -51,6 +51,20 @@
     padding:2px 0px;
 }
 
+@media screen and (max-width:600px){
+	.b-listfilter-item .item a
+	{
+		/*background: #c1f1e8;
+		color: #00000;*/
+		padding:8px 18px;	
+		height: auto;
+		margin-right: 0;
+	}
+}
+
+
+
+
 .b-listfilter-item .item a:hover{
     text-decoration: underline !important;
 }

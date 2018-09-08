@@ -33,13 +33,28 @@
 <link rel="Bookmark" href="{$maccms.path_tpl}/template/qwysmb-html/images/favicon.png">
 <!--[if lt IE 9]><script src="js/html5.js"></script><![endif]-->
 <style>
+	
+.left_content{ float: left; width: 70%; padding-right: 30px;}
+.bofangdiv,.MacPlayer{min-height: 450px;}
+.right_adv{	float: left;
+	width: 30%;; padding-top: 50px;
+}
+.right_adv img{ margin-bottom: 10px;}
+
 .w-newfigure{list-style:none; float:left;}
 .list{ margin-left:-40px;}
 	
 @media screen and (min-width:1200px){
 	.bofangdiv{height: 540px;}
+}
+@media screen and (max-width:600px){
+	.left_content{  width: 100%; padding-right: 0px;}
+	.right_adv{	clear: both;
+		width: 100%; padding-top: 20px;
 	}
-	 ul, li, h2 {
+	.bofangdiv,.MacPlayer{min-height: 200px; height: 100%; width: 100%;}
+}
+ul, li, h2 {
     margin: 0px;
     padding: 0px;
     list-style: none;
@@ -53,17 +68,19 @@
 <div class="single-post">
 <section class="container">
     <div class="content-wrap">
-    	<div class="content">
+    	
+    	<div class="left_content">
+    	<div class="">
 <div id="bof">
 <script type="text/javascript" language="javascript" src="js/all-top.js"></script>
 <div class="sptitle"><h2 class="single-strong">正在播放:在线播放{$obj.vod_name}</h2></div>
 <div class="bofangdiv">
   
 	{$player_data}
-        {$player_js}
+    {$player_js}
 
 </div>
-<p style="background-color: #1db69a;color: #FFFFFF;padding-top: 0.4rem; padding-left: 0.75rem; padding-right: 0.75rem;margin:0; font-size: .7rem; font-size: 14px;padding-bottom: 0.35rem;text-align:center;">如等待10秒以上播放器还没出现请从新点击播放或者刷新即可观看</p>
+<p style="background-color: #1db69a;color: #FFFFFF;padding-top: 0.4rem; padding-left: 0.75rem; padding-right: 0.75rem;margin:0; font-size: .7rem; font-size: 14px;padding-bottom: 0.35rem;text-align:center;">如等待10秒以上播放器还没出现请重新点击播放或者刷新即可观看</p>
 </div>
 <div class="am-cf"></div>
 <div class="am-panel am-panel-default">
@@ -75,7 +92,7 @@ function xldata(urls){
 	videourls.src = urls+xlqieh.href;
 }
 </script>
-      	<div class="juji">
+     <div class="juji" style="display: none;">
 		<ul class="juji-hd">
 			{maccms:foreach name="obj.vod_play_list" id="vo"}
 			<li {if condition="($param.sid==$key)"}class="active"{else /}{/if} >{$vo.player_info.show}</li>
@@ -107,18 +124,10 @@ function xldata(urls){
 <br/>
    
 </div>
+</div>
 
 
-<style>
-	.right_adv{
-		position: absolute;
-		top: 50px;
-		right: 0;
-		width: 380px;
-	}
-	.right_adv img{ margin-bottom: 10px;}
-	
-</style>
+
   <div class="right_adv">
 	<div class="advertise">
                         <a href="http://yptq.d.h.y9p1.space" target="_blank">
