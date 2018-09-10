@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>ckplay</title>
+		<script>
+			var maccms = {
+				path: ""
+			};
+		</script>
+	</head>
+
+	<body>
+		<h3>动态获取配置文件的广告</h3>
+		<div id="play2" style="width: 90%; height: 400px;">
+
+		</div>
+		<h3>静态单独配置广告</h3>
+		<div id="play1" style="width: 90%; height: 400px;">
+
+		</div>
+
+		<script src="/static/player/ckplayer/ckplayer.js"></script>
+		<script>
+			var player_data = {
+				"flag": "play",
+				"encrypt": 0,
+				"trysee": 0,
+				"points": 0,
+				"link": "\/index.php\/vod\/play\/id\/5924\/sid\/1\/nid\/1.html",
+				"link_next": "\/index.php\/vod\/play\/id\/5924\/sid\/1\/nid\/1.html",
+				"link_pre": "\/index.php\/vod\/play\/id\/5924\/sid\/1\/nid\/1.html",
+				"url": "http:\/\/videocdn2.quweikm.com:8091\/20180801\/WKJ6RYWE004\/index.m3u8",
+				"url_next": "",
+				"from": "ckplayer",
+				"server": "no",
+				"note": ""
+			};
+		</script>
+		<script src="/static/js/playerconfig.js"></script>
+		<script src="/static/js/player.js"></script>
+		<script>
+			//静态单独配置广告
+			var videoObject = {
+				container: '#play1', //容器的ID或className
+				variable: 'player', //播放函数名称				
+				autoplay: false,
+				video: MacPlayer.PlayUrl,
+				"adfront": "/static/ad/adfront.png",
+				"adfrontlink":"http://www.587755.com:8888/Register/?a=30329",
+				"adfronttime":"3",
+				"adpause": "/static/ad/adpause.gif",
+				"adpauselink":"http://www.043377.com:8888/Register/?a=926794",				
+				"adinsert": "/static/ad/adinsert.gif",
+				"adinsertlink":"https://ecwon.com/en/registration/1037985",
+				"adinserttime":"6",
+				"inserttime":"10%"	
+			};
+			var player1 = new ckplayer(videoObject);
+			
+			
+			//动态获取配置文件的广告
+			var videoObject2 = {
+				container: '#play2', //容器的ID或className
+				variable: 'player', //播放函数名称				
+				autoplay: true,
+				video: MacPlayer.PlayUrl,
+				advertisements:"{:url('Adv/get_adv')}"
+			};
+			var player2 = new ckplayer(videoObject2);
+		</script>
+
+	</body>
+
+</html>

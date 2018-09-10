@@ -1,0 +1,34 @@
+{    
+	
+	"front": [
+        {
+            "file": "/static/ad/adfront.png",
+            "type": "png",
+            "link": "http://www.587755.com:8888/Register/?a=30329",
+            "time": 6,
+            "exhibitionMonitor": "/adv/exhibitionMonitor",
+            "clickMonitor": "/adv/clickMonitor"
+        }
+    ],
+    "pause": [
+        {
+            "file": "/static/ad/adpause.gif",
+            "type": "gif",
+            "link": "http://www.043377.com:8888/Register/?a=926794",
+            "time": 3,
+            "exhibitionMonitor": "/adv/exhibitionMonitor",
+            "clickMonitor": "/adv/clickMonitor"
+        }
+    ],
+	"insert": [
+        {
+            "file": "/static/ad/adinsert.gif",
+            "type": "gif",
+            "link": "https://ecwon.com/en/registration/1037985",
+            "time": 5,
+            "exhibitionMonitor": "/adv/exhibitionMonitor",
+            "clickMonitor": "/adv/clickMonitor"
+        }
+    ],
+	"inserttime": "100"	
+}

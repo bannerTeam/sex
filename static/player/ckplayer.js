@@ -29,7 +29,8 @@ setTimeout(function(){
         variable: 'player',//播放函数名称
         //flashplayer:true,
         autoplay:true,
-        video: MacPlayer.PlayUrl
+        video: MacPlayer.PlayUrl,
+       advertisements:'/Adv/get_adv'
     };
     var player = new ckplayer(videoObject);
 
