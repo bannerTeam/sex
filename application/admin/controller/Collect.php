@@ -173,7 +173,9 @@ class Collect extends Base
         if($param['ac'] != 'list'){
             Cache::set('collect_break_vod', url('collect/api').'?'. http_build_query($param) );
         }
+                
         $res = model('Collect')->vod($param);
+                   
         if($res['code']>1){
             return $this->error($res['msg']);
         }
@@ -205,7 +207,6 @@ class Collect extends Base
 
             return $this->fetch('admin@collect/vod');
         }
-
         mac_echo('<style type="text/css">body{font-size:12px;color: #333333;line-height:21px;}span{font-weight:bold;color:#FF0000}</style>');
         model('Collect')->vod_data($param,$res );
 

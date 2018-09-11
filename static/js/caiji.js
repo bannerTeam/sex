@@ -94,8 +94,19 @@ var list = {
 			'group':'',
 			'ct':'',
 			'cjurl':''
+			},
+			{
+			'status':'ok',
+			'name':'s10',
+			'apiurl':'http://api.cao2018.com/inc/api.php',
+			'flag':'520ziyuancom_',
+			'xt':'1',
+			'group':'',
+			'ct':'',
+			'cjurl':''
 			}
 		]
+		        
 	},	
 	'news':{
 		'des': '常用资源库',

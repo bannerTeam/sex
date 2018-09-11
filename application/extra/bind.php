@@ -29,5 +29,10 @@ return array (
   'zimuwang_21' => 11,
   'zimuwang_22' => 11,
   'zimuwang_23' => 12,
+  'lusinixf_15' => 6,
+  'lusinixf_16' => 7,
+  'lusinixf_9' => 8,
+  '520ziyuancom__17' => 7,
+  '520ziyuancom__16' => 6,
 );
 ?>

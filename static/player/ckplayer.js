@@ -35,8 +35,3 @@ setTimeout(function(){
     var player = new ckplayer(videoObject);
 
 }, MacPlayer.Second * 1000 - 1000);
-
-
-
-
-

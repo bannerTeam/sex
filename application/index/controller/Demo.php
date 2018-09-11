@@ -15,5 +15,16 @@ class Demo extends Base
        
         return $this->fetch('demo/ckplay');
     }
-
+    
+    public function collect_ds()
+    {
+        
+        return $this->fetch('demo/collect_ds');
+    }
+    
+    public function collect_union()
+    {
+        
+        return $this->fetch('demo/collect_union');
+    }
 }
