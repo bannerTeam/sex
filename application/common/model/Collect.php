@@ -378,7 +378,7 @@ class Collect extends Base {
         $config = $config['vod'];
 
         $type_list = model('Type')->getCache('type_list');
-
+        
         foreach($data['data'] as $k=>$v){
             $color='red';
             $des='';
@@ -540,12 +540,14 @@ class Collect extends Base {
                 if(empty($v['vod_down_server'])) $v['vod_down_server']='';
                 if(empty($v['vod_down_note'])) $v['vod_down_note']='';
 
-
                 $info = model('Vod')->where($where)->find();
+                
+                
                 if (!$info) {
                     $tmp = $this->syncImages($config['pic'],$v['vod_pic'],'vod');
                     $v['vod_pic'] = $tmp['pic'];
                     $msg = $tmp['msg'];
+                                                           
                     $res = model('Vod')->insert($v);
                     if($res===false){
 

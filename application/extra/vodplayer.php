@@ -6,9 +6,11 @@ return array (
     'from' => '520ziyuan',
     'show' => '520在线资源',
     'des' => 'www.520ziyuan.com,cao2018.com',
+    'ps' => '0',
     'parse' => '',
     'sort' => '500',
     'tip' => '',
+    'id' => '520ziyuan',
   ),
   'xigua' => 
   array (
@@ -166,7 +168,7 @@ return array (
     'tip' => '无需安装任何插件',
     'id' => 'youku',
   ),
-  '56_' =>
+  '56_' => 
   array (
     'status' => '1',
     'sort' => '380',
@@ -394,6 +396,18 @@ return array (
     'tip' => '无需安装任何插件',
     'id' => 'media',
   ),
+  'dbm3u8' => 
+  array (
+    'status' => '1',
+    'from' => 'dbm3u8',
+    'show' => 'dbm3u8',
+    'des' => 'http://www.doubanzy.com/help/#MacCms',
+    'ps' => '0',
+    'parse' => '',
+    'sort' => '99',
+    'tip' => 'dbm3u8',
+    'id' => 'dbm3u8',
+  ),
   'ckplayer' => 
   array (
     'status' => '1',
@@ -465,6 +479,18 @@ return array (
     'sort' => '9',
     'tip' => '无需安装任何插件',
     'id' => 'link',
+  ),
+  '2048zy_yun' => 
+  array (
+    'status' => '1',
+    'from' => '2048zy_yun',
+    'show' => '2048zy资源站',
+    'des' => '2048zy5.com',
+    'ps' => '0',
+    'parse' => '',
+    'sort' => '500',
+    'tip' => '在线播放,无需安装播放器',
+    'id' => '2048zy_yun',
   ),
 );
 ?>

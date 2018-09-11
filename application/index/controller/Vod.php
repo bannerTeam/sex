@@ -65,7 +65,7 @@ class Vod extends Base
 
     public function play()
     {
-        $info = $this->label_vod_play('play');
+        $info = $this->label_vod_play('play');       
         return $this->fetch( mac_tpl_fetch('vod',$info['vod_tpl_play'],'play') );
     }
 
