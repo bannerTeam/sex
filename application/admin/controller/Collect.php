@@ -179,6 +179,7 @@ class Collect extends Base
         if($res['code']>1){
             return $this->error($res['msg']);
         }
+        
 
         if($param['ac'] == 'list'){
 

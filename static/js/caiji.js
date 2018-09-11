@@ -97,14 +97,36 @@ var list = {
 			},
 			{
 			'status':'ok',
-			'name':'s10',
+			'name':'s520ziyuancom',
 			'apiurl':'http://api.cao2018.com/inc/api.php',
 			'flag':'520ziyuancom_',
 			'xt':'1',
 			'group':'',
 			'ct':'',
 			'cjurl':''
+			},
+			{
+			'status':'ok',
+			'name':'sdoubanzy',
+			'apiurl':'http://www.dbzyz.com/inc/dbm3u8.php',
+			'flag':'doubanzy',
+			'xt':'1',
+			'group':'',
+			'ct':'',
+			'cjurl':''
 			}
+			,
+			{
+			'status':'ok',
+			'name':'2048zy5',
+			'apiurl':'https://2048zy5.com/inc/api.php',
+			'flag':'2048zy5',
+			'xt':'1',
+			'group':'',
+			'ct':'',
+			'cjurl':''
+			}
+			
 		]
 		        
 	},	

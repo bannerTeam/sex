@@ -34,5 +34,8 @@ return array (
   'lusinixf_9' => 8,
   '520ziyuancom__17' => 7,
   '520ziyuancom__16' => 6,
+  'doubanzy_19' => 6,
+  '3e3154f9a3ca492a548dffd2eca870a9_18' => 7,
+  '2048zy5_2' => 7,
 );
 ?>
