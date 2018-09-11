@@ -1,5 +1,16 @@
 <?php
 return array (
+  '520ziyuan' => 
+  array (
+    'status' => '1',
+    'from' => '520ziyuan',
+    'show' => '520在线资源',
+    'des' => 'www.520ziyuan.com,cao2018.com',
+    'ps' => '0',
+    'parse' => '',
+    'sort' => '500',
+    'tip' => '',
+  ),
   'xigua' => 
   array (
     'status' => '1',
@@ -156,7 +167,7 @@ return array (
     'tip' => '无需安装任何插件',
     'id' => 'youku',
   ),
-  '56_' =>
+  '56_' => 
   array (
     'status' => '1',
     'sort' => '380',
