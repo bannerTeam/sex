@@ -396,18 +396,6 @@ return array (
     'tip' => '无需安装任何插件',
     'id' => 'media',
   ),
-  'dbm3u8' => 
-  array (
-    'status' => '1',
-    'from' => 'dbm3u8',
-    'show' => 'dbm3u8',
-    'des' => 'http://www.doubanzy.com/help/#MacCms',
-    'ps' => '0',
-    'parse' => '',
-    'sort' => '99',
-    'tip' => 'dbm3u8',
-    'id' => 'dbm3u8',
-  ),
   'ckplayer' => 
   array (
     'status' => '1',

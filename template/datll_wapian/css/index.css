@@ -970,7 +970,7 @@
 }
 
 .Film_list {
-    width: 980px;
+    width: 895px;
     float: left;
 }
 
@@ -995,8 +995,18 @@
 
 .hot_film {
     width: 260px;
-    float: left;
+     float: right;
     padding-left: 30px;
+}
+@media (max-width: 700px) {   
+    .hot_film {
+    	float: none;
+    	clear: both;
+	    display: block;
+	    width: 90%;
+	    margin: 0 auto;
+	    padding: 0;
+	}
 }
 
 .index_film {
