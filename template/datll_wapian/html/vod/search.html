@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -51,9 +49,11 @@
 </style>
 <div class="bread-crumb-nav fn-clear">
     <ul class="bread-crumbs">
-        <li class="home"><a href="{$maccms.path}">首页</a></li>
-        <li>搜索" <strong style="color:#4c8fe8;">{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}</strong>" 结果 " <strong style="color:#4c8fe8" class="mac_total"></strong>" 个资源</li>
-        <li class="back"><a href="javascript:MAC.GoBack()">返回上一页</a></li>
+        <li>搜索" <strong >{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}</strong>" &nbsp;&nbsp;&nbsp;共 " <strong  class="mac_total"></strong>" 个资源
+        
+        <span class="back" style="padding-left: 30px;"><a href="javascript:MAC.GoBack()">返回上一页</a></span>
+        </li>
+        
     </ul>
 </div>
       

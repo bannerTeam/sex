@@ -1,12 +1,14 @@
 ﻿.b-listfilter
 {
-    background-color:#fff;
+    background-color:#1db69a;
     border:1px solid #e6e6e6;
     font-size:12px;
     line-height:16px;
     padding:0 20px;
 }
-
+.b-listfilter .bread-crumbs{ color: #FFFFFF;}
+.b-listfilter .bread-crumbs li{ line-height: 35px; font-size: 14px; list-style: none;}
+.b-listfilter .bread-crumbs a{ color: #FFFFFF;}
 .b-listfilter-item
 {
     position:relative;
@@ -47,8 +49,25 @@
     font-size: 14px;
     white-space:nowrap;
     word-wrap:break-word;
-    margin:5px 20px 5px 0px;
-    padding:2px 0px;
+    margin:5px 0px 5px 0px;
+    padding:2px 20px;
+    color: #ffffff ;
+}
+.b-listfilter-item .item a:first-child{
+	 padding-left: 0px;
+}
+
+@media screen and (max-width:600px){
+	.b-listfilter-item .item{ padding: 0;}
+	
+	.b-listfilter-item .item a
+	{
+		height: auto;
+		padding:4px 20px;
+	}
+	.b-listfilter-item .item a:first-child{
+		 padding:4px 20px;
+	}
 }
 
 .b-listfilter-item .act
@@ -763,9 +782,7 @@
 }
 
 @media only screen and (max-width: 420px) {
-    .b-listfilter-item .item a {
-        margin: 5px 0 5px 9pt
-    }
+   
 
     .b-listtab-main .item {
         width: 40%
@@ -833,7 +850,7 @@
 .homesoin {
     padding: 4px 8px;
     width: 500px;
-    border: 1px solid #eee;
+    border: 1px solid #1db69a;
     border-right: none;
     border-radius: 2px 0 0 2px;
     color: #999

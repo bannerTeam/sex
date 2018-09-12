@@ -358,7 +358,7 @@ input[type="search"] {
 }
 
 .menu-itema {
-    color: #1db69a !important;
+    
 }
 
 .menu-itema-two {
@@ -1166,7 +1166,7 @@ body {
 .searchform .sinput {
     float: left;
     color: #999;
-    border: solid 1px #eee;
+    border: solid 1px #1db69a;
     width: 300px;
     height: 32px;
     padding: 4px 8px;

@@ -54,7 +54,7 @@
         <div>
           <div class="s-tab-main">
             <ul class="list g-clear">
-					 {maccms:vod num="12" paging="yes" pageurl="vod/show" type="menu-itema" order="desc" by="time"}
+				{maccms:vod num="12" paging="yes" pageurl="vod/show" type="menu-itema" order="desc" by="time"}
                   <li class='item'>
                     <a class='js-tongjic' href='{:mac_url_vod_detail($vo)} ' title='{$vo.vod_name}'>
                       <div class='cover g-playicon'>
@@ -68,9 +68,9 @@
                         <p class='star'>热度：{$vo.vod_hits_month} </p></div>
                     </a>
                   </li>
-                     {/maccms:vod}
+                {/maccms:vod}
 				    
-				  </ul>
+			</ul>
           </div>
         </div>
       </div>

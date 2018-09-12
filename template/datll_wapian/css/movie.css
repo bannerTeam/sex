@@ -1,6 +1,6 @@
 ﻿.b-listfilter
 {
-    background-color:#fff;
+    background-color:#1db69a;
     border:1px solid #e6e6e6;
     font-size:12px;
     line-height:16px;
@@ -47,21 +47,26 @@
     font-size: 14px;
     white-space:nowrap;
     word-wrap:break-word;
-    margin:5px 17px 5px 0px;
-    padding:2px 0px;
+    margin:5px 0px 5px 0px;
+    padding:2px 20px;
+    color: #ffffff ;
+}
+.b-listfilter-item .item a:first-child{
+	 padding-left: 0px;
 }
 
 @media screen and (max-width:600px){
+	.b-listfilter-item .item{ padding: 0;}
+	
 	.b-listfilter-item .item a
 	{
-		/*background: #c1f1e8;
-		color: #00000;*/
-		padding:8px 18px;	
 		height: auto;
-		margin-right: 0;
+		padding:4px 20px;
+	}
+	.b-listfilter-item .item a:first-child{
+		 padding:4px 20px;
 	}
 }
-
 
 
 
