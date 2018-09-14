@@ -296,7 +296,7 @@ class All extends Controller
             }
             $info = $res['info'];
         }
-
+        
         $trysee = 0;
         $urlfun='mac_url_vod_'.$flag;
         $listfun = 'vod_'.$flag.'_list';
@@ -305,14 +305,14 @@ class All extends Controller
                 $trysee = $GLOBALS['config']['user']['trysee'];
                 if($info['vod_trysee'] >0){
                     $trysee = $info['vod_trysee'];
-                }
+                }                
                 $popedom = $this->check_user_popedom($info['type_id'], ($pe==0 ? 3 : 5),$param,$flag,$info['vod_points_play'],$trysee);
             }
             else {
                 $popedom =  $this->check_user_popedom($info['type_id'], 4,$param,$flag,$info['vod_points_down']);
             }
             $this->assign('popedom',$popedom);
-
+            
             if($pe==0 && $popedom['code']>1 && empty($popedom["trysee"])){
                 if($popedom['confirm']==1){
                     $this->assign('flag',$flag);
@@ -358,6 +358,8 @@ class All extends Controller
             $player_info['url_next'] = base64_encode(mac_escape($player_info['url_next']));
         }
 
+        
+        
         $info['player_info'] = $player_info;
         $this->assign('obj',$info);
 

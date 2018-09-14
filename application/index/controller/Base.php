@@ -58,9 +58,7 @@ class Base extends All
         if(strpos(','.$group['group_type'],','.$type_id.',')!==false && !empty($group['group_popedom'][$type_id][$popedom])!==false){
             $res = true;
         }
-
         if($popedom==3){
-
             if($res===false && (empty($group['group_popedom'][$type_id][5]) || $trysee==0)){
                 return ['code'=>3001,'msg'=>'您没有权限访问此数据，请升级会员','trysee'=>0];
             }

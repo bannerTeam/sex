@@ -75,7 +75,7 @@
     <div class="b-listtab-main">
       <div class="s-tab-main">
         <ul class="list g-clear">
-          {maccms:vod num="12" type="'.$vo1['type_id'].'" order="desc" by="time"}
+          {maccms:vod num="10" type="'.$vo1['type_id'].'" order="desc" by="time"}
           <li class='item'><a class='js-tongjic' href='{:mac_url_vod_detail($vo)} ' title='{$vo.vod_name}'>
             <div class='cover g-playicon'> <img src='{:mac_url_img($vo.vod_pic)}' alt='{$vo.vod_name}' /> <span class='pay'>{$vo.type.type_name} </span><span class='hint'>{$vo.vod_remarks}</span> </div>
             <div class='detail'>
@@ -91,30 +91,14 @@
   <div class="hot_film" >
     <div class="single-strong">{$vo1.type_name}排行榜</div>
 
-	  {if condition="$vo1.type_id == 1"}
-
-	  <div class="hot_film_list">
-		{maccms:vod num="32" type="'.$vo['type_id'].'" order="desc" by="time"}
-		<a href="{:mac_url_vod_detail($vo)} "><span class=" {if condition="($key <=3)"}Serial_number{else /}Serial_numberh {/if}">{$key}</span><span class="vodname">{$vo.vod_name}</span><span class="list_score">{$vo.vod_score}</span></a> {/maccms:vod}
-	  </div>
-
-	  {else /}
+	 
 
 	   <div class="hot_film_list">
-		{maccms:vod num="9" type="'.$vo['type_id'].'" order="desc" by="time"}
+		{maccms:vod num="23" type="'.$vo['type_id'].'" order="desc" by="time"}
 		<a href="{:mac_url_vod_detail($vo)} "><span class=" {if condition="($key <=3)"}Serial_number{else /}Serial_numberh {/if}">{$key}</span><span class="vodname">{$vo.vod_name}</span><span class="list_score">{$vo.vod_score}</span></a> {/maccms:vod}
 	  </div>
-    <div class="single-strong">热播{$vo1.type_name}</div>
-    <div class="hot_film_list">
-		{maccms:vod num="9" type="'.$vo['type_id'].'" order="desc" by="time"}
-		<a href="{:mac_url_vod_detail($vo)} "><span class="{if condition="($key <= 3)"}Serial_number{else /}Serial_numberh {/if}"">{$key}</span><span class="vodname">{$vo.vod_name}</span><span class="list_score">{$vo.vod_score}分</span></a>
+    
 
-
-
-		{/maccms:vod}
-	  </div>
-
-	  {/if}
 
   </div>
   {/maccms:type}

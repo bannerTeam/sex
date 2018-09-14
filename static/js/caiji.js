@@ -126,6 +126,17 @@ var list = {
 			'ct':'',
 			'cjurl':''
 			}
+			,
+			{
+			'status':'ok',
+			'name':'ziyuanpian',
+			'apiurl':'http://www.ziyuanpian.com/inc/ckm3u8.php',
+			'flag':'ckflvzy',
+			'xt':'1',
+			'group':'',
+			'ct':'',
+			'cjurl':''
+			}
 			
 		]
 		        

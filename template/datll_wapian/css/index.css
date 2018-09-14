@@ -766,6 +766,9 @@
     margin-top: 10px
 }
 
+
+
+
 @media only screen and (max-width: 700px) {
     .b-listtab-main .item {
     }
@@ -805,7 +808,11 @@
         height: 262px
     }
 }
-
+@media only screen and (min-width: 1200px) {
+	.Film_list .b-listtab-main .item:nth-child(10){
+		display: none;
+	}
+}
 @media only screen and (max-width: 320px) {
     .b-listfilter-item .item a {
         margin: 5px 0 5px 5px

@@ -37,5 +37,7 @@ return array (
   'doubanzy_19' => 6,
   '3e3154f9a3ca492a548dffd2eca870a9_18' => 7,
   '2048zy5_2' => 7,
+  'ckflvzy_16' => 20,
+  'ckflvzy_21' => 23,
 );
 ?>
