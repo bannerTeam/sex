@@ -2,25 +2,9 @@
   <div class="container">
     <h1 class="logo"><a href="/" title="{$maccms.site_name}"><img src="{$maccms.path_tpl}images/logo.png"></a></h1>
     <div class="logo_font"><img src="{$maccms.path_tpl}css/images/logo_font.png"></div>
-    <!--<div class="sitenav">
-      <ul>
-
-        <li id="menu-item-18" class="menu-item">-->
-          <!--<a {if condition="($maccms.aid==1) "} class="menu-itema-two"{else /}{/if}   href="/">首页</a> </li>-->
-          <!--{maccms:type ids="parent" order="asc" by="sort"}
-          <li id="menu-item-{$vo.type_id}" class="menu-item">
-        <a {if condition="($obj.type_name==$vo.type_name) "} class="menu-itema-two"{else /}{/if} href="{:mac_url_type($vo)}">{$vo.type_name}</a>
-          </li>
-        {/maccms:type}
-
-      </ul>
-    </div>-->
+    
     <span class="sitenav-on"><i class="icon-list"></i></span> <span class="sitenav-mask"></span>
-    <!--<div class="accounts"> <a class="account-weixin" href="javascript:;"><i class="fa"></i>-->
-      <!--<div class="account-popover">-->
-        <!--<div class="account-popover-content"><img src="{$maccms.path_tpl}images/qrcode.png"></div>-->
-      <!--</div>-->
-      <!--</a> </div>-->
+    
     <span class="searchstart-on"><i class="icon-search"></i></span> <span class="searchstart-off"><i class="icon-search"></i></span>
     <form class="searchform"  name="search" method="POST" action="{:mac_url('vod/search')}" method="post" id="search">
       <button tabindex="3" class="sbtn" type="submit"><i class="fa"></i></button>
@@ -67,7 +51,6 @@
       	
 	    	<a href='{:url('/')}' class="" target='_self'>首页</a>
       	
-        <!--<a condition="($vo.type_name=="")"} class="menu-itema" {/if} href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>'','order'=>$param['order'],'by'=>$param['by'] ],'show')}">全部</a>-->
         {if condition="($obj.type_pid ==0)"}
         {maccms:type parent="menu-itema" order="asc" by="sort"}
         <a {if condition="($vo.type_name==$obj.type_name)"}class="menu-itema"{/if} href="{:mac_url_type($vo,[],'show')}">{$vo.type_name}</a>
@@ -78,14 +61,7 @@
         {/maccms:type}
         {/if}
         
-        
-        <!--<a href='/' class="menu-itema" target='_self'>全部</a>
-        {maccms:type parent="current" order="asc" by="sort"}
-        <a href="{:mac_url_type($vo,[],'show')}" class="menu-itema" target='_self'>{$vo.type_name}</a>
-        {/maccms:type}
-        {if condition="$Request.controller neq 'Index'"}
-	    	<a href='/' class="menu-itema" target='_self'>返回</a>
-				{/if}-->
+      
         
       </dd>
     </dl>

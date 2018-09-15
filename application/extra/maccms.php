@@ -22,16 +22,22 @@ return array (
     'site_wapurl' => 'www.1.cn',
     'site_keywords' => '免费在线电影',
     'site_description' => '提供最新最快的影视资讯和在线播放',
-    'site_icp' => 'icp123',
-    'site_qq' => '123456',
-    'site_email' => '123456@xxxx.com',
+    'site_icp' => '',
+    'site_qq' => '2640963460',
+    'site_email' => '2640963460@qq.com',
     'install_dir' => '/',
     'template_dir' => 'datll_wapian',
     'html_dir' => 'html',
     'mob_status' => '0',
     'mob_template_dir' => 'datll_wapian',
     'mob_html_dir' => 'html',
-    'site_tj' => '统计代码',
+    'site_tj' => 'var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?660ad0abbde775cd24ce86189a558ad1";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();',
     'site_status' => '1',
     'site_close_tip' => '站点暂时关闭，请稍后访问',
     'ads_dir' => 'ads',
