@@ -30,8 +30,12 @@ setTimeout(function(){
         //flashplayer:true,
         autoplay:true,
         video: MacPlayer.PlayUrl,
-       advertisements:'/Adv/get_adv'
+    	advertisements:'/Adv/get_adv'
     };
-    var player = new ckplayer(videoObject);
+    var player = new ckplayer(videoObject);    
+   
 
 }, MacPlayer.Second * 1000 - 1000);
+
+
+
