@@ -20,7 +20,7 @@ class Collect extends Base {
 
     public function listData($where,$order,$page,$limit=20)
     {
-        $total = $this->where($where)->count();
+    	$total = $this->where($where)->count();
         $list = Db::name('Collect')->where($where)->order($order)->page($page)->limit($limit)->select();
         return ['code'=>1,'msg'=>'数据列表','page'=>$page,'pagecount'=>ceil($total/$limit),'limit'=>$limit,'total'=>$total,'list'=>$list];
     }
@@ -75,6 +75,7 @@ class Collect extends Base {
 
     public function vod($param)
     {
+        
         if($param['type'] == '1'){
             return $this->vod_xml($param);
         }

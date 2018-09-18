@@ -53,7 +53,7 @@ class Ajax extends Base
         }
         $field='*';
         $res = model($pre)->listData($where,$order,$page,$limit,0,$field);
-        if($res['code']==1) {
+        if($res['code']==1) {        	
             foreach ($res['list'] as $k => &$v) {
                 unset($v[$pre.'_time_hits'],$v[$pre.'_time_make']);
                 $v[$pre.'_time'] = date('Y-m-d H:i:s',$v[$pre.'_time']);

@@ -25,13 +25,15 @@ class Vod extends Base {
 
     public function listData($where,$order,$page=1,$limit=20,$start=0,$field='*',$addition=1,$totalshow=1)
     {
-        if(!is_array($where)){
+    	if(!is_array($where)){
             $where = json_decode($where,true);
         }
         $limit_str = ($limit * ($page-1) + $start) .",".$limit;
         if($totalshow==1) {
             $total = $this->where($where)->count();
-        }
+        }       
+        
+        
         $list = Db::name('Vod')->field($field)->where($where)->order($order)->limit($limit_str)->select();
 
         //分类
@@ -119,6 +121,9 @@ class Vod extends Base {
         $start = intval(abs($lp['start']));
         $num = intval(abs($lp['num']));
         $half = intval(abs($lp['half']));
+        
+        $timeadd =  intval($lp['timeadd']);
+        
         $page = 1;
         $where=[];
         $totalshow = 0;
@@ -292,6 +297,17 @@ class Vod extends Base {
         if(!in_array($by, ['id', 'time','time_add','score','hits','hits_day','hits_week','hits_month','up','down','level','rnd'])) {
             $by = 'time';
         }
+        
+        
+        /**
+         * 时间范围检索  单位 天
+         */
+        if(!empty($timeadd)){            
+            $start_time = strtotime('-'.$timeadd.' day');            
+            $where['vod_time_add'] = ['gt', $start_time];
+            
+        }        
+        
         if(!in_array($order, ['asc', 'desc'])) {
             $order = 'desc';
         }

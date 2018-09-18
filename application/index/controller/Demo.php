@@ -12,13 +12,11 @@ class Demo extends Base
 
      public function ckplay()
     {
-       
         return $this->fetch('demo/ckplay');
     }
     
     public function ckplayer()
     {
-        
         return $this->fetch('demo/ckplayer');
     }
     

@@ -1645,3 +1645,4 @@ function mac_data_count($tid=0,$range='all',$flag='vod')
     }
     return intval($data[$key]);
 }
+

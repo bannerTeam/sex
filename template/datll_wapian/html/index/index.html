@@ -51,7 +51,7 @@
           <div>
             <div class="s-tab-main">
               <ul class="list g-clear">
-                {maccms:vod num="12" type="all" by="hits_day" order="desc"  }
+                {maccms:vod num="12" type="all" by="hits_day" order="desc" timeadd="7" }
                 <li class='item'> <a class='js-tongjic' href='{:mac_url_vod_detail($vo)} ' title='{$vo.vod_name}'>
                   <div class='cover g-playicon'> <img width="286" height="213" src='{:mac_url_img($vo.vod_pic)}' alt='{$vo.vod_name}' /> <span class='pay'>{$vo.type.type_name}</span> <span class='hint'>{$vo.vod_remarks}</span></div>
                   <div class='detail'>
