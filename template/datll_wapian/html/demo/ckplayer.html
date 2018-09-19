@@ -24,25 +24,42 @@
 	<body>
 		
 		<div>
-			VIDEO
+			VIDEO - m3u8
 		</div>
 		<div>
-			<video id="roomVideo" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"  poster="http://vjs.zencdn.net/v/oceans.png">
-			  <!--<source src="http://videocdn2.quweikm.com:8091/20180801/TJKO2HY366/index.m3u8" type="application/x-mpegURL">-->
+			<video id="roomVideo1" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"  poster="http://vjs.zencdn.net/v/oceans.png">			 
+			</video>
+		</div>
+		
+		<div>
+			VIDEO - mp4
+		</div>
+		<div>
+			<video id="roomVideo2" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"  poster="http://vjs.zencdn.net/v/oceans.png">			 
 			</video>
 		</div>
 		
 		<script>
 			
 			$(function(){
-				var myPlayer = videojs('roomVideo',{
+				var myPlayer = videojs('roomVideo1',{
 		            bigPlayButton : false,
 		            textTrackDisplay : false,
 		            posterImage: true,
 		            errorDisplay : false,
 		            controlBar : false
 		       });
-		       myPlayer.src('http://videocdn2.quweikm.com:8091/20180801/TJKO2HY366/index.m3u8')
+		       myPlayer.src('http://videocdn2.quweikm.com:8091/20180801/TJKO2HY366/index.m3u8');
+		       
+		       var myPlayer2 = videojs('roomVideo2',{
+		            bigPlayButton : false,
+		            textTrackDisplay : false,
+		            posterImage: true,
+		            errorDisplay : false,
+		            controlBar : false
+		       });
+		       myPlayer2.src(' http://img.ksbbs.com/asset/Mon_1703/05cacb4e02f9d9e.mp4');
+		      
 			})	
 			
 		</script>
