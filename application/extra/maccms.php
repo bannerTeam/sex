@@ -17,7 +17,7 @@ return array (
   ),
   'site' => 
   array (
-    'site_name' => '免费电影 - 大香蕉',
+    'site_name' => '免费电影 - 撸草湾',
     'site_url' => '1.cn',
     'site_wapurl' => 'www.1.cn',
     'site_keywords' => '免费在线电影',

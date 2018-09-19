@@ -4,6 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>ckplayer</title>
+		<script src="/template/datll_wapian/js/jquery.js"></script>
 		<script src="/static/ckplayerX1/ckplayer.js"></script>
 		<style type="text/css">
 			body {
@@ -13,18 +14,48 @@
 				font-size: 14px
 			}
 		</style>
-
+		
+		<link href="/static/player/video/video.css" rel="stylesheet">
+		<script src="/static/player/video/video.min.js"></script>
+		<script src="/static/player/video/videojs-contrib-hls.js"></script>
+			
 	</head>
 
 	<body>
+		
+		<div>
+			VIDEO
+		</div>
+		<div>
+			<video id="roomVideo" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"  poster="http://vjs.zencdn.net/v/oceans.png">
+			  <!--<source src="http://videocdn2.quweikm.com:8091/20180801/TJKO2HY366/index.m3u8" type="application/x-mpegURL">-->
+			</video>
+		</div>
+		
+		<script>
+			
+			$(function(){
+				var myPlayer = videojs('roomVideo',{
+		            bigPlayButton : false,
+		            textTrackDisplay : false,
+		            posterImage: true,
+		            errorDisplay : false,
+		            controlBar : false
+		       });
+		       myPlayer.src('http://videocdn2.quweikm.com:8091/20180801/TJKO2HY366/index.m3u8')
+			})	
+			
+		</script>
 		<div>OBJECT</div>
 		<div style="width: 600px; height: 400px;">
 			<object width="200" height="200" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#4,0,0,0">
-  <param name="src" value="clock.swf" />
+  <param name="src" value="http://bpic.wotucdn.com/10/79/80/11bOOOPIC4e.swf" />
   <param name="quality" value="high" />
   <embed src="http://bpic.wotucdn.com/10/79/80/11bOOOPIC4e.swf" type="application/x-shockwave-flash" width="200" height="200" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>
 </object
 		</div>
+		
+		
 		
 		<div>mp4</div>
 		<div id="video1" style="width: 600px; height: 400px;"></div>
