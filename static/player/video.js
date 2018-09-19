@@ -20,8 +20,7 @@ setTimeout(function(){
 	
 	$("#playleft").append('<video id="roomVideo1" class="video-js vjs-big-play-centered" controls preload="none" ></video>');
 				
-	var w = $(".MacPlayer").width();
-	var h = $(".MacPlayer").height();
+	var mp = $(".MacPlayer"),w = mp.width(), h = mp.height();
 	var myPlayer = videojs('roomVideo1',{
 		autoplay:true,
         //poster: "封面",
@@ -29,6 +28,13 @@ setTimeout(function(){
 		width:w
    });
    myPlayer.src(MacPlayer.PlayUrl);
+   
+   $(window).resize(function(){
+   		w = mp.width();
+   		h = mp.height();
+   		myPlayer.width(w);
+   		myPlayer.height(h);
+   });
 
 }, MacPlayer.Second * 1000 - 1000);
 
