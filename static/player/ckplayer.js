@@ -1,5 +1,5 @@
 
-if(/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);){
+if(/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)){
 	document.write('<script type="text/javascript" src="'+ maccms.path +'/static/player/video.js"></script>');
 }else{
 	document.write('<script type="text/javascript" src="'+ maccms.path +'/static/player/ckplayer/ckplayer.js"></script>');
