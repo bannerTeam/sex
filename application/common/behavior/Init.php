@@ -27,7 +27,7 @@ class Init
         }
 
         define('MAC_URL','http://www.xxxx.com/');
-        define('MAC_NAME','大香蕉');
+        define('MAC_NAME','xxx');
         define('MAC_PATH', $config['site']['install_dir'] .'');
         define('MAC_MOB', $TMP_ISWAP);
         define('MAC_ROOT_TEMPLATE', ROOT_PATH .'template/'.$TMP_TEMPLATEDIR.'/'. $TMP_HTMLDIR .'/');

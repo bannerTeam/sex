@@ -20,6 +20,11 @@ class Demo extends Base
         return $this->fetch('demo/ckplayer');
     }
     
+    public function video()
+    {
+        return $this->fetch('demo/video');
+    }
+    
     public function collect_ds()
     {
         
