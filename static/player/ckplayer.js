@@ -34,9 +34,8 @@ if(/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)){
 	        video: MacPlayer.PlayUrl,
 	    	advertisements:'/Adv/get_adv'
 	    };
-	    var player = new ckplayer(videoObject);    
-	   
-	
+	    var player = new ckplayer(videoObject);    	   
+		
 	}, MacPlayer.Second * 1000 - 1000);
 }
 

@@ -5,6 +5,6 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 
 MacPlayer.Init();
 setTimeout(function(){
-	var h = $("#playleft").height(); 
+	var mp = $(".MacPlayer"),w = mp.width(), h = mp.height();		
 	$("#playleft").height(h);		
 },1000);

@@ -115,12 +115,12 @@ class Collect extends Base
         $param = input();
         if(!empty($pp)){
             $param = $pp;
-        }
-
+        }        
+        
         //分类
         $type_list = model('Type')->getCache('type_list');
         $this->assign('type_list',$type_list);
-
+        
         if(!empty($param['pg'])){
             $param['page'] = $param['pg'];
             unset($param['pg']);
@@ -184,14 +184,15 @@ class Collect extends Base
         if($param['ac'] == 'list'){
 
             $bind_list = config('bind');
+           
             foreach($res['type'] as $k=>$v){
                 $key = $param['cjflag'] . '_' . $v['type_id'];
-                $res['type'][$k]['isbind'] = 0;
+                $res['type'][$k]['isbind'] = 0;               
                 if( intval($bind_list[$key])>0 ){
                     $res['type'][$k]['isbind'] = 1;
                 }
             }
-
+            
             $this->assign('page',$res['page']);
             $this->assign('type',$res['type']);
             $this->assign('list',$res['data']);
