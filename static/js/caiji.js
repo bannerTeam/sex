@@ -129,9 +129,32 @@ var list = {
 			,
 			{
 			'status':'ok',
+			'name':'2048zy5-欧美激情',
+			'apiurl':'https://2048zy5.com/inc/api.php',
+			'flag':'2048zy5',
+			'xt':'1',
+			'group':'',
+			'ct':'',
+			'cjurl':'',
+			't':'3'
+			}
+			,
+			{
+			'status':'ok',
 			'name':'ziyuanpian',
 			'apiurl':'http://www.ziyuanpian.com/inc/ckm3u8.php',
 			'flag':'ckflvzy',
+			'xt':'1',
+			'group':'',
+			'ct':'',
+			'cjurl':''
+			}
+			,
+			{
+			'status':'ok',
+			'name':'bt616',
+			'apiurl':'http://www.bt616.com/inc/api.php',
+			'flag':'bt616',			
 			'xt':'1',
 			'group':'',
 			'ct':'',
@@ -171,7 +194,7 @@ var list = {
 var html='',html2='',url='',url8x='',url7x='',ver='7x',url1='',url2='',url3='',url4='',urlone='',name1='',du='';
 url8x='index.php?m=collect-{ac}-ac2-{ac2}-hour-{hour}-xt-{xt}-ct-{ct}-group-{group}-flag-{flag}-apiurl-{apiurl}';
 url7x='admin_maccj.php?action={ac}&xt={xt}&ct={ct}&rday={hour}&cjflag={flag}&cjurl={apiurl}';
-url10x='api?ac={ac}&xt={xt}&ct={ct}&rday={hour}&cjflag={flag}&cjurl={apiurl}';
+url10x='api?ac={ac}&xt={xt}&ct={ct}&rday={hour}&cjflag={flag}&cjurl={apiurl}&t={t}';
 
 ver='8x';url=url8x;
 if(top.location.href.indexOf('maccj')>-1){ver='7x';url=url7x;}
@@ -200,7 +223,7 @@ $.each(list, function(k1, v1){
 	//html += "<tr class='table_title'><td colspan='7' class='td'><span style='float:left'>&nbsp;"+v1.des+"</span><span style='float:right'>&nbsp;</span></td></tr>";
 	
 	$.each(v1.rows, function(k2, v2){
-		urlone = url.replace('{xt}',v2.xt).replace('{ct}',v2.ct).replace('{group}',v2.group).replace('{flag}',v2.flag).replace('{apiurl}',v2.apiurl);
+		urlone = url.replace('{xt}',v2.xt).replace('{ct}',v2.ct).replace('{group}',v2.group).replace('{flag}',v2.flag).replace('{apiurl}',v2.apiurl).replace('{t}',v2.t ? v2.t : '');
 		name1 = v2.name;
 		if(ver=='8x'){
 			url1= urlone.replace('{ac}','list').replace('{ac2}','').replace('{hour}','');

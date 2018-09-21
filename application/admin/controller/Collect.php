@@ -173,13 +173,10 @@ class Collect extends Base
         if($param['ac'] != 'list'){
             Cache::set('collect_break_vod', url('collect/api').'?'. http_build_query($param) );
         }
-                
-        $res = model('Collect')->vod($param);
-                   
+        $res = model('Collect')->vod($param);        
         if($res['code']>1){
             return $this->error($res['msg']);
-        }
-        
+        }     
 
         if($param['ac'] == 'list'){
 

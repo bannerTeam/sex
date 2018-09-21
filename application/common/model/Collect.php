@@ -76,6 +76,7 @@ class Collect extends Base {
     public function vod($param)
     {
         
+       
         if($param['type'] == '1'){
             return $this->vod_xml($param);
         }
@@ -83,8 +84,7 @@ class Collect extends Base {
             return $this->vod_json($param);
         }
         else{
-            $data = $this->vod_json($param);
-
+            $data = $this->vod_json($param);  
             if($data['code'] == 1){
                 return $data;
             }
@@ -144,7 +144,6 @@ class Collect extends Base {
         if(empty($html)){
             return ['code'=>1001, 'msg'=>'连接API资源库失败，通常为服务器网络不稳定或禁用了采集'];
         }
-
         $xml = @simplexml_load_string($html);
         if(empty($xml)){
             $labelRule = '<pic>'."(.*?)".'</pic>';
@@ -287,12 +286,14 @@ class Collect extends Base {
         if(empty($html)){
             return ['code'=>1001, 'msg'=>'连接API资源库失败，通常为服务器网络不稳定或禁用了采集'];
         }
-
+       
         $json = json_decode($html,true);
         if(!$json){
             return ['code'=>1002, 'msg'=>'JSON格式不正确，不支持采集'];
         }
-
+        
+        print_r($json);
+        exit;
         $array_page = [];
         $array_page['page'] = $json['page'];
         $array_page['pagecount'] = $json['pagecount'];

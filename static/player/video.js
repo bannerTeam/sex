@@ -60,25 +60,28 @@ setTimeout(function(){
         //poster: "封面",
         height:h, 
 		width:w
-   },function(){
-		this.on('click', function() {
-		   console.log('播放了!click');
-		});
+  },function(){
+  		//暂停
 		this.on('pause', function() {
-		   console.log('播放结束了!pause');
 		   $("#ad_pause").show();
 		});
    });
    myPlayer.src(MacPlayer.PlayUrl);
    
    
-   	
+   	//关闭广告
    	$("#playleft").delegate(".ad_close","click",function(){
 	 	$("#ad_front").hide();
 	 	$("#ad_pause").hide();
    		myPlayer.play();
 	});   	
 	
+	if(MacPlayer.Adv.front){
+		var ts = MacPlayer.Adv.front.time;
+		setTimeout(function(){
+			$("#playleft .ad_close").click();   	
+		},(ts * 1000));
+	}	
    
    
    $(window).resize(function(){
