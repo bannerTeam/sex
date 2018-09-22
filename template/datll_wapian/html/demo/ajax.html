@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>ajax</title>
+		<script src="/template/datll_wapian/js/jquery.js"></script>
+		
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0px;
+				font-family: "Microsoft YaHei", YaHei, "微软雅黑", SimHei, "黑体";
+				font-size: 14px
+			}
+
+		</style>
+	
+	</head>
+
+	<body>
+		
+		<div>
+			获取视频列表
+		</div>
+		<div id="vod_list">
+			
+		</div>
+		
+		
+		<script>
+			
+			
+			var get_list =function(){
+				
+				$.ajax({
+					type:"get",
+					url:"/index.php/ajax/data",
+					data:{
+						mid:1,
+						limit:10,
+						page:1
+					},
+					success:function(data){
+						console.log(data);
+					}
+				});
+			}
+			
+			get_list();
+			
+		</script>
+		
+	</body>
+
+</html>

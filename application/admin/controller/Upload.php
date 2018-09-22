@@ -34,6 +34,7 @@ class Upload extends Base
         $config = config('maccms.site');
         $pre= $config['install_dir'];
 
+        
         switch ($param['from']) {
             case 'kindeditor':
                 $input = 'imgFile';
@@ -60,10 +61,11 @@ class Upload extends Base
 
         // 获取表单上传文件 例如上传了001.jpg
         $file = request()->file($param['input']);
+                
         $data = [];
         if (empty($file)) {
             return self::upload_return('未找到上传的文件(原因：表单名可能错误，默认表单名“file”)！', $param['from']);
-        }
+        }        
         if ($file->getMime() == 'text/x-php') {
             return self::upload_return('禁止上传php,html文件！', $param['from']);
         }
@@ -73,7 +75,7 @@ class Upload extends Base
         $upload_media_ext = 'rm,rmvb,avi,mkv,mp4';
         $sys_max_filesize = ini_get('upload_max_filesize');
         $config = config('maccms.upload');
-
+                
         // 格式、大小校验
         if ($file->checkExt($upload_image_ext)) {
             $type = 'image';
@@ -93,6 +95,7 @@ class Upload extends Base
         // 附件访问路径
         $_save_path = 'upload'. '/' . $param['flag'] . '/';
 
+        
         $upfile = $file->move($_upload_path);
         if (!is_file($_upload_path.$upfile->getSaveName())) {
             return self::upload_return('文件上传失败！', $param['from']);

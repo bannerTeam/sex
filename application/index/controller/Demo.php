@@ -36,4 +36,9 @@ class Demo extends Base
         
         return $this->fetch('demo/collect_union');
     }
+    
+    
+    public function ajax(){
+    	return $this->fetch('demo/ajax');
+    }
 }

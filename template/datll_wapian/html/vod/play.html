@@ -176,6 +176,69 @@ function xldata(urls){
     </a>
 </div>
 
+
+<div class="new_vod" style="clear: both; margin-top: 20px;">
+	<h2 class="single-strong" title="最新视频 ">最新视频 </h2>
+	<div class="new_vod-list">
+		<div class="b-listtab-main">
+        <ul class="list g-clear" id="new_list" style="margin-left: -20px;">
+             
+        </ul>
+       </div>
+	</div>
+</div>
+<script>
+			
+	var get_list =function(){
+		
+		$.ajax({
+			type:"get",
+			url:"/index.php/ajax/data",
+			data:{
+				mid:1,
+				limit:8,
+				page:1
+			},
+			success:function(data){
+				var items = data.list,str = "";
+				
+				for (var i = 0; i < items.length; i++) {
+					str +=`<li class="item"> <a class="js-tongjic" href="${items[i].detail_link}" title="${items[i].vod_name}">
+                  <div class="cover g-playicon"> <img width="286" height="213" src="${items[i].vod_pic}" alt="${items[i].vod_name}"> <span class="pay">${items[i].vod_class}</span> </div>
+                  <div class="detail">
+                    <p class="title g-clear"> <span class="s1">${items[i].vod_name}</span></p>
+                    <p class="star"> </p>
+                  </div>
+                  </a> 
+             </li>`;             
+             
+				}
+				
+				
+				$("#new_list").html(str);
+				
+			}
+		});
+	}
+	
+	get_list();
+	
+</script>
+
+<style>
+	.advs .middel{padding: 0 46px;}
+	@media (max-width: 768px) {
+		.advs .middel{ padding: 0;}
+	}
+</style>
+<div class="" style="clear: both; margin-top: 20px;">
+    <div class="advs">
+        <a href="https://www.p99998888.com/230502.html" target="_blank"><img src="http://ws3.sinaimg.cn/large/006tNc79gy1fsiuyo5k2rj30a501omxi.jpg"></a>
+<a href="https://www.p99998888.com/230502.html" target="_blank" class="middel" style=""><img src="http://ws1.sinaimg.cn/large/006tNc79gy1fsiv2fhzy9j30a501omxc.jpg"></a>
+<a href="https://www.p99998888.com/230502.html" target="_blank"><img src="http://ws1.sinaimg.cn/large/006tNc79gy1fsiv3t0ik2j30a901o3yc.jpg"></a>
+    </div>
+</div>
+
 </section>
 </div>
 
@@ -183,9 +246,6 @@ function xldata(urls){
 	{include file="public/foot"}
 
 	
-<!--<script type='text/javascript' src='{$maccms.path_tpl}js/main.js'></script>-->
-<!--<script type="text/javascript"> document.body.oncontextmenu=document.body.ondragstart= document.body.onselectstart=document.body.onbeforecopy=function(){return false;};
-document.body.onselect=document.body.oncopy=document.body.onmouseup=function(){document.selection.empty();}; </script>-->
 
 <div class="rewards-popover-mask" etap="rewards-close"></div>
 	<div class="rewards-popover">

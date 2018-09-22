@@ -28,7 +28,7 @@ class Ajax extends Base
         if( !in_array($mid,['1','2','3']) ) {
             return json(['code'=>1001,'msg'=>'参数错误']);
         }
-        if( !in_array($limit,['10','20','30']) ) {
+        if( !in_array($limit,['8','10','20','30']) ) {
             $limit =10;
         }
         if($page < 1 || $page > 20){
