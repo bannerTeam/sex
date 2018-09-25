@@ -7,7 +7,7 @@ var list = {
 		'rows':[
           	{
 			'status':'ok',
-			'name':'s1',
+			'name':'s1-zmw',
 			'apiurl':'http://zmwcj8.com/inc/api.php',
 			'flag':'zimuwang',
 			'xt':'1',
@@ -17,7 +17,7 @@ var list = {
 			},
 			{
 			'status':'ok',
-			'name':'s2',
+			'name':'f2d-职场同事/空姐模特',
 			'apiurl':'http://f2dcj9.com/Api',
 			'flag':'fu2d',
 			'xt':'1',

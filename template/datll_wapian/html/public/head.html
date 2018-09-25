@@ -11,16 +11,6 @@
       <input tabindex="2" class="sinput" name="wd" type="text" placeholder="请输入搜索关键字" value="">
     </form>
 
-    <!--<div class="header_user">-->
-      <!--<div class="header_user_not">-->
-        <!--<a href="javascript:MAC.User.Login();" class="login">登 录</a>-->
-        <!--<a href="{:url('user/reg')}" class="reg">注 册</a>-->
-      <!--</div>-->
-      <!--<div class="header_user_in">-->
-        <!--欢迎您，<a href="/index.php/user/index.html" class="username"></a>&nbsp;&nbsp;|&nbsp;&nbsp;-->
-        <!--<a href="/index.php/user/logout.html">退出登录</a>-->
-      <!--</div>-->
-    <!--</div>-->
   </div>
 </header>
 <div class="header_end">
@@ -53,11 +43,11 @@
       	
         {if condition="($obj.type_pid ==0)"}
         {maccms:type parent="menu-itema" order="asc" by="sort"}
-        <a {if condition="($vo.type_name==$obj.type_name)"}class="menu-itema"{/if} href="{:mac_url_type($vo,[],'show')}">{$vo.type_name}</a>
+        <a {if condition="($vo.type_name==$obj.type_name)"}class="menu-itema"{/if} href="{:mac_url_type($vo,[],'type')}">{$vo.type_name}</a>
         {/maccms:type}
         {else /}
         {maccms:type parent="'.$obj['type_pid'].'" order="asc" by="sort"}
-        <a {if condition="($vo.type_name==$obj.type_name)"}class="menu-itema"{/if} href="{:mac_url_type($vo,[],'show')}">{$vo.type_name}</a>
+        <a {if condition="($vo.type_name==$obj.type_name)"}class="menu-itema"{/if} href="{:mac_url_type($vo,[],'type')}">{$vo.type_name}</a>
         {/maccms:type}
         {/if}
         
@@ -67,3 +57,61 @@
     </dl>
   </div>
 </div>
+
+<div class="navs">
+	<div class="navs-body">
+		<div id="nav" style="">
+			<a href="/" class="nav-item {if condition="$maccms.aid eq 1"} on{/if}">
+				首页
+			</a>
+			{maccms:type parent="menu-itema" order="asc" by="sort"}
+				<a href="{:mac_url_type($vo,[],'type')}" class="nav-item {if condition="($vo.type_id eq MAC_TYPE_ID || $vo.type_id eq MAC_TYPE_PID)"} on{/if}">{$vo.type_name}</a>
+			{/maccms:type}
+		</div>
+	</div>
+	<div class="nav-menu" id="navOpen"><img src="{$maccms.path_tpl}images/m/nav-ico.png"></div>
+	 <div class="nav-popup" id="navPopup"><i></i></div>
+</div>
+<script>
+		$(function(){
+			
+			$("#searchOpen").click(function(){$("#search").show()});
+			$("#navOpen").click(function(){
+				var navPopup = $("#navPopup");
+				if(navPopup.is(":visible")){
+					navPopup.hide();
+				}else{
+					if($(navPopup).find('a').length <= 0){
+						var nav = $('#nav');
+						var alist = $(nav).find('a');
+						var len = alist.length;
+						var fragment = document.createDocumentFragment();
+						for(var i = 5;i < len;i++){
+							fragment.appendChild(alist[i]);
+						}
+						$('#navPopup').append(fragment);
+					}
+					navPopup.show();
+				}
+				
+				});
+			$("#searchClose").click(function(){$("#search").hide()});
+			$("#userOpen").click(function(){
+				if($("#userPopup").is(":visible")){
+					$("#userOpen").removeClass("on");
+					$("#userPopup").hide();
+				}else{
+					$("#userOpen").addClass("on");
+					$("#userPopup").show();
+				}
+				
+			});
+			var navWidht=0;
+			$("#nav .nav-item").each(function(){
+				navWidht=navWidht+$(this).outerWidth()+5;
+			});
+			$("#nav").width(navWidht);
+			
+		});
+		
+</script>

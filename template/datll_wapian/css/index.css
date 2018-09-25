@@ -772,9 +772,9 @@
 @media only screen and (max-width: 700px) {
     .b-listtab-main .item {
     }
-
+	.fenlei{display: none;}
     .pingfen {
-        display: none
+        display: none;
     }
 
     .bbbt {
@@ -782,15 +782,15 @@
         overflow: hidden;
         height: 29px;
     }
+    .hot_film{
+    	display: none;
+    }
 }
+
 
 @media only screen and (max-width: 420px) {
    
 
-    .b-listtab-main .item {
-        width: 40%
-        margin-left: 10%;
-    }
 
     .b-listtab-main .cover {
         height: 203px
@@ -804,9 +804,6 @@
         overflow: hidden
     }
 
-    .b-listtab-main .item {
-        height: 262px
-    }
 }
 @media only screen and (min-width: 1200px) {
 	.Film_list .b-listtab-main .item:nth-child(10){
@@ -845,7 +842,11 @@
     margin: 45px 0;
     display: none;
 }
-
+.hot_film {
+    width: 260px;
+     float: right;
+    padding-left: 30px;
+}
 .pcadd {
     display: block
 }
@@ -1003,6 +1004,7 @@
         margin: 45px 0;
         display: inherit;
     }
+    #soform{ display: none;}
 }
 
 @media (max-width: 980px) {
@@ -1011,27 +1013,7 @@
     }
 }
 
-@media (max-width: 1150px) {
-    .hot_film {
-        display: none;
-    }
-}
 
-.hot_film {
-    width: 260px;
-     float: right;
-    padding-left: 30px;
-}
-@media (max-width: 700px) {   
-    .hot_film {
-    	float: none;
-    	clear: both;
-	    display: block;
-	    width: 90%;
-	    margin: 0 auto;
-	    padding: 0;
-	}
-}
 
 .index_film {
     display: inline;
@@ -1104,6 +1086,10 @@
     padding: 10px;
 }
 
+
+
+
+
 @media (max-width: 700px) {
     .link1 {
         display: none;
@@ -1112,6 +1098,24 @@
     .link {
         display: none;
     }
+    
+    .b-listtab-main .list {
+	    margin-left:10px !important;
+	    margin-right:10px;
+	    padding-left: 0;
+	}
+	.b-listtab-main .list .item{
+		padding: 5px;
+		margin-bottom: 10px !important;
+	    width: 48%;
+	    float: left;
+	    margin: 0;
+	    height: auto;
+	}
+	.b-listtab-main .list .item:nth-child(odd)
+	{
+		margin-right: 4%;
+	}
 }
 
 .chak_link {
@@ -1134,4 +1138,23 @@
     color: #FFF;
     box-shadow: 0px 0px 4px #0808084d;
     -moz-transition: 0.5s all;
+}
+
+
+.navs{height: 45px;background-color: #fff;position: relative;}
+.navs .nav-menu{position: absolute;right:0;top:0;text-align: center;line-height: 45px;background-color: #fff;width: 50px;border-left: 1px solid #e9e9e9;}
+.navs .nav-menu>img{width:20px;}
+.navs .nav-popup{ position:absolute; background:#fff; right:0px; top:52px; font-size:14px; display:none; box-shadow:0px 0px 2px rgba(0,0,0,0.3);z-index:999;}
+.navs .nav-popup i{ display:block; width:0px; height:0px; border-width:0px 9px 9px 9px; border-style:solid; border-color:transparent transparent #fff transparent; position:absolute; top:-0.2rem; right:14px;}
+.navs .nav-popup a{ display:block;padding:10px 14px; color:#333; border-bottom:1px dashed #ccc; width:90px; overflow:hidden; height:35px; text-align:center; font-family: "微软雅黑";}
+.navs .nav-popup a.on{color:#1db69a;}
+
+.navs .navs-body{height: 45px;overflow-y: hidden;overflow-x: scroll;width: 325px;position: absolute;left:0;top:0;}
+.navs .navs-body::-webkit-scrollbar{display: none;}
+.navs .navs-body>div{padding:0 14px;}
+.navs .navs-body .nav-item{padding:0 4px;display:block;float: left;margin-right:5px;line-height: 45px;font-size:14px;color:#333;border-bottom: 2px solid #fff;height: 45px;}
+.navs .navs-body .nav-item:hover,.navs .navs-body .nav-item.on{color:#1db69a;border-bottom: 2px solid #1db69a;}
+
+@media (min-width: 700px) {
+	.navs{ display: none; height: 0; width: 0; overflow: hidden;}
 }
