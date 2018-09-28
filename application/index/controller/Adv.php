@@ -48,6 +48,18 @@ class Adv extends Base
         
         return json(($res));
     }
-    
+     /**
+     * 获取广告
+     * @return \think\response\Json
+     */
+    public function get_index_adv()
+    {
+    	   
+        $res = config('adv');
+        
+        //urldecode(json_encode($expression))
+        
+        return json($res);
+    }
 
 }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="/template/datll_wapian/js/jquery.js"></script>
+	</head>
+	<body>
+		
+<div>
+    <pre id = "show">
+ 
+    </pre>
+</div>
+		<script>
+			var jsObj = {$adv};
+			console.log(jsObj);
+			jsObj = JSON.stringify(jsObj, null, "\t"); // 缩进一个tab  
+			
+			//jsObj = JSON.stringify(jsObj, null, 4);    // 缩进4个空格
+			//console.log(jsObj);
+			$("#show").html(jsObj) 
+		</script>
+	</body>
+</html>

@@ -24,40 +24,30 @@ var list = {
 			'group':'',
 			'ct':'',
 			'cjurl':''
+			},			
+			{
+			'status':'ok',
+			'name':'撸死你',
+			'apiurl':'http://lsnzxcj.com/inc/api.php',
+			'flag':'lsnzxcj',
+			'xt':'1',
+			'group':'',
+			'ct':'',
+			'cjurl':''
 			},
 			{
 			'status':'ok',
-			'name':'s3',
+			'name':'色色',
 			'apiurl':'http://sscj8.com/inc/api.php',
 			'flag':'sszyz',
 			'xt':'1',
 			'group':'',
 			'ct':'',
 			'cjurl':''
-			},
+			},			
 			{
 			'status':'ok',
-			'name':'s4',
-			'apiurl':'http://zywz33.com/api/index.asp',
-			'flag':'jiucao',
-			'xt':'1',
-			'group':'',
-			'ct':'',
-			'cjurl':''
-			},
-			{
-			'status':'ok',
-			'name':'s5',
-			'apiurl':'http://lsnzxcj.com/inc/api.php',
-			'flag':'lusini',
-			'xt':'1',
-			'group':'',
-			'ct':'',
-			'cjurl':''
-			},
-			{
-			'status':'ok',
-			'name':'s6',
+			'name':'玖玖',
 			'apiurl':'http://99zxcj.com/inc/api.php',
 			'flag':'jiujiu',
 			'xt':'1',
@@ -67,7 +57,7 @@ var list = {
 			},
 			{
 			'status':'ok',
-			'name':'s7',
+			'name':'s7【xfplay需要下载安装】',
 			'apiurl':'http://sszxapi.com/xfplay.php',
 			'flag':'ssxf',
 			'xt':'1',
@@ -77,7 +67,7 @@ var list = {
 			},
 			{
 			'status':'ok',
-			'name':'s8',
+			'name':'s8【xfplay需要下载安装】',
 			'apiurl':'http://99xfcj.com/xfplay.php',
 			'flag':'jiujiuxf',
 			'xt':'1',
@@ -87,7 +77,7 @@ var list = {
 			},
 			{
 			'status':'ok',
-			'name':'s9',
+			'name':'s9【xfplay需要下载安装】',
 			'apiurl':'http://lsnapizx.com/xfplay.php',
 			'flag':'lusinixf',
 			'xt':'1',
@@ -97,7 +87,7 @@ var list = {
 			},
 			{
 			'status':'ok',
-			'name':'s520ziyuancom',
+			'name':'s520ziyuancom【iframe】',
 			'apiurl':'http://api.cao2018.com/inc/api.php',
 			'flag':'520ziyuancom_',
 			'xt':'1',
@@ -107,7 +97,7 @@ var list = {
 			},
 			{
 			'status':'ok',
-			'name':'sdoubanzy',
+			'name':'sdoubanzy【iframe】',
 			'apiurl':'http://www.dbzyz.com/inc/dbm3u8.php',
 			'flag':'doubanzy',
 			'xt':'1',
@@ -118,7 +108,7 @@ var list = {
 			,
 			{
 			'status':'ok',
-			'name':'2048zy5',
+			'name':'2048zy5【iframe】',
 			'apiurl':'https://2048zy5.com/inc/api.php',
 			'flag':'2048zy5',
 			'xt':'1',
@@ -129,7 +119,7 @@ var list = {
 			,
 			{
 			'status':'ok',
-			'name':'2048zy5-欧美激情',
+			'name':'2048zy5-欧美激情【iframe】',
 			'apiurl':'https://2048zy5.com/inc/api.php',
 			'flag':'2048zy5',
 			'xt':'1',
@@ -152,9 +142,30 @@ var list = {
 			,
 			{
 			'status':'ok',
-			'name':'bt616',
+			'name':'bt616-xml错误',
 			'apiurl':'http://www.bt616.com/inc/api.php',
 			'flag':'bt616',			
+			'xt':'1',
+			'group':'',
+			'ct':'',
+			'cjurl':''
+			},
+			
+			{
+			'status':'ok',
+			'name':'s4-xml错误',
+			'apiurl':'http://zywz33.com/api/index.asp',
+			'flag':'jiucao',
+			'xt':'1',
+			'group':'',
+			'ct':'',
+			'cjurl':''
+			},
+			{
+			'status':'ok',
+			'name':'久草-不能用（没有播放地址）',
+			'apiurl':'http://9ccj8.com/api',
+			'flag':'9ccj8',
 			'xt':'1',
 			'group':'',
 			'ct':'',
@@ -264,3 +275,5 @@ if(h>0){
 else{
 	document.write('<font style="color:red;font-size:26px">资源库关闭中，请稍后访问。<br></font><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>');
 }
+
+

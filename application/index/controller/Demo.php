@@ -10,9 +10,23 @@ class Demo extends Base
         parent::__construct();
     }
 
+    public function index(){
+        
+        $expression = config('adv');
+        
+        $this->assign('adv',urldecode(json_encode($expression)));
+        
+        return $this->fetch('demo/index');
+    }
+    
      public function ckplay()
     {
         return $this->fetch('demo/ckplay');
+    }
+    
+    public function ckplay520()
+    {
+        return $this->fetch('demo/ckplay520');
     }
     
     public function ckplayer()

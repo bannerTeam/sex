@@ -144,7 +144,9 @@ class Collect extends Base {
         if(empty($html)){
             return ['code'=>1001, 'msg'=>'连接API资源库失败，通常为服务器网络不稳定或禁用了采集'];
         }
-        $xml = @simplexml_load_string($html);
+        
+        $xml = @simplexml_load_string($html);        
+        
         if(empty($xml)){
             $labelRule = '<pic>'."(.*?)".'</pic>';
             $labelRule = mac_buildregx($labelRule,"is");
