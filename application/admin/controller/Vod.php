@@ -419,5 +419,63 @@ class Vod extends Base
         $res = model('Vod')->updateToday($flag);
         return json($res);
     }
+    
+    /**
+     * yh
+     * 添加视频
+     */
+    public function save(){
+        
+        $param = array();
+        
+        //分类
+        $param['type_id'] = 1;
+        //审核 0.未审核  1.已审核
+        $param['vod_status'] = 1;
+        //是否发布  1.已完成  0.未完成
+        $param['vod_isend'] = 1;        
+        // 更新时间戳、1.当前时间 
+        $param['uptime'] = 1;
+        //标题
+        $param['vod_name'] = '09-28-name'; 
+        //图片
+        $param['vod_pic']='';        
+        //播放器 数组
+        $param['vod_play_from'][] = 'ckplayer';
+        //播放服务器
+        $param['vod_play_server'][] = 'no';
+        //备注
+        $param['vod_play_note'][]='';        
+        //采集地址
+        $param['role_cj'] = '';        
+        
+        
+        //****** 未必填   随机生成******//
+        //顶数量
+        $param['vod_up'] = rand(333, 999);;
+        //踩数量
+        $param['vod_down'] = rand(111, 555);
+        //总人气
+        $param['vod_hits'] = rand(3333, 9999);
+        //月人气
+        $param['vod_hits_month'] = rand(888, 1111);
+        //周人气
+        $param['vod_hits_week'] = rand(333, 666);
+        //日人气
+        $param['vod_hits_day'] = rand(11,333);
+        //平均分
+        $param['vod_score'] = rand(5,10);
+        //总评分
+        $param['vod_score_all'] = rand(99,999);
+        //总评次
+        $param['vod_score_num'] = rand(10,99);
+        
+        
+        
+        $res = model('Vod')->saveData($param);
+        
+        return json($res);
+        
+    }
 
 }

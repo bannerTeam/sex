@@ -24,6 +24,7 @@ class Maccms extends Taglib {
         'vod' => ['attr' =>'order,by,start,num,id,ids,paging,pageurl,type,class,area,lang,year,level,letter,half'],
         'foreach' => ['attr'=>'name,id,key'],
         'for' => ['attr'=>'start,end,comparison,step,name'],
+	    'ad' => ['attr'=>'flag'],
     ];
 
     public function tagFor($tag,$content)
@@ -452,6 +453,32 @@ class Maccms extends Taglib {
         $parse .= $content;
         $parse .= '{/volist}';
 
+        return $parse;
+    }
+    
+    
+    public function tagAd($tag,$content)
+    {
+        $id = $tag['id'];
+        $flag = $tag['flag'];
+        if(empty($id)){
+            $id = $flag;
+        }        
+       
+        config('ad');
+        $datas = controller('ad')->get_adv('i_banner');
+        
+        
+        
+        $parse = '<?php ';
+        $parse .= '$__TAG__ = \'' . json_encode($tag) . '\';';
+        $parse .= '$__LIST__ = controller("ad")->get_adv("'.$flag.'");';
+        
+        $parse .= ' ?>';
+        $parse .= '{volist name="__LIST__" id="'.$id.'" }';
+        $parse .= $content;
+        $parse .= '{/volist}';
+        
         return $parse;
     }
 }

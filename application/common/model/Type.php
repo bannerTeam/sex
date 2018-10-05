@@ -253,7 +253,7 @@ class Type extends Base {
 
     public function setCache()
     {
-        $res = $this->listData([],'type_id asc');
+        $res = $this->listData([],'type_sort asc');
         $list = $res['list'];
         Cache::set('type_list',$list);
 

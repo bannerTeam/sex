@@ -86,5 +86,7 @@ class Vod extends Base
         $info = $this->label_vod_detail();
         return $this->fetch('vod/rss');
     }
+    
+    
 
 }

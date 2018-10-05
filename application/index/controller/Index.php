@@ -11,7 +11,6 @@ class Index extends Base
 //         exit;
 //         $param = mac_param_url();
 
-        
         return $this->fetch( 'index/index');
     }
 

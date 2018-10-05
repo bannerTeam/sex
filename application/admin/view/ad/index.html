@@ -1,0 +1,58 @@
+{include file="../../../application/admin/view/public/head" /}
+<div class="page-container p10">
+    <div class="my-toolbar-box">
+
+        <div class="layui-btn-group">
+            <a data-href="{:url('info')}" class="layui-btn layui-btn-primary j-iframe"><i class="layui-icon">&#xe654;</i>添加</a>
+        </div>
+
+    </div>
+
+    <form class="layui-form " method="post" id="pageListForm">
+        <table class="layui-table" lay-size="sm">
+            <thead>
+            <tr>
+                <th width="80">排序</th>
+                <th width="80">标识</th>
+                <th width="80">状态</th>
+                <th width="150">名称</th>
+                <th>图片</th>
+                <th>链接</th>
+                <th width="100">操作</th>
+            </tr>
+            </thead>
+
+            {volist name="list" id="vo" key="k"}
+            <tr>
+                <td>{$vo.sort}</td>
+                <td>                	
+                	{volist name="$group" id="go"}
+                     {if condition="$vo.flag eq $go.key"}{$go.title}{/if}
+                    {/volist}                
+                </td>
+                <td>{if condition="$vo.status eq 1"}<span class="layui-badge layui-bg-green">启用</span>{else}<span class="layui-badge">禁用</span>{/if} </td>
+                <td>{$vo.title}</td>
+                <td>
+                	<a href="{$vo.img}" target="_blank">
+                		<img src="{$vo.img}" style="max-height: 80px; max-width: 200px;" />
+                	</a>
+                </td>
+                <td>{$vo.link}</td>
+                <td>
+                    <a class="layui-badge-rim j-iframe" data-href="{:url('info?id='.$k)}" href="javascript:;" title="编辑">编辑</a>
+                    <a class="layui-badge-rim j-tr-del" data-href="{:url('del?ids='.$k)}" href="javascript:;" title="删除">删除</a>
+                </td>
+            </tr>
+            {/volist}
+            </tbody>
+        </table>
+
+    </form>
+</div>
+{include file="../../../application/admin/view/public/foot" /}
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
