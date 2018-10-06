@@ -1,6 +1,6 @@
 <?php
 namespace app\admin\controller;
-use think\Db;
+use think\Cache;
 
 class Ad extends Base
 {
@@ -60,6 +60,7 @@ class Ad extends Base
             if($res===false){
                 return $this->error('保存失败，请重试!');
             }
+            Cache::set('config_ad',null);
             return $this->success('保存成功!');
         }
         
@@ -82,13 +83,27 @@ class Ad extends Base
     {
         $param = input();
         $datas = config($this->_pre);
-        $list = $datas['list'];        
-        unset($list[$param['ids']]);
+        $list = $datas['list'];       
+        $index = $param['ids'];
+        if(!is_numeric($index)){
+            return $this->error('删除失败，请重试!');
+        }
+        
+        unset($list[$index - 1]);
+        
+        $sort=[];
+        foreach ($list as $k=>&$v){
+            $sort[] = $v['sort'];
+        }
+        array_multisort($sort, SORT_ASC, SORT_NUMERIC , $list);
+        
         $datas['list'] = $list;
         $res = mac_arr2file(APP_PATH. 'extra/'.$this->_pre.'.php', $datas);
         if($res===false){
             return $this->error('删除失败，请重试!');
         }
+        
+        Cache::set('config_ad',null);
         return $this->success('删除成功!');
     }
 

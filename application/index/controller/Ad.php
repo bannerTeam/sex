@@ -26,7 +26,7 @@ class Ad extends Base
         $list = $datas['list'];        
         $res = array();        
         for ($i = 0; $i < count($list); $i++) {
-            if($list[$i]['flag'] == $flag){
+            if($list[$i]['flag'] == $flag && intval($list[$i]['status']) === 1){
                 $res[] = $list[$i];
             }
         }        

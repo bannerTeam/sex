@@ -132,15 +132,6 @@ return array (
     ),
     10 => 
     array (
-      'status' => '0',
-      'flag' => '',
-      'title' => '',
-      'img' => '',
-      'link' => '',
-      'sort' => 99,
-    ),
-    14 => 
-    array (
       'status' => '1',
       'flag' => 'd_bottom',
       'title' => '',
@@ -148,7 +139,7 @@ return array (
       'link' => 'https://www.p99998888.com/230502.html',
       'sort' => 99,
     ),
-    15 => 
+    11 => 
     array (
       'status' => '1',
       'flag' => 'd_bottom',
@@ -157,7 +148,7 @@ return array (
       'link' => 'https://www.p99998888.com/230502.html',
       'sort' => 99,
     ),
-    16 => 
+    12 => 
     array (
       'status' => '1',
       'flag' => 'd_foot',
@@ -166,7 +157,7 @@ return array (
       'link' => 'http://7142999.com/?Intr=1116906',
       'sort' => 99,
     ),
-    17 => 
+    13 => 
     array (
       'status' => '1',
       'flag' => 'd_right',
@@ -175,7 +166,7 @@ return array (
       'link' => 'http://baicai.bc88.space/prize',
       'sort' => 99,
     ),
-    18 => 
+    14 => 
     array (
       'status' => '1',
       'flag' => 'd_right',
@@ -184,7 +175,7 @@ return array (
       'link' => 'http://8320777.COM/?Intr=28833619',
       'sort' => 99,
     ),
-    19 => 
+    15 => 
     array (
       'status' => '1',
       'flag' => 'd_right',
@@ -193,7 +184,7 @@ return array (
       'link' => 'https://c83rutdv.com/?213293',
       'sort' => 99,
     ),
-    20 => 
+    16 => 
     array (
       'status' => '1',
       'flag' => 'd_right',
@@ -202,7 +193,7 @@ return array (
       'link' => 'http://2740999.com/register?key=156715902',
       'sort' => 99,
     ),
-    21 => 
+    17 => 
     array (
       'status' => '1',
       'flag' => 'l_banner',
@@ -211,13 +202,40 @@ return array (
       'link' => 'http://bcbm.bcbm66666.com:890/1832284.html',
       'sort' => 99,
     ),
-    22 => 
+    18 => 
     array (
       'status' => '1',
       'flag' => 'l_banner',
       'title' => '',
       'img' => 'http://img.cksource.space/advertising/2018-07-16/2018-07-16-19-37-47_ZSY4cH20Pi.gif',
       'link' => 'https://xiaocongbao.com/s1/ekeg',
+      'sort' => 99,
+    ),
+    19 => 
+    array (
+      'status' => '1',
+      'flag' => 's_banner',
+      'title' => '',
+      'img' => 'http://img.cksource.space/advertising/2017-03-16/2017-03-16-15-58-28_FdDyapRGBA.jpg',
+      'link' => 'http://baicai.bc88.space/prize',
+      'sort' => '99',
+    ),
+    20 => 
+    array (
+      'status' => '1',
+      'flag' => 's_banner',
+      'title' => '',
+      'img' => 'http://img.cksource.space/advertising/2018-06-19/2018-06-19-17-12-33_Cn3Oyr7nZ0.gif',
+      'link' => 'http://bcbm.bcbm66666.com:890/1832284.html',
+      'sort' => 99,
+    ),
+    21 => 
+    array (
+      'status' => '1',
+      'flag' => 's_banner',
+      'title' => '',
+      'img' => 'http://img.cksource.space/advertising/2018-07-03/2018-07-03-01-29-40_eZdI0kSTZr.gif',
+      'link' => 'http://t2.9797game.com/',
       'sort' => 99,
     ),
   ),
