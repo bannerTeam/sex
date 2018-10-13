@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="cache-control" content="no-siteapp">
+		<title>{$maccms.site_name}-高清云影视免费为大家提供最新最全的免费电影</title>
+
+		<meta name="keywords" content="{$maccms.site_keywords}">
+		<meta name="description" content=" {$maccms.site_description} "> 
+		{include file="public/include"}
+		
+		<link rel='stylesheet' href='{$maccms.path_tpl}css/index.css' type='text/css' />
+	</head>
+
+	<body>
+		{include file="public/head"}
+		<div class="index-advertise v-container clearfix">
+			<div class="v-advertise">
+
+				<div class="v-advertise-pc-bottom v-container">
+					<img class="pc-bottom-close-btn" src="http://static.vstatic.space/bundle/images/v2-pc-bottom-X-115560ccd3.png">
+
+				</div>
+			</div>
+		</div>
+		<div class="v-container clearfix">
+			<div class="col-xs-12 nopadding" style="margin-top: 10px;">
+				<div class="index-today-popular index-section-videos clearfix">
+					<div class="indx-section-title" style="margin-top: 0px;">今日热门</div>
+					<div class="today-popular-container"  riot-tag="rv-preview-video-box">
+						
+						{maccms:vod num="6" type="all" by="hits_day" order="desc" timeadd="7" }
+						<div class="v-search-video-box ">
+							<div class="" style="position:relative ">
+								<a target="_blank" href="{:mac_url_vod_detail($vo)}">
+									<div class="v-search-video-img"> <img src="{:mac_url_img($vo.vod_pic)}"> </div>
+								</a>
+								<a class="xvideo-thumbnail-mask " target="_blank" href="{:mac_url_vod_detail($vo)}"> <img src="{$maccms.path_tpl}/images/v2-play-btn.png"> 
+								</a>
+								
+							</div>
+							<div class="v-search-video-name">
+								<a target="_blank" href="{:mac_url_vod_detail($vo)}">
+									<div class="v-search-video-name-div">{$vo.vod_name}</div>
+								</a>
+								<div class="v-search-video-name-desc"> {$vo.vod_hits}次观看 </div>
+							</div>
+						</div>
+						{/maccms:vod}
+						<div style="clear:both"></div>
+					</div>
+				</div>
+				
+				{maccms:type parent="current" order="asc" by="sort" mid="1" id="vo1"}
+				<div class="index-cinema-videos index-section-videos clearfix">
+					<div class="indx-section-title">{$vo1.type_name}
+						<a href="{:mac_url_type($vo)}">查看更多</a>
+					</div>
+					<div class="index-av-cinema-container" data-is="rv-preview-video-box" riot-tag="rv-preview-video-box">
+						{maccms:vod num="8" type="'.$vo1['type_id'].'" order="desc" by="time"}
+						<div class="v-search-video-box ">
+							<div class="v-search-video-box-video-info" style="position:relative ">
+								<a target="_blank" href="{:mac_url_vod_detail($vo)}">
+									<div class="v-search-video-img"> <img src="{:mac_url_img($vo.vod_pic)}"> </div>
+								</a>
+								<a class="xvideo-thumbnail-mask " target="_blank" href="{:mac_url_vod_detail($vo)}"> <img src="{$maccms.path_tpl}/images/v2-play-btn.png"> 
+								</a>								
+																
+							</div>
+							<div class="v-search-video-name">
+								<a target="_blank" href="{:mac_url_vod_detail($vo)}">
+									<div class="v-search-video-name-div">{$vo.vod_name}</div>
+								</a>
+								<div class="v-search-video-name-desc"> {$vo.vod_hits}次观看 </div>
+							</div>
+						</div>
+						{/maccms:vod}
+						<div style="clear:both"></div>
+					</div>
+				</div>
+				{/maccms:type}
+
+			</div>
+		</div>
+
+		{include file="public/foot"}
+		
+	</body>
+
+</html>

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="cache-control" content="no-siteapp">
+		<title>{$maccms.site_name}-高清云影视免费为大家提供最新最全的免费电影</title>
+
+		<meta name="keywords" content="{$maccms.site_keywords}">
+		<meta name="description" content=" {$maccms.site_description} "> 
+		{include file="public/include"}
+		
+		<link rel='stylesheet' href='{$maccms.path_tpl}css/vod.css' type='text/css' />
+	</head>
+
+	<body>
+		{include file="public/head"}
+		
+		<div class="videos-cinema-container v-container">
+			<div class="cinema-videos clearfix">
+				{maccms:vod num="16" paging="yes" pageurl="vod/show" type="current" order="desc" by="time"}
+				
+					<div class="cinema-video-box">
+            <div class="cinema-video-content">
+                <img src="{:mac_url_img($vo.vod_pic)}">                                        
+                <a class="cinema-video-play" href="{:mac_url_vod_detail($vo)}" target="_blank"><img src="{$maccms.path_tpl}/images/v2-play-btn.png"></a>
+            </div>
+            <div class="cinema-video-title">
+                <a href="{:mac_url_vod_detail($vo)}" target="_blank">{$vo.vod_name}</a>
+                <div>{$vo.vod_hits}次观看</div>
+            </div>
+        </div>
+					
+				{/maccms:vod}
+			</div>
+			
+			<div class="v-rv-page-box">
+				<ul class="pagination"><li><span style="padding: 10px 11px;font-size: 14px;">首页</span></li><li><span><i class="xyvideo-icon xyvideo-icon-chevron-left"></i></span></li><li class="active"><span>1</span></li><li><a href="http://email.v2dizhi.at.gmail.com.v2p2.space/v/cinema?page=2">2</a></li><li><a href="http://email.v2dizhi.at.gmail.com.v2p2.space/v/cinema?page=3">3</a></li><li><span>...</span></li><li><a href="http://email.v2dizhi.at.gmail.com.v2p2.space/v/cinema?page=100">100</a></li><li><a href="http://email.v2dizhi.at.gmail.com.v2p2.space/v/cinema?page=2"><i class="xyvideo-icon xyvideo-icon-chevron-right"></i></a></li><li><a href="http://email.v2dizhi.at.gmail.com.v2p2.space/v/cinema?page=100" style="padding: 10px 11px;font-size: 14px;">尾页</a></li></ul>
+				{include file="public/paging"}
+			</div>
+		</div>
+
+		{include file="public/foot"}
+		
+	</body>
+
+</html>

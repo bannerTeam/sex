@@ -12,6 +12,16 @@ class Demo extends Base
 
     public function index(){
         
+        
+        $filename = './application/extra/ad.php';
+        if (is_writable($filename)) {
+            echo 'The file is writable';
+        } else {
+            echo 'The file is not writable';
+        }
+        exit;
+        
+        
         $expression = config('adv');
         
         $this->assign('adv',urldecode(json_encode($expression)));
@@ -51,7 +61,11 @@ class Demo extends Base
         return $this->fetch('demo/collect_union');
     }
     
-    
+     public function submit()
+    {
+        
+        return $this->fetch('demo/submit');
+    }
     public function ajax(){
     	return $this->fetch('demo/ajax');
     }

@@ -1,0 +1,44 @@
+<nav class="xingyu-topnav  hasnt-login ">
+	<div class="v-container clearfix">
+		<div class="topnav-logo">
+			<a class="xingyu-logo-portal" href="/">
+				<img src="{$maccms.path_tpl}images/logo.png">
+			</a>
+		</div>
+
+		<div class="xingyu-search-div">
+			<div class="xingyu-search">
+				<form method="GET" action="{:mac_url('vod/search')}">
+					<input type="text" class="form-control" name="wd" tabindex="1" placeholder="请输入搜索关键字" autocomplete="off">
+					<div class="btn-xvideo-search">搜索</div>
+					<a style="text-decoration: none" href="javascript:void(0)" class="xvideo-href-search">
+						<img class="xvideo-href-search" src="{$maccms.path_tpl}images/v2-search.png">
+					</a>
+					<div class="ui-front"></div>
+				</form>
+			</div>
+		</div>
+
+		<div class="pull-right xingyu-topnav-btn-group">
+
+			<div style="margin-top: 5px;">
+				<!--<a name="btn-login" class="btn-danger xingyu-btn-upload pop-login-register">注册</a>
+				<a class="xingyu-btn-login please-login">登录</a>-->
+			</div>
+		</div>
+	</div>
+</nav>
+<nav class="xingyu-mainnav">
+	<div class="v-container clearfix">
+		<ul class="pull-left clearfix navigation">
+			<li data-url="/" class="{if condition="$maccms.aid eq 1"} current{/if}">
+				<a href="/" target="_blank">首页</a>
+			</li>
+			{maccms:type parent="menu-itema" order="asc" by="sort"}
+			<li data-url="{:mac_url_type($vo,[],'type')}" class="{if condition="($vo.type_id eq MAC_TYPE_ID || $vo.type_id eq MAC_TYPE_PID)"} current{/if}">
+				<a href="{:mac_url_type($vo,[],'type')}">{$vo.type_name}</a>
+			</li>
+			{/maccms:type}
+		</ul>
+	</div>
+</nav>
