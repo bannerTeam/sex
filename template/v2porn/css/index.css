@@ -95,3 +95,23 @@ div.xvideo-movie-sction-list .index-section-videos [riot-tag=rv-preview-video-bo
 .v-search-video-box:hover .xvideo-thumbnail-mask{display:block}
 
 .v-search-video-box{  float: left;} 
+
+
+@media screen and (max-width:600px){
+	.v-container{ width: 100%;}
+	
+	.indx-section-title{ font-size: 20px;    height: 35px;
+    line-height: 35px;    text-indent: 15px;}
+    .indx-section-title a{ padding-right: 15px;}
+	
+	.v-container .index-section-videos .today-popular-container{ width: 100%;padding: 0 10px;}
+	.v-container .index-section-videos .v-search-video-box { margin: 0!important;margin-bottom: 20px!important; width: 100%; float: none;}
+	.v-container .index-section-videos .v-search-video-box .v-search-video-img{ width: 100%; max-height: 220px;}
+	.v-container .index-section-videos .v-search-video-box .v-search-video-img img{ width: 100%; height: auto;}
+	.v-container .index-section-videos .v-search-video-box .v-search-video-name .v-search-video-name-div{white-space: inherit;}
+
+	.v-container .index-av-cinema-container{ width: 100%;    padding: 0 10px;}
+	.v-container .index-cinema-videos .v-search-video-box{ width: 100% !important;}
+	
+	
+}

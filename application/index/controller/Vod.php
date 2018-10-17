@@ -15,13 +15,26 @@ class Vod extends Base
     }
 
     public function type()
-    {
-        $info = $this->label_type();
+    {        
+       
+        
+        $info = $this->label_type();      
+                
+        $this->assign('sort','hits_month');
+      
+        
         return $this->fetch( mac_tpl_fetch('vod',$info['type_tpl'],'type') );
     }
 
     public function show()
     {
+        $info = $this->label_type();
+    
+   
+    
+        $this->assign('obj',$info);
+       
+        
         //var_dump(111);
         //$info = $this->label_type();
         //var_dump(mac_tpl_fetch('vod',$info['type_tpl_list'],'show') );
@@ -65,7 +78,8 @@ class Vod extends Base
 
     public function play()
     {
-        $info = $this->label_vod_play('play');
+        $info = $this->label_vod_play('play');        
+        
         return $this->fetch( mac_tpl_fetch('vod',$info['vod_tpl_play'],'play') );
     }
 
@@ -86,7 +100,7 @@ class Vod extends Base
         $info = $this->label_vod_detail();
         return $this->fetch('vod/rss');
     }
-    
+   
     
 
 }

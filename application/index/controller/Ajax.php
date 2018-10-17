@@ -302,4 +302,48 @@ class Ajax extends Base
         }
         return json(['code'=>1,'msg'=>'感谢您的参与，评分成功！','data'=>$data]);
     }
+    
+    
+    function get_vod_more(){
+        //页码
+        $page = $this->_param['page'];
+        //分类id 
+        $type = $this->_param['tid'];
+        //每页显示条数
+        $limit = $this->_param['limit'];
+        
+        //排序字段
+        $by = $this->_param['by'];
+        
+        $by_arr = ['time','hits','score','hits_week'];
+        
+        if(!in_array($by, $by_arr)) {
+            $by = 'time';
+        }
+        
+        $order = 'vod_'.$by.' desc';
+        
+                
+        $tmp_arr = explode(',',$type);
+        $type_list = model('Type')->getCache('type_list');
+        $type = [];
+        foreach($type_list as $k2=>$v2){
+            if(in_array($v2['type_id'].'',$tmp_arr) || in_array($v2['type_pid'].'',$tmp_arr)){
+                $type[]=$v2['type_id'];
+            }
+        }
+        $type = array_unique($type);
+        $where['type_id'] = ['in', implode(',',$type) ];
+        $where['vod_status'] = ['eq',1];
+       
+        $res = model("Vod")->listData($where,$order,$page,$limit);
+                
+        $this->assign('datalist',$res['list']);
+        
+        $html = $this->fetch('index/ajax_vod_more');
+        
+        return json(['code'=>1,'msg'=>'','html'=>$html,'count'=>count($res['list'])]);
+        
+    }
+    
 }

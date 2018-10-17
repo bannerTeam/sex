@@ -8,7 +8,7 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta http-equiv="cache-control" content="no-siteapp">
-		<title>{$maccms.site_name}-高清云影视免费为大家提供最新最全的免费电影</title>
+		 <title>{$maccms.site_name}-{$obj.type_name}</title>
 
 		<meta name="keywords" content="{$maccms.site_keywords}">
 		<meta name="description" content=" {$maccms.site_description} "> 
@@ -19,10 +19,20 @@
 
 	<body>
 		{include file="public/head"}
-		
+		<div class="v-container clearfix">
+			<div class="v-advertise">
+				<div class="v-advertise-one">
+				{maccms:ad flag='l_banner'}
+					<a href="{$l_banner.link}" target="_blank">
+				        <img style="width:1200px;height: 60px;" src="{$l_banner.img}">
+				    </a>
+				 {/maccms:ad}
+				 </div>
+			</div>
+		</div>
 		<div class="videos-cinema-container v-container">
 			<div class="cinema-videos clearfix">
-				{maccms:vod num="16" paging="yes" pageurl="vod/show" type="current" order="desc" by="time"}
+				{maccms:vod num="16" paging="yes" pageurl="vod/type" type="current" order="desc" by="time"}
 				
 					<div class="cinema-video-box">
             <div class="cinema-video-content">
@@ -39,7 +49,6 @@
 			</div>
 			
 			<div class="v-rv-page-box">
-				<ul class="pagination"><li><span style="padding: 10px 11px;font-size: 14px;">首页</span></li><li><span><i class="xyvideo-icon xyvideo-icon-chevron-left"></i></span></li><li class="active"><span>1</span></li><li><a href="http://email.v2dizhi.at.gmail.com.v2p2.space/v/cinema?page=2">2</a></li><li><a href="http://email.v2dizhi.at.gmail.com.v2p2.space/v/cinema?page=3">3</a></li><li><span>...</span></li><li><a href="http://email.v2dizhi.at.gmail.com.v2p2.space/v/cinema?page=100">100</a></li><li><a href="http://email.v2dizhi.at.gmail.com.v2p2.space/v/cinema?page=2"><i class="xyvideo-icon xyvideo-icon-chevron-right"></i></a></li><li><a href="http://email.v2dizhi.at.gmail.com.v2p2.space/v/cinema?page=100" style="padding: 10px 11px;font-size: 14px;">尾页</a></li></ul>
 				{include file="public/paging"}
 			</div>
 		</div>

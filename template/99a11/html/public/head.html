@@ -1,0 +1,53 @@
+<header>
+	<div class="header-inner">
+		<div class="container clearfix">
+
+			<div class="wrap-logo">
+				<div class="logo logo1">
+					<a href="/"></a>
+				</div>
+			</div>
+			<div class="panel">
+				<div class="cap"></div>
+				<div class="menu-btn sendwich" id="menu-btn"><span></span></div>
+				<div class="search-btn" id="search-btn"><span></span></div>
+				<div class="user-btns" style="height: 32px;">					
+				</div>
+				<div class="panel-group">
+					<nav class="responsive-menu">
+						<ul>
+							<li class="{if condition="$maccms.aid eq 1"} active{/if}">
+								<a href="/">首页</a>
+							</li>
+							{maccms:type parent="menu-itema" order="asc" by="sort"}
+			<li class="{if condition="($vo.type_id eq MAC_TYPE_ID || $vo.type_id eq MAC_TYPE_PID)"} active{/if}">
+				<a href="{:mac_url_type($vo,[],'type')}">{$vo.type_name}</a>
+			</li>
+			{/maccms:type}
+
+						</ul>
+					</nav>
+					<div class="search">
+						<form class="form1" action="{:mac_url('vod/search')}" method="POST">
+							<input type="text" tabindex="1" name="wd" value="" placeholder="请输入搜索内容">
+							<input type="submit" value="">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<script>
+	$(function(){
+		$("#menu-btn").click(function() {
+			$('.panel').toggleClass('expand');
+			$(this).toggleClass('active');
+		});
+		$("#search-btn").click(function() {
+			$('.panel').toggleClass('showsearch');
+			$(this).toggleClass('active');
+		});
+	})
+</script>

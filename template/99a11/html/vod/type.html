@@ -1,0 +1,99 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="cache-control" content="no-siteapp">
+		<title>{$maccms.site_name}-{$obj.type_name}</title>
+
+		<meta name="keywords" content="{$maccms.site_keywords}">
+		<meta name="description" content=" {$maccms.site_description} "> {include file="public/include"}
+
+	</head>
+
+	<body>
+		{include file="public/head"}
+
+		<div class="content">
+			<div class="container">
+				<div class="content-inner">
+
+					<div class="v-advertise">
+
+						{maccms:ad flag='l_banner'}
+						<a href="{$l_banner.link}" target="_blank">
+							<img style="width:100%;" src="{$l_banner.img}">
+						</a>
+						{/maccms:ad}
+					</div>
+
+					<div class="sidebar">
+						{include file="public/sponsor_2"}
+						{include file="public/rankings"}
+						{include file="public/sponsor_1"} 
+						{include file="public/tags"}
+					</div>
+					<div class="main">
+
+						<div>
+							<div class="wrap-heading">
+								<div class="wrap-title">
+									<h1 class="title">{$obj.type_name}</h1>
+									<span class="c-video">展示40个视频</span>
+								</div>
+								<ul class="time-view ajax" >
+									<li>
+										<a href="{:mac_url_type(['type_id'=>$obj['type_id']],['by'=>'time'])}" >最新更新</a>
+									</li>
+									<li><span class="separate"></span></li>
+									<li>
+										<a href="{:mac_url_type(['type_id'=>$obj['type_id']],['by'=>'hits'])}" >总播放次数</a>
+									</li>
+									<li><span class="separate"></span></li>
+									<li>
+										<a href="{:mac_url_type(['type_id'=>$obj['type_id']],['by'=>'score'])}" >评分</a>
+									</li>
+									<li><span class="separate"></span></li>
+									<li>
+										<a href="{:mac_url_type(['type_id'=>$obj['type_id']],['by'=>'hits_week'])}" >月播放排行</a>
+									</li>
+								</ul>
+							</div>
+							<div class="thumbs">
+								{maccms:vod num="40" paging="yes" pageurl="vod/type" type="current" order="desc" by="'.$sort.'"}
+								<div class="thumb">
+									<div class="thumb-content">
+										<a target="_blank" href="{:mac_url_vod_detail($vo)}" class="kt_imgrc bbb" title="{$vo.vod_name}">
+											<span class="preview">
+											<img src="{:mac_url_img($vo.vod_pic)}" >
+										</span>
+											<span class="name">{$vo.vod_name}</span>
+											<span class="desc"><span class="views">{$vo.vod_hits} 次观看</span>
+											
+											<span class="data">{$vo.vod_time_add|mac_time_range}</span>
+											</span>
+										</a>
+									</div>
+								</div>
+								{/maccms:vod}
+							</div>
+							<div class="v-rv-page-box" style="margin-top: 20px;">
+								{include file="public/paging"}
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		{include file="public/foot"}
+
+	</body>
+
+</html>

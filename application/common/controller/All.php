@@ -35,7 +35,11 @@ class All extends Controller
         else{
             $maccms['aid'] = mac_get_aid($controller,$action);
         }
-
+        
+        if($maccms['search_hot']){
+            $maccms['search_hot_arr'] = explode(",", $maccms['search_hot']);
+        }
+        
         $this->assign( ['maccms'=>$maccms] );
     }
 

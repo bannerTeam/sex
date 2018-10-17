@@ -21,11 +21,12 @@
 		{include file="public/head"}
 		<div class="index-advertise v-container clearfix">
 			<div class="v-advertise">
-
-				<div class="v-advertise-pc-bottom v-container">
-					<img class="pc-bottom-close-btn" src="http://static.vstatic.space/bundle/images/v2-pc-bottom-X-115560ccd3.png">
-
-				</div>
+				
+				{maccms:ad flag='i_banner'}
+					<a href="{$i_banner.link}" target="_blank">
+				        <img style="width:100%;" src="{$i_banner.img}">
+				     </a>
+				{/maccms:ad}
 			</div>
 		</div>
 		<div class="v-container clearfix">

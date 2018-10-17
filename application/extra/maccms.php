@@ -26,10 +26,10 @@ return array (
     'site_qq' => '2640963460',
     'site_email' => '2640963460@qq.com',
     'install_dir' => '/',
-    'template_dir' => 'datll_wapian',
+    'template_dir' => '99a11',
     'html_dir' => 'html',
     'mob_status' => '0',
-    'mob_template_dir' => 'datll_wapian',
+    'mob_template_dir' => '99a11',
     'mob_html_dir' => 'html',
     'site_tj' => 'var _hmt = _hmt || [];
 	(function() {
@@ -58,7 +58,7 @@ return array (
     'pagesize' => '20',
     'makesize' => '30',
     'suffix' => 'html',
-    'search_hot' => '变形金刚,火影忍者,复仇者联盟,战狼,红海行动',
+    'search_hot' => '强奸,长腿,翘臀,美乳,美鲍,模特,内射,黑丝,颜射,乱交,淫水,网红,抽插,深喉,后入,女同,自慰,SM,痴汉,偷拍',
     'art_extend_class' => '段子手,私房话,八卦精,爱生活,汽车迷,科技咖,美食家,辣妈帮',
     'vod_extend_class' => '爱情,动作,喜剧,战争,科幻,剧情,武侠,冒险,枪战,恐怖,微电影,其它',
     'vod_extend_state' => '正片,预告片,花絮',

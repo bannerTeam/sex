@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="cache-control" content="no-siteapp">
+		<title>{$maccms.site_name}-高清云影视免费为大家提供最新最全的免费电影</title>
+
+		<meta name="keywords" content="{$maccms.site_keywords}">
+		<meta name="description" content=" {$maccms.site_description} "> {include file="public/include"}
+		
+	
+	</head>
+
+	<body>
+		<div class="wrap-head-spots">
+			<div class="container">
+				<div class="v-advertise">				
+					{maccms:ad flag='i_banner'}
+						<a href="{$i_banner.link}" target="_blank">
+					        <img style="width:100%;" src="{$i_banner.img}">
+					     </a>
+					{/maccms:ad}
+				</div>
+			</div>
+		</div>
+		
+		{include file="public/head"}
+
+		<div class="content">
+			<div class="container">
+				<div class="content-inner">
+					
+					<div class="v-advertise">
+				
+						{maccms:ad flag='i_banner'}
+							<a href="{$i_banner.link}" target="_blank">
+						        <img style="width:100%;" src="{$i_banner.img}">
+						     </a>
+						{/maccms:ad}
+					</div>
+					
+					<div class="sidebar">
+						{include file="public/sponsor_2"}
+						{include file="public/rankings"}
+						{include file="public/sponsor_1"}
+						{include file="public/tags"}						
+						{include file="public/sponsor_3"}
+						{include file="public/sponsor_5"}
+					</div>
+					<div class="main">
+						
+					{maccms:type parent="current" order="asc" by="sort" mid="1" id="vo1"}
+						<div>
+							<div class="wrap-heading">
+								<div class="wrap-title">
+									<h1 class="title">{$vo1.type_name}</h1>
+									<span class="c-video">展示10个视频</span>
+								</div>
+								<ul class="time-view ajax j_view_sort">
+									<li>
+										<a data-id="{$vo1.type_id}" href="javascript:;" data-sort="time">最新更新</a>
+									</li>
+									<li><span class="separate"></span></li>
+									<li>
+										<a data-id="{$vo1.type_id}" href="javascript:;" data-sort="hits">总播放次数</a>
+									</li>
+									<li><span class="separate"></span></li>
+									<li>
+										<a data-id="{$vo1.type_id}" href="javascript:;" data-sort="score">评分</a>
+									</li>
+									<li><span class="separate"></span></li>
+									<li>
+										<a data-id="{$vo1.type_id}" href="javascript:;" data-sort="hits_week">月播放排行</a>
+									</li>
+								</ul>
+							</div>
+							<div class="thumbs" id="thumbs_{$vo1.type_id}" data-sort="time">
+								{maccms:vod num="10" type="'.$vo1['type_id'].'" order="desc" by="time"}
+								<div class="thumb">
+									<div class="thumb-content">
+										<a target="_blank" href="{:mac_url_vod_detail($vo)}" class="kt_imgrc bbb" title="{$vo.vod_name}">
+											<span class="preview">
+											<img src="{:mac_url_img($vo.vod_pic)}" >
+										</span>
+											<span class="name">{$vo.vod_name}</span>
+											<span class="desc"><span class="views">{$vo.vod_hits} 次观看</span>
+											<span class="data">{$vo.vod_time_add|mac_time_range}</span>
+											</span>
+										</a>
+									</div>
+								</div>
+								{/maccms:vod}
+							</div>
+							<a href="javascript:;">
+								<span id="more_{$vo1.type_id}" data-id="{$vo1.type_id}"  data-page="1" class="more-thumbs btn">更多</span>
+								<span class="more-thumbs btn" style="display: none;">正在加载....</span>
+							</a>
+						</div>
+						{/maccms:type}
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		
+		<script>
+			
+			$(function(){
+				
+				//排序
+				$(".j_view_sort a").click(function(){
+					var type_id = $(this).data('id'),
+						sort = $(this).data('sort');
+					
+					get_vod_more(1,type_id,sort);
+					
+					$("#thumbs_"+type_id).data('sort',sort);
+										
+				});
+				
+				//更多
+				$(".more-thumbs").click(function(){
+					
+					var type_id = $(this).data('id'),
+					    page = $(this).data('page'),
+					    sort = $("#thumbs_"+type_id).data('sort');
+					
+					
+					get_vod_more(parseInt(page)+1,type_id,sort);
+					
+									
+					
+				})
+				
+				function get_vod_more(p,type_id,sort){
+					var obj = $("#more_" + type_id);
+					$(obj).hide();
+					$(obj).next().show();
+					$.ajax({
+						url:"/Ajax/get_vod_more",
+						dataType: "JSON",
+						data:{
+							page:p,
+							tid:type_id,
+							by:sort,
+							limit:10
+						},
+						success:function(data){		
+							if(p > 1){
+								$("#thumbs_"+type_id).append(data.html);
+							}else{
+								$("#thumbs_"+type_id).html(data.html);
+							}							
+							
+							if(data.count < 10){
+								$(obj).parent().remove();
+							}else{
+								$(obj).show();
+								$(obj).next().hide();
+							}
+							
+							$(obj).data('page',p);
+						}
+					});
+				}
+				
+				get_vod_more(1,10);
+				
+			})
+			
+			
+		</script>
+		
+
+		{include file="public/foot"}
+
+	</body>
+
+</html>

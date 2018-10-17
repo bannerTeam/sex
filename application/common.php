@@ -1200,7 +1200,7 @@ function mac_url($model,$param=[],$info=[])
             }
             else{
                 $id = $config['rewrite']['type_id'] ==1 ? 'type_en' : 'type_id';
-                $url = url($model,['id'=>$info[$id],'page'=>$param['page']]);
+                $url = url($model,['id'=>$info[$id],'page'=>$param['page'],'by'=>$param['by']]);
             }
             break;
         case 'vod/detail':
@@ -1644,5 +1644,59 @@ function mac_data_count($tid=0,$range='all',$flag='vod')
         $key = $flag.'_'.$range;
     }
     return intval($data[$key]);
+}
+
+/**
+ * 时间间隔
+ * @param unknown $time
+ * @return string
+ */
+function mac_time_range( $time )
+{
+       
+    $range          = NULL;
+    $current_time   = time();
+    $interval       = $current_time-$time;
+    if ( $interval > 0 ) {
+        $day    = $interval/(60*60*24);
+        if ( $day >= 1 ) {
+            if($day>30){
+                $range = '一个月';
+            }else if($day>7){
+                $range = '一周';
+            }else{
+                $range      = floor($day).' 天';
+            }            
+            $interval   = $interval-(60*60*24*floor($day));
+        }
+        if( $interval > 0 && $range == '' ) {
+            $hour       = $interval/(60*60);
+            if ( $hour >=1 ) {
+                $range      = floor($hour). ' 小时';
+                $interval   = $interval-(60*60*floor($hour));
+            }
+        }
+        if ( $interval > 0 && $range == '' ) {
+            $min        = $interval/(60);
+            if ( $min >= 1 ) {
+                $range=floor($min). ' 分';
+                $interval=$interval-(60*floor($min));
+            }
+        }
+        if ( $interval > 0 && $range == '' ) {
+            $scn        = $interval;
+            if ( $scn >= 1 ) {
+                $range  = $scn. ' 秒';
+            }
+        }
+        
+        return ( $range != '' ) ? $range. '前' : '刚刚';
+    }
+}
+
+function mac_curstr($str){
+    
+    return mb_substr($str,0,15,"UTF-8");
+    
 }
 

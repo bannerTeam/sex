@@ -1,0 +1,263 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="cache-control" content="no-siteapp">
+
+		<title>在线播放{$obj.vod_name} {$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']} - 高清资源 - {$maccms.site_name}</title>
+		<meta name="keywords" content=">在线播放{$obj.vod_name} {$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']} - 高清资源 - {$maccms.site_name}">
+		<meta name="description" content=">在线播放{$obj.vod_name} {$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']} - 高清资源 - {$maccms.site_name}"> {include file="public/include"}
+
+		
+		<script>
+			var maccms = {
+				"path": "__ROOT__",
+				"mid": "{$maccms['mid']}",
+				"url": "{$maccms['site_url']}",
+				"wapurl": "{$maccms['site_wapurl']}",
+				"mob_status": "{$maccms['mob_status']}"
+			};
+		</script>
+		<style>
+			.wrap-video .video{height: 450px;}
+			@media screen and (min-width: 1200px){
+				.wrap-video .video {
+				    height: 540px;
+				}
+			}
+			@media screen and (max-width: 600px){
+				.wrap-video .video {
+				    min-height: 200px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		{include file="public/head"}
+
+		<div class="content">
+			<div class="container">
+				<div class="content-inner">
+
+					<div class="v-advertise">
+						{maccms:ad flag='i_banner'}
+						<a href="{$i_banner.link}" target="_blank">
+							<img style="width:100%;" src="{$i_banner.img}">
+						</a>
+						{/maccms:ad}
+					</div>
+
+					<div class="sidebar">
+						{include file="public/sponsor_1"}
+						{include file="public/sponsor_2"} 
+						{include file="public/tags"}
+					</div>
+					<div class="main">
+
+						<div class="wrap-heading">
+							<div class="wrap-title">
+								<h1 class="title">网络约炮极品女仆装萝莉援交美眉酒店开房自拍动作片</h1>
+							</div>
+						</div>
+						<div class="wrap-video">
+							<div class="video">
+								<div style="width: 100%; height: 100%; position:relative; overflow: hidden;">
+{$player_data}
+    {$player_js}
+								</div>
+
+							</div>
+						</div>
+						<div class="tools">
+							
+							<ul class="buttons">								
+								
+								<li>
+									<a class="share_btn" href="#"><i class="icon-link"></i>
+										<div class="tooltip">分享</div>
+									</a>
+								</li>
+							</ul>
+							<div class="wrap-overflow">
+								<ul class="information">
+									<li>
+										<i class="icon-eye"></i>
+										<span class="key">播放次数:</span> 
+										<span class="value">{$obj.vod_hits}</span>
+									</li>
+									<li>
+										<i class="icon-add"></i>
+										<span class="key">上传时间:</span> 
+										<span class="value">
+											{$obj.vod_time_add|mac_time_range}</span>
+									</li>
+								</ul>
+							</div>
+							<div id="flagging_success" class="g_hidden success">感谢您的评分!</div>
+							<div id="flagging_failure" class="g_hidden failure">请勿重复评分!</div>
+							<div id="fav_block_success" class="g_hidden success">影片已收藏.</div>
+							<div id="flagging_report" class="g_hidden success">非常感谢您的反馈!</div>
+							<div id="fav_block_success" class="add_to_favourites g_hidden success">影片已收藏.</div>
+							<noscript>
+								<div class="message_error failure">您的浏览器java插件已被禁用导致本页面部分功能无法正常使用，请开启后重试.</div>
+							</noscript>							
+						</div>
+
+						<div class="share-block" style="display: none;">
+							<div class="row">
+								<span class="title">镶嵌代码:</span>
+								<div class="wrap-overflow">
+									<textarea class="ftext" id="share_code">
+									</textarea>
+								</div>
+							</div>
+							<div class="row">
+								<span class="title">本影片分享链接:</span>
+								<div class="wrap-overflow">
+									<input class="finp" type="text" id="share_url" value="">
+								</div>
+							</div>
+							<script>
+								
+								$(function(){
+									var u = location.href;
+									$("#share_code").val(`<iframe width="1914" height="1033" src="${u}" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>`);
+									$("#share_url").val(u);
+								})
+								
+								
+								
+							</script>
+						</div>
+						<div class="report-block" style="display: none;">
+							<div class="row">
+								<span class="title">问题反馈:</span>
+								<div class="wrap-overflow">
+									<input type="radio" id="flag_inappropriate_video" value="flag_inappropriate_video" name="flag_id" class="fradio" checked="checked">
+									<label for="flag_inappropriate_video" class="flrad block">视频分类错误</label>
+									<input type="radio" id="flag_underage_video" class="fradio" value="flag_underage_video" name="flag_id">
+									<label for="flag_underage_video" class="flrad block">幼女或人兽</label>
+									<input type="radio" id="flag_not_play_video" class="fradio" value="flag_not_play_video" name="flag_id">
+									<label for="flag_not_play_video" class="flrad block">无法播放</label>
+									<input type="radio" id="flag_spam_video" class="fradio" value="flag_spam_video" name="flag_id">
+									<label for="flag_spam_video" class="flrad block">视频重复</label>
+									<input type="radio" id="flag_other_video" class="fradio" value="flag_other_video" name="flag_id">
+									<label for="flag_other_video" class="flrad block">其他</label>
+								</div>
+							</div>
+							<div class="row">
+								<span class="title">原因:</span>
+								<div class="wrap-overflow">
+									<textarea class="ftext"></textarea>
+								</div>
+							</div>
+							<div class="row">
+								<button class="btn btn-send-rep" >提交</button>
+							</div>
+						</div>
+
+						<div class="description-block">
+							<!--<div class="row">
+								<span class="title">影片简介:</span>
+								<div class="wrap-overflow">
+									<div class="desc-video">xxx</div>
+								</div>
+							</div>-->
+							
+
+							<div class="row">
+								<span class="title">影片分类: </span>
+								<div class="wrap-overflow">
+									<a target="_blank" href="{:mac_url_type(['type_id'=>$obj['type_id']])}" class="desc-link" title="{$obj.type_name}">{$obj.type.type_name}</a>
+								</div>
+							</div>
+							<!--<div class="row">
+								<span class="title">标签: </span>
+								<div class="wrap-overflow">
+									<a href="" class="desc-link" title=""></a>									
+								</div>
+							</div>-->
+						</div>
+						
+						<div class="wrap-heading">
+							<div class="wrap-title">
+								<h1 class="title">相关影片</h1>
+							</div>
+						</div>
+						<div class="thumbs" id="new_list">
+							
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		
+		<script>
+			
+	function toogleShowBlock(event) {
+		$this = $(this);
+		$this.toggleClass('active');
+		if( $this.hasClass('active')) {
+			$(event.data.className).slideDown();
+		} else {
+			$(event.data.className).slideUp();
+		}
+		return false;
+	}
+			
+		$('.share_btn').on('click',{ className: '.share-block' }, toogleShowBlock);
+			
+	var get_list =function(){
+		
+		$.ajax({
+			type:"get",
+			url:"/index.php/ajax/data",
+			data:{
+				mid:1,
+				limit:10,
+				page:1
+			},
+			success:function(data){
+				var items = data.list,str = "";
+				
+				for (var i = 0; i < items.length; i++) {
+					str +=`<div class="thumb">
+							<div class="thumb-content">
+							<a target="_blank" href="${items[i].detail_link}" class="kt_imgrc bbb" title="">
+						<span class="preview">
+						<img src="${items[i].vod_pic}" >
+						</span>
+						<span class="name">${items[i].vod_name}</span>
+						<span class="desc"><span class="views">${items[i].vod_hits} 次观看</span>
+					<span class="data"></span>
+					</span></a></div></div>`;             
+             
+				}
+				
+				
+				$("#new_list").html(str);
+				
+			}
+		});
+	}
+	
+	get_list();
+	
+</script>
+		
+
+		{include file="public/foot"}
+
+
+	
+	</body>
+
+</html>
