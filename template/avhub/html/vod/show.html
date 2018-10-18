@@ -1,0 +1,76 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="cache-control" content="no-siteapp">
+		 <title>{$maccms.site_name}-{$obj.type_name}</title>
+
+		<meta name="keywords" content="{$maccms.site_keywords}">
+		<meta name="description" content=" {$maccms.site_description} "> 
+		{include file="public/include"}
+		
+	</head>
+
+	<body>
+		{include file="public/head"}
+		
+		<div class="container">
+			<div id="content" class="row">
+
+				<div class="ads">
+					{maccms:ad flag='l_banner'}
+						<a href="{$l_banner.link}" target="_blank">
+							<img style="width:100%;min-height: 50px;" src="{$l_banner.img}">
+						</a>
+					{/maccms:ad}
+				</div>
+
+				<div class="col-md-2 hidden-xs hidden-sm">
+					{include file="public/left_menu"}					
+				</div>
+				<div class="col-xs col-sm-12 col-md-10">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h2 class="panel-title">{$obj.type_name}</h2>
+						</div>
+						<div class="panel-body panel-padding">
+							<ul class="videos">
+								{maccms:vod num="40" paging="yes" pageurl="vod/show" type="current" order="desc" by="'.$sort.'"}
+								<li>
+									<div class="video">
+										<a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" class="thumbnail">
+											<div class="video-thumb"> <img onerror="this.src='{$maccms.path_tpl}images/nopic.gif'" src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" width="200" height="135"> </div> <span class="video-title">{$vo.vod_name}</span>
+											<div class="video-details hidden-xs hidden-sm"> <span class="pull-left">{$vo.vod_time_add|mac_time_range}</span> <span class="pull-right text-right">{$vo.vod_hits} 次播放</span> </div>
+										</a>
+									</div>
+								</li>
+								{/maccms:vod}	
+							</ul>
+							<div class="clearfix"></div>
+							
+							<div class="v-rv-page-box" style="margin-top: 20px;">
+								{include file="public/paging"}
+							</div>
+							
+							<div class="clearfix"></div>
+							
+							
+						</div>
+					</div>
+					
+					
+					
+				</div>
+			</div>
+		</div>
+
+		{include file="public/foot"}
+		
+	</body>
+
+</html>

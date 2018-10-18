@@ -1,0 +1,10 @@
+<div class="block info">
+	<h2>影片排行</h2>
+	<ul class="scatgs">
+		{maccms:vod num="12" type="all" by="hits_day" order="desc" timeadd="7" }
+		<li>
+			<a href="{:mac_url_vod_detail($vo)}"><span class="name">{$vo.vod_name|mac_curstr}</span><span class="count">{$vo.vod_hits}</span></a>
+		</li>
+		{/maccms:vod}		
+	</ul>
+</div>

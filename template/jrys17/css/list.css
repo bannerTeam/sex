@@ -1,11 +1,11 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 .filter-box{ position: relative; clear: both; margin: 10px auto 22px auto; border: 1px #e8e8e8 solid; padding: 0 10px; overflow: hidden;}
 .filter-row{border-bottom: 0px #e8e8e8 dashed; padding: 8px 0; margin: 10px auto;}
 .filter-row:after{clear: both; content: ""; display: block;}
 .filter-head{float: left; width:8%; margin-top:8px; padding-right:35px; text-align: right; color: #999;}
 .filter-body{float: left; width:92%;}
 .filter-body a{padding: 5px 8px; background:#C8C8C8; color: #fff; border-radius: 10px; line-height:40px;margin-right: 7px;}
-.filter-body a.selected-a{background: #f50; color: #fff; border-radius: 10px;}
+.filter-body a.selected-a{background: #da2657; color: #fff; border-radius: 10px;}
 .more-down-up{ position: relative;}
 .more-down,.more-up{display: block; width: 80px; text-align: center; font-size: 12px; height: 25px; line-height: 25px; background: #e8e8e8; position: absolute; left: 50%; margin-left: -40px; margin-top: -40px;}
 .more-down a:after{font-family: "iconfont"; content: "\e60d"; font-size: 14px;}

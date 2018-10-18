@@ -1,12 +1,12 @@
-﻿@charset "utf-8";
-.slide-index{ width: 600px; height: 300px; margin-right: 10px; overflow: hidden;}
+@charset "utf-8";
+.slide-index{ width: 600px; height: 300px; margin-right: 20px; overflow: hidden;}
 .slide-index .item a{ display: block; width: 600px; height: 300px; overflow: hidden; position: relative;}
 .slide-index .item a h3{ width: 600px; height: 40px; line-height: 40px; background: rgba(0,0,0,.7); position: absolute; left: 0; bottom: 0; color: #fff; padding: 0 10px; box-sizing: border-box;}
 .slide-index .owl-theme .owl-controls{width: 110px; position: absolute; bottom: 0; right: 10px; z-index: 99; text-align: right;}
 .slide-index .owl-theme .owl-dots .owl-dot span{width: 15px; height: 15px; margin: 5px 3px;}
 .slide-index .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{ background: #ff4400;}
 .index-recommend{ width: 580px;}
-.index-recommend-list li{width: 170px; margin: 0 20px 15px 0; float: left;}
+.index-recommend-list li{width: 180px; margin: 0 20px 15px 0; float: left;}
 .index-recommend-list li .thumb{width: 180px; height: 119px;overflow: hidden;font-size:0; *font-size:200px; text-align:center; background: #fff;}
 .index-recommend-list li .thumb img{vertical-align:middle; max-width: 180px; height: auto;}
 .index-recommend-list li .thumb:after{display:inline-block; width:0; height:100%; content:"center"; vertical-align:middle; overflow:hidden;}

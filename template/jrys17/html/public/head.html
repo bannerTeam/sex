@@ -1,4 +1,4 @@
-<div class="head">
+<div class="head" >
 	<div class="deanmaintops" id="deandingbu">
 		<div class="deanheaderbg">
 			<div class="w1180">
@@ -7,7 +7,7 @@
 				<div class="deansearch">
 					<div id="scbar" class="cl">
 						<form class="topnav_menu_search" name="searchform" method="post" action="{:mac_url('vod/search')}">
-							
+
 							<table cellspacing="0" cellpadding="0">
 								<tbody>
 									<tr>
@@ -26,10 +26,9 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="nav-pinupbox">
 		<div class="nav-pinup stuckMenu" style="position: relative; top: 0px;">
-			<div class="menu">				
+			<div class="menu">
 				<ul class="f16 menu-list leftside" id="leftside">
 					<li class="{if condition=" $maccms.aid eq 1 "} active{/if}">
 						<a href="/">网站首页</a>
@@ -38,26 +37,106 @@
 					<li class="{if condition=" ($vo.type_id eq MAC_TYPE_ID || $vo.type_id eq MAC_TYPE_PID) "} active{/if}">
 						<a href="{:mac_url_type($vo,[],'type')}" title="{$vo.type_name}">{$vo.type_name}</a>
 					</li>
-					{/maccms:type}					
+					{/maccms:type}
 
 				</ul>
 			</div>
-
+			<div class="gonggao">
+				<div class="main">
+					<span>公告：</span> 按 CTRL+D 收藏本站,防止迷路哟.
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
 
+<div class="sitenav" id="sitenav" style="display: none;">
+	<span class="sitenav-on">
+		<div class="bb-header-nav-wrap" style="height:60px;">
+			<h1 class="bb-header-logo g-night-bgimage js-header-logo" style="margin:0 0 0 15px;"></h1>
+			<a class="bb-header-logo-a" href="/"></a>
+		</div>
+	</span>
+	<ul class="left" id="left">
+		<li class="current-menu-item {if condition=" $maccms.aid eq 1 "} active{/if}" style="padding: 7px 10px;">
+			<a rel="nofollow" href="/">
+				<i class="fa fa-home"></i>首页</a>
+		</li>
+		<li class="pro">
+			<a href="javascript:;"><i class="fa fa-play-circle"></i>视频</a>
+			<ul class="sub-menu">
+
+				
+				{maccms:type parent="menu-itema" order="asc" by="sort"}
+				<li class="{if condition=" ($vo.type_id eq MAC_TYPE_ID || $vo.type_id eq MAC_TYPE_PID) "} active{/if}">
+					<i class="fa fa-caret-right " style="color:#ccc;"></i>
+					<a href="{:mac_url_type($vo,[],'type')}" title="{$vo.type_name}">{$vo.type_name}</a>
+				</li>
+				{/maccms:type}
+
+				
+			</ul>
+		</li>
+	</ul>
+	<div style="width:30%;height:100%;float: right;" id="right-hide"></div>
+</div>
+<header class="b-header g-header-v2 b-header-q" style="border-bottom:2px solid #da2657;background:#272626;width: 100%;height:65px;">
+	<div class="b-header-search-wrap g-header-search-box " id="sea-btn-show">
+		<a href="javascript:;" id="silde-left" class="slide"><span class="fa fa-navicon"></span></a>
+		<div onclick="$('#silde-left').click()" style="color: red; position: absolute;margin:15px 0 0 25px;">← 菜单</div>
+		<div class="bb-header-nav-wrap">
+
+			<h1 class="bb-header-logo g-night-bgimage js-header-logo"></h1>
+			<a class="bb-header-logo-a" href="/"></a>
+		</div>
+		<a href="javascript:;" id="sea-show" class="search-mid"><span class="fa fa-search"></span></a>
+	</div>
+	<div class="sea" id="sea">
+		<form class="b-header-search-form js-form" style="width:90%;float:left;" action="{:mac_url('vod/search')}"  method="post">
+			<div id="js-b-suggest" class="b-suggest">
+				<div class="b-suggest-container">
+					<input name="wd" class="b-suggest-q js-query" maxlength="100" autocomplete="off" type="text" placeholder="输入关键词搜索....">
+					<i class="b-suggest-reset js-reset-btn" style="display:none;"></i>
+				</div>
+				<button type="submit" class="b-suggest-button">
+				<i class="fa fa-search"></i>
+				</button>
+			</div>
+		</form>
+		<div class="suggest-container" style="display: none;">
+			<div class="suggest-box" role="listbox">
+				<div class="suggest-content"></div>
+			</div>
+		</div>
+		<a href="javascript:;" id="sea-btn-off" class="fa fa-remove"></a>
+		<div style="clear:both;"></div>
+	</div>
+</header>
+
+<style>
+
+</style>
 <script>
-	
-	$(function(){
-		
-		if($(window).width() < 620){
-			$("#leftside").css({
-				width:$("#leftside li").length * 107
-			});
-		}	
-			
-		
+	$(function() {
+
+		$("#sea-show").click(function() {
+			$("#sea").show();
+		});
+		$("#sea-btn-off").click(function() {
+			$("#sea").hide();
+		});
+		$("#silde-left").click(function() {
+			$("#sitenav").show();
+		});
+		$("#silde-left-hide").click(function() {
+			$("#sitenav").hide();
+		});
+		$("#left").click(function() {
+			$("#sitenav").hide();
+		});
+		$("#right-hide").click(function() {
+			$("#sitenav").hide();
+		});
+
 	});
-	
 </script>

@@ -1,5 +1,5 @@
 {if condition="$__PAGING__.record_total gt 0"}
-<div class="mac_pages j_record_total" data-count="{$__PAGING__.record_total}">
+<div class="mac_pages">
     <!--<div class="page_tip">共{$__PAGING__.record_total}条数据,当前{$__PAGING__.page_current}/{$__PAGING__.page_total}页</div>-->
     <div class="page_info">
         <a class="page_link" href="{$__PAGING__.page_url|mac_url_page=1}" title="首页">首页</a>
@@ -18,7 +18,7 @@
     </div>
 </div>
 {else/}
-<div class="mac_pages_empty j_record_total" data-count='0'>
+<div class="mac_pages_empty">
     <h1>没有找到资源</h1>
 </div>
 {/if}
@@ -33,29 +33,26 @@
     width:100%;}
 	.mac_pages .page_tip{}
 	.mac_pages .page_info{}
-	.mac_pages .page_info .page_link{    color: #da2657;
+	.mac_pages .page_info .page_link{    color: #f2990d;
     padding: 9px 16px;color: #666;
     background-color: #ddd;
     border: 1px solid #ddd; 
     white-space: nowrap; display: inline-block;}
 	.mac_pages .page_info .page_current,.mac_pages .page_info .page_link:hover{font-style: normal;
-    background-color: #da2657;
+    background-color: #f2990d;
     color: #fff;
     white-space: nowrap;}
     
     
 	.mac_pages .page_info .page_input{}
 	.mac_pages .page_info .page_btn{    font-style: normal;
-    background-color: #da2657;
+    background-color: #f2990d;
     color: #fff;
-    padding: 2px 5px 2px 5px;  
+    padding: 2px 5px 2px 5px;
+  
     white-space: nowrap;}
-    
-    @media screen and (max-width: 600px){
+ @media screen and (max-width: 600px){
 		.mac_pages{ height: auto; margin-top: 20px;}
 		.mac_pages .page_info .page_link{ margin-bottom: 15px;}
 	}
 </style>
-<script>	
-	$("#listCount").text($(".j_record_total").data('count'));	
-</script>
