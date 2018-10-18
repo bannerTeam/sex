@@ -1,0 +1,15 @@
+{maccms:foreach name="$datalist" id="vo"}
+<div class="thumb">
+	<div class="thumb-content">
+		<a target="_blank" href="{:mac_url_vod_detail($vo)}" class="kt_imgrc bbb" title="{$vo.vod_name}">
+			<span class="preview">
+			<img src="{:mac_url_img($vo.vod_pic)}" >
+		</span>
+			<span class="name">{$vo.vod_name}</span>
+			<span class="desc"><span class="views">{$vo.vod_hits} 次观看</span>
+			<span class="data">{$vo.vod_time_add|mac_time_range}</span>
+			</span>
+		</a>
+	</div>
+</div>
+{/maccms:foreach}

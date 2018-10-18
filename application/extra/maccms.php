@@ -26,10 +26,10 @@ return array (
     'site_qq' => '2640963460',
     'site_email' => '2640963460@qq.com',
     'install_dir' => '/',
-    'template_dir' => '99a11',
+    'template_dir' => 'cstc1',
     'html_dir' => 'html',
     'mob_status' => '0',
-    'mob_template_dir' => '99a11',
+    'mob_template_dir' => 'cstc1',
     'mob_html_dir' => 'html',
     'site_tj' => 'var _hmt = _hmt || [];
 	(function() {

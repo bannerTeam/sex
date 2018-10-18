@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">目录</h3>
+	</div>
+	<div class="panel-body no-padding">
+		<ul class="nav nav-stacked navigation">
+			{maccms:type parent="menu-itema" order="asc" by="sort"}
+			<li class="{if condition="($vo.type_id eq MAC_TYPE_ID || $vo.type_id eq MAC_TYPE_PID)"} active{/if}">
+				<a href="{:mac_url_type($vo,[],'type')}">{$vo.type_name}
+				<span class="badge category-count pull-right"></span>
+				</a>
+			</li>
+			{/maccms:type}
+		</ul>
+	</div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">赞助商</h3>
+	</div>
+	<div class="panel-body no-padding" style="text-align: center; padding: 10px 0;">
+		<a href="http://1366802.com/?Intr=6535" target="_blank"><img  src="https://ww2.sinaimg.cn/large/0060lm7Tgw1f62tcpj2pjg3046046jrl.jpg"></a>
+	</div>
+</div>
+
+

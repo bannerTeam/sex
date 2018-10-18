@@ -1,0 +1,1042 @@
+﻿.w1180 {
+width: 1180px;
+margin: 0 auto;
+}
+.deanmaintops {
+height: 140px;
+position: relative;
+}
+
+.deanhdtop {
+}
+
+.deanhdtopl {
+float: left;
+}
+
+.deanhdtopl ul {
+float: left;
+margin-left: 15px;
+height: 15px;
+line-height: 15px;
+margin-top: 12px;
+}
+
+.deanhdtopl ul li {
+float: left;
+border-left: 1px solid #ededed;
+height: 15px;
+line-height: 15px;
+}
+
+.deanhdtopl ul li a {
+font-size: 12px;
+display: block;
+color: #fff;
+margin: 0 13px;
+float: left;
+height: 15px;
+line-height: 15px;
+}
+
+.deanhdtopl ul li a:hover {
+color: #24C7FC;
+}
+
+.deanhdtopl ul li a.deanzhuzhan {
+background: url(../images/1.png) left center no-repeat;
+padding-left: 20px;
+}
+
+.deanhdtopl ul li a.deanhuayou {
+background: url(../images/2.png) left center no-repeat;
+padding-left: 20px;
+}
+
+.deanhdtopl ul li a.deanyxzx {
+background: url(../images/3.png) left center no-repeat;
+padding-left: 20px;
+}
+
+.deanhdtopl ul li a.deanzhibo {
+background: url(../images/4.png) left center no-repeat;
+padding-left: 20px;
+}
+
+.deanhdtopl ul li a.deanzhoubian {
+background: url(../images/5.png) left center no-repeat;
+padding-left: 20px;
+}
+
+.deanhdtopr {
+float: right;
+}
+
+.deansubnavs {
+float: right;
+margin-top: 10px;
+}
+
+#qmenu {
+float: right;
+margin: 0;
+padding-right: 0;
+overflow: visible;
+font-weight: normal;
+display: inline-block;
+width: 100px;
+height: 30px;
+line-height: 30px;
+text-indent: 20px;
+background: #24C7FC url(../images/nav.png) 20px center no-repeat;
+;border-radius: 25px;
+color: #fff;
+}
+
+#qmenu.a {
+background-position: 20px center!important;
+}
+
+.deanheaderbg {
+width: 100%;
+height: 180px;
+min-width: 1180px;
+position: relative;
+top: -40px;
+z-index: 1;
+background: url(../images/headerbg.jpg) 0 0 no-repeat;
+}
+
+.deanheader {
+width: 100%;
+min-width: 1180px;
+height: 40px;
+background: rgba(0,0,0,.4);
+position: relative;
+z-index: 5;
+transition: all 0.3s linear;
+}
+
+.deanlogo {
+width: 260px;
+height: 70px;
+float: left;
+padding-top: 68px;
+}
+
+#deannavs {
+height: 50px;
+line-height: 50px;
+width: 100%;
+min-width: 1180px;
+box-shadow: 0 2px 3px #ededed;
+}
+
+.deannav {
+height: 50px;
+line-height: 50px;
+width: 990px;
+overflow: hidden;
+float: left;
+}
+
+.deannav ul li {
+float: left;
+margin-right: 25px;
+}
+
+.deannav ul li a {
+display: inline-block;
+padding: 0 10px;
+height: 47px;
+line-height: 47px;
+color: #454545;
+font-size: 16px;
+text-align: center;
+position: relative;
+}
+
+.deannav ul li a:hover {
+color: #24C7FC;
+}
+
+.deansearch {
+float: right;
+height: 42px;
+padding-top: 85px;
+}
+
+.deannav ul li.a a {
+border-bottom: 3px solid #24C7FC;
+color: #24C7FC;
+}
+
+.deannav span {
+display: none;
+}
+
+.deannav ul {
+width: 1180px;
+margin: 0 auto;
+}
+
+.deannav ul li.hover {
+color: #24C7FC;
+}
+
+.deannav ul li.hover a {
+border-bottom: 3px solid #24C7FC;
+color: #24C7FC;
+}
+
+.deangz {
+float: left;
+}
+
+.deangztop {
+font-size: 12px;
+color: #fff;
+height: 40px;
+z-index: 111;
+cursor: pointer;
+line-height: 40px;
+background: url(../images/cell.png) left center no-repeat;
+padding-left: 20px;
+position: relative;
+}
+
+.deangzpic {
+text-align: center;
+position: absolute;
+top: 40px;
+padding: 10px;
+background: #fff;
+box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+left: 0;
+border-radius: 0 0 3px 3px;
+display: none;
+}
+
+.deangzpic img {
+}
+
+.deangztop:hover {
+color: #24C7FC;
+}
+
+.deangztop:hover .deangzpic {
+display: block;
+}
+
+#qmenu_menu {
+background-color: #fff!important;
+}
+
+#qmenu_menu {
+border-color: #ededed!important;
+border-width: 4px!important;
+border-radius: 5px!important;
+}
+
+#hd .p_pop {
+background: #fcfcfc;
+box-shadow: none;
+padding: 0!important;
+-webkit-box-shadow: 0 2px 3px #ccc;
+-moz-box-shadow: 0 2px 3px #ccc;
+box-shadow: 0 2px 3px #ccc;
+border: 0;
+overflow: hidden;
+}
+
+#hd .p_pop a {
+padding: 0;
+color: #24C7FC;
+font-size: 14px;
+color: #333;
+border-bottom: 0;
+height: 34px;
+line-height: 34px;
+background: url(../images/cicle.png) 15px center no-repeat;
+padding-left: 30px;
+display: block;
+-webkit-transition: all 0.3s linear;
+-moz-transition: all 0.3s linear;
+-o-transition: all 0.3s linear;
+-ms-transition: all 0.3s linear;
+transition: all 0.3s linear;
+}
+
+#hd .p_pop a:hover {
+background: #f0f0f0 url(../images/cicle1.png) 15px center no-repeat!important;
+color: #24C7FC;
+transform: translate(5px,0);
+-webkit-transform: translate(5px,0);
+-moz-transform: translate(5px,0);
+-o-transform: translate(5px,0);
+-ms-transform: translate(5px,0);
+}
+
+#mu {
+border-left: 0!important;
+border-right: 0!important;
+width: 100%!important;
+min-width: 1180px!important;
+background: #24C7FC!important;
+}
+
+#mu ul {
+width: 100%;
+border: 0;
+padding: 6px 0!important;
+min-width: 1180px;
+position: relative!important;
+background-color: #24C7FC!important;
+background: rgba(36,199,252,0.8)!important;
+border-bottom: 0!important;
+width: 1180px;
+margin: 0 auto;
+}
+
+#mu a {
+border: 0;
+font-size: 12px;
+border: 1px solid #24C7FC;
+margin: 0px 5px;
+color: #fff;
+display: inline-block!important;
+height: 25px;
+line-height: 25px;
+padding: 0 6px!important;
+border-radius: 20px;
+}
+
+#mu a:hover {
+margin: 0px 5px;
+border: 1px solid #fff!important;
+background: #24C7FC;
+color: #fff;
+text-decoration: none;
+}
+
+#scbar {
+height: 45px;
+overflow: hidden;
+zoom: 1;
+width: 335px;
+border-radius: 10px;
+border-top: 0;
+border-bottom: 0;
+background: none;
+}
+
+#scbar_txt {
+width: 245px!important;
+padding-left: 40px;
+font-family: Microsoft Yahei;
+color: #999;
+height: 45px;
+line-height: 45px;
+font-size: 14px;
+border: 0;
+background: rgba(255,255,255,0.8) url(../images/search.png) 10px center no-repeat;
+}
+
+#scbar_btn {
+background:#91004B;
+color:#fff;
+border: 0;
+width: 80px;
+font-family: Microsoft Yahei;
+border-radius: 0 10px 10px 0;
+height: 45px;
+line-height: 45px;
+}
+
+.deansidetools {
+width: 50px;
+z-index: 999999;
+position: fixed;
+right: 1%;
+top: 50%;
+}
+
+.deansidetools ul {
+}
+
+.deansidetools ul li {
+width: 50px;
+height: 50px;
+position: relative;
+}
+
+.deansidetools ul li a {
+display: block;
+width: 50px;
+height: 50px;
+border-radius: 100%;
+background: url(../images/gotop.png) no-repeat;
+transition: none;
+-webkit-transition: none;
+-moz-transition: none;
+-o-transition: none;
+}
+
+.deansidetools ul li a.deanqqservices {
+background-position: center -5px;
+}
+
+.deansidetools ul li a.deanqqservices:hover {
+background-position: center -245px;
+}
+
+.deansidetools ul li a span {
+display: block;
+min-width: 150px;
+text-align: center;
+height: 27px;
+line-height: 27px;
+background: #7F8187;
+border-radius: 24px;
+font-size: 12px;
+color: #fff;
+position: absolute;
+top: 12px;
+right: 55px;
+-webkit-transition: all 0.3s linear;
+-moz-transition: all 0.3s linear;
+-o-transition: all 0.3s linear;
+-ms-transition: all 0.3s linear;
+transition: all 0.3s linear;
+display: none;
+}
+
+.deansidetools ul li a:hover span {
+display: block;
+}
+
+.deansidetools ul li a span.deantelsd {
+width: 170px;
+}
+
+.deansidetools ul li a.deansidetoolcontact {
+background-position: center -65px;
+}
+
+.deansidetools ul li a.deansidetoolcontact:hover {
+background-position: center -305px;
+}
+
+.deansidetools ul li a.deansidetoolfankui {
+background-position: center -125px;
+}
+
+.deansidetools ul li a.deansidetoolfankui:hover {
+background-position: center -365px;
+}
+
+.deansidetools ul li a span i {
+display: block;
+position: absolute;
+right: -5px;
+top: 9px;
+width: 6px;
+height: 7px;
+background: url(../images/jiao.png) center no-repeat;
+}
+
+#scrolltop {
+display: block;
+width: 50px;
+height: 50px;
+left: 0!important;
+right: -1px!important;
+background: none;
+position: absolute!important;
+bottom: -50px;
+cursor: pointer;
+z-index: 222222;
+border-top: 0;
+border: 0;
+border-radius: 0!important;
+}
+
+#scrolltop a {
+width: 50px;
+height: 50px;
+border-top: 0;
+border: 0;
+padding: 0;
+background: url(../images/gotop.png) no-repeat;
+z-index: 222222;
+background-position: center -185px;
+transition: none;
+-webkit-transition: none;
+-moz-transition: none;
+-o-transition: none;
+}
+
+a.scrolltopa:hover {
+background-position: center -425px!important;
+background: url(../images/gotop.png) no-repeat;
+z-index: 222222;
+}
+
+#scrolltop a span {
+opacity: 0;
+padding: 0 15px;
+height: 27px;
+border-radius: 24px;
+width: 60px;
+display: block;
+line-height: 27px;
+background: #7F8187;
+font-size: 12px;
+color: #fff;
+position: absolute;
+top: 12px;
+right: 55px;
+-webkit-transition: all 0.3s linear;
+-moz-transition: all 0.3s linear;
+-o-transition: all 0.3s linear;
+-ms-transition: all 0.3s linear;
+transition: all 0.3s linear;
+}
+
+#scrolltop a:hover span {
+opacity: 1;
+}
+
+#scrolltop a span i {
+display: block;
+position: absolute;
+right: -5px;
+top: 9px;
+width: 6px;
+height: 7px;
+background: url(../images/jiao.png) center no-repeat;
+}
+
+.deanfooter {
+margin-top: 30px;
+width: 100%;
+min-width: 1180px;
+background: #141414;
+padding: 40px 0;
+}
+
+.deanfttop {
+padding-bottom: 30px;
+}
+
+.deanfttopl {
+float: left;
+width: 300px;
+}
+
+.deanftlogo {
+width: 200px;
+margin-bottom: 10px;
+}
+
+.deanftlogo img {
+width: 200px;
+}
+
+.deanftltxt {
+font-size: 12px;
+height: 23px;
+line-height: 23px;
+width: 100%;
+overflow: hidden;
+color: #999;
+}
+
+.deanftltxt a {
+color: #999;
+}
+
+.deanfttopm {
+float: left;
+width: 600px;
+}
+
+.deanfttopm ul {
+}
+
+.deanfttopm ul li {
+float: left;
+padding: 0 50px 0 0;
+width: 150px;
+}
+
+.deanfttopm ul li h5 {
+height: 40px;
+line-height: 15px;
+font-size: 16px;
+color: #999;
+font-weight: normal;
+}
+
+.deanitemsft {
+border-right: 1px solid #232323;
+width: 165px;
+}
+
+.deanitemsft a {
+display: inline-block;
+margin: 0 12px 10px 0;
+font-size: 14px;
+color: #999;
+height: 18px;
+line-height: 18px;
+}
+
+.deanitemsft a:hover {
+color: #24C7FC
+}
+
+.deanfttopr {
+float: right;
+}
+
+.deanftgirls {
+width: 90px;
+margin-right: 15px;
+float: left;
+}
+
+.deanftgirls img {
+width: 107px;
+}
+
+.deamftewmm {
+border-radius: 4px;
+float: right;
+background: #fff;
+border: 2px solid #24C7FC;
+width: 100px;
+height: 100px;
+padding: 10px;
+}
+
+.deamftewmm img {
+width: 100px;
+height: 100px;
+}
+
+.deanftbottom {
+text-align: center;
+}
+
+.deanftbottom img.deanftlogo {
+margin-bottom: 20px;
+}
+
+.deanftbottom p {
+height: 36px;
+line-height: 26px;
+}
+
+.deanftbottom p,.deanftbottom a {
+font-size: 12px;
+color: #848586;
+}
+
+.deanftbottom p.deanpp span {
+display: none;
+}
+
+.deanftbottom p.deanpp a {
+margin-right: 10px;
+}
+
+.deanftbottom p a:hover {
+color: #24C7FC;
+}
+
+.deandl {
+float: left;
+width: auto;
+height: 40px;
+line-height: 40px;
+}
+
+.deanundl {
+margin-top: 13px;
+float: left;
+}
+
+.deanundl ul {
+}
+
+.deanundl ul li {
+float: left;
+margin-left: 5px;
+}
+
+.deanundl ul li.deandlfde a {
+border-left: 0!important;
+}
+
+.deanundl ul li a {
+display: inline-block;
+float: left;
+margin-left: 12px;
+font-size: 12px;
+color: #fff;
+border-left:0px solid #ededed;
+height: 15px;
+line-height: 15px;
+padding-left: 19px;
+}
+
+.deanundl ul li a:hover {
+color: #24C7FC;
+}
+
+
+
+
+
+.ceandl {
+float: left;
+width: auto;
+height: 40px;
+line-height: 40px;
+}
+
+.ceanundl {
+margin-top: 13px;
+float: left;
+}
+
+.ceanundl ul {
+}
+
+.ceanundl ul li {
+float: left;
+margin-left: 5px;
+}
+
+.ceanundl ul li.ceandlfde a {
+border-left: 0!important;
+}
+
+.ceanundl ul li a {
+display: inline-block;
+float: left;
+margin-left: 12px;
+font-size: 12px;
+color: #fff;
+border-left:0px solid #ededed;
+height: 15px;
+line-height: 15px;
+padding-left:29px;
+}
+
+.ceanundl ul li a:hover {
+color: #24C7FC;
+}
+
+
+.deandlqq {
+background: url(../images/qq.png) 10px center no-repeat;
+}
+
+.deandlwx {
+background: url(../images/wx.png) 10px center no-repeat;
+}
+
+.deandldl {
+background: url(../images/login.png) 10px center no-repeat;
+}
+
+.deandlzc {
+background: url(../images/register.png) 10px center no-repeat;
+}
+
+.logininfo {
+position: absolute;
+height: 41px;
+bottom: 0px;
+right: 40px;
+color: #333;
+}
+
+.logins {
+float: right;
+overflow: hidden;
+width: 100px;
+height: 41px;
+}
+
+.deanlogin {
+float: right;
+width: auto;
+}
+
+.deanlogin ul {
+overflow: hidden;
+float: right;
+}
+
+.deanlogin ul li {
+float: left;
+}
+
+.qq_bind {
+margin-top: 3px;
+width: 75px;
+height: 22px;
+}
+
+#myprompt {
+background: url(../images/bell.png) left center no-repeat;
+}
+
+.deanlogin dd a {
+color: #666;
+}
+
+.loginout a,.deanvwmy a {
+color: #eee;
+}
+
+.unlogin {
+position: absolute;
+top: 0;
+right: 0px;
+}
+
+.unlogin a {
+display: block;
+width: 48px;
+margin: 0;
+height: 41px;
+overflow: hidden;
+line-height: 41px;
+text-align: center;
+float: left;
+padding: 0;
+font-size: 16px;
+font-family: microsoft yahei;
+background: #fff;
+color: #333;
+margin-left: 10px;
+}
+
+#deanmemberinfo {
+position: absolute;
+text-align: center;
+right: 0;
+top: 0;
+padding: 0;
+width: 60px;
+z-index: 121;
+height: 40px;
+line-height: 40px;
+font-size: 16px;
+overflow: hidden;
+}
+
+#deanmemberinfo.curs,#deanmemberinfo:hover {
+background: #fff;
+}
+
+#deanmemberinfo a {
+color: #555;
+font-family: microsoft yahei;
+font-size: 14px;
+}
+
+#deanmembercontent {
+display: none;
+position: absolute;
+z-index: 120;
+background: #fff;
+right: 0;
+top: 40px;
+width: 77px;
+border: 1px solid #ededed;
+border-top: 0;
+border-radius: 0 0 10px 10px;
+}
+
+#deanmemberinfo.curs a {
+color: #24C7FC;
+}
+
+#deanmemberinfo.curs i,#deanmemberinfo:hover i {
+background: url(../images/header-down-arrow-w1.png) center no-repeat;
+}
+
+#deanmemberinfo a span {
+display: block;
+width: 60px;
+height: 60px;
+overflow: hidden;
+line-height: 0;
+position: absolute;
+z-index: 6;
+top: 0;
+right: 8px;
+}
+
+#deanmembercontent dd {
+display: block;
+line-height: 20px;
+clear: both;
+text-align: center;
+}
+
+#deanmembercontent dd a:hover {
+color: #24C7FC;
+}
+
+#deanmembercontent dd a {
+color: #555;
+font-size: 12px;
+display: block;
+height: 30px;
+line-height: 30px;
+font-family: Microsoft Yahei;
+}
+
+.deandiybtn {
+float: left;
+}
+
+.deandiybtn a {
+display: block;
+margin-right: 15px;
+width: 50px!important;
+margin-top: 10px;
+border-radius: 2px;
+text-align: center;
+font-size: 12px;
+color: #fff;
+height: 17px!important;
+line-height: 17px!important;
+background: #24C7FC!important;
+}
+
+#diy-tg {
+text-indent: 0;
+background: none;
+}
+
+#g_upmine {
+padding-left: 0px;
+}
+
+.deanunlogin a {
+float: left;
+padding-left: 6px;
+display: block;
+color: #666;
+}
+
+.deanunlogin a:hover {
+color: #2A629D;
+}
+
+.deanadmin {
+height: 22px;
+line-height: 26px;
+display: block;
+overflow: hidden;
+font-size: 12px;
+color: #fff;
+text-align: center;
+padding: 0 10px!important;
+width: 58px;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+
+.deanvwmy i {
+display: block;
+width: 12px;
+height: 6px;
+margin-top: 16px;
+margin-right: 6px;
+background: url(../images/menudown.png) center no-repeat;
+float: right;
+-webkit-transition: all 0.3s linear;
+-moz-transition: all 0.3s linear;
+-o-transition: all 0.3s linear;
+-ms-transition: all 0.3s linear;
+transition: all 0.3s linear;
+}
+
+.deanvwmy img {
+width: 30px;
+height: 30px;
+border-radius: 24px;
+margin-right: 3px;
+margin-top: 5px;
+}
+
+#deanmemberinfo.curs i,#deanmemberinfo:hover i {
+background: url(../images/menudown1.png) center no-repeat;
+transform: rotate(180deg);
+-webkit-transform: rotate(180deg);
+-moz-transform: rotate(180deg);
+-o-transform: rotate(180deg);
+-ms-transform: rotate(180deg);
+}
+
+#um dl dd {
+float: left;
+margin-right: 5px;
+}
+
+#pm_ntc {
+background: url(../images/message.png) left center no-repeat;
+}
+
+#pm_ntc.new {
+background: url(../images/message1.png) left center no-repeat;
+}
+
+.deantongzhi {
+float: left;
+height: 40px;
+line-height: 40px;
+margin-right: 20px;
+display: inline-block;
+}
+
+.deantongzhi .new span {
+font-size: 12px;
+background: #24C7FC;
+font-weight: normal;
+border-radius: 2px;
+color: #fff;
+}
+
+#toptb .new {
+padding-left: 14px;
+font-weight: normal;
+padding-left: 24px;
+}
+
+#pm_ntc,#myprompt.new,#myprompt {
+padding-left: 22px!important;
+}
+
+#myprompt.new {
+background: url(../images/bell1.png) left center no-repeat!important;
+}
+
+ .jiao span {
+	background-color: #f30839;
+	position: absolute;
+	top: 0;
+	padding: 3px 15px;
+	font-weight: bold;
+	font-size: 14px;
+	left: 0;
+	color: #fff;
+}

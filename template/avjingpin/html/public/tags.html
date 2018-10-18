@@ -1,0 +1,22 @@
+<div class="block info">
+	<h2>热门标签</h2>
+	<div class="stags" id="stags">		
+		
+		{maccms:foreach name="$maccms.search_hot_arr" id="hot"}
+		<a target="_blank" href="/vod/search/wd/{$hot}" title="{$hot}" >{$hot}</a>
+		{/maccms:foreach}		
+	</div>	
+</div>
+<script>
+	
+	$(function(){		
+		var items = $("#stags a") ,ran = 0;		
+		for (var i = 0; i < items.length; i++) {
+			ran = Math.ceil(Math.random()*14);
+			items.eq(i).css({
+				"font-weight": (ran > 10 ? "bold" : "100"),
+				"font-size":12 + ran
+			})
+		}		
+	})
+</script>

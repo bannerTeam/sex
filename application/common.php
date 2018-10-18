@@ -1694,9 +1694,19 @@ function mac_time_range( $time )
     }
 }
 
-function mac_curstr($str){
+/**
+ * 字符串截取
+ * @param unknown $str 字符串
+ * @param unknown $len 截取长度
+ * @return string
+ */
+function mac_curstr($str,$len){
     
-    return mb_substr($str,0,15,"UTF-8");
+    if(empty($len)){
+        $len = 15;
+    }
+    
+    return mb_substr($str,0,$len,"UTF-8");
     
 }
 

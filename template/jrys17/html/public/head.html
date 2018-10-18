@@ -1,0 +1,63 @@
+<div class="head">
+	<div class="deanmaintops" id="deandingbu">
+		<div class="deanheaderbg">
+			<div class="w1180">
+				<div class="deanlogo">
+					<h2><a href="./"><img src="{$maccms.path_tpl}images/logo.png" border="0"></a></h2></div>
+				<div class="deansearch">
+					<div id="scbar" class="cl">
+						<form class="topnav_menu_search" name="searchform" method="post" action="{:mac_url('vod/search')}">
+							
+							<table cellspacing="0" cellpadding="0">
+								<tbody>
+									<tr>
+										<td>
+											<input name="wd" type="text" class="xg1" id="scbar_txt" placeholder="输入关键词搜索..." value="">
+										</td>
+										<td><button type="submit" name="submit" class="pn pnc" id="scbar_btn" value="true">搜&nbsp;索&nbsp;</button></td>
+									</tr>
+								</tbody>
+							</table>
+						</form>
+					</div>
+
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="nav-pinupbox">
+		<div class="nav-pinup stuckMenu" style="position: relative; top: 0px;">
+			<div class="menu">				
+				<ul class="f16 menu-list leftside" id="leftside">
+					<li class="{if condition=" $maccms.aid eq 1 "} active{/if}">
+						<a href="/">网站首页</a>
+					</li>
+					{maccms:type parent="menu-itema" order="asc" by="sort"}
+					<li class="{if condition=" ($vo.type_id eq MAC_TYPE_ID || $vo.type_id eq MAC_TYPE_PID) "} active{/if}">
+						<a href="{:mac_url_type($vo,[],'type')}" title="{$vo.type_name}">{$vo.type_name}</a>
+					</li>
+					{/maccms:type}					
+
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<script>
+	
+	$(function(){
+		
+		if($(window).width() < 620){
+			$("#leftside").css({
+				width:$("#leftside li").length * 107
+			});
+		}	
+			
+		
+	});
+	
+</script>

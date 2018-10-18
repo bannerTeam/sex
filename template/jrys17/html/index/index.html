@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="cache-control" content="no-siteapp">
+		<title>{$maccms.site_name}-高清云影视免费为大家提供最新最全的免费电影</title>
+
+		<meta name="keywords" content="{$maccms.site_keywords}">
+		<meta name="description" content=" {$maccms.site_description} "> {include file="public/include"}
+
+	</head>
+
+	<body class="index">
+
+		{include file="public/head"}
+
+		<div class="main">
+			<div class="panel panel-default">
+				<div style="height:5px;"></div>
+				<div class="panel-head">					
+					<h2 class="f-l fa colordef fa-upload hot-title panel-title">最新视频</h2></div>
+				<div class="panel-body">
+					<ul class="panel-list">
+						{maccms:vod num="15" type="all" order="desc"  }
+						<li class="video ">
+							<a href="{:mac_url_vod_detail($vo)}" target="_blank" title="{$vo.vod_name}">
+								<div class="thumb"><img src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}"></div>
+								<h2 class="f16 video-title">{$vo.vod_name|mac_curstr}</h2>
+								<div class="f12 video-details">
+									<div class="video-details-1">
+										<span class="f-l fa fa-calendar-check-o"> {$vo.vod_time_add|date="y-m-d",###}</span>
+										</div>
+									<div class="video-details-2">
+										<span class="f-r fa fa-eye"> 已被观看：{$vo.vod_hits} 次</span></div>
+									<!--<div class="icons"><i class="icon-play"></i></div>-->
+								</div>
+							</a>
+						</li>
+						{/maccms:vod}					
+
+					</ul>
+				</div>
+
+			</div>
+			<div class="clearfix"></div>
+			{maccms:ad flag='i_banner'}
+				<a href="{$i_banner.link}" target="_blank">
+					<img style="width:100%;min-height: 50px;" src="{$i_banner.img}">
+				</a>
+			{/maccms:ad}
+			<div class="clearfix"></div>
+			{maccms:type parent="current" order="asc" by="sort" mid="1" id="vo1"}
+			
+			<div class="panel panel-default">
+				<div style="height:5px;"></div>
+				<div class="panel-head">
+					<a href="{:mac_url_type($vo)}" class="f-r morelink">更多视频</a>
+					<h2 class="f-l fa colordef fa-upload hot-title panel-title">{$vo1.type_name}</h2></div>
+				<div class="panel-body">
+					<ul class="panel-list">
+						{maccms:vod num="10" type="'.$vo1['type_id'].'" order="desc" by="time"}
+						<li class="video ">
+							<a href="{:mac_url_vod_detail($vo)}" target="_blank" title="{$vo.vod_name}">
+								<div class="thumb"><img src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}"></div>
+								<h2 class="f16 video-title">{$vo.vod_name|mac_curstr}</h2>
+								<div class="f12 video-details">
+									<div class="video-details-1">
+										<span class="f-l fa fa-calendar-check-o"> {$vo.vod_time_add|date="y-m-d",###}</span>
+										</div>
+									<div class="video-details-2">
+										<span class="f-r fa fa-eye"> 已被观看：{$vo.vod_hits} 次</span></div>
+									
+								</div>
+							</a>
+						</li>
+						{/maccms:vod}					
+
+					</ul>
+				</div>
+
+			</div>
+			
+			{/maccms:type}
+		</div>
+		
+		{include file="public/foot"}
+		
+	</body>
+
+</html>

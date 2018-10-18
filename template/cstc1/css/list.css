@@ -1,0 +1,34 @@
+﻿@charset "utf-8";
+.filter-box{ position: relative; clear: both; margin: 10px auto 22px auto; border: 1px #e8e8e8 solid; padding: 0 10px; overflow: hidden;}
+.filter-row{border-bottom: 0px #e8e8e8 dashed; padding: 8px 0; margin: 10px auto;}
+.filter-row:after{clear: both; content: ""; display: block;}
+.filter-head{float: left; width:8%; margin-top:8px; padding-right:35px; text-align: right; color: #999;}
+.filter-body{float: left; width:92%;}
+.filter-body a{padding: 5px 8px; background:#C8C8C8; color: #fff; border-radius: 10px; line-height:40px;margin-right: 7px;}
+.filter-body a.selected-a{background: #f50; color: #fff; border-radius: 10px;}
+.more-down-up{ position: relative;}
+.more-down,.more-up{display: block; width: 80px; text-align: center; font-size: 12px; height: 25px; line-height: 25px; background: #e8e8e8; position: absolute; left: 50%; margin-left: -40px; margin-top: -40px;}
+.more-down a:after{font-family: "iconfont"; content: "\e60d"; font-size: 14px;}
+.more-up a:after{font-family: "iconfont"; content: "\e602"; font-size: 14px;}
+.filter-sequence-box{width: 1200px; height: 40px; background: #f5f5f5; border:1px #e8e8e8 solid; margin: 15px auto;}
+.f-l-select{ padding: 0 20px; margin: 4px auto; line-height: 30px;}
+.select-parent{ background:#fff url(../images/arrow-down.png) no-repeat right center;  width: auto; height: 30px; overflow: hidden; border: solid 1px #e8e8e8; float: left; margin-right: 20px;}
+.select-parent select{ -webkit-appearance:none; -moz-appearance:none; appearance:none; background:transparent; border:none; line-height: 28px; padding:0 20px 0 10px; height:100%; color: #ff4400; float: left;}
+.filter-sequence-list li{ line-height: 38px; padding: 0 15px; float: left; border-left: 1px #e8e8e8 solid;}
+.filter-sequence-list li.active{ background: #fff;}
+.filter-sequence-list .active a{color: #ff4400;}
+.filter-sequence-list li a{ }
+#tags_choose span {
+border: 1px solid #eee;
+cursor: pointer;
+font-size: 14px;
+line-height: 26px;
+margin-right: 5px;
+padding: 5px;
+float: left
+}
+#tags_choose span:hover{
+border: 1px solid red;
+color: red;
+}
+#tags_choose font{padding-left: 5px}

@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="cache-control" content="no-siteapp">
+		<title>{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索结果 - {$maccms.site_name}</title>
+
+		<meta name="keywords" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索结果" />
+    <meta name="description" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索结果" />
+		{include file="public/include"}
+		
+		
+	</head>
+
+	<body>
+		{include file="public/head"}
+		
+		<div class="main">
+			<div class="clearfix"></div>
+			<div>
+				{maccms:ad flag='s_banner'}
+						<a href="{$s_banner.link}" target="_blank">
+				        <img style="width:100%;min-height: 50px;" src="{$s_banner.img}">
+				     </a>
+				 {/maccms:ad} 
+			</div>
+			<div class="clearfix"></div>
+			<div class="panel panel-default">
+				<div style="height:5px;"></div>
+				<div class="panel-head">
+					<div class="f-r lh40">共有视频<span class="f20 colordef " id="listCount"></span> 部</div>
+					<h2 class="f-l f18 colordef panel-title">{$param.wd}</h2><span class="lh40 colorgray"></span>
+				</div>
+				<div class="panel-body">
+					<ul class="panel-list">
+						{maccms:vod num="40" paging="yes" pageurl="vod/search" type="current" order="desc" }
+						<li class="video ">
+							<a href="{:mac_url_vod_detail($vo)}" target="_blank" title="{$vo.vod_name}">
+								<div class="thumb"><img src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}"></div>
+								<h2 class="f16 video-title">{$vo.vod_name|mac_curstr}</h2>
+								<div class="f12 video-details">
+									<div class="video-details-1">
+										<span class="f-l fa fa-calendar-check-o"> {$vo.vod_time_add|date="Y-m-d",###}</span>
+									</div>
+									<div class="video-details-2">
+										<span class="f-r fa fa-eye"> 已被观看：{$vo.vod_hits} 次</span></div>
+									<!--<div class="icons"><i class="icon-play"></i></div>-->
+								</div>
+							</a>
+						</li>
+						{/maccms:vod}
+
+					</ul>
+					
+					<div class="v-rv-page-box">
+						{include file="public/paging"}
+					</div>
+						
+				</div>
+
+			</div>
+		</div>
+
+
+
+
+		{include file="public/foot"}
+		 <script>
+	        $('.mac_total').html('{$__PAGING__.record_total}');
+	    </script>
+	</body>
+
+</html>

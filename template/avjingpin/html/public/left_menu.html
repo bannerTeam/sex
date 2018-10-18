@@ -1,0 +1,16 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">目录</h3>
+	</div>
+	<div class="panel-body no-padding">
+		<ul class="nav nav-stacked navigation">
+			{maccms:type parent="menu-itema" order="asc" by="sort"}
+			<li class="{if condition="($vo.type_id eq MAC_TYPE_ID || $vo.type_id eq MAC_TYPE_PID)"} active{/if}">
+				<a href="{:mac_url_type($vo,[],'type')}">{$vo.type_name}
+				<span class="badge category-count pull-right"></span>
+				</a>
+			</li>
+			{/maccms:type}
+		</ul>
+	</div>
+</div>
