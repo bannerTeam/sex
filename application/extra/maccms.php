@@ -26,10 +26,10 @@ return array (
     'site_qq' => '2640963460',
     'site_email' => '2640963460@qq.com',
     'install_dir' => '/',
-    'template_dir' => 'jrys17',
+    'template_dir' => 'avhub',
     'html_dir' => 'html',
     'mob_status' => '0',
-    'mob_template_dir' => 'jrys17',
+    'mob_template_dir' => 'avhub',
     'mob_html_dir' => 'html',
     'site_tj' => 'var _hmt = _hmt || [];
 	(function() {

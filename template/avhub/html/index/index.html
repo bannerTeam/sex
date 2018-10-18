@@ -30,10 +30,8 @@
 					{/maccms:ad}
 				</div>
 
-				<div class="col-md-2 hidden-xs hidden-sm">
-					{include file="public/left_menu"}					
-				</div>
-				<div class="col-xs col-sm-12 col-md-10">
+				
+				<div class="col-xs col-sm-12 col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h2 class="panel-title">热播推荐</h2>
@@ -41,56 +39,47 @@
 						<div class="panel-body panel-padding">
 							<ul class="videos">
 								{maccms:vod num="10" type="all" by="hits_day" order="desc" timeadd="7" }
+								
 								<li>
-									<div class="video">
-										<a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" class="thumbnail">
-											<div class="video-thumb"> <img onerror="this.src='{$maccms.path_tpl}images/nopic.gif'" src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" width="200" height="135"> </div> <span class="video-title">{$vo.vod_name}</span>
-											<div class="video-details hidden-xs hidden-sm"> <span class="pull-left">{$vo.vod_time_add|mac_time_range}</span> <span class="pull-right text-right">{$vo.vod_hits} 次播放</span> </div>
-										</a>
-									</div>
+									<div class="video"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" class="thumbnail">
+<div class="video-thumb"><img src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" ></div>
+<span class="video-title">{$vo.vod_name}</span><span class="video-overlay badge transparent">{$vo.vod_time_add|mac_time_range}</span>
+<div class="video-details hidden-xs hidden-sm"><span class="pull-right text-right">{$vo.vod_hits} </span></div></a></div>
 								</li>
-								{/maccms:vod}	
+								
+								{/maccms:vod}
 							</ul>
 							<div class="clearfix"></div>
 							<div class="clearfix"></div>
 						</div>
 					</div>
 					
-					{maccms:type parent="current" order="asc" by="sort" mid="1" id="vo1"}
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h2 class="panel-title">{$vo1.type_name}</h2>
+							<h2 class="panel-title">最新上传视频</h2>
 						</div>
 						<div class="panel-body panel-padding">
 							<ul class="videos">
-								{maccms:vod num="10" type="'.$vo1['type_id'].'" order="desc" by="time"}
+								{maccms:vod num="30"  paging="yes" pageurl="index/index" order="desc" timeadd="7" }
+								
 								<li>
-									<div class="video">
-										<a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" class="thumbnail">
-											<div class="video-thumb"> <img onerror="this.src='{$maccms.path_tpl}images/nopic.gif'" src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" width="200" height="135"> </div> <span class="video-title">{$vo.vod_name}</span> 
-											<div class="video-details hidden-xs hidden-sm"> <span class="pull-left">{$vo.vod_time_add|mac_time_range}</span> <span class="pull-right text-right">{$vo.vod_hits} 次播放</span> </div>
-										</a>
-									</div>
+									<div class="video"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" class="thumbnail">
+<div class="video-thumb"><img src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" ></div>
+<span class="video-title">{$vo.vod_name}</span><span class="video-overlay badge transparent">{$vo.vod_time_add|mac_time_range}</span>
+<div class="video-details hidden-xs hidden-sm"><span class="pull-right text-right">{$vo.vod_hits} </span></div></a></div>
 								</li>
+								
 								{/maccms:vod}	
 							</ul>
 							<div class="clearfix"></div>
+							<div class="v-rv-page-box" style="margin-top: 20px;">
+								{include file="public/paging"}
+							</div>
 							<div class="clearfix"></div>
 						</div>
 					</div>
 					
 					
-					{/maccms:type}
-					
-					<!--<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">友情链接</h3></div>
-						<div class="panel-body">
-
-							<a href="" class="btn btn-default btn-xs margin-bottom-5" target="_blank" title=""><i class="fa fa-tag"></i>撸草湾</a>
-
-						</div>
-					</div>-->
 					
 					
 				</div>

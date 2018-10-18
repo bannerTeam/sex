@@ -22,7 +22,21 @@
 				"mob_status": "{$maccms['mob_status']}"
 			};
 		</script>
-		<link href="{$maccms.path_tpl}css/style_video.css" rel="stylesheet">
+		<style>
+			.players{ height: 650px;}
+			@media (max-width: 1000px){	
+				.players{
+					height: 450px;
+				}
+			}
+			@media (max-width: 600px){	
+				.players{
+					height: 300px;
+				}
+			}
+			
+		</style>
+		
 	</head>
 
 	<body>
@@ -33,7 +47,13 @@
 			
 			<div id="video" class="row">
 				<h2>{$obj.vod_name}</h2>
-				<div class="right hidden-xs hidden-sm">
+				<div class=" content content-video">
+					<div class="players">
+						{$player_data}
+    					{$player_js}
+					</div>
+				</div>
+				<div class=" hidden-xs hidden-sm">
 					<div class="content">
 						<div class="ads">
 							{maccms:ad flag='d_right'}
@@ -44,22 +64,13 @@
 						</div>
 					</div>
 				</div>
-				<div class="left content content-video">
-					<div class="players">
-						{$player_data}
-    					{$player_js}			
-
-					</div>
-
-					
-					
-				</div>
+				
 				
 			</div>
 			<div class="clearfix"></div>
 			{maccms:ad flag='d_foot'}
 				<a href="{$d_foot.link}" target="_blank">
-			        <img  src="{$d_foot.img}" class="card-img">
+			        <img  width="100%" src="{$d_foot.img}" class="card-img">
 			     </a>
 			 {/maccms:ad}
 			
@@ -90,11 +101,14 @@
 			</div>
 		
 			<div class="clearfix"></div>
-			{maccms:ad flag='d_bottom'}
-				<a href="{$d_bottom.link}" target="_blank">
-			        <img  src="{$d_bottom.img}" >
-			     </a>
-			{/maccms:ad}   
+			<div>
+				{maccms:ad flag='d_bottom'}
+					<a href="{$d_bottom.link}" target="_blank">
+				        <img src="{$d_bottom.img}" >
+				     </a>
+				{/maccms:ad}  
+			</div>
+			 
 			
 		</div>
 

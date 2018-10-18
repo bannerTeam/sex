@@ -31,26 +31,9 @@
 				 {/maccms:ad} 
 				</div>
 
-				<div class="col-md-2 hidden-xs hidden-sm">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">热门推荐</h3>
-						</div>
-						<div class="panel-body no-padding">
-							<ul class="nav nav-stacked navigation">
-								{maccms:vod num="12" type="all" by="hits_day" order="desc" timeadd="7" }
-								<li>
-									<a target="_blank" href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}									
-									</a>
-								</li>
-								{/maccms:vod}
-			
-							</ul>
-						</div>
-					</div>				
-				</div>
-				<div class="col-xs col-sm-12 col-md-10">
-					<div class="panel panel-default">
+				
+				<div class="col-xs col-sm-12 col-md-12">
+					<div class="panel panel-default" style="margin-top: 20px;">
 						<div class="panel-heading">
 							<h2 class="panel-title">搜索" <strong style="color:#FF0000">{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}</strong>" &nbsp;&nbsp;&nbsp;共 " <strong  class="mac_total" style="color:#FF0000"></strong>" 个资源</h2>
 						</div>

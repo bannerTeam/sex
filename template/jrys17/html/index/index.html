@@ -26,7 +26,7 @@
 					<h2 class="f-l fa colordef fa-upload hot-title panel-title">最新视频</h2></div>
 				<div class="panel-body">
 					<ul class="panel-list">
-						{maccms:vod num="12" paging="yes" pageurl="index/index" type="all" order="desc"  }
+						{maccms:vod num="12" type="all" order="desc"  }
 						<li class="video ">
 							<a href="{:mac_url_vod_detail($vo)}" target="_blank" title="{$vo.vod_name}">
 								<div class="thumb"><img src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}"></div>
