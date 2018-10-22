@@ -1,0 +1,150 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="cache-control" content="no-siteapp">
+
+		<title>在线播放{$obj.vod_name} {$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']} - {$maccms.site_name}</title>
+		<meta name="keywords" content=">{$obj.vod_name} {$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']} - {$maccms.site_name}">
+		<meta name="description" content=">{$obj.vod_name} {$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']} - {$maccms.site_name}"> {include file="public/include"}
+
+		<script>
+			var maccms = {
+				"path": "__ROOT__",
+				"mid": "{$maccms['mid']}",
+				"url": "{$maccms['site_url']}",
+				"wapurl": "{$maccms['site_wapurl']}",
+				"mob_status": "{$maccms['mob_status']}"
+			};
+		</script>
+	</head>
+
+	<body>
+		{include file="public/head"}
+
+		<div id="wrapper">
+			<div class="container hidden-xs">
+				{include file="index/adv"}
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<div id="video-body">
+							{$player_data} {$player_js}
+						</div>
+						<div class="col-md-12 video_player_tools" style="margin-bottom:10px;">
+							<div class="row nopadding">
+								<div class="col-md-12">
+									<h3 class="hidden-xs big-title-truncate m-t-0">
+								{$obj.vod_name}
+							</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 unvisible hidden-xs">
+						<div class="ps-body">
+
+							{maccms:ad flag='d_right'}
+							<a href="{$d_right.link}" target="_blank">
+								<img style="width:100%;" src="{$d_right.img}">
+							</a>
+							{/maccms:ad}
+
+						</div>
+
+					</div>
+				</div>
+
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a href="#related_videos" data-toggle="tab">相关视频 </a>
+					</li>
+				</ul>
+				<div class="tab-content m-b-20">
+					<div class="tab-pane fade active in" id="related_videos">
+
+						<div class="row row-boder">
+							{maccms:vod num="8" type="all" by="hits_day" order="desc" timeadd="7" }
+							<div class="col-sm-6 col-md-3 col-lg-3">
+								<div class="well well-sm m-b-0 m-t-20">
+									<a href="{:mac_url_vod_detail($vo)}">
+										<div class="thumb-overlay">
+											<img src="{:mac_url_img($vo.vod_pic)}" title="{$vo.vod_name}" alt="{$vo.vod_name}" id="" class="img-responsive ">
+											<div class="label-private"></div>
+											<div class="duration">
+											</div>
+										</div>
+										<span class="video-title title-truncate m-t-5">{$vo.vod_name}</span>
+									</a>
+									<div class="video-added">
+
+										{$vo.vod_time_add|mac_time_range}
+									</div>
+									<div class="video-views pull-left">
+										<i class="fa fa-eye"></i>&nbsp;{$vo.vod_hits}
+									</div>
+									<!--<div class="video-rating pull-right no-rating">
+										<i class="fa fa-thumbs-up video-rating-heart no-rating"></i> <b>-</b>
+									</div>-->
+									<div class="clearfix"></div>
+
+								</div>
+							</div>
+							{/maccms:vod}
+
+						</div>
+						<div id="related_videos_container_1"></div>
+
+						<center>
+							<div class="center_related" style="margin: -6px 0px -26px;"><img src="{$maccms.path_tpl}images/loading-bubbles.svg"></div>
+							<ul class="pager">
+								<li>
+									<a href="#prev_related_videos" id="prev_related_videos_205015" style="display: none;">隐藏</a>
+								</li>
+								<li>
+									<a href="#next_related_videos" id="next_related_videos_205015">显示更多</a>
+								</li>
+							</ul>
+						</center>
+
+					</div>
+
+					
+				</div>
+				
+				<div class="ps-body">
+					{maccms:ad flag='d_bottom'}
+						<a href="{$d_bottom.link}" target="_blank">
+					        <img  src="{$d_bottom.img}" >
+					     </a>
+					{/maccms:ad}   
+				</div>
+			</div>
+
+		</div>
+
+		
+		<script>
+			
+			(function(){
+				var vdiv = $('#video-body');
+				var width = vdiv.width();
+				height =  Math.round(width / (1280 / 720));
+				vdiv.css("height" , height);
+			})();
+			
+
+			
+		</script>
+
+		{include file="public/foot"}
+
+	</body>
+
+</html>

@@ -1,0 +1,88 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta http-equiv="cache-control" content="no-siteapp">
+<title>{$maccms.site_name}-最新电影</title>
+ {include file="public/include"}
+<link rel='stylesheet' id='main-css'  href='{$maccms.path_tpl}css/movie.css' type='text/css' media='all' />
+
+</head>
+<body class="page-template page-template-pages page-template-posts-film page-template-pagesposts-film-php page page-id-9">
+
+{include file="public/head"}
+<!--幻灯片开始-->
+<!--<div id="wrapper">-->
+  <!--<div class="fullwidthbanner-container">-->
+    <!--<div class="fullwidthbanner">-->
+      <!--<ul>-->
+        <!--{maccms:vod order="desc"   by="level" level="9"  type="all"  }-->
+        <!--<li class="datll_li" data-transition="flyin" data-slotamount="15" data-masterspeed="300" data-link="{:mac_url_vod_detail($vo)} "> <img src="{$vo.vod_pic_slide}" alt="{$vo.vod_name}" style="max-height: 460px;"/> </li>-->
+        <!--{/maccms:vod}-->
+      <!--</ul>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+<!--幻灯片结束-->
+<!--<div class="header_end"></div>-->
+<section class="container">
+<div class="v-advertise">
+    <div class="v-advertise-one">
+                    <a href="http://bcbm.bcbm66666.com:890/1832284.html" target="_blank">
+                <img style="width:1200px;height: 60px;" src="http://img.cksource.space/advertising/2018-06-19/2018-06-19-17-12-33_Cn3Oyr7nZ0.gif">
+             </a>            <a href="https://xiaocongbao.com/s1/ekeg" target="_blank">
+                <img style="width:1200px;height: 60px;" src="http://img.cksource.space/advertising/2018-07-16/2018-07-16-19-37-47_ZSY4cH20Pi.gif">
+             </a>            <a href="http://t2.9797game.com/" target="_blank">
+                <img style="width:1200px;height: 60px;" src="http://img.cksource.space/advertising/2018-07-03/2018-07-03-01-29-40_eZdI0kSTZr.gif">
+             </a>            <a href="https://c83rutdv.com/?213293" target="_blank">
+                <img style="width:1200px;height: 60px;" src="http://img.cksource.space/advertising/2018-08-15/2018-08-15-18-24-15_GUuiLVyOwU.gif">
+             </a>            <a href="http://baicai.bc88.space/prize" target="_blank">
+                <img style="width:1200px;height: 60px;" src="http://img.cksource.space/advertising/2017-03-16/2017-03-16-15-58-28_FdDyapRGBA.jpg">
+             </a>            <a href="http://android.download.v2app.space/v300.apk" target="_blank">
+                <img style="width:1200px;height: 60px;" src="http://img.cksource.space/advertising/2018-07-19/2018-07-19-17-40-41_gf7YQbkXVv.gif">
+             </a>
+    </div>    
+    
+</div>
+  <div class="m-g">
+    <div class="b-listtab-main">
+      <div>
+        <div>
+          <div class="s-tab-main">
+            <ul class="list g-clear">
+				{maccms:vod num="12" paging="yes" pageurl="vod/show" type="menu-itema" order="desc" by="time"}
+                  <li class='item'>
+                    <a class='js-tongjic' href='{:mac_url_vod_detail($vo)} ' title='{$vo.vod_name}'>
+                      <div class='cover g-playicon'>
+                        <img width="285" height="213" src='{:mac_url_img($vo.vod_pic)}' alt='{$vo.vod_name}' />
+                        <span class='pay'>{$vo.type.type_name}</span>
+                        <span class='hint'>{$vo.vod_remarks}</span></div>
+                      <div class='detail'>
+                        <p class='title g-clear'>
+                          <span class='s1'>{$vo.vod_name}</span>
+                          <span class='s2'>{$vo.vod_score}</span></p>
+                        <p class='star'>热度：{$vo.vod_hits_month} </p></div>
+                    </a>
+                  </li>
+                {/maccms:vod}
+				    
+			</ul>
+          </div>
+        </div>
+      </div>
+       {include file="public/paging"}
+    </div>
+  </div>
+</section>
+{include file="public/foot"}
+<script type='text/javascript' src='{$maccms.path_tpl}js/main.js'></script>
+<script src="{$maccms.path}static/js/home.js"></script><!--内置js插件-->
+<!--<script type="text/javascript"> document.body.oncontextmenu=document.body.ondragstart= document.body.onselectstart=document.body.onbeforecopy=function(){return false;};
+document.body.onselect=document.body.oncopy=document.body.onmouseup=function(){document.selection.empty();}; </script>-->
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="cache-control" content="no-siteapp">
+		<title>{$maccms.site_name}-高清云影视免费为大家提供最新最全的免费电影</title>
+
+		<meta name="keywords" content="{$maccms.site_keywords}">
+		<meta name="description" content=" {$maccms.site_description} "> {include file="public/include"}
+
+	</head>
+
+	<body>
+
+		{include file="public/head"}
+		
+		<div id="wrapper">
+			
+			{include file="index/adv"}
+
+			<!--End-->
+			<div class="container">
+				<div class="well well-filters new_filters">
+					<div class="pull-left">
+						<h4><i class="fa fa-thumbs-o-up green"></i>&nbsp;本站推荐的视频</h4>
+					</div>
+
+					<div class="pull-right btn-line-height m-l-20">
+						<a class="btn btn-primary" href="/videos?o=mr"><span class="hidden-xs"><i class="fa fa-plus"></i> 更多视频</span><span class="visible-xs"><i class="fa fa-plus"></i></span></a>
+					</div>
+
+					<div class="clearfix"></div>
+				</div>
+
+				<div class="row row-boder">
+					<div class="col-md-12">
+						<div class="row">
+							
+							{maccms:vod num="8" type="all" by="time" level="1" order="desc"  }
+							<div class="col-sm-4 col-md-3 col-lg-3">
+								<div class="well well-sm">
+									<a href="{:mac_url_vod_detail($vo)}">
+										<div class="thumb-overlay">
+											<img src="{:mac_url_img($vo.vod_pic)}" id="" class="img-responsive ">
+											<div class="label-private"></div>
+											<!--<div class="duration">
+											</div>-->
+										</div>
+										<span class="video-title title-truncate m-t-5">{$vo.vod_name}</span>
+									</a>
+									<div class="video-added">
+
+										{$vo.vod_time_add|mac_time_range}
+									</div>
+									<div class="video-views pull-left">
+										<i class="fa fa-eye"></i>&nbsp;{$vo.vod_hits}
+									</div>
+									<!--<div class="video-rating pull-right no-rating">
+										<i class="fa fa-thumbs-up video-rating-heart no-rating"></i> <b>-</b>
+									</div>-->
+									<div class="clearfix"></div>
+
+								</div>
+							</div>
+							{/maccms:vod}	
+							
+						</div>
+					</div>
+				</div>
+
+				<div class="ps-body">
+					<div class="ps-pc">
+						<div class="ps_39" style="width: 1140px;">
+							<a href="/link/4kytha" target="_blank"><img src="{$maccms.path_tpl}images/tad/8.gif" title="9198" style="width:1140px;height:65px;"></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="well well-filters new_filters">
+					<div class="pull-left">
+						<h4><i class="fa fa-clock-o green"></i>&nbsp;最新上传视频</h4>
+					</div>
+
+					<div class="pull-right btn-line-height m-l-20">
+						<a class="btn btn-primary" href="/videos?o=mr"><span class="hidden-xs"><i class="fa fa-plus"></i> 更多视频</span><span class="visible-xs"><i class="fa fa-plus"></i></span></a>
+					</div>
+
+					
+
+					<div class="clearfix"></div>
+				</div>
+
+				<div class="row row-boder">
+					<div class="col-sm-9 hidden-xs hidden-sm">
+						<div class="row">
+						{maccms:vod num="6" type="all"  order="desc"  }
+							<div class="col-sm-6 col-md-4 col-lg-4">
+								<div class="well well-sm">
+									<a href="{:mac_url_vod_detail($vo)}">
+										<div class="thumb-overlay">
+											<img src="{:mac_url_img($vo.vod_pic)}" id="" class="img-responsive ">
+											<div class="label-private"></div>
+											<div class="duration">
+											</div>
+										</div>
+										<span class="video-title title-truncate m-t-5">{$vo.vod_name}</span>
+									</a>
+									<div class="video-added">
+										{$vo.vod_time_add|mac_time_range}
+									</div>
+									<div class="video-views pull-left">
+										<i class="fa fa-eye"></i>&nbsp;{$vo.vod_hits}
+									</div>
+									<!--<div class="video-rating pull-right no-rating">
+										<i class="fa fa-thumbs-up video-rating-heart no-rating"></i> <b>-</b>
+									</div>-->
+									<div class="clearfix"></div>
+
+								</div>
+							</div>
+						{/maccms:vod}	
+							
+						</div>
+
+					</div>
+
+
+					<div class="col-md-3 col-sm-4">
+
+						<div class="ps-body">
+
+							<div class="ps-pc">
+								<div style="margin-bottom:20px;">
+									<div class="ps_41" style="width: 237px; margin: 0px 0px 10px;">
+										<a href="" target="_blank"><img src="{$maccms.path_tpl}images/tad/1525408318546577621.png" title="推广送色币" style="width:237px;height:211px;"></a>
+									</div>
+								</div>
+								<div>
+									<div class="ps_42" style="width: 237px; margin: 0px 0px 10px;">
+										<a href="" target="_blank"><img src="{$maccms.path_tpl}images/tad/1532324691510136714.gif" title="bell成人裸聊" style="width:237px;height:211px;"></a>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="ps-body">
+
+					<div class="ps-pc">
+						<div class="ps_40" style="width: 1140px; margin: 0px 0px 10px;">
+							<a href="" target="_blank"><img src="{$maccms.path_tpl}images/tad/1522766860117939580.gif" title="乐橙国际" style="width:1140px;height:65px;"></a>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="well well-filters new_filters">
+					<div class="pull-left">
+						<h4><i class="fa fa-fire green"></i>&nbsp;最受欢迎的视频</h4>
+					</div>
+
+					<div class="pull-right btn-line-height m-l-20">
+						<a class="btn btn-primary" href="/videos?o=mr"><span class="hidden-xs"><i class="fa fa-plus"></i> 更多视频</span><span class="visible-xs"><i class="fa fa-plus"></i></span></a>
+					</div>
+
+					<div class="clearfix"></div>
+				</div>
+
+				<div class="row row-boder">
+					<div class="col-sm-12">
+						<div class="row">
+						{maccms:vod num="8" type="all" by="hits_day" order="desc" timeadd="7" }
+							<div class="col-sm-4 col-md-3 col-lg-3">
+								<div class="well well-sm">
+									<a href="{:mac_url_vod_detail($vo)}">
+										<div class="thumb-overlay">
+											<img src="{:mac_url_img($vo.vod_pic)}" id="" class="img-responsive ">
+											<div class="label-private"></div>
+											<div class="duration">
+
+											</div>
+										</div>
+										<span class="video-title title-truncate m-t-5">{$vo.vod_name}</span>
+									</a>
+									<div class="video-added">
+
+										{$vo.vod_time_add|mac_time_range}
+									<div class="video-views pull-left">
+										<i class="fa fa-eye"></i>&nbsp;{$vo.vod_hits}
+									</div>
+									<div class="video-rating pull-right no-rating">
+										<i class="fa fa-thumbs-up video-rating-heart no-rating"></i> <b>-</b>
+									</div>
+									<div class="clearfix"></div>
+
+								</div>
+							</div>
+							
+						</div>
+{/maccms:vod}	
+					</div>
+				</div>
+
+				<!--首页分页-->
+				<div class="index-pages">
+
+					<div style="text-align: center;" class="hidden-xs">
+						<ul class="pagination">
+							<li class="active"><span>1</span></li>
+							<li class="hidden-xs">
+								<a href="/videos/index_page_2.html">2</a>
+							</li>
+							<li class="hidden-xs">
+								<a href="/videos/index_page_3.html">3</a>
+							</li>
+							<li class="hidden-xs">
+								<a href="/videos/index_page_4.html">4</a>
+							</li>
+							<li class="disabled hidden-xs"><span>&nbsp;...&nbsp;</span></li>
+							<li></li>
+							<li class="hidden-xs">
+								<a href="/videos/index_page_2125.html">2125</a>
+							</li>
+							<li class="hidden-xs">
+								<a href="/videos/index_page_2126.html">2126</a>
+							</li>
+							<li>
+								<a href="/videos/index_page_2.html" class="prevnext">»</a>
+							</li>
+						</ul>
+					</div>
+					<div style="text-align: center;" class="visible-xs">
+						<ul class="pagination pagination-lg">
+							<li class="active"><span>1</span></li>
+							<li class="hidden-xs">
+								<a href="/videos/index_page_2.html">2</a>
+							</li>
+							<li class="hidden-xs">
+								<a href="/videos/index_page_3.html">3</a>
+							</li>
+							<li class="hidden-xs">
+								<a href="/videos/index_page_4.html">4</a>
+							</li>
+							<li class="disabled hidden-xs"><span>&nbsp;...&nbsp;</span></li>
+							<li></li>
+							<li class="hidden-xs">
+								<a href="/videos/index_page_2125.html">2125</a>
+							</li>
+							<li class="hidden-xs">
+								<a href="/videos/index_page_2126.html">2126</a>
+							</li>
+							<li>
+								<a href="/videos/index_page_2.html" class="prevnext">»</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--首页分页-->
+			</div>
+			
+		</div>
+			
+		<script>
+			
+			if($(window).width() > 650){
+				setTimeout(function(){
+					$("#wrapper").css({
+						"background-image": "url('{$maccms.path_tpl}/images/HY-POP.jpg')",
+						"background-attachment":"fixed",
+						"background-position":"center 190px",
+						"background-repeat":"no-repeat"
+					})
+				},3000);	
+				
+				$(window).scroll(function(){
+					
+					if($(window).scrollTop() > 190){
+						$("#wrapper").css({
+							"background-position":"center 0px"
+						})
+					}else{
+						$("#wrapper").css({
+							"background-position":"center 190px"
+						})
+					}
+					
+				})
+				
+			}
+			
+			
+		</script>
+			
+		{include file="public/foot"}
+
+	</body>
+
+
+
+</html>

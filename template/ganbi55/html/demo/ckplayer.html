@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>ckplayer</title>
+		<script src="/template/datll_wapian/js/jquery.js"></script>
+		<script src="/static/ckplayerX1/ckplayer.js"></script>
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0px;
+				font-family: "Microsoft YaHei", YaHei, "微软雅黑", SimHei, "黑体";
+				font-size: 14px
+			}
+		</style>
+		
+		<link href="/static/player/video/video.css" rel="stylesheet">
+		<script src="/static/player/video/video.min.js"></script>
+		<script src="/static/player/video/videojs-contrib-hls.js"></script>
+			
+	</head>
+
+	<body>
+		
+		<div>
+			VIDEO - m3u8
+		</div>
+		<div>
+			<video id="roomVideo1" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"  poster="http://vjs.zencdn.net/v/oceans.png">			 
+			</video>
+		</div>
+		
+		<div>
+			VIDEO - mp4
+		</div>
+		<div>
+			<video id="roomVideo2" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"  poster="http://vjs.zencdn.net/v/oceans.png">			 
+			</video>
+		</div>
+		
+		<script>
+			
+			$(function(){
+				var myPlayer = videojs('roomVideo1',{
+		            bigPlayButton : false,
+		            textTrackDisplay : false,
+		            posterImage: true,
+		            errorDisplay : false,
+		            controlBar : false
+		       });
+		       myPlayer.src('http://videocdn2.quweikm.com:8091/20180801/TJKO2HY366/index.m3u8');
+		       
+		       var myPlayer2 = videojs('roomVideo2',{
+		            bigPlayButton : false,
+		            textTrackDisplay : false,
+		            posterImage: true,
+		            errorDisplay : false,
+		            controlBar : false
+		       });
+		       myPlayer2.src(' http://img.ksbbs.com/asset/Mon_1703/05cacb4e02f9d9e.mp4');
+		      
+			})	
+			
+		</script>
+		<div>OBJECT</div>
+		<div style="width: 600px; height: 400px;">
+			<object width="200" height="200" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#4,0,0,0">
+  <param name="src" value="http://bpic.wotucdn.com/10/79/80/11bOOOPIC4e.swf" />
+  <param name="quality" value="high" />
+  <embed src="http://bpic.wotucdn.com/10/79/80/11bOOOPIC4e.swf" type="application/x-shockwave-flash" width="200" height="200" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>
+</object
+		</div>
+		
+		
+		
+		<div>mp4</div>
+		<div id="video1" style="width: 600px; height: 400px;"></div>
+		
+		<div>m3u8</div>
+		<div id="video2" style="width: 600px; height: 400px;"></div>
+		
+		<script type="text/javascript">
+			var videoObject = {
+		        container: '#video1', //容器的ID或className
+		        variable: 'player',//播放函数名称
+		        autoplay:true,		       
+		        video: "http://img.ksbbs.com/asset/Mon_1703/05cacb4e02f9d9e.mp4",
+		        advertisements:'/Adv/get_adv'
+		    };
+		   
+		    var player = new ckplayer(videoObject);
+		    
+		    
+		    var videoObject = {
+		        container: '#video2', //容器的ID或className
+		        variable: 'player',//播放函数名称
+		        autoplay:true,		       
+		        video: "http://videocdn2.quweikm.com:8091/20180801/TJKO2HY366/index.m3u8",
+		        advertisements:'/Adv/get_adv'
+		    };
+		    var player = new ckplayer(videoObject);
+		</script>
+		
+	</body>
+
+</html>

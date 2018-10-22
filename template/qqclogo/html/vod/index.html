@@ -1,0 +1,114 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="cache-control" content="no-siteapp">
+		<title>{$maccms.site_name}-{$obj.type_name}</title>
+
+		<meta name="keywords" content="{$maccms.site_keywords}">
+		<meta name="description" content=" {$maccms.site_description} "> {include file="public/include"}
+
+	</head>
+
+	<body>
+		{include file="public/head"}
+
+		<div id="wrapper">
+			<div class="container hidden-xs">
+				{include file="index/adv"}
+			</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-4">
+						<div class="list-group" style="margin-bottom:0px;">
+							<!--Mobile-->
+							<div class="header visible-mo" style="background-color:#1bbc9d;border-color:#1bbc9d;color:white;display:none\9;">
+								<a href="/videos/" class="list-group-item" style="background-color:#1bbc9d;border-color:#1bbc9d;color:white;">
+									<i class="fa fa-list-alt"></i>&nbsp;视频分类
+								</a>								
+								<div style="clear:both;"></div>
+							</div>
+							<!--Mobile-->
+							<a href="/videos/" class="list-group-item header visible-pc">
+								<i class="fa fa-list-alt"></i>&nbsp;视频分类
+							</a>							
+							{maccms:type parent="menu-itema" order="asc" by="sort"}
+							
+								<a class="active_list list-group-item {if condition=" ($vo.type_id eq MAC_TYPE_ID || $vo.type_id eq MAC_TYPE_PID) "} active{/if}" href="{:mac_url_type($vo,[],'type')}">{$vo.type_name}
+								<i class="total_videos pull-right"></i>
+								</a>
+							
+							{/maccms:type}
+							
+							
+
+						</div>
+						
+						<div class="ad-body">
+							<div class="adv-pc"></div>
+						</div>
+					</div>
+					<div class="col-md-9 col-sm-8">
+						<div class="well well-filters new_filters">
+							<div class="pull-left">
+								<h4><i class="fa fa-clock-o green"></i>&nbsp;视频</h4>
+							</div>							
+							<div class="clearfix"></div>
+						</div>
+						
+						<div class="row row-boder">
+
+						{maccms:vod num="30" paging="yes" pageurl="vod/index" type="current" order="desc" by="'.$sort.'"}
+							<div class="col-sm-6 col-md-4 col-lg-4">
+								<div class="well well-sm">
+									<a href="{:mac_url_vod_detail($vo)}">
+										<div class="thumb-overlay">
+											<img src="{:mac_url_img($vo.vod_pic)}" title="{$vo.vod_name}" alt="{$vo.vod_name}" id="" class="img-responsive ">
+											<div class="label-private"></div>
+											<div class="hd-text-icon"></div>
+											<div class="duration">
+												
+											</div>
+										</div>
+										<span class="video-title title-truncate m-t-5">{$vo.vod_name}</span>
+									</a>
+									<div class="video-added">
+
+										{$vo.vod_time_add|mac_time_range}
+									</div>
+									<div class="video-views pull-left">
+										<i class="fa fa-eye"></i>&nbsp;{$vo.vod_hits}
+									</div>
+									<div class="video-rating pull-right ">
+										<i class="fa fa-thumbs-up video-rating-heart "></i> <b>100%</b>
+									</div>
+									<div class="clearfix"></div>
+
+								</div>
+							</div>
+{/maccms:vod}	
+
+						</div>
+
+						
+						<div class="v-rv-page-box" style="margin-top: 20px;">
+							{include file="public/paging"}
+						</div>
+						
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		{include file="public/foot"}
+
+	</body>
+
+</html>

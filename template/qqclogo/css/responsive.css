@@ -1,0 +1,374 @@
+/*!
+ * XIAOWANG Theme / frontend-default v3.0
+ * Email:frontend.offer@gmail.com
+*/
+
+.row .col-md-3.list-group  a.header.visible-mo{
+		display:none;
+}
+	/*==========  Mobile First Method  ==========*/
+
+	/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+		/*.index body {
+			  padding-top: 187px;
+		}*/
+
+.ps-pc{
+	display: none!important;
+}
+.list-group > a.list-group-item{
+	display:none;
+}
+.list-group a.list-group-item{
+	float: left!important;
+	width: 49.9%!important;
+	overflow: hidden!important;
+	/*display: block!important;*/
+	border-left: none!important;
+}
+
+.list-group a.list-group-item.header{
+	float: inherit!important;
+	width: 100%!important;
+	overflow: hidden!important;
+	display: none!important;
+}
+
+
+.bbspicture { float: none!important; margin:0 auto!important; }
+.vip_view .pinglunbox { width: 345px!important;}
+.main.vip_view { margin: 0 auto; padding-left: 3px; padding-right: 3px; text-align: left; }
+.box { border: 3px #008b70 solid; margin-bottom: 10px; }
+.vip_view .box .title{font-size:17px;}
+.shili .f_list{position:relative; width: 345px; height:265px; border:10px #00765f solid;}
+.shili .f_out{ width: 325px; height:245px; overflow:hidden; position:relative;}
+
+.commendable_mian_l {
+  float: none!important;
+  width: 100%!important;
+  clear: both!important;
+}
+.commendable_mian_r {
+  float: none!important;
+  width: 100%!important;
+  clear: both!important;
+}
+.commendable_mian li {
+  float: left!important;
+  width: 100%!important;
+}
+.index_wrapper {
+  width: 100%!important;
+  }
+/*body {   padding-top: 219px; }*/
+.index_mod_videos .videos_mian li.videos_item{
+	float: none!important;
+	margin: 0 auto!important;
+} 
+.index_mod_videos .videos_mian li.videos_item img{
+	width: 100%;
+}
+
+}
+
+	/* Extra Small Devices, Phones */ 
+	@media only screen and (min-width : 480px) {
+.main.vip_view { margin: 0 auto; padding-left: 3px; padding-right: 3px; text-align: left; }
+.box { border: 3px #008b70 solid; margin-bottom: 10px; }	
+.shili .f_list{position:relative; width: 345px; height:265px; border:10px #00765f solid;}
+.shili .f_out{ width: 325px; height:245px; overflow:hidden; position:relative;}
+.vip_view .pinglunbox { width: 345px!important;}	
+	 	/*.index body {
+		  padding-top: 187px;
+		}*/
+/*body {   padding-top: 217px; }*/
+.vip_view .box .title{font-size:17px;}
+.index_wrapper {
+  width: 100%!important;
+  }
+.ps-pc{
+	display: none!important;
+}
+.list-group a.list-group-item{
+	float: left!important;
+	width: 49.9%!important;
+	overflow: hidden!important;
+	display: block!important;
+	border-left: none!important;
+}
+.list-group > a.list-group-item{
+	display:none;
+}
+.list-group a.list-group-item.header{
+	float: inherit!important;
+	width: 100%!important;
+	overflow: hidden!important;
+	display: block!important;
+}
+
+.commendable_mian_l {
+  float: none!important;
+  width: 100%!important;
+  clear: both!important;
+}
+.commendable_mian_r {
+  float: none!important;
+  width: 100%!important;
+  clear: both!important;
+}
+.commendable_mian li {
+  float: left!important;
+  width: 100%!important;
+}
+.index_mod_videos .videos_mian li.videos_item{
+	float: none!important;
+	margin: 0 auto!important;
+} 
+.index_mod_videos .videos_mian li.videos_item img{
+	width: 100%;
+}
+.bbspicture { float: none!important; margin:0 auto!important; }
+	}
+.navbar-navwd  li {
+	float: left;
+	width: 72px;
+	width: 68px\9;
+	border-left: 1px solid #17937b;
+	text-align:center;
+}
+.navbar-navwd  li  a{
+	font-size: 14px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+	text-align:center;
+}
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) and (orientation:portrait) {
+	.pull-left .visible-mo,.navbar-nav .visible-mo,.unvisible{
+		display:none;
+	}
+}
+@media only screen and (min-width : 768px) {
+.box { border: 10px #008b70 solid; margin-bottom: 25px; }
+.bbspicture { float: left!important; margin-left: 80px!important; }
+.main.vip_view { margin: 0 auto; padding-left: 15px; padding-right: 15px; text-align: left; }
+.shili .f_list{position:relative; width:550px; height:265px; border:10px #00765f solid;}
+.shili .f_out{ width:530px; height:245px; overflow:hidden; position:relative;}
+#scroller_title{display:none}	
+.pad_view_off{display:none!important}
+.ps-pc{
+	display: block!important;
+}
+.list-group a.list-group-item{
+	float: inherit!important;
+	width: 100%!important;
+	overflow: hidden!important;
+	display: block!important;
+	border-left: none!important;
+}
+
+.list-group a.list-group-item.header{
+	float: inherit!important;
+	width: 100%!important;
+	overflow: hidden!important;
+	display: block!important;
+}
+
+/*body {
+		  padding-top: 177px;
+	}*/
+	
+	.navbar {
+		min-height: 60px;
+	}
+	.vip_view .box .title{font-size:24px; }	
+	.navbar-brand {
+		height: 84px;
+	}
+
+	.navbar-inverse .navbar-nav > li > a {
+		font-size: 14px;
+		padding-top: 12px;
+		padding-bottom: 12px;
+	
+		padding-left: 5px;
+		padding-right: 5px;
+}
+
+	.navbar-inverse .navbar-nav > li > ul a{
+		font-size: 12px;
+	
+		font-weight: bold;
+}
+.pc-navbar{
+	background-color: #17937b!important;
+}
+
+.mobile_search {
+  padding-top: 27px!important;
+}
+.mobile_search .search_input {
+  width: 230px!important;
+}
+	.navbar-btn {
+		margin-top: 11px;
+		margin-bottom: 11px;
+	}
+
+	.navbar-toggle {
+		margin-top: 13px;
+		margin-bottom: 13px;
+	}
+	
+	.input-group-addon {
+		width: 1%!important;
+	}
+.navbar-nav > li {
+  float: left;
+  width: 134px;  text-align: center;
+  border-left: 1px solid #17937b;
+}
+.navbar-navwd > li {float: left;width: 67px;border-left: 1px solid #17937b;}
+/*.index body {padding-top: 182px!important;}*/
+.index_wrapper{
+  width: 1140px!important;
+}
+.index_mod_videos .videos_mian li.videos_item{
+	float: left!important;
+	margin: 9px!important;
+}
+  
+.index_mod_videos .videos_mian li.videos_item img{
+	width: 256px!important;
+}
+.commendable_mian li {
+  float: left!important;
+  width: 100%!important;
+}
+.commendable_mian_l {
+  float: left!important;
+  width: 49%!important;
+ clear: none!important;
+}
+.commendable_mian_r {
+  float: right!important;
+  width: 49%!important;
+clear: none!important;
+}
+
+	}
+
+	/* Medium Devices, Desktops */
+	@media only screen and (min-width : 992px) {
+	.vip_view .box .title{font-size:24px; }
+	.pc-navbar{
+		  background: #1abd9e!important;
+	}
+	/*body {
+			  padding-top: 210px;
+		}
+	}*/
+
+	/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+#scroller_title{display:block}
+.pad_view_off{display:block!important}
+	.vip_view{width:1030px!important;}
+	.vip_view .box .title{font-size:24px; }
+	.pc-navbar{
+		  background: #1abd9e!important;
+	}
+	
+	}
+
+
+
+	/*==========  Non-Mobile First Method  ==========*/
+
+	/* Large Devices, Wide Screens */
+	@media only screen and (max-width : 1200px) {
+
+	}
+
+	/* Medium Devices, Desktops */
+	@media only screen and (max-width : 992px) {
+
+	}
+
+	/* Small Devices, Tablets */
+	@media only screen and (max-width : 768px)  {
+		
+
+	}
+
+	/* Smartphones, Smartphones Landscape, Mini Tablets */	
+	@media only screen and (max-width : 767px) {
+
+	.search-dropdown-menu {
+	  min-width: 296px!important;
+	}
+	
+	.navbar-inverse .navbar-nav > li > a {
+	font-size: 16px;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	}	
+	.navbar-inverse .navbar-nav > li {
+	border-bottom: 1px solid rgba(255,255,255,0.05);
+	}		
+	
+	}	
+
+	/* Extra Small Devices, Phones */ 
+	/*@media only screen and (max-width : 480px) {
+
+	}*/
+		
+	/* Custom, iPhone Retina */ 
+	/*@media only screen and (max-width : 320px) {
+	
+	}*/
+
+	/* Retina-specific stuff here */	
+	@media 
+	(-webkit-min-device-pixel-ratio: 2), 
+	(min-resolution: 192dpi) {
+	.badge {
+		line-height: 18px;
+	}
+	.top-menu ul li .badge {
+		margin-top: 2px;
+	}
+	.label-private {
+		padding: 0px 3px;
+	}
+
+	.hd-text-icon {
+		padding: 0px 3px;
+	}
+	
+	}	
+
+@media only screen and (max-width: 767px){
+	.list-group .visible-mo{
+		display:block !important;
+	}
+	.list-group  a.list-group-item.header.visible-pc{
+		display:none;
+	}
+}
+@media only screen and (min-width: 768px){
+	.list-group .visible-mo{
+		display:none;
+	}
+	.list-group  a.list-group-item.header.visible-pc{
+		display:block !important;
+	}
+}
+.list-group .visible-mo,.list-group .visible-pc{
+	border-top-right-radius:4px;
+	border-top-left-radius:4px;
+}

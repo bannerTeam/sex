@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>videojs</title>
+		<script src="/template/datll_wapian/js/jquery.js"></script>
+		
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0px;
+				font-family: "Microsoft YaHei", YaHei, "微软雅黑", SimHei, "黑体";
+				font-size: 14px
+			}
+			#playleft{ position: relative; background: #000000;}
+			
+
+		</style>
+		
+		<!--<link href="/static/player/video/video.css" rel="stylesheet">
+		<script src="/static/player/video/video.min.js"></script>
+		<script src="/static/player/video/videojs-contrib-hls.js"></script>-->
+			
+		<script>
+			var maccms = {
+				path:""				
+			};
+			var MacPlayer = {
+				Second:5,
+				PlayUrl:"http://img.ksbbs.com/asset/Mon_1703/05cacb4e02f9d9e.mp4",
+				Show:function(){
+					;
+				}
+			};
+			
+			
+			
+		</script>
+	</head>
+
+	<body>
+		
+		<div>
+			VIDEO - m3u8
+		</div>
+		<div class="MacPlayer" style="width: 500PX; height: 300px;">
+			<div id="playleft">
+				<script src="/static/player/video.js"></script>
+				<div id="ad_pause" style="display: none;" class="ad_box">
+					<div><a href=""><img src="/static/ad/adpause.gif" /></a></div>
+					<span href="javascript:;" class="ad_close"><span class="ad_close_s"></span></span>
+				</div>
+				<div id="ad_front"  style="display: none;" class="ad_box">
+					<div><a href=""><img src="/static/ad/adfront.png" /></a></div>
+					<span href="javascript:;" class="ad_close"><span class="ad_close_s"></span></span>
+				</div>
+				
+			</div>
+		</div>
+		
+		
+		<script>
+			
+			
+			var VideoPlayer = (function(){
+				
+				function getAdv(){
+				
+					$.ajax({
+						type:"get",
+						url:"/Adv/get_adv",
+						success:function(ret){
+							console.log(ret);
+						}
+					});
+					
+				}
+				getAdv();
+				
+				
+			})();
+			
+		</script>
+		<script1>
+			
+			$(function(){
+				
+				$("#playleft").append('<video id="roomVideo1" class="video-js vjs-default-skin" controls preload="none" ></video>');
+				
+				var w = $("#playleft").width();
+				var h = $("#playleft").height();
+				var myPlayer = videojs('roomVideo1',{
+					autoplay:true,
+		            poster: "http://vjs.zencdn.net/v/oceans.png",
+		            height:h, 
+    				width:w
+		       });
+		       myPlayer.src('http://videocdn2.quweikm.com:8091/20180801/TJKO2HY366/index.m3u8');
+		       
+		       var myPlayer2 = videojs('roomVideo2',{
+		            bigPlayButton : false,
+		            textTrackDisplay : false,
+		            posterImage: true,
+		            errorDisplay : false,
+		            controlBar : false
+		       });
+		       myPlayer2.src(' http://img.ksbbs.com/asset/Mon_1703/05cacb4e02f9d9e.mp4');
+		      
+			})	
+			
+			
+			
+		</script1>
+		
+		
+	</body>
+
+</html>

@@ -212,7 +212,7 @@ class Vod extends Base {
                     unset($param[$k]);
                 }
             }
-            if(!in_array($pageurl,['vod/type','vod/show','vod/search','index/index'])){
+            if(!in_array($pageurl,['vod/type','vod/show','vod/search','index/index','vod/index'])){
                 $pageurl = 'vod/type';
             }
             $param['page'] = 'PAGELINK';
@@ -312,6 +312,8 @@ class Vod extends Base {
             $order = 'desc';
         }
         $order= 'vod_'.$by .' ' . $order;
+        
+        
         $cach_name = md5('vod_listcache_'.http_build_query($where).'_'.$order.'_'.$page.'_'.$num.'_'.$start.'_'.$pageurl);
 
         $res = Cache::get($cach_name);

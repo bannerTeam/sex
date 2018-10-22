@@ -1,0 +1,103 @@
+<div class="top-nav">
+	<div class="container">
+		<ul class="top-menu">
+			<div class="pull-left">
+				<li class="hidden-xs">
+					<a data-toggle="modal" href="/"><span style="color:white">欢迎光临{$maccms.site_name}</span></a>
+				</li>
+				<li class="hidden-xs visible-mo">
+					<a data-toggle="modal" href="" target="_blank"><span style="color:white">请收藏{$maccms.site_name}地址发布页</span></a>
+				</li>				
+				<li class="visible-xs" style="color: white;">{$maccms.site_name}欢迎你</li>
+			</div>
+
+			<div class="clearfix"></div>
+		</ul>
+	</div>
+</div>
+<div class="navbar navbar-inverse" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+
+			<div class="mobile_search visible-xs visible-sm pull-right">
+				<form method="post" action="{:mac_url('vod/search')}"> <input type="text" name="wd" placeholder="请输入内容" class="search_input" value="" >
+					<input class="search_submit" type="submit" name="submit" value="搜索"> </form>
+			</div>
+
+			<div class="pull-left">
+				<a class="navbar-brand" href="/">
+					<img src="{$maccms.path_tpl}images/logo.png?t=3">
+				</a>
+				<a class="navbar-brand hidden-xs" style="margin-left: 15px;" href="/"><img src="{$maccms.path_tpl}images/logo.gif"></a>
+			</div>
+
+			<div class="search_header hidden-xs hidden-sm pull-right">
+
+				<!--头部广告-->
+				<div class="ps_117" style="float: left; margin: 0px 0px 10px; width: 110px;">
+					<a href="/link/94huwp" target="_blank"><img src="{$maccms.path_tpl}images/1507557675932060584.gif" title="会员活动" style="width:110px;height:75px;"></a>
+				</div>
+				<div class="ps_36" style="float: left; width: 300px; margin: 0px 0px 10px;">
+					<a href="/link/6plpt6" target="_blank"><img src="{$maccms.path_tpl}images/15169541964562064.gif" title="小湿妹群" style="width:300px;height:75px;"></a>
+				</div>
+				<div class="ps_161" style="float: left; width: 300px; margin: 0px 0px 10px;">
+					<a href="/link/5dsumh" target="_blank"><img src="{$maccms.path_tpl}images/1516954150757551980.gif" title="小湿妹群" style="width:300px;height:75px;"></a>
+				</div>
+				<div style="clear:both;"></div>
+			</div>
+
+		</div>
+
+		<!--/.nav-collapse -->
+	</div>
+
+	<!--Mobile-->
+	<div class="mobile_navbar_collapse  visible-xs">
+		<ul>
+
+			<li>
+				<a href="/" class="{if condition=" $maccms.aid eq 1 "} active{/if}">首页</a>
+			</li>
+			<li>
+				<a href="{:mac_url('/vod/index')}" class="{if condition=" $vodindex eq 1 "} active{/if}">最新视频</a>
+			</li>
+			{maccms:type parent="menu-itema" order="asc" by="sort"}
+			<li>
+				<a class="{if condition=" ($vo.type_id eq MAC_TYPE_ID || $vo.type_id eq MAC_TYPE_PID) "} active{/if}" href="{:mac_url_type($vo,[],'type')}">{$vo.type_name}</a>
+			</li>
+			{/maccms:type}
+			
+		</ul>
+
+	</div>
+	<!--Mobile-->
+
+	<div class="navbar-collapse pc-navbar collapse navbar-inverse-collapse">
+
+		<div class="container">
+
+			<ul class="hidden-xs nav navbar-nav navbar-navwd">				
+				<li style="width:45px">
+					<a href="/" class="{if condition=" $maccms.aid eq 1 "} active{/if}">首页</a>
+				</li>
+				<li>
+					<a href="{:mac_url('/vod/index')}" class="{if condition=" $vodindex eq 1 "} active{/if}">最新视频</a>
+				</li>
+				{maccms:type parent="menu-itema" order="asc" by="sort"}
+				<li>
+					<a class="{if condition=" ($vo.type_id eq MAC_TYPE_ID || $vo.type_id eq MAC_TYPE_PID) "} active{/if}" href="{:mac_url_type($vo,[],'type')}">{$vo.type_name}</a>
+				</li>
+				{/maccms:type}
+				<div class="search_nav hidden-xs hidden-sm">
+					<form method="post" action="{:mac_url('vod/search')}"> <input type="text" name="wd" placeholder="请输入搜索内容" class="search_input" value="">
+						<input class="search_submit" type="submit" name="submit" value="搜索"> </form>
+				</div>
+				<div style="clear:both;"></div>
+			</ul>
+		</div>
+	</div>
+	<div class="pc-tags cats hidden-xs hidden-sm navbar-collapse navbar-inverse-collapse">
+		<div class="container" style="display:none">
+		</div>
+	</div>
+</div>

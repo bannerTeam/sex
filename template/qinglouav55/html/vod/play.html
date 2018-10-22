@@ -1,0 +1,274 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta http-equiv="cache-control" content="no-siteapp">
+	
+<script>var maccms={"path":"__ROOT__","mid":"{$maccms['mid']}","url":"{$maccms['site_url']}","wapurl":"{$maccms['site_wapurl']}","mob_status":"{$maccms['mob_status']}"};</script>
+<link rel="Shortcut Icon" href="{$maccms.path_tpl}images/favicon.ico" type="image/x-icon">
+<link rel='stylesheet' id='main-css'  href='{$maccms.path_tpl}css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='main-css'  href='{$maccms.path_tpl}css/index.css' type='text/css' media='all' />
+<link rel='stylesheet' id='main-css'  href='{$maccms.path_tpl}css/play.css' type='text/css' media='all' />
+<link rel='stylesheet' id='main-css'  href='{$maccms.path_tpl}css/uikit.min.css' type='text/css' media='all' />
+	
+<script src="{$maccms.path_tpl}js/jquery.js"></script>
+<script src="{$maccms.path_tpl}js/jquery.lazyload.js"></script>
+<script src="{$maccms.path_tpl}js/jquery.autocomplete.js"></script>
+<script src="{$maccms.path}static/js/jquery.autocomplete.js"></script><!--内置js插件-->
+<script src="{$maccms.path}static/js/home.js"></script><!--内置js插件-->
+	
+	
+<script type='text/javascript' src='{$maccms.path_tpl}js/jquery.min.js?ver=0.5'></script>
+<meta name="keywords" content=">在线播放{$obj.vod_name} {$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']} - 高清资源 - {$maccms.site_name}">
+<meta name="description" content=">在线播放{$obj.vod_name} {$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']} - 高清资源 - {$maccms.site_name}">
+	
+	
+<title>在线播放{$obj.vod_name} {$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']} - 高清资源 - {$maccms.site_name}</title>
+	{include file="public/include"}
+<link rel="Shortcut Icon" href="{$maccms.path_tpl}/template/qwysmb-html/images/favicon.png">
+<link rel="Bookmark" href="{$maccms.path_tpl}/template/qwysmb-html/images/favicon.png">
+<!--[if lt IE 9]><script src="js/html5.js"></script><![endif]-->
+<style>
+	
+.left_content{ float: left; width: 70%; padding-right: 30px;}
+.bofangdiv,.MacPlayer{min-height: 450px;}
+.right_adv{	float: left;
+	width: 30%;; padding-top: 50px;
+}
+.right_adv img{ margin-bottom: 10px;}
+
+.w-newfigure{list-style:none; float:left;}
+.list{ margin-left:-40px;}
+	
+@media screen and (min-width:1200px){
+	.bofangdiv{height: 540px;}
+}
+@media screen and (max-width:600px){
+	.left_content{  width: 100%; padding-right: 0px;}
+	.right_adv{	clear: both;
+		width: 100%; padding-top: 20px;
+	}
+	.bofangdiv,.MacPlayer{min-height: 200px; height: 100%; width: 100%;}
+}
+ul, li, h2 {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+</style>
+</head>
+<body class="page-template page-template-pages page-template-posts-play page-template-pagesposts-play-php page page-id-16">
+
+	{include file="public/head"}
+<!--<div class="header_end"></div> -->
+<div class="single-post">
+<section class="container">
+    <div class="content-wrap">
+    	
+    	<div class="left_content">
+    	<div class="">
+<div id="bof">
+
+<div class="sptitle"><h2 class="single-strong" title="{$obj.vod_name}">正在播放:在线播放{$obj.vod_name}</h2></div>
+<div class="bofangdiv">
+  
+	{$player_data}
+    {$player_js}
+
+</div>
+<p style="background-color: #1db69a;color: #FFFFFF;padding-top: 0.4rem; padding-left: 0.75rem; padding-right: 0.75rem;margin:0; font-size: .7rem; font-size: 14px;padding-bottom: 0.35rem;text-align:center;">如等待10秒以上播放器还没出现请重新点击播放或者刷新即可观看</p>
+</div>
+<div class="am-cf"></div>
+<div class="am-panel am-panel-default">
+<div class="am-panel-bd">
+<script type="text/javascript">
+function xldata(urls){
+	var videourls = document.getElementById('video');
+	var xlqieh = document.getElementById('videourlgo');
+	videourls.src = urls+xlqieh.href;
+}
+</script>
+     <div class="juji" style="display: none;">
+		<ul class="juji-hd">
+			{maccms:foreach name="obj.vod_play_list" id="vo"}
+			<li {if condition="($param.sid==$key)"}class="active"{else /}{/if} >{$vo.player_info.show}</li>
+			{/maccms:foreach}
+		</ul>
+			
+		<ul class="juji-bd">
+		{maccms:foreach name="obj.vod_play_list" id="vo"}
+			{maccms:foreach name="vo.urls" id="vo2"}
+		   <li {if condition="$param.sid eq $vo.sid && $param.nid eq $vo2.nid"} style="display:block"{/if} >
+		   <a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}" target="_self" class="am-btn am-btn-default lipbtn">{$vo2.name}</a>
+			</li>
+			 {/maccms:foreach}
+	     {/maccms:foreach}
+			
+			</ul>
+	</div>
+<div style="clear: both;"></div>
+<!--<p class="jianjie"><h3 class="single-strong">简介</h3><p class="item-desc js-close-wrap" ><span style="font-size:12px"> {$obj.vod_content}-->
+	<!--</span></p>-->
+<div style="clear: both;"></div> 
+<div id="xuji"></div>
+<div class="video-list view-font">
+<div class="dianshijua" id="dianshijuid">
+</div>
+ </div>
+</div>
+</div>
+<br/>
+   
+</div>
+</div>
+
+
+
+  <div class="right_adv">
+	<div class="advertise">		
+		{maccms:ad flag='d_right'}
+			<a href="{$d_right.link}" target="_blank">
+		        <img style="width:460px;" src="{$d_right.img}">
+		     </a>
+		 {/maccms:ad}                        
+    </div>
+</div>
+
+
+
+    	</div>
+
+<!--<div class="widget widget-textasst">-->
+	<!--<a class="style01" href="http://wpa.qq.com/msgrd?v=3&uin=776774592&site=qq&menu=yes" target="_blank">-->
+		<!--<strong>热度</strong><h2><em id="hits">{$obj.vod_hits}</em></h2><p></p></a>-->
+	<!--</div>-->
+<!--
+<div class="widget widget-textasst">
+	<a class="style02" href="http://www.avtba.com/adv/20/" target="_blank">
+		<div class="article-wechats"> </br>
+			<img width="328" src="http://ww2.sinaimg.cn/large/0060lm7Tly1fo99ec6vtcg306y06yac2.gif">
+		</div>
+	</a>
+	<a class="style02" href="http://www.itou00.com" target="_blank">
+		<div class="article-wechats"> </br>
+			<img width="328" src="https://xl163.com/2.gif">
+		</div>
+	</a>
+</div>
+<div class="widget widget-textasst"></div></div>
+-->
+
+
+<div class="ad1-top">
+	{maccms:ad flag='d_foot'}
+		<a href="{$d_foot.link}" target="_blank">
+	        <img  src="{$d_foot.img}" class="card-img">
+	     </a>
+	 {/maccms:ad} 
+</div>
+
+
+<div class="new_vod" style="clear: both; margin-top: 20px;">
+	<h2 class="single-strong" title="最新视频 ">最新视频 </h2>
+	<div class="new_vod-list">
+		<div class="b-listtab-main">
+        <ul class="list g-clear" id="new_list" style="margin-left: -20px;">
+             
+        </ul>
+       </div>
+	</div>
+</div>
+<script>
+			
+	var get_list =function(){
+		
+		$.ajax({
+			type:"get",
+			url:"/index.php/ajax/data",
+			data:{
+				mid:1,
+				limit:8,
+				page:1
+			},
+			success:function(data){
+				var items = data.list,str = "";
+				
+				for (var i = 0; i < items.length; i++) {
+					str +=`<li class="item"> <a class="js-tongjic" href="${items[i].detail_link}" title="${items[i].vod_name}">
+                  <div class="cover g-playicon"> <img width="286" height="213" src="${items[i].vod_pic}" alt="${items[i].vod_name}"> <span class="pay">${items[i].vod_class}</span> </div>
+                  <div class="detail">
+                    <p class="title g-clear"> <span class="s1">${items[i].vod_name}</span></p>
+                    <p class="star"> </p>
+                  </div>
+                  </a> 
+             </li>`;             
+             
+				}
+				
+				
+				$("#new_list").html(str);
+				
+			}
+		});
+	}
+	
+	get_list();
+	
+</script>
+
+<style>
+	.advs .middel{padding: 0 46px;}
+	@media (max-width: 768px) {
+		.advs .middel{ padding: 0;}
+	}
+</style>
+<div class="" style="clear: both; margin-top: 20px;">
+    <div class="advs">
+    	{maccms:ad flag='d_bottom'}
+			<a href="{$d_bottom.link}" target="_blank">
+		        <img  src="{$d_bottom.img}" >
+		     </a>
+		{/maccms:ad}         
+    </div>
+</div>
+
+</section>
+</div>
+
+
+	
+	{include file="public/foot"}
+
+	
+
+<div class="rewards-popover-mask" etap="rewards-close"></div>
+	<div class="rewards-popover">
+		<h3>觉得本站还不错就打赏一下吧！</h3>
+				<div class="rewards-popover-item">
+			<h4>支付宝扫一扫打赏</h4>
+			<img src="images/zfb.png">
+		</div>
+						<div class="rewards-popover-item">
+			<h4>微信扫一扫打赏</h4>
+			<img src="{$maccms.path_tpl}images/wx.png">
+		</div>
+				<span class="rewards-popover-close" etap="rewards-close"></span>
+	</div> 
+<script type="text/javascript">
+$(function(){
+    function jujis(jujiTit,on,jujiCon){
+        $(jujiTit).children().hover(function(){
+            $(this).addClass(on).siblings().removeClass(on);
+            var index = $(jujiTit).children().index(this);
+           	$(jujiCon).children().eq(index).show().siblings().hide();
+    	});
+	};
+    jujis(".juji-hd","active",".juji-bd");
+});
+</script>
+</body>
+</html>

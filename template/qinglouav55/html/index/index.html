@@ -1,0 +1,147 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="cache-control" content="no-siteapp">
+		<title>{$maccms.site_name}</title>
+
+		<meta name="keywords" content="{$maccms.site_keywords}">
+		<meta name="description" content=" {$maccms.site_description} "> {include file="public/include"}
+
+		<link rel='stylesheet' href='{$maccms.path_tpl}css/index.css' type='text/css' />
+
+	</head>
+
+	<body>
+		{include file="public/head"}
+
+		<div class="s-body" style="min-height: 645px;">
+			<!--banner-->
+			<div class="focus-wrap">
+				<ul class="focus-list">
+					<li class="pic" style="">
+						<a href="" target="_bank" style="background: url({$maccms.path_tpl}/images/hbg.jpg)no-repeat;background-size: cover;background-position: center;">
+
+						</a>
+					</li>					
+
+				</ul>
+			</div>
+			<div class="copyright-tips">
+				<div class="layout-cont">
+					<span><i class="btn fn-gonggao"></i> &nbsp;公告：</span>
+					<ul style="margin-top: 0px;">
+						<li>
+							<a> 按 CTRL+D 收藏本站,防止迷路哟.</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--公告弹窗-->
+			<div class="tips-box">
+			</div>
+			<div style="text-align: center;">
+				{maccms:ad flag='i_banner'}
+				<a href="{$i_banner.link}" target="_blank">
+					<img style="min-height: 60px;" src="{$i_banner.img}"  border="0">
+				</a>
+				{/maccms:ad}
+			</div>
+			<div class="content">
+				<!--左边模块-->
+				<div class="left-box">
+					<div class="mod-new">
+						<div class="title">
+							<h2>推荐视频</h2></div>
+						<div class="mod-row">
+							{maccms:vod num="15" type="all"  order="desc" timeadd="7" level="1"}
+							<div class="mod-col">
+								<a href="{:mac_url_vod_detail($vo)}">
+									<div class="view-layer">
+										<img src="{:mac_url_img($vo.vod_pic)}">
+										<p></p>
+										<div class="play-bg"><span><i></i></span></div>
+									</div>
+								</a>
+								<p class="col-title">{$vo.vod_name}</p>
+								<div class="subtitle">
+									<i class="btn fn-see"></i>{$vo.vod_hits}
+									
+									<!--<span><i class="btn fn-zan2"></i>23</span>-->
+								</div>
+							</div>
+							{/maccms:vod}
+						</div>
+					</div>
+					
+					{maccms:type parent="current" order="asc" by="sort" mid="1" id="vo1"}					
+					<div class="mod-new">
+						<div class="title">
+							<h2>{$vo1.type_name}</h2></div>
+						<div class="mod-row">
+							{maccms:vod num="15" type="'.$vo1['type_id'].'" order="desc" by="time"}
+							<div class="mod-col">
+								<a href="{:mac_url_vod_detail($vo)}">
+									<div class="view-layer">
+										<img src="{:mac_url_img($vo.vod_pic)}">
+										<p></p>
+										<div class="play-bg"><span><i></i></span></div>
+									</div>
+								</a>
+								<p class="col-title">{$vo.vod_name}</p>
+								<div class="subtitle">
+									<i class="btn fn-see"></i>{$vo.vod_hits}
+									
+									<!--<span><i class="btn fn-zan2"></i>23</span>-->
+								</div>
+							</div>
+							
+							{/maccms:vod}
+						</div>
+					</div>					
+					{/maccms:type}
+					
+					{include file="index/lradv"}
+					
+
+				</div>
+				<!--右边模块-->
+				<div class="right-box">
+					<!--排行榜-->
+					<div class="newest">
+						<a class="s-title">最热视频 <i></i></a>
+						<ul>
+							{maccms:vod num="20" type="all" by="hits_day" order="desc" timeadd="14"}
+							<li>
+								<a href="{:mac_url_vod_detail($vo)}">
+									<img src="{:mac_url_img($vo.vod_pic)}">
+								</a>
+								<p>{$vo.vod_name}</p>
+								<p class="content-like">
+									<span class="mod-like"><i class="btn fn-see"></i>{$vo.vod_hits}</span>
+									<!--<span class="mod-like" style="float: right;"><i class="btn fn-zan2"></i></span>-->
+								</p>
+							</li>
+							{/maccms:vod}	
+						</ul>
+						<div class="home-r-rank-footer">
+							<a href="http://www.qinglouav55.com/video/lists/orderCode/hot.html" class="uhl">查看更多&gt;</a>
+						</div>
+					</div>
+
+				</div>
+			
+			</div>
+
+		</div>
+
+		{include file="public/foot"}
+
+	</body>
+
+</html>

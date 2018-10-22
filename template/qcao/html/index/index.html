@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="cache-control" content="no-siteapp">
+		<title>{$maccms.site_name}-高清云影视免费为大家提供最新最全的免费电影</title>
+
+		<meta name="keywords" content="{$maccms.site_keywords}">
+		<meta name="description" content=" {$maccms.site_description} "> {include file="public/include"}
+
+	</head>
+
+	<body>
+
+		{include file="public/head"}
+
+		<div class="container">
+			<div id="content" class="row">
+
+				<div class="ads">
+					{maccms:ad flag='i_banner'}
+					<a href="{$i_banner.link}" target="_blank">
+						<img style="width:100%;min-height: 50px;" src="{$i_banner.img}">
+					</a>
+					{/maccms:ad}
+				</div>
+
+				
+				<div class="col-xs col-sm-12 col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h2 class="panel-title">热播推荐</h2>
+						</div>
+						<div class="panel-body panel-padding">
+							<ul class="videos">
+								{maccms:vod num="12" type="all" by="hits_day" order="desc" timeadd="7" }
+								<li>
+									<div class="video">
+										<a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" class="thumbnail">
+											<div class="video-thumb"> <img onerror="this.src='{$maccms.path_tpl}images/nopic.gif'" src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" width="200" height="135"> </div> <span class="video-title">{$vo.vod_name}</span>
+											<div class="video-details hidden-xs hidden-sm"> <span class="pull-left">{$vo.vod_time_add|mac_time_range}</span> <span class="pull-right text-right">{$vo.vod_hits} 次播放</span> </div>
+										</a>
+									</div>
+								</li>
+								{/maccms:vod}	
+							</ul>
+							<div class="clearfix"></div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					
+					{maccms:type parent="current" order="asc" by="sort" mid="1" id="vo1"}
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h2 class="panel-title">
+								<a href="{:mac_url_type($vo)}">
+								{$vo1.type_name}
+								</a>
+							</h2>
+						</div>
+						<div class="panel-body panel-padding">
+							<ul class="videos">
+								{maccms:vod num="12" type="'.$vo1['type_id'].'" order="desc" by="time"}
+								<li>
+									<div class="video">
+										<a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" class="thumbnail">
+											<div class="video-thumb"> <img onerror="this.src='{$maccms.path_tpl}images/nopic.gif'" src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" width="200" height="135"> </div> <span class="video-title">{$vo.vod_name}</span> 
+											<div class="video-details hidden-xs hidden-sm"> <span class="pull-left">{$vo.vod_time_add|mac_time_range}</span> <span class="pull-right text-right">{$vo.vod_hits} 次播放</span> </div>
+										</a>
+									</div>
+								</li>
+								{/maccms:vod}	
+							</ul>
+							<div class="clearfix"></div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					
+					
+					{/maccms:type}
+					
+				
+					
+					
+				</div>
+			</div>
+		</div>
+		
+		{include file="public/foot"}
+
+	</body>
+
+</html>

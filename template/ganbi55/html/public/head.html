@@ -1,0 +1,109 @@
+<header class="header">
+  <div class="container">
+    <h1 class="logo"><a href="/" title="{$maccms.site_name}"><img src="{$maccms.path_tpl}images/logo.png"></a></h1>
+    <div class="logo_font"><img src="{$maccms.path_tpl}images/logo_font.png"></div>
+    
+    <span class="sitenav-on"><i class="icon-list"></i></span> <span class="sitenav-mask"></span>
+    
+    <span class="searchstart-on"><i class="icon-search"></i></span> <span class="searchstart-off"><i class="icon-search"></i></span>
+    <form class="searchform"  name="search" method="POST" action="{:mac_url('vod/search')}" method="post" id="search">
+      <button tabindex="3" class="sbtn" type="submit"><i class="fa"></i></button>
+      <input tabindex="2" class="sinput" name="wd" type="text" placeholder="请输入搜索关键字" value="">
+    </form>
+
+  </div>
+</header>
+<div class="header_end">
+
+</div>
+<div id="homeso">
+  <form method="post" id="soform" style="text-align: center;float: none"  name="search" action="{:mac_url('vod/search')}">
+    <img id="imgsrc" src="{$maccms.path_tpl}images/sologo.png"><br>
+    <br>
+    <input tabindex="2" class="homesoin" id="sos" name="wd" type="text" placeholder="输入你要观看的视频" value="">
+    <button id="button" tabindex="3" class="homesobtn" type="submit"><i class="fa">搜索</i></button>
+  </form>
+</div>
+
+<div class="fenlei">
+  <div class="b-listfilter" style="padding: 0px;">
+    <style>
+      #noall{
+        background-color: #aik651;
+        color: #fff;
+      }
+    </style>
+    <dl class="b-listfilter-item js-listfilter" style="padding-left: 0px;height:auto;padding-right:0px;">
+      <dd class="item g-clear js-listfilter-content" style="margin: 0;">
+	    	<a href='{:url('/')}' class="" target='_self'>首页</a>      	
+        {if condition="($obj.type_pid ==0)"}
+        {maccms:type parent="menu-itema" order="asc" by="sort"}
+        <a {if condition="($vo.type_name==$obj.type_name)"}class="menu-itema"{/if} href="{:mac_url_type($vo,[],'type')}">{$vo.type_name}</a>
+        {/maccms:type}
+        {else /}
+        {maccms:type parent="'.$obj['type_pid'].'" order="asc" by="sort"}
+        <a {if condition="($vo.type_name==$obj.type_name)"}class="menu-itema"{/if} href="{:mac_url_type($vo,[],'type')}">{$vo.type_name}</a>
+        {/maccms:type}
+        {/if}        
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="navs">
+	<div class="navs-body">
+		<div id="nav">
+			<a href="{:url('/')}" class="nav-item {if condition="$maccms.aid eq 1"} on{/if}">
+				首页
+			</a>
+			{maccms:type parent="menu-itema" order="asc" by="sort"}
+				<a href="{:mac_url_type($vo,[],'type')}" class="nav-item {if condition="($vo.type_id eq MAC_TYPE_ID || $vo.type_id eq MAC_TYPE_PID)"} on{/if}">{$vo.type_name}</a>
+			{/maccms:type}
+		</div>
+	</div>
+	<div class="nav-menu" id="navOpen"><img src="{$maccms.path_tpl}images/m/nav-ico.png"></div>
+	 <div class="nav-popup" id="navPopup"><i></i></div>
+</div>
+<script>
+		$(function(){
+			
+			$("#searchOpen").click(function(){$("#search").show()});
+			$("#navOpen").click(function(){
+				var navPopup = $("#navPopup");
+				if(navPopup.is(":visible")){
+					navPopup.hide();
+				}else{
+					if($(navPopup).find('a').length <= 0){
+						var nav = $('#nav');
+						var alist = $(nav).find('a');
+						var len = alist.length;
+						var fragment = document.createDocumentFragment();
+						for(var i = 5;i < len;i++){
+							fragment.appendChild(alist[i]);
+						}
+						$('#navPopup').append(fragment);
+					}
+					navPopup.show();
+				}
+				
+			});
+			$("#searchClose").click(function(){$("#search").hide()});
+			$("#userOpen").click(function(){
+				if($("#userPopup").is(":visible")){
+					$("#userOpen").removeClass("on");
+					$("#userPopup").hide();
+				}else{
+					$("#userOpen").addClass("on");
+					$("#userPopup").show();
+				}
+				
+			});
+			var navWidht=0;
+			$("#nav .nav-item").each(function(){
+				navWidht=navWidht+$(this).outerWidth()+5;
+			});
+			$("#nav").width(navWidht);
+			
+		});
+		
+</script>

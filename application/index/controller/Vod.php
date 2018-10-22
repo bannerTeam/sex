@@ -11,6 +11,19 @@ class Vod extends Base
 
     public function index()
     {
+        $param = mac_param_url();
+        
+        $this->assign('vodindex','1');
+        
+        $by = $param['by'];
+        
+        if(empty($by)){
+            $by = 'time';
+        }
+        
+        $this->assign('sort',$by);
+        
+        
         return $this->fetch('vod/index');
     }
 
@@ -19,8 +32,8 @@ class Vod extends Base
        
         
         $info = $this->label_type();      
-                
-        $this->assign('sort','hits_month');
+        
+        //$this->assign('sort','hits_month');
       
         
         return $this->fetch( mac_tpl_fetch('vod',$info['type_tpl'],'type') );
@@ -53,6 +66,8 @@ class Vod extends Base
     public function search()
     {
         $param = mac_param_url();
+        
+        
         $this->check_search($param);
         $this->assign('param',$param);
         return $this->fetch('vod/search');
@@ -62,6 +77,10 @@ class Vod extends Base
     {
         $info = $this->label_vod_detail();
         return $this->fetch( mac_tpl_fetch('vod',$info['vod_tpl'],'detail') );
+        
+        $info = $this->label_vod_play('play');
+        
+        return $this->fetch( mac_tpl_fetch('vod',$info['vod_tpl_play'],'play') );
     }
 
     public function ajax_detail()
@@ -78,8 +97,9 @@ class Vod extends Base
 
     public function play()
     {
-        $info = $this->label_vod_play('play');        
         
+        $info = $this->label_vod_play('play');        
+                
         return $this->fetch( mac_tpl_fetch('vod',$info['vod_tpl_play'],'play') );
     }
 

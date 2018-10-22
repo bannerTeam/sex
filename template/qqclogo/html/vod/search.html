@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="cache-control" content="no-siteapp">
+		<title>{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索结果 - {$maccms.site_name}</title>
+
+		<meta name="keywords" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索结果" />
+    <meta name="description" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索结果" />
+		{include file="public/include"}
+		
+		
+	</head>
+
+	<body>
+		{include file="public/head"}
+		
+		
+		<div id="wrapper">
+			<div class="container hidden-xs">
+				{maccms:ad flag='s_banner'}
+					<a href="{$s_banner.link}" target="_blank">
+				        <img style="width:100%;min-height: 50px;" src="{$s_banner.img}">
+				    </a>
+				 {/maccms:ad} 
+			</div>
+
+			<div class="container">
+				<div class="row ">
+					
+					<div class="well well-filters new_filters">
+						<div class="pull-left">
+							<h4>搜索含有<span class=" hidden-sm"> “{$param.wd}” 的搜索结果</span>&nbsp;&nbsp;<i class="search_query_num mac_total"></i>个视频</h4>
+						</div>
+						<div class="pull-right m-l-20">
+							<div class="hidden-xs">											
+			
+								<div class="btn-group">
+									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+										
+		{if condition="$param['by'] eq 'time'"}最新 {else}最受欢迎 {/if}
+										
+										<span class="caret"></span>
+										
+										
+									</button>
+									<ul class="dropdown-menu">					
+										<li class="{if condition="$param['by'] eq 'time'"}active {/if}"><a href="/vod/search/by/time/wd/{$param.wd}">最新</a></li>
+										<li class="{if condition="$param['by'] eq 'hits'"}active {/if}"><a href="/vod/search/by/hits/wd/{$param.wd}">最受欢迎</a></li>
+									</ul>
+								</div>					
+							</div>	
+							
+						</div>
+								
+						<div class="clearfix"></div>
+					</div>
+					
+					<div class="col-md-12 row-boder">
+						{maccms:vod num="40" paging="yes" pageurl="vod/search" type="current" order="desc" by="time"}
+						<div class="col-sm-6 col-md-3 col-lg-3">
+							<div class="well well-sm m-b-0 m-t-20">
+								<a href="{:mac_url_vod_detail($vo)}">
+									<div class="thumb-overlay">
+										<img src="{:mac_url_img($vo.vod_pic)}" title="{$vo.vod_name}" alt="{$vo.vod_name}" id="" class="img-responsive ">
+										<div class="label-private"></div>
+										<div class="duration">
+										</div>
+									</div>
+									<span class="video-title title-truncate m-t-5">{$vo.vod_name}</span>
+								</a>
+								<div class="video-added">
+
+									{$vo.vod_time_add|mac_time_range}
+								</div>
+								<div class="video-views pull-left">
+									<i class="fa fa-eye"></i>&nbsp;{$vo.vod_hits}
+								</div>
+								<!--<div class="video-rating pull-right no-rating">
+									<i class="fa fa-thumbs-up video-rating-heart no-rating"></i> <b>-</b>
+								</div>-->
+								<div class="clearfix"></div>
+							</div>
+						</div>
+						{/maccms:vod}
+					</div>
+					
+					<div class="clearfix"></div>
+							
+					<div class="v-rv-page-box" style="margin-top: 20px;">
+						{include file="public/paging"}
+					</div>
+					
+					<div class="clearfix"></div>
+				</div>
+			</div>
+
+		</div>
+
+
+		{include file="public/foot"}
+		 <script>
+	        $('.mac_total').html('{$__PAGING__.record_total}');
+	    </script>
+	    
+	    <script src="{$maccms.path_tpl}js/bootstrap.min.js"></script>
+	    
+	</body>
+
+</html>

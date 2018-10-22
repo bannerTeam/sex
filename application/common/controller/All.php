@@ -300,7 +300,7 @@ class All extends Controller
             }
             $info = $res['info'];
         }
-        
+      
         $trysee = 0;
         $urlfun='mac_url_vod_'.$flag;
         $listfun = 'vod_'.$flag.'_list';
@@ -328,7 +328,25 @@ class All extends Controller
                 exit;
             }
         }
-
+                
+        
+        /*判断有多个播放器的时候，优先使用 ckplayer */
+        if(count($info[$listfun])>1){            
+            $sid = $param['sid'];            
+            $play_list = $info[$listfun]; 
+            $other = false;
+            $other_k = 0;
+            foreach ($play_list as $k => $v) {
+                if($v['from'] == 'ckplayer' && $k != $sid){
+                    $play_list[$sid] = $v;                    
+                    break;
+                }
+            }
+            
+            $info[$listfun] = $play_list;
+        }
+        /*判断有多个播放器的时候，优先使用 ckplayer  end*/
+       
         $player_info=[];
         $player_info['flag'] = $flag;
         $player_info['encrypt'] = intval($GLOBALS['config']['app']['encrypt']);
@@ -353,6 +371,8 @@ class All extends Controller
         $player_info['server'] = (string)$info[$listfun][$param['sid']]['server'];
         $player_info['note'] = (string)$info[$listfun][$param['sid']]['note'];
 
+        
+        
         if($GLOBALS['config']['app']['encrypt']=='1'){
             $player_info['url'] = mac_escape($player_info['url']);
             $player_info['url_next'] = mac_escape($player_info['url_next']);
@@ -362,7 +382,6 @@ class All extends Controller
             $player_info['url_next'] = base64_encode(mac_escape($player_info['url_next']));
         }
 
-        
         
         $info['player_info'] = $player_info;
         $this->assign('obj',$info);
