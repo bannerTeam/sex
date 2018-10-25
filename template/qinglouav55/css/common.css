@@ -136,7 +136,7 @@ body{
 }
 .g-header .g-box .search .search-box input {
     float: left;
-    width: 250px;
+    width: 100px;
     height: 22px;
     padding: 8px 12px 8px 18px;
     outline: 0 none;
@@ -147,6 +147,7 @@ body{
     border: 0 none;
     border-top-left-radius: 19px;
     border-bottom-left-radius: 19px;
+    
 }
 .g-header .g-box .search .search-box .choice-box1{
     line-height: 17px;
@@ -1840,9 +1841,51 @@ font {
     }
 
 }
+@media screen and (max-width: 1440px){
+	.g-header .g-box .search{ display: none;}
+}
+/*.banner100{ max-width: 1200px; margin: 0 auto;}
+.banner100 img{ width: 100%;}*/
 
+@media screen and (max-width: 600px){
+	
+	
+header{display:block!important;position:fixed;top:0;max-width:1024px;width:100%;background:#fff;height:40px;z-index:999;border-bottom:1px solid #dedede}
+header .head{box-shadow:none;display:inline-block;vertical-align:bottom;width:100%;max-width:1024px;height:40px;background:#fff;position:fixed;top:0;z-index:9;-webkit-transition:-webkit-box-shadow .5s;border:none}
+header .logo{width:82px;height:38px;line-height:38px;display:inline-block;float:left;padding-left:5px;text-align:center}
+header .logo img{max-width:82px;max-height:33px}
+header .menu{float:right;line-height:40px;font-size:18px;width:40px;color:#000;text-align:right;padding-right:5px;margin-right:0}
+header.nav-active .nav-masklayer{display:block}
+header .menu span{font-size:24px;width:auto}
+header .search{position:absolute;width:auto;height:auto;margin:0;background-color:#e4e4e4;border-radius:15px;left:105px;right:45px;bottom:6px;top:6px;display:-webkit-flex}
+header .search .choice-box1{float:left;font-size:12px;border-right:1px solid #fff;margin:6px 0;transform:scale(.8);-webkit-transform:scale(.8);-moz-transform:scale(.8);-o-transform:scale(.8);-ms-transform:scale(.8);color:#888;padding:0 3px}
+header .search .choice-box1 i{height:auto;line-height:normal;float:right;font-size:16px}
+header .search .js-placeholder{width:59%;height:100%;background:0 0;border:0;padding-left:7px;outline:0;color:#888;float:left;font-size:12px;-webkit-flex:1}
+header .search i{font-size:16px;float:left;height:28px;line-height:28px;color:#fff}
+header nav{position:fixed;top:40px;display:none;width:100%;max-width:1024px;background-color:#fff;padding-bottom:15px;z-index:9;border-top:1px solid #e6e6e6;padding:6px;margin:auto;overflow-y:auto}
+.js-nav li{display:block;line-height:40px;padding-left:15px;border-bottom:1px solid #f1f1f1}
+.js-nav li .menu-two{display:block;overflow:hidden;padding:10px 0 0;border-top:1px solid #f1f1f1}
+header .menu-two a{padding:0 10px;float:left;text-align:center;display:inline-block;line-height:28px;cursor:pointer;margin-bottom:10px}
+header .menu-two a.cur{color:red;border:1px solid red;border-radius:5px;line-height:26px}
+header nav a{display:block}
+header nav a div{border-radius:3px;padding:9px 0}
+header nav i{width:30px;height:30px;line-height:30px;display:block;margin:5px auto 0;font-size:24px!important;background:#f1f1f1;border-radius:3px}
+header nav span{color:#545454;font-size:14px;line-height:27px}
+header .nav-masklayer{width:100%;height:100%;z-index:8;background-color:#000;opacity:.6;display:none;position:fixed;top:0;left:0}
+header nav a{padding:0;height:auto}
+header nav .special div{margin-left:-1px}
 
-
-
+	
+	.s-body{ padding-top: 42px;}
+	.s-body .focus-wrap{ display: none;}
+	.s-body .content{ width: 100% !important;}
+	.g-head,.copyright-tips,#leftdiv,#rightdiv{ height: 0;display: none;}	
+	
+	
+	.banner100{ width: 100%;}
+	.banner100 img{ width: 100%; min-height: 50px;}
+	.footer .copyright{ padding: 20px 20px;}
+	.footer .main{width: 100% !important; text-align: left;}	
+}
 
 

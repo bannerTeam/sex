@@ -9,7 +9,7 @@
 			</div>
 			<!--顶部导航-->
 			<div class="g-head-center">
-				<ul>					
+				<ul>
 					<li class="{if condition=" $maccms.aid eq 1 "} current{/if}">
 						<a class="bar-list" href="/">首页</a>
 					</li>
@@ -18,8 +18,7 @@
 						<a class="bar-list" href="{:mac_url_type($vo,[],'type')}" title="{$vo.type_name}">{$vo.type_name}</a>
 					</li>
 					{/maccms:type}
-					
-					
+
 				</ul>
 			</div>
 			<!--顶部搜索-->
@@ -38,3 +37,45 @@
 		</div>
 	</div>
 </div>
+
+<header class="js-header" style="display: none;">
+	<div class="head">
+		<a class="logo" href="/"><img src="{$maccms.path_tpl}images/logo.png"></a>
+		<form action="{:mac_url('vod/search')}" method="get" id="myform">
+			<div class="search">				
+				<input class="js-placeholder" placeholder="请输入" type="search" value="" name="wd"><i class="btn fn-sousuo" onclick="$('#myform').submit();" style="float: right;width: 23px;"></i>
+			</div>
+		</form>
+
+		<div class="menu"><span class="btn fn-sort"></span></div>
+	</div>
+	<nav class="js-nav" style="max-height: 600px; display: none;">
+		<ul>
+			<li>
+				<div class="menu-two">
+					{maccms:type parent="menu-itema" order="asc" by="sort"}					
+						<a href="{:mac_url_type($vo,[],'type')}" title="{$vo.type_name}">{$vo.type_name}</a>				
+					{/maccms:type}					
+				</div>
+			</li>			
+		</ul>
+	</nav>
+	<div class="nav-masklayer"></div>
+</header>
+<script>
+	var _height = $(window).height()-40;
+    $("header nav").css("max-height", _height + "px");
+	$(".head .menu").click(function(){
+        if($(".js-header").hasClass("nav-active")==false){
+            $(".js-header nav").show();
+            $(".js-header").addClass("nav-active");
+        }else{
+            $(".js-header nav").hide();
+            $(".js-header").removeClass("nav-active");
+        }
+    });
+    $(".nav-masklayer").click(function(){
+        $(".js-header nav").hide();
+        $(".js-header").removeClass("nav-active");
+    });
+</script>

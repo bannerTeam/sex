@@ -29,13 +29,13 @@
 						<div class="list-group" style="margin-bottom:0px;">
 							<!--Mobile-->
 							<div class="header visible-mo" style="background-color:#1bbc9d;border-color:#1bbc9d;color:white;display:none\9;">
-								<a href="/videos/" class="list-group-item" style="background-color:#1bbc9d;border-color:#1bbc9d;color:white;">
+								<a class="list-group-item" style="background-color:#1bbc9d;border-color:#1bbc9d;color:white;">
 									<i class="fa fa-list-alt"></i>&nbsp;视频分类
 								</a>								
 								<div style="clear:both;"></div>
 							</div>
 							<!--Mobile-->
-							<a href="/videos/" class="list-group-item header visible-pc">
+							<a class="list-group-item header visible-pc">
 								<i class="fa fa-list-alt"></i>&nbsp;视频分类
 							</a>							
 							{maccms:type parent="menu-itema" order="asc" by="sort"}
@@ -60,15 +60,11 @@
 								<h4><i class="fa fa-clock-o green"></i>&nbsp;视频</h4>
 							</div>
 
-							<div class="pull-right" style="display: none;">
-								<a class="btn btn-primary" href="/upload/video"><span class="hidden-xs"><i class="fa fa-upload"></i> 上传视频</span><span class="visible-xs"><i class="fa fa-upload"></i></span></a>
-							</div>
+							
 							<div class="clearfix"></div>
 						</div>
 
-						<div class="well well-sm" style="display: none;">
-							显示 <span class="text-white">1</span> 到 <span class="text-white">36</span> of <span class="text-white">1311</span> 视频.
-						</div>
+						
 						<div class="row row-boder">
 
 {maccms:vod num="30" paging="yes" pageurl="vod/type" type="current" order="desc" by="'.$sort.'"}

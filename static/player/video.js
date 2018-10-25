@@ -11,9 +11,8 @@ function loadCss(src){
 }
 loadCss(maccms.path +"/static/player/video/video.css");
 
-document.write('<script type="text/javascript" src="'+ maccms.path +'/static/player/video/video.min.js"></script>');
-document.write('<script type="text/javascript" src="'+ maccms.path +'/static/player/video/videojs-contrib-hls.js"></script>');
-
+$("head").append('<script type="text/javascript" src="'+ maccms.path +'/static/player/video/video.min.js"></script>');
+$("head").append('<script type="text/javascript" src="'+ maccms.path +'/static/player/video/videojs-contrib-hls.js"></script>');
 
 function getPlayerAdv(){
 				
@@ -39,11 +38,14 @@ function getPlayerAdv(){
 					<span href="javascript:;" class="ad_close"><span class="ad_close_s"></span></span>
 				</div>`);
 			}
-			
+			var mp = $(".MacPlayer"),w = mp.width(), h = mp.height();
+			$(".ad_box a img").css({
+				"max-height":h, 
+				"max-width":w
+			});			
 			
 		}
-	});
-	
+	});	
 }
 
 getPlayerAdv();
@@ -52,11 +54,25 @@ MacPlayer.Show();
 
 setTimeout(function(){
 	
+	if(typeof(videojs) == "function"){
+		newVideojs();
+	}else{		
+		setTimeout(function(){
+			newVideojs();
+		},2000);		
+	}
+
+}, MacPlayer.Second * 1000 - 1000);
+
+
+function newVideojs(){
+	
 	$("#playleft").append(`<video id="roomVideo1" class="video-js vjs-big-play-centered" controls preload="none" ></video>`);
 				
 	var mp = $(".MacPlayer"),w = mp.width(), h = mp.height();
 	var myPlayer = videojs('roomVideo1',{
 		autoplay:false,
+		bigPlayButton : true,
         //poster: "封面",
         height:h, 
 		width:w
@@ -67,7 +83,7 @@ setTimeout(function(){
 		});
    });
    myPlayer.src(MacPlayer.PlayUrl);
-   
+		
    
    	//关闭广告
    	$("#playleft").delegate(".ad_close","click",function(){
@@ -90,5 +106,5 @@ setTimeout(function(){
    		myPlayer.width(w);
    		myPlayer.height(h);
    });
-
-}, MacPlayer.Second * 1000 - 1000);
+	
+}

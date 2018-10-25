@@ -39,6 +39,9 @@ class All extends Controller
         if($maccms['search_hot']){
             $maccms['search_hot_arr'] = explode(",", $maccms['search_hot']);
         }
+        if($maccms['site_qq']){
+            $maccms['site_qq_arr'] = explode(",", $maccms['site_qq']);
+        }
         
         $this->assign( ['maccms'=>$maccms] );
     }

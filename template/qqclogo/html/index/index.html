@@ -8,7 +8,7 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta http-equiv="cache-control" content="no-siteapp">
-		<title>{$maccms.site_name}-高清云影视免费为大家提供最新最全的免费电影</title>
+		<title>{$maccms.site_name}</title>
 
 		<meta name="keywords" content="{$maccms.site_keywords}">
 		<meta name="description" content=" {$maccms.site_description} "> {include file="public/include"}
@@ -31,7 +31,7 @@
 					</div>
 
 					<div class="pull-right btn-line-height m-l-20">
-						<a class="btn btn-primary" href="/videos?o=mr"><span class="hidden-xs"><i class="fa fa-plus"></i> 更多视频</span><span class="visible-xs"><i class="fa fa-plus"></i></span></a>
+						<a class="btn btn-primary" href="{:mac_url('/vod/index/level/1,2')}"><span class="hidden-xs"><i class="fa fa-plus"></i> 更多视频</span><span class="visible-xs"><i class="fa fa-plus"></i></span></a>
 					</div>
 
 					<div class="clearfix"></div>
@@ -76,7 +76,7 @@
 				<div class="ps-body">
 					<div class="ps-pc">
 						<div class="ps_39" style="width: 1140px;">
-							<a href="/link/4kytha" target="_blank"><img src="{$maccms.path_tpl}images/tad/8.gif" title="9198" style="width:1140px;height:65px;"></a>
+							<a href="" target="_blank"><img src="{$maccms.path_tpl}images/tad/8.gif" title="9198" style="width:1140px;height:65px;"></a>
 						</div>
 					</div>
 				</div>
@@ -85,20 +85,16 @@
 					<div class="pull-left">
 						<h4><i class="fa fa-clock-o green"></i>&nbsp;最新上传视频</h4>
 					</div>
-
 					<div class="pull-right btn-line-height m-l-20">
-						<a class="btn btn-primary" href="/videos?o=mr"><span class="hidden-xs"><i class="fa fa-plus"></i> 更多视频</span><span class="visible-xs"><i class="fa fa-plus"></i></span></a>
+						<a class="btn btn-primary" href="{:mac_url('/vod/index')}"><span class="hidden-xs"><i class="fa fa-plus"></i> 更多视频</span><span class="visible-xs"><i class="fa fa-plus"></i></span></a>
 					</div>
-
-					
-
 					<div class="clearfix"></div>
 				</div>
 
 				<div class="row row-boder">
 					<div class="col-sm-9 hidden-xs hidden-sm">
 						<div class="row">
-						{maccms:vod num="6" type="all"  order="desc"  }
+						{maccms:vod num="6" type="all" order="desc"  }
 							<div class="col-sm-6 col-md-4 col-lg-4">
 								<div class="well well-sm">
 									<a href="{:mac_url_vod_detail($vo)}">
@@ -169,7 +165,7 @@
 					</div>
 
 					<div class="pull-right btn-line-height m-l-20">
-						<a class="btn btn-primary" href="/videos?o=mr"><span class="hidden-xs"><i class="fa fa-plus"></i> 更多视频</span><span class="visible-xs"><i class="fa fa-plus"></i></span></a>
+						<a class="btn btn-primary" href="/vod/index/by/hits"><span class="hidden-xs"><i class="fa fa-plus"></i> 更多视频</span><span class="visible-xs"><i class="fa fa-plus"></i></span></a>
 					</div>
 
 					<div class="clearfix"></div>
@@ -213,56 +209,6 @@
 				<!--首页分页-->
 				<div class="index-pages">
 
-					<div style="text-align: center;" class="hidden-xs">
-						<ul class="pagination">
-							<li class="active"><span>1</span></li>
-							<li class="hidden-xs">
-								<a href="/videos/index_page_2.html">2</a>
-							</li>
-							<li class="hidden-xs">
-								<a href="/videos/index_page_3.html">3</a>
-							</li>
-							<li class="hidden-xs">
-								<a href="/videos/index_page_4.html">4</a>
-							</li>
-							<li class="disabled hidden-xs"><span>&nbsp;...&nbsp;</span></li>
-							<li></li>
-							<li class="hidden-xs">
-								<a href="/videos/index_page_2125.html">2125</a>
-							</li>
-							<li class="hidden-xs">
-								<a href="/videos/index_page_2126.html">2126</a>
-							</li>
-							<li>
-								<a href="/videos/index_page_2.html" class="prevnext">»</a>
-							</li>
-						</ul>
-					</div>
-					<div style="text-align: center;" class="visible-xs">
-						<ul class="pagination pagination-lg">
-							<li class="active"><span>1</span></li>
-							<li class="hidden-xs">
-								<a href="/videos/index_page_2.html">2</a>
-							</li>
-							<li class="hidden-xs">
-								<a href="/videos/index_page_3.html">3</a>
-							</li>
-							<li class="hidden-xs">
-								<a href="/videos/index_page_4.html">4</a>
-							</li>
-							<li class="disabled hidden-xs"><span>&nbsp;...&nbsp;</span></li>
-							<li></li>
-							<li class="hidden-xs">
-								<a href="/videos/index_page_2125.html">2125</a>
-							</li>
-							<li class="hidden-xs">
-								<a href="/videos/index_page_2126.html">2126</a>
-							</li>
-							<li>
-								<a href="/videos/index_page_2.html" class="prevnext">»</a>
-							</li>
-						</ul>
-					</div>
 				</div>
 				<!--首页分页-->
 			</div>
@@ -274,7 +220,7 @@
 			if($(window).width() > 650){
 				setTimeout(function(){
 					$("#wrapper").css({
-						"background-image": "url('{$maccms.path_tpl}/images/HY-POP.jpg')",
+						"background-image": "url('{$maccms.path_tpl}/images/bdbg.jpg')",
 						"background-attachment":"fixed",
 						"background-position":"center 190px",
 						"background-repeat":"no-repeat"

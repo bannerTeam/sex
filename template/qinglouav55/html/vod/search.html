@@ -11,86 +11,71 @@
     <meta name="keywords" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索结果" />
     <meta name="description" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索结果" />
  {include file="public/include"}
-<link rel='stylesheet' id='main-css'  href='{$maccms.path_tpl}css/movie.css' type='text/css' media='all' />
-
+<link rel='stylesheet' href='{$maccms.path_tpl}css/video-sort.css' type='text/css' />
 </head>
-<body class="page-template page-template-pages page-template-posts-film page-template-pagesposts-film-php page page-id-9">
+<body>
 
 {include file="public/head"}
 	
-<section class="container">
+	<div class="s-body">
+			<div class="content">
+				<div class="vault-top">
+					<div class="banner100">
+					{maccms:ad flag='s_banner'}
+					<a href="{$s_banner.link}" target="_blank">
+						<img style="100%;min-height: 60px;" src="{$s_banner.img}">
+					</a>
+					{/maccms:ad}
+					</div>
+				</div>
+				<div class="vault-main">
+					<div class="sort-title">
+
+						<div class="sort-label" style="width: auto;">搜索“{$param.wd}” 共<span id="mac_total"></span>个视频</div>
+
+						<div class="sort-stat"></div>
+
+					</div>
+					<div class="sort-box">
+						<ul class="panel">
+							{maccms:vod num="30" paging="yes" pageurl="vod/search" type="current" order="desc" by="time"}
+							<li class="sort-cel">
+								<a href="{:mac_url_vod_detail($vo)}" class="sort-pack">
+									<img src="{:mac_url_img($vo.vod_pic)}">
+									<div class="play-bg"><span><i></i></span></div>
+								</a>
+								<ul class="info-list">
+									<li class="title">
+										<a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">{$vo.vod_name}</a>
+									</li>
+									<li>
+										<var><i class="btn fn-time"></i>{$vo.vod_time_add|date='Y-m-d',###}</var>
+										<i class="btn fn-see"></i>{$vo.vod_hits} </li>
+								</ul>
+							</li>
+							{/maccms:vod}
+						</ul>
+					</div>
+					<div class="sort-pager">
+
+						<div class="v-rv-page-box" style="margin-top: 20px;">
+							{include file="public/paging"}
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
 	
-	<div class="v-advertise">
-    <div class="v-advertise-one">
-    	{maccms:ad flag='s_banner'}
-				<a href="{$s_banner.link}" target="_blank">
-		        <img style="width:1200px;height: 60px;" src="{$s_banner.img}">
-		     </a>
-		 {/maccms:ad}    	           
-    </div>    
-    
-</div>
-
-  <div class="fenlei">
-    <div class="b-listfilter" style="padding: 0px;">
-      <style>
-#noall{
-	background-color: #aik651;
-    color: #fff;
-}
-</style>
-<div class="bread-crumb-nav fn-clear">
-    <ul class="bread-crumbs">
-        <li>搜索" <strong >{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}</strong>" &nbsp;&nbsp;&nbsp;共 " <strong  class="mac_total"></strong>" 个资源
-        
-        <span class="back" style="padding-left: 30px;"><a href="javascript:MAC.GoBack()">返回上一页</a></span>
-        </li>
-        
-    </ul>
-</div>
-
-
-      
-    </div>
-  </div>
-  <div class="m-g">
-    <div class="b-listtab-main">
-      <div>
-        <div>
-          <div class="s-tab-main">
-            <ul class="list g-clear">
-					
-					 {maccms:vod num="48" paging="yes" pageurl="vod/search" order="desc" by="time"}
-                  <li class='item'>
-                    <a class='js-tongjic' href='{:mac_url_vod_detail($vo)} ' title='{$vo.vod_name}'>
-                      <div class='cover g-playicon'>
-                        <img width="285" height="213" src='{:mac_url_img($vo.vod_pic)}' alt='{$vo.vod_name}' />
-                        <span class='pay'>{$vo.type.type_name}</span>
-                        <span class='hint'>{$vo.vod_remarks}</span></div>
-                      <div class='detail'>
-                        <p class='title g-clear'>
-                          <span class='s1'>{$vo.vod_name}</span>
-                          <span class='s2'>{$vo.vod_score}</span></p>
-                          <p class='star'>{$vo.vod_time|date='Y-m-d',###} </p></div>
-                    </a>
-                  </li>
-                     {/maccms:vod}
-				    
-				  </ul>
-          </div>
-        </div>
-      </div>
-       {include file="public/paging"}
-    </div>
-  </div>
-</section>
 {include file="public/foot"}
-<script type='text/javascript' src='{$maccms.path_tpl}js/main.js'></script> 
-<!--<script type="text/javascript"> document.body.oncontextmenu=document.body.ondragstart= document.body.onselectstart=document.body.onbeforecopy=function(){return false;};
-document.body.onselect=document.body.oncopy=document.body.onmouseup=function(){document.selection.empty();}; </script>-->
 
-</body>
-</html>
  <script>
-        $('.mac_total').html('{$__PAGING__.record_total}');
+        $('#mac_total').html('{$__PAGING__.record_total}');
     </script>
+</body>
+
+</html>
+

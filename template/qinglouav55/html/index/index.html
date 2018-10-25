@@ -43,12 +43,10 @@
 				</div>
 			</div>
 			<!--公告弹窗-->
-			<div class="tips-box">
-			</div>
-			<div style="text-align: center;">
+			<div class="banner100" style="text-align: center;">
 				{maccms:ad flag='i_banner'}
 				<a href="{$i_banner.link}" target="_blank">
-					<img style="min-height: 60px;" src="{$i_banner.img}"  border="0">
+					<img src="{$i_banner.img}"  border="0">
 				</a>
 				{/maccms:ad}
 			</div>
@@ -64,7 +62,7 @@
 								<a href="{:mac_url_vod_detail($vo)}">
 									<div class="view-layer">
 										<img src="{:mac_url_img($vo.vod_pic)}">
-										<p></p>
+										
 										<div class="play-bg"><span><i></i></span></div>
 									</div>
 								</a>
@@ -88,8 +86,7 @@
 							<div class="mod-col">
 								<a href="{:mac_url_vod_detail($vo)}">
 									<div class="view-layer">
-										<img src="{:mac_url_img($vo.vod_pic)}">
-										<p></p>
+										<img src="{:mac_url_img($vo.vod_pic)}">										
 										<div class="play-bg"><span><i></i></span></div>
 									</div>
 								</a>
@@ -130,7 +127,7 @@
 							{/maccms:vod}	
 						</ul>
 						<div class="home-r-rank-footer">
-							<a href="http://www.qinglouav55.com/video/lists/orderCode/hot.html" class="uhl">查看更多&gt;</a>
+							<a href="{:mac_url('/vod/index/by/hits_month')}" class="uhl">查看更多&gt;</a>
 						</div>
 					</div>
 

@@ -837,7 +837,7 @@ font-size: 12px;
 .footerMian ul{float: left; width: 300px;}
 .footerMian ul li{float: left; color: #fff; line-height: 25px; font-size: 14px; width: 300px;}
 .footerMian ul li span{float: left;}
-.footerMian ul li a{ width: 96px; height: 26px; margin-left: 22px;display: inline-block; background: url(../img/qqjt_15.jpg) no-repeat;}
+.footerMian ul li a{ width: 96px; height: 26px; margin-left: 22px;display: inline-block; }
 .footerRight img{ height: 90px; float: left;}
 .footerRight ul{float: left; width: 180px; margin-left: 20px; margin-top: 18px;}
 .footerRight ul li{float: left; color: #fff; line-height: 25px; font-size: 14px; width: 300px;}

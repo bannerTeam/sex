@@ -394,7 +394,25 @@ body{
     }
 }
 
-
+@media screen and (max-width: 600px){
+	
+	
+	.mod-new .mod-row .mod-col{
+		width: 50%;
+		margin: 0; margin-bottom: 15px;
+		padding: 5px;
+		box-sizing: border-box;
+	}
+	.mod-new .mod-row .mod-col:nth-child(15){
+		display: none;
+	}
+	
+	.content{ margin-top: 10px !important;}
+	.content .right-box{ display: none; width: 0; height: 0;}
+	.mod-new{ margin-bottom: 12px;}
+	.mod-new .title{ margin-bottom: 10px;}
+	.mod-new .title h2{font-size: 16px; padding-left: 12px;}
+}
 
 
 

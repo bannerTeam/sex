@@ -8,10 +8,10 @@
 		<div class="footerMian">
 			<img src="{$maccms.path_tpl}images/qq_15.jpg">
 			<ul>
-				
-				<li style="line-height:20px;"><span style="font-size:13px;">客服：2640963460</span><a href="tencent://message/?uin=2640963460&amp;&amp;Menu=yes"></a></li>
-				<li style="line-height:20px;"><span style="font-size:13px;">客服：3343991804</span><a href="tencent://message/?uin=3343991804&amp;&amp;Menu=yes"></a></li>
-				<li style="line-height:18px;"><span>在线时间：13:00--22:00</span></li>
+				{maccms:foreach name="$maccms.site_qq_arr" id="qqs"}
+				<li style="line-height:20px;"><span style="font-size:13px;">客服：{$qqs}</span><a href="tencent://message/?uin={$qqs}&amp;&amp;Menu=yes"></a></li>
+				{/maccms:foreach}
+				<li style="line-height:18px;"><span>在线时间：13:00--21:00</span></li>
 			</ul>
 		</div>
 		
