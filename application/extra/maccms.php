@@ -26,10 +26,10 @@ return array (
     'site_qq' => '994546855,3343991804',
     'site_email' => '994546855@qq.com',
     'install_dir' => '/',
-    'template_dir' => 'qqclogo',
+    'template_dir' => 'datll_wapian',
     'html_dir' => 'html',
     'mob_status' => '0',
-    'mob_template_dir' => 'qqclogo',
+    'mob_template_dir' => 'datll_wapian',
     'mob_html_dir' => 'html',
     'site_tj' => 'var _hmt = _hmt || [];
 	(function() {

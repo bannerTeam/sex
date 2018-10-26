@@ -2,19 +2,19 @@
 	
 	"front": [
         {
-            "file": "/static/ad/adfront.png",
-            "type": "png",
-            "link": "http://www.587755.com:8888/Register/?a=30329",
-            "time": 6,
+            "file": "/upload/banner/yy/YY-360x240.gif",
+            "type": "gif",
+            "link": "http://23.101.2.204:5577/index.php?s=/WebPublic/register/code/3dc492e0eb8df42051a518f0d0d69274/plf/link/",
+            "time": 8,
             "exhibitionMonitor": "/adv/exhibitionMonitor",
             "clickMonitor": "/adv/clickMonitor"
         }
     ],
     "pause": [
         {
-            "file": "/static/ad/adpause.gif",
+            "file": "/upload/banner/yy/YY-360x240.gif",
             "type": "gif",
-            "link": "http://www.043377.com:8888/Register/?a=926794",
+            "link": "http://23.101.2.204:5577/index.php?s=/WebPublic/register/code/3dc492e0eb8df42051a518f0d0d69274/plf/link/",
             "time": 3,
             "exhibitionMonitor": "/adv/exhibitionMonitor",
             "clickMonitor": "/adv/clickMonitor"
@@ -22,9 +22,9 @@
     ],
 	"insert": [
         {
-            "file": "/static/ad/adinsert.gif",
+            "file": "/upload/banner/yy/YY-360x240.gif",
             "type": "gif",
-            "link": "https://ecwon.com/en/registration/1037985",
+            "link": "http://23.101.2.204:5577/index.php?s=/WebPublic/register/code/3dc492e0eb8df42051a518f0d0d69274/plf/link/",
             "time": 5,
             "exhibitionMonitor": "/adv/exhibitionMonitor",
             "clickMonitor": "/adv/clickMonitor"
