@@ -22,7 +22,7 @@
     padding-bottom: 25px;
     padding-top: 25px;
 }
-	</style>
+</style>
 <div class="v-advertise">
     <div class="v-advertise-one">
         {maccms:ad flag='i_banner'}
@@ -30,10 +30,8 @@
 		        <img style="width:1200px;height: 60px;" src="{$i_banner.img}">
 		     </a>
 		{/maccms:ad}
-    </div>    
-    
+   </div>
 </div>
-
 
 <section class="container">
   <div class="index_film">
@@ -70,7 +68,7 @@
         <ul class="list g-clear">
           {maccms:vod num="10" type="'.$vo1['type_id'].'" order="desc" by="time"}
           <li class='item'><a class='js-tongjic' href='{:mac_url_vod_detail($vo)} ' title='{$vo.vod_name}'>
-            <div class='cover g-playicon'> <img src='{:mac_url_img($vo.vod_pic)}' alt='{$vo.vod_name}' /> <span class='pay'>{$vo.type.type_name} </span><span class='hint'>{$vo.vod_remarks}</span> </div>
+            <div class='cover g-playicon'> <img data-original='{:mac_url_img($vo.vod_pic)}' alt='{$vo.vod_name}' /> <span class='pay'>{$vo.type.type_name} </span><span class='hint'>{$vo.vod_remarks}</span> </div>
             <div class='detail'>
               <p class='title g-clear'> <span class='s1'>{$vo.vod_name}</span> <span class='s2'>{$vo.vod_score}</span></p>
               <p class='star'>{$vo.vod_actor} </p>
@@ -108,7 +106,7 @@
 </section>
 
 {include file="public/foot"}
-<script type='text/javascript' src='{$maccms.path_tpl}js/main.js'></script>
+
 <script type="text/javascript"> document.body.oncontextmenu=document.body.ondragstart= document.body.onselectstart=document.body.onbeforecopy=function(){return false;};
 document.body.onselect=document.body.oncopy=document.body.onmouseup=function(){return false;}; </script>
 
@@ -116,74 +114,10 @@ document.body.onselect=document.body.oncopy=document.body.onmouseup=function(){r
 <style>
 .b-listtab-main .item{ overflow: hidden;}
 </style>
-<script>
-	
-(function ($) {
-    var loadImg = function (url, fn) {
-        var img = new Image();
-        img.src = url;
-        if (img.complete) {
-            fn.call(img);
-        } else {
-            img.onload = function () {
-                fn.call(img);
-                img.onload = null;
-            };
-        };
-    };
 
-    $.fn.imgAutoSize = function (padding) {
-				
-        var maxWidth = this.innerWidth() - (padding || 0);
-				var maxHeight = this.innerHeight() - (padding || 0);
-				var ratio = maxWidth/maxHeight,ratio_n = 1;
-        return this.find('img').each(function (i, img) {
-            loadImg(this.src, function () {
-								ratio_n = (this.width/this.height);								
-								if(ratio > ratio_n){
-									if (this.width > maxWidth) {
-	                    var height = maxWidth / this.width * this.height,
-	                        width = maxWidth;	
-	                    img.width = width;
-	                    img.height = height;
-	                };
-								}else{
-									if (this.height > maxHeight) {										
-	                    var height = maxHeight;
-	                    img.height = height;
-	                };
-								}
-                
-            });
-        });
-    };
-	
-	$('.cover').imgAutoSize();
-	
-	
-	function get_adv(){
-		$.ajax({
-			url :"/Adv/get_index_adv",
-			success:function(data){				
-				var vod = $(".Film_list"),len = vod.length;
-				if(data && data.length > 0){
-					
-					for (var i = 0; i < len; i++) {
-						if(i<data.length){
-							vod.eq(i).before(`<div style="clear:both;margin-bottom:20px;"><a href="${data[i].link}" target="_blank"><img src="${data[i].img}" style="width:100%;" /></a></div>`)
-						}
-					}					
-				}
-			}
-		})
-	}
-	
-	get_adv();
-})(jQuery); 
+<script type="text/javascript" src="{$maccms.path_tpl}js/jquery.lazyload.yh.js"></script>
+<script type="text/javascript" src="{$maccms.path_tpl}js/index.js"></script>
 
 
-
-	
-</script>
 </body>
 </html>

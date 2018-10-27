@@ -2,58 +2,58 @@
 return array (
     array (
         'title' => '',
-        'link' => 'http://gg.huolinhe.com/bet997.html',
-        'img' => '/static/ad/index/1.gif'
+        'link' => 'https://www.cflm.com/',
+        'img' => 'https://pic.rfqcyp.com/20181001/bn_5bb1f5d89d018.gif'
     ),    
     array (
         'title' => '',
-        'link' => 'https://www.tg9.com/',
-        'img' => '/static/ad/index/2.gif'
+        'link' => 'http://videoracing.com/',
+        'img' => 'https://pic.rfqcyp.com/20180724/bn_5b570136cfc6f.gif'
     ),   
     array (
         'title' => '',
-        'link' => 'http://t2.9797game.com/',
-        'img' => '/static/ad/index/3.gif'
+        'link' => 'http://glipromotion.com/?a4',
+        'img' => 'https://pic.rfqcyp.com/20181002/bn_5bb2fcf846c26.gif'
+    ),
+    array (
+        'title' => '',
+        'link' => 'http://wpa.qq.com/msgrd?v=3&uin=1750182485&site=qq&menu=yes',
+        'img' => 'https://pic.rfqcyp.com/20171213/bn_5a30c7719cbc1.gif'
+    ),
+    array (
+        'title' => '',
+        'link' => 'http://bcbm.bcbm66666.com:890/1832284.html',
+        'img' => 'http://img.cksource.space/advertising/2018-06-19/2018-06-19-17-12-33_Cn3Oyr7nZ0.gif'
+    ),
+    array (
+        'title' => '',
+        'link' => 'https://www.36513.com/Register.aspx?aid=365bb',
+        'img' => 'http://img.cksource.space/advertising/2018-10-12/2018-10-12-17-55-47_6ykDH4JEVb.gif'
     ),
     array (
         'title' => '',
         'link' => 'http://baicai.bc88.space/prize',
-        'img' => '/static/ad/index/4.gif'
+        'img' => 'http://img.cksource.space/advertising/2017-03-16/2017-03-16-15-58-28_FdDyapRGBA.jpg'
     ),
     array (
         'title' => '',
-        'link' => 'https://xz.xinyao888.net/fwxz.html',
-        'img' => '/static/ad/index/5.gif'
+        'link' => 'http://glipromotion.com/?a4',
+        'img' => 'https://pic.rfqcyp.com/20181002/bn_5bb2fcf846c26.gif'
     ),
     array (
         'title' => '',
-        'link' => 'http://ap1.apgames.com/',
-        'img' => '/static/ad/index/6.gif'
-    ),
-    array (
-        'title' => '',
-        'link' => 'http://www.349955.com:8888/Register/?a=1832284',
-        'img' => '/static/ad/index/7.gif'
-    ),
-    array (
-        'title' => '',
-        'link' => 'http://cn.man494.com/',
-        'img' => '/static/ad/index/8.gif'
-    ),
-    array (
-        'title' => '',
-        'link' => 'http://www.inplaymatrix.com/products/esports/index_en.html',
-        'img' => '/static/ad/index/9.gif'
+        'link' => '',
+        'img' => 'https://pic.rfqcyp.com/20180113/bn_5a59e9cb12fe9.gif'
     ),
     array (
         'title' => '',
         'link' => 'http://videoracing.com/',
-        'img' => '/static/ad/index/10.gif'
+        'img' => 'https://pic.rfqcyp.com/20180724/bn_5b570136cfc6f.gif'
     ),
     array (
         'title' => '',
-        'link' => 'https://bblc0020.com/bet365gglj/bet198/index.html',
-        'img' => '/static/ad/index/11.gif'
+        'link' => 'https://www.cflm.com/',
+        'img' => 'https://pic.rfqcyp.com/20181001/bn_5bb1f5d89d018.gif'
     ),
 );
 ?>
