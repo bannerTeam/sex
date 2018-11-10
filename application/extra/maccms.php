@@ -17,27 +17,41 @@ return array (
   ),
   'site' => 
   array (
-    'site_name' => '撸草湾',
+    'site_name' => '免费电影-撸草湾',
     'site_url' => '1.cn',
     'site_wapurl' => 'www.1.cn',
     'site_keywords' => '免费在线电影,色站',
     'site_description' => '提供最新最快的色站在线播放',
-    'site_icp' => '',
-    'site_qq' => '994546855,3343991804',
-    'site_email' => '994546855@qq.com',
+    'site_icp' => 'icp123',
+    'site_qq' => '875731383,654551320',
+    'site_email' => '875731383@qq.com',
     'install_dir' => '/',
     'template_dir' => 'datll_wapian',
     'html_dir' => 'html',
     'mob_status' => '0',
     'mob_template_dir' => 'datll_wapian',
     'mob_html_dir' => 'html',
-    'site_tj' => 'var _hmt = _hmt || [];
-	(function() {
-	  var hm = document.createElement("script");
-	  hm.src = "https://hm.baidu.com/hm.js?660ad0abbde775cd24ce86189a558ad1";
-	  var s = document.getElementsByTagName("script")[0]; 
-	  s.parentNode.insertBefore(hm, s);
-	})();',
+    'site_tj' => '<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c2d0d55bd224a0a578217d59d3814d9a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?971a39ddef89acfa7cb0d02b307c3a38";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?64599d023a782fe7244819e0ffbb9600";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script src="https://s96.cnzz.com/z_stat.php?id=1275241343&web_id=1275241343" language="JavaScript"></script>',
     'site_status' => '1',
     'site_close_tip' => '站点暂时关闭，请稍后访问',
     'ads_dir' => 'ads',
@@ -58,7 +72,7 @@ return array (
     'pagesize' => '20',
     'makesize' => '30',
     'suffix' => 'html',
-    'search_hot' => '强奸,长腿,翘臀,美乳,美鲍,模特,内射,黑丝,颜射,乱交,淫水,网红,抽插,深喉,后入,女同,自慰,SM,痴汉,偷拍',
+    'search_hot' => '变形金刚,火影忍者,复仇者联盟,战狼,红海行动',
     'art_extend_class' => '段子手,私房话,八卦精,爱生活,汽车迷,科技咖,美食家,辣妈帮',
     'vod_extend_class' => '爱情,动作,喜剧,战争,科幻,剧情,武侠,冒险,枪战,恐怖,微电影,其它',
     'vod_extend_state' => '正片,预告片,花絮',

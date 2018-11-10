@@ -21,9 +21,11 @@
 			<div class="container">
 				<div class="v-advertise">				
 					{maccms:ad flag='i_banner'}
-						<a href="{$i_banner.link}" target="_blank">
+						{if condition="($key < 5)"}
+						<a href="{$i_banner.link}" target="_blank" data-key = "{$key}">
 					        <img style="width:100%;" src="{$i_banner.img}">
-					     </a>
+					    </a>
+					    {/if}
 					{/maccms:ad}
 				</div>
 			</div>
@@ -36,11 +38,13 @@
 				<div class="content-inner">
 					
 					<div class="v-advertise">
-				
+						
 						{maccms:ad flag='i_banner'}
-							<a href="{$i_banner.link}" target="_blank">
+							{if condition="($key > 4)"}
+							<a href="{$i_banner.link}" target="_blank" data-key = "{$key}">
 						        <img style="width:100%;" src="{$i_banner.img}">
-						     </a>
+						    </a>
+						    {/if}
 						{/maccms:ad}
 					</div>
 					

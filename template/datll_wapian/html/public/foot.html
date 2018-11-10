@@ -3,6 +3,15 @@
 		<div class="uk-float-left footer-logo">
 			<a href="/" target="_blank" class="uk-display-block"></a>
 		</div>
+		
+		<div class="uk-float-left footer-link">
+			<a>友情链接：</a>
+			{maccms:link type="font"}
+			<a href="{$vo.link_url}" target="_blank">{$vo.link_name}</a>
+			{/maccms:link}
+		</div>
+    
+		
 		<div class="uk-float-right footer-r clearfix">
 			<div class="vip uk-float-left" style="display: none;">
 				<ul>
@@ -16,7 +25,7 @@
 					<div class="cs-pic"></div>
 					
 					{maccms:foreach name="$maccms.site_qq_arr" id="qqs"}
-					<a class="uk-display-block cs-qq-btn cs-qq-btn-2" href="tencent://message/?uin={$qqs}&amp;Site=qq&amp;Menu=yes">
+					<a class="uk-display-block cs-qq-btn cs-qq-btn-{$key + 1}" href="tencent://message/?uin={$qqs}&amp;Site=qq&amp;Menu=yes">
 						<span class="uk-display-block uk-float-left icon-cs-qq"></span>
 						<span>{$qqs}</span>
 					</a>

@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header" id="header">
   <div class="container">
     <h1 class="logo"><a href="/" title="{$maccms.site_name}"><img src="{$maccms.path_tpl}images/logo.png"></a></h1>
     <div class="logo_font"><img src="{$maccms.path_tpl}images/logo_font.png"></div>
@@ -10,11 +10,13 @@
       <button tabindex="3" class="sbtn" type="submit"><i class="fa"></i></button>
       <input tabindex="2" class="sinput" name="wd" type="text" placeholder="请输入搜索关键字" value="">
     </form>
-
+		<div class="fpb">
+			<a href="http://scw1314.com/" target="_blank">发布地址</a>			
+		</div>
   </div>
 </header>
-<div class="header_end">
 
+<div class="header_end">
 </div>
 <div id="homeso">
   <form method="post" id="soform" style="text-align: center;float: none"  name="search" action="{:mac_url('vod/search')}">
@@ -66,6 +68,32 @@
 </div>
 <script>
 		$(function(){
+			
+			
+			$('.searchstart-on').on("click", function(){
+
+					$(this).hide()
+			
+					$('.searchstart-off').show()
+			
+					$("#header").addClass('searchform-active')
+			
+					$('.sinput').focus()
+			
+				})
+			
+			
+			
+				$('.searchstart-off').on("click", function(){
+			
+					$(this).hide()
+			
+					$('.searchstart-on').show()
+			
+					$("#header").removeClass('searchform-active')
+			
+				})
+			
 			
 			$("#searchOpen").click(function(){$("#search").show()});
 			$("#navOpen").click(function(){
