@@ -26,7 +26,7 @@ return array (
     'site_qq' => '875731383,654551320',
     'site_email' => '875731383@qq.com',
     'install_dir' => '/',
-    'template_dir' => 'datll_wapian',
+    'template_dir' => 'datll_wapian',//datll_wapian
     'html_dir' => 'html',
     'mob_status' => '0',
     'mob_template_dir' => 'datll_wapian',

@@ -82,15 +82,19 @@
 					
 					{/maccms:type}
 					
-					<!--<div class="panel panel-default">
+					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h3 class="panel-title">友情链接</h3></div>
 						<div class="panel-body">
 
-							<a href="" class="btn btn-default btn-xs margin-bottom-5" target="_blank" title=""><i class="fa fa-tag"></i>撸草湾</a>
+							
+			{maccms:link type="font" by="sort"}
+			<a href="{$vo.link_url}" target="_blank"  class="margin-bottom-5">{$vo.link_name}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			{/maccms:link}
+			
 
 						</div>
-					</div>-->
+					</div>
 					
 					
 				</div>

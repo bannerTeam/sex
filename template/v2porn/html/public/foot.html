@@ -1,21 +1,23 @@
 <div class="xvideo-footer">
 
-	<div class="xvideo-footer-partner v-container" style="display: none;">
+	<div class="xvideo-footer-partner v-container" >
 		<div class="xvideo-footer-partner-title">合作伙伴：</div>
 		<div class="xvideo-footer-partner-container">
+			{maccms:link type="font" by="sort"}
 			<div>
-				<a href="" class="xvideo-footer-partner-content" target="_blank"></a>
-			</div>			
+				<a href="{$vo.link_url}" class="xvideo-footer-partner-content" target="_blank">{$vo.link_name}</a>
+			</div>	
+			{/maccms:link}
 		</div>
-
+						
 	</div>
 	<div class="xvideo-footer-caution v-container">
 		<p>
 			警告: 此网站只适合十八岁或以上人士观看, 此网站内容可能令人反感；不可将此区域的内容派发，传阅，出售，出租，交给或者 借予年龄未满18岁的人士或将本网站内容向该人士出售，播放或放映，如果你是该影片的版权方所有者而要求删除影片的，请联系我们，我们会很快做出回复。 </p>
 	</div>
 	<ul class="xvideo-footer-nav v-container">
-		<li class="current">
-			<a>联系QQ: 2640963460 / 3343991804</a>			
+		<li>
+			联系QQ: {maccms:foreach name="$maccms.site_qq_arr" id="qqs"}{$qqs} / {/maccms:foreach}			
 		</li>		
 	</ul>
 	<p class="v-container" style="text-align: center;">

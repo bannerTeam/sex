@@ -51,5 +51,6 @@ return array (
   'ssxf_8' => 20,
   'jiujiuxf_8' => 20,
   'lusinixf_8' => 20,
+  'ssxf_7' => 6,
 );
 ?>
