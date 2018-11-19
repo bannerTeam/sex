@@ -8,12 +8,9 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta http-equiv="cache-control" content="no-siteapp">
-		<title>{$maccms.site_name}-高清云影视免费为大家提供最新最全的免费电影</title>
-
+		<title>{$maccms.site_name}</title>
 		<meta name="keywords" content="{$maccms.site_keywords}">
 		<meta name="description" content=" {$maccms.site_description} "> {include file="public/include"}
-		
-	
 	</head>
 
 	<body>
@@ -42,7 +39,7 @@
 						{maccms:ad flag='i_banner'}
 							{if condition="($key > 4)"}
 							<a href="{$i_banner.link}" target="_blank" data-key = "{$key}">
-						        <img style="width:100%;" src="{$i_banner.img}">
+						        <img style="width:100%;" alt="src="{$i_banner.img}">
 						    </a>
 						    {/if}
 						{/maccms:ad}

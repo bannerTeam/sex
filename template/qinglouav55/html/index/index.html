@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 
 	<head>
@@ -9,12 +9,9 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta http-equiv="cache-control" content="no-siteapp">
 		<title>{$maccms.site_name}</title>
-
 		<meta name="keywords" content="{$maccms.site_keywords}">
-		<meta name="description" content=" {$maccms.site_description} "> {include file="public/include"}
-
+		<meta name="description" content="{$maccms.site_description}"> {include file="public/include"}
 		<link rel='stylesheet' href='{$maccms.path_tpl}css/index.css' type='text/css' />
-
 	</head>
 
 	<body>
@@ -84,16 +81,15 @@
 						<div class="mod-row">
 							{maccms:vod num="15" type="'.$vo1['type_id'].'" order="desc" by="time"}
 							<div class="mod-col">
-								<a href="{:mac_url_vod_detail($vo)}">
+								<a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">
 									<div class="view-layer">
-										<img src="{:mac_url_img($vo.vod_pic)}">										
+										<img src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}">										
 										<div class="play-bg"><span><i></i></span></div>
 									</div>
 								</a>
 								<p class="col-title">{$vo.vod_name}</p>
 								<div class="subtitle">
 									<i class="btn fn-see"></i>{$vo.vod_hits}
-									
 									<!--<span><i class="btn fn-zan2"></i>23</span>-->
 								</div>
 							</div>
@@ -126,7 +122,7 @@
 						<ul>
 							{maccms:vod num="20" type="all" by="hits_day" order="desc" timeadd="14"}
 							<li>
-								<a href="{:mac_url_vod_detail($vo)}">
+								<a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">
 									<img src="{:mac_url_img($vo.vod_pic)}">
 								</a>
 								<p>{$vo.vod_name}</p>
