@@ -11,7 +11,11 @@ class Demo extends Base
     }
 
     public function index(){
+                
         
+        header("Cache-Control: no-store, no-cache, must-revalidate");//强制不缓存
+        header("Cache-Control: post-check=0, pre-check=0", false);
+        header("Pragma: no-cache");//禁止本页被缓存
         
         
         return $this->fetch('demo/index');

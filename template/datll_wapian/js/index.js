@@ -88,6 +88,5 @@
 			}
 		})
 	}
-
-	get_adv();
+	//get_adv();
 })(jQuery);

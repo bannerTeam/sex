@@ -212,7 +212,28 @@
 				</div>
 				<!--首页分页-->
 			</div>
+				
+				
+				<div class="well well-filters new_filters">
+					<div class="pull-left">
+						<h4>&nbsp;&nbsp;&nbsp;友情链接</h4>
+					</div>
+
+					<div class="clearfix"></div>
+				</div>
+
+				<div class="row row-boder">
+					<div class="col-sm-12">
+						<div class="row">
+						{maccms:link type="font" by="sort"}
+							<a href="{$vo.link_url}" target="_blank"  class="" style="color: #1bbc9d;">{$vo.link_name}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+							{/maccms:link}						
+						</div>
+					</div>
+	
+				</div>
 			
+				
 		</div>
 			
 		<script>

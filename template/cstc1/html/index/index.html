@@ -86,6 +86,18 @@
 			</div>
 			
 			{/maccms:type}
+			
+			<div class="panel panel-default">
+				<div style="height:5px;"></div>
+				<div class="panel-head">
+					<h2 class="f-l fa colordef fa-upload hot-title panel-title">友情链接</h2></div>
+					<div class="panel-body">
+						{maccms:link type="font" by="sort"}
+			<a href="{$vo.link_url}" target="_blank"  class="margin-bottom-5">{$vo.link_name}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			{/maccms:link}
+					</div>
+
+			</div>
 		</div>
 		
 		{include file="public/foot"}
