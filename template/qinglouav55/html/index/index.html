@@ -1,20 +1,15 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta http-equiv="cache-control" content="no-siteapp">
-		<title>{$maccms.site_name}</title>
-
-		<meta name="keywords" content="{$maccms.site_keywords}">
-		<meta name="description" content=" {$maccms.site_description} "> {include file="public/include"}
-
+		<title>免费性爱网,免费性爱电影,在线性爱电影,在线性爱视频,性爱电影网址大全,性爱视频网址大全,有哪些性爱电影网址,有哪些性爱视频网址 - 青楼av</title>
+		<meta name="keywords" content="青楼av,青楼av性爱网,青楼av电影网,爱色影,性爱影,君爱色性爱网,爱色吧影院,性爱色爱,av电影,av视频,青楼av性爱影,青楼av性爱影院">
+		<meta name="description" content="青楼av免费为大家提供高清云影视,最新最全的性爱视频,性爱电影.">
+		{include file="public/include"}
 		<link rel='stylesheet' href='{$maccms.path_tpl}css/index.css' type='text/css' />
-
 	</head>
 
 	<body>
@@ -84,16 +79,15 @@
 						<div class="mod-row">
 							{maccms:vod num="15" type="'.$vo1['type_id'].'" order="desc" by="time"}
 							<div class="mod-col">
-								<a href="{:mac_url_vod_detail($vo)}">
+								<a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">
 									<div class="view-layer">
-										<img src="{:mac_url_img($vo.vod_pic)}">										
+										<img src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}">										
 										<div class="play-bg"><span><i></i></span></div>
 									</div>
 								</a>
 								<p class="col-title">{$vo.vod_name}</p>
 								<div class="subtitle">
 									<i class="btn fn-see"></i>{$vo.vod_hits}
-									
 									<!--<span><i class="btn fn-zan2"></i>23</span>-->
 								</div>
 							</div>
@@ -126,7 +120,7 @@
 						<ul>
 							{maccms:vod num="20" type="all" by="hits_day" order="desc" timeadd="14"}
 							<li>
-								<a href="{:mac_url_vod_detail($vo)}">
+								<a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">
 									<img src="{:mac_url_img($vo.vod_pic)}">
 								</a>
 								<p>{$vo.vod_name}</p>
