@@ -1,0 +1,71 @@
+.video-title{
+	background: #000000;
+	padding: 10px 16px;
+	line-height: 25px;
+}
+.video-container{
+	width: 100%;
+	height: 250px;
+}
+.video-plan1 {
+    width: 250px;
+    margin: 0 auto;
+}
+.video-plan1-name {
+    color: #fff;
+    font-size: 20px;
+    line-height: 56px;
+    text-align: center;
+    background: #ec567c;
+    border-radius: 5px 5px 0 0;
+}
+.video-plan1-box {
+    background: #fff;
+    margin: 0;padding: 0;
+    margin-bottom: 6px;
+}
+.video-plan1-box li {
+	list-style: none;
+    padding: 10px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.plan-time {
+    float: left;
+}
+.plan-txt {
+    display: block;
+    color: #ec567c;
+    font-size: 24px;
+    text-indent: 0;
+    padding-left: 20px;
+    margin-top: 3px;
+    background-position: 0 -580px;
+}
+.plan-price {
+    padding-top: 9px;
+    text-align: right;
+}
+.plan-price .price-ntd {
+    display: block;
+    color: #000;
+    font-size: 16px;
+}.can-click {
+    cursor: pointer;
+}.btn-blue {
+    display: block;
+    font-size: 18px;
+    line-height: 1.33333;
+    padding: 0 10px;
+    margin-bottom: 5px;
+    background: #0091ea;
+    border-radius: 6px;
+    padding: 10px 16px;
+    margin: 15px;
+    text-align: center;
+    color: #fff;
+    font-weight: 900;
+}
+.adv_count_down{ 
+	position: absolute; right: 10px;top: 10px; background: #000000; color: #FFFFFF;
+	padding:5px 15px;font-size:14px;
+}

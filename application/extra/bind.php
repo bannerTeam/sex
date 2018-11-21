@@ -52,5 +52,8 @@ return array (
   'jiujiuxf_8' => 20,
   'lusinixf_8' => 20,
   'ssxf_7' => 6,
+  'selaba_14' => 20,
+  'selaba_12' => 1,
+  'selaba_6' => 6,
 );
 ?>

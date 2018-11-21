@@ -17,7 +17,7 @@ class System extends Base
             'port' => $post['port'],
             'test' => $post['test'],
         ];
-        $res = mac_send_mail($conf['test'], '苹果CMS发送邮件测试', '当您看到这封邮件说明邮件配置正确了！感谢使用苹果CMS相关产品！', $conf);
+        $res = mac_send_mail($conf['test'], '发送邮件测试', '当您看到这封邮件说明邮件配置正确了！感谢使用苹果CMS相关产品！', $conf);
         if ($res==true) {
             return json(['code' => 1, 'msg' => '测试成功']);
         }
@@ -45,7 +45,9 @@ class System extends Base
     }
 
     public function config()
-    {
+    {   
+        
+        
         if (Request()->isPost()) {
             $config = input();
 
@@ -80,10 +82,23 @@ class System extends Base
             if ($res === false) {
                 return $this->error('保存失败，请重试!');
             }
+            
+            if(file_exists(RUNTIME_FILE)){
+                unlink(RUNTIME_FILE); //删除RUNTIME_FILE;
+            }
+            $cachedir=RUNTIME_PATH."/cache/";//Cache文件的路径;            
+            if($dh = opendir($cachedir)){//打开Cache文件夹;                
+                while(($file = readdir($dh))!==false){//遍历Cache目录,                    
+                    unlink($cachedir.$file);//删除遍历到的每一个文件;                    
+                }                
+                closedir($dh);                
+            }
+            
             return $this->success('保存成功!');
         }
 
-
+        
+        
         $templates = glob('./template' . '/*', GLOB_ONLYDIR);
         foreach ($templates as $k => &$v) {
             $v = str_replace('./template/', '', $v);
@@ -93,7 +108,8 @@ class System extends Base
         $usergroup = Db::name('group')->select();
         $this->assign('usergroup', $usergroup);
 
-        $config = config('maccms');
+        $config = config('maccms');        
+        
         $this->assign('config', $config);
         $this->assign('title', '网站参数配置');
         return $this->fetch('admin@system/config');

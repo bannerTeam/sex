@@ -17,16 +17,16 @@ return array (
   ),
   'site' => 
   array (
-    'site_name' => '免费电影-撸草湾',
-    'site_url' => '1.cn',
-    'site_wapurl' => 'www.1.cn',
+    'site_name' => '撸草湾,色站',
+    'site_url' => '2.cn',
+    'site_wapurl' => 'www.2.cn',
     'site_keywords' => '免费在线电影,色站',
     'site_description' => '提供最新最快的色站在线播放',
     'site_icp' => 'icp123',
     'site_qq' => '875731383,654551320',
     'site_email' => '875731383@qq.com',
     'install_dir' => '/',
-    'template_dir' => 'datll_wapian',//datll_wapian
+    'template_dir' => 'datll_wapian',
     'html_dir' => 'html',
     'mob_status' => '0',
     'mob_template_dir' => 'datll_wapian',

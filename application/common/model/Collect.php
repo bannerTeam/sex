@@ -75,8 +75,6 @@ class Collect extends Base {
 
     public function vod($param)
     {
-        
-       
         if($param['type'] == '1'){
             return $this->vod_xml($param);
         }
@@ -284,6 +282,11 @@ class Collect extends Base {
             $url .='&';
         }
         $url .= http_build_query($url_param). base64_decode($param['param']);
+        
+        
+//      var_dump($url);
+//      exit();
+        
         $html = mac_curl_get($url);
         if(empty($html)){
             return ['code'=>1001, 'msg'=>'连接API资源库失败，通常为服务器网络不稳定或禁用了采集'];
@@ -294,8 +297,7 @@ class Collect extends Base {
             return ['code'=>1002, 'msg'=>'JSON格式不正确，不支持采集'];
         }
         
-        print_r($json);
-        exit;
+        
         $array_page = [];
         $array_page['page'] = $json['page'];
         $array_page['pagecount'] = $json['pagecount'];

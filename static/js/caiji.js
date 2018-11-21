@@ -3,7 +3,18 @@ var h = d.getHours();
 var list = {
 	'ads': {
 		'des': '',
-		'rows': [{
+		'rows': [
+		{
+				'status': 'ok',
+				'name': '色喇叭',
+				'apiurl': 'http://www.zy.com/api.php',
+				'flag': 'selaba',
+				'xt': '1',
+				'group': '',
+				'ct': '',
+				'cjurl': ''
+			},
+		{
 				'status': 'ok',
 				'name': 's1-zmw',
 				'apiurl': 'http://zmwcj8.com/inc/api.php',

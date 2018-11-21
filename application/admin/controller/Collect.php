@@ -125,6 +125,7 @@ class Collect extends Base
             $param['page'] = $param['pg'];
             unset($param['pg']);
         }
+        
         if($param['mid']=='' || $param['mid']=='1'){
             return $this->vod($param);
         }
@@ -181,7 +182,7 @@ class Collect extends Base
         if($param['ac'] == 'list'){
 
             $bind_list = config('bind');
-           
+            
             foreach($res['type'] as $k=>$v){
                 $key = $param['cjflag'] . '_' . $v['type_id'];
                 $res['type'][$k]['isbind'] = 0;               
@@ -203,6 +204,7 @@ class Collect extends Base
             $this->assign('param',$param);
 
             $this->assign('param_str',http_build_query($param)) ;
+            
 
             return $this->fetch('admin@collect/vod');
         }
