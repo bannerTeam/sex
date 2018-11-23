@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>会员中心</title>
+		<meta name="keywords" content="{$maccms.site_keywords}" />
+		<meta name="description" content="{$maccms.site_description}" /> {include file="public/include" /}
+	</head>
+
+	<body>
+		<div id="head">
+			<div class="fixtop">
+				<span id="home"><a href="/" rel="external"><i class="ico08"><img src="{$maccms.path_tpl}img/homepage.png" width="30px"></i></a></span>
+				<i class="ico21">会员登录</i>
+			</div>
+		</div>
+
+		<div style="background: rgb(42,35,51); color:#FFF;">
+			<div class="ui-avatar"><span style="background-image:url(/img/pl/19.jpg)" ></span></div>
+			<div class="login_t">
+				<h3><span style="color:#FFF">账号：{$user.user_name}</span>
+				</h3>
+				<h3 class="login_lj" style="font-size:14px;">财富：<font>0</font>元  级别：试用VIP会员</h3>
+				<h3><font color="#999999" style="font-size: small;">[剩余0天]结束时间：2018-11-22 12:59:37</font><p></p></h3>
+			</div>
+		</div>
+		<section class="jilu" style="padding-top:0.0%; width:94%">
+			<table style="padding-top:0.0%; width:100%">
+				<tbody>
+					<tr>
+						<td>
+							<a href="user_gold.php" style="height:50px">
+								<li><span class="t5 l" style="height:50px">
+        <img src="/img/p2.png" width="40" height="40"></span>
+									<h2 class="t2 l" style="padding-top:3.5%;">金币充值</h2>
+								</li>
+							</a>
+						</td>
+						<td>
+							<a href="user_pay.php" style="height:50px">
+								<li><span class="t5 l" style="height:50px"><img src="/img/p2.png" width="40" height="40"></span>
+									<h2 class="t2 l" style="padding-top:3.5%;">会员升级</h2>
+								</li>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="jihuo.php" style="height:50px">
+								<li><span class="t5 l" style="height:50px"><img src="/img/p2.png" width="40" height="40"></span>
+									<h2 class="t2 l" style="padding-top:3.5%;">卡密激活</h2>
+								</li>
+							</a>
+						</td>
+						<td>
+							
+
+							<a href="user_packet.php" style="height:50px">
+								<li><span class="t5 l" style="height:50px"><img src="/img/p2.png" width="40" height="40"></span>
+									<h2 class="t2 l" style="padding-top:3.5%;">抢红包</h2>
+								</li>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		{include file="public/foot" /}
+	</body>
+
+</html>

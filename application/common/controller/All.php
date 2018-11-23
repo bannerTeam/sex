@@ -44,6 +44,8 @@ class All extends Controller
         }
         
         $this->assign( ['maccms'=>$maccms] );
+        
+        $this->assign('title',$maccms['site_name']);
     }
 
     protected function label_user()

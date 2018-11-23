@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="cache-control" content="no-siteapp">
+		<title>免费AV网,免费AV电影,在线AV电影,在线AV视频,AV电影网址大全,AV视频网址大全,有哪些AV电影网址,有哪些AV视频网址 - AV淘宝</title>
+		<meta name="keywords" content="AV淘宝,AV淘宝网,AV淘宝电影网,AV淘宝影院,AV色爱,av电影,av视频,撸草湾电影">
+		<meta name="description" content="AV淘宝免费为大家提供高清云影视,最新最全的AV视频,AV电影."> {include file="public/include"}
+		<script src="{$maccms.path_tpl}js/TouchSlide.1.1.js"></script>
+		<script src="{$maccms.path_tpl}js/index_m.js"></script>
+
+	</head>
+
+	<body>
+		
+		{include file="public/header"}
+		
+		<div id="focusBox" class="focusBox">
+			<div class="hd">
+				<ul></ul>
+			</div>
+			<div class="bd">
+				<ul>
+					<li><a href="" target="_blank">
+					<img src="https://i.loli.net/2018/11/15/5bed11a1e6ca0.jpg" /></a></li>
+					<li><a href="" target="_blank">
+					<img src="https://i.loli.net/2018/11/15/5bed11a1ebc89.jpg" /></a></li>
+					<li><a href="" target="_blank">
+					<img src="https://i.loli.net/2018/11/15/5bed11a229802.jpg" /></a></li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="sort">
+			<div class="left"><i></i>视频<span id="videos_total"></span>部</div>
+			<div class="right">
+				<a href="{:mac_url('/vod/index',['by'=>'hits','timeadd'=>1])}">今日热门</a>
+				<a href="{:mac_url('/vod/index',['timeadd'=>1])}">今日视频</a><span></span>
+			</div>
+		</div>
+
+		<div class="xulie">
+			<div class="left"><i></i>最新视频</div>
+			<div class="right">
+				<a href="{:mac_url('/vod/index')}" class="ui-link"><span>最新</span></a>
+				<a href="{:mac_url('/vod/index',['by'=>'hits'])}" class="ui-link"><span>人气</span></a>
+				<a href="{:mac_url('/vod/index',['by'=>'up'])}" class="ui-link"><span>点赞</span></a>
+				<a href="{:mac_url('/vod/index',['by'=>'score'])}" class="ui-link"><span>综合</span></a>
+			</div>
+		</div>
+
+		<section class="ui-panel">
+			<h2 class="ui-arrowlink"></h2>
+			<ul class="ui-grid-trisect" id="vlist">
+
+				{maccms:vod num="10" paging="yes" type="all" by="time"  order="desc"  }
+				<li style="width: 49.5%;">
+					<a href="{:mac_url_vod_detail($vo)}">
+						<div class="ui-grid-trisect-img" style="padding-top: 54.47%;"><span style="background-image:url('{:mac_url_img($vo.vod_pic)}')"></span>
+							<div class="cnl-tag tag">
+								 {:date('m-d',$vo.vod_time_add)}
+							</div>
+						</div>
+					</a>
+					<h4 class="ui-nowrap" style="font-size: 100%;font-weight: 400;text-align:center"><a href="{:mac_url_vod_detail($vo)}" >{$vo.vod_name}</a></h4>
+				</li>
+				{/maccms:vod}	
+
+			</ul>
+			<div class="loading" id="loading" style="display: block;"><span><img src="{$maccms.path_tpl}img/m_loading.gif"  height="16" align="absmiddle"></span></div>
+		</section>
+		<script type="text/javascript">
+			$('#videos_total').html('{$__PAGING__.record_total}');
+			pagination();
+		</script>
+		
+		{include file="public/foot"}
+		
+		
+	</body>
+
+</html>

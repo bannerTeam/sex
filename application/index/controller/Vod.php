@@ -1,6 +1,7 @@
 <?php
 namespace app\index\controller;
 use think\Controller;
+use think\Request;
 
 class Vod extends Base
 {
@@ -9,20 +10,48 @@ class Vod extends Base
         parent::__construct();
     }
 
-    public function index()
-    {
+    private function assign_param(){
+        
         $param = mac_param_url();
-        
-        $this->assign('vodindex','1');
-        
         $by = $param['by'];
-        
         if(empty($by)){
             $by = 'time';
         }
-        
         $this->assign('sort',$by);
         
+        $timeadd = $param['timeadd'];
+        if(empty($by)){
+            $timeadd = 0;
+        }
+        
+        $typeid = $param['id'];
+        if(empty($typeid)){
+            $type = '';
+        }
+        $this->assign('typeid',$typeid);
+        
+        $wd = $param['wd'];
+        if(empty($wd)){
+            $wd = '';
+        }
+        $this->assign('wd',$wd);
+        
+        $this->assign('timeadd',$timeadd);
+        
+        return $param;
+    }
+    public function index()
+    {
+        $param = $this->assign_param();
+        
+        $this->assign('vodindex','1');
+        
+        
+        if($param['timeadd']  == 1){
+            $this->assign('title','今日更新');
+        }else if($param['timeadd']  == 7){
+            $this->assign('title','发现');
+        }
         
         return $this->fetch('vod/index');
     }
@@ -30,11 +59,11 @@ class Vod extends Base
     public function type()
     {        
        
+        $this->assign_param();
         
         $info = $this->label_type();      
-        
-        //$this->assign('sort','hits_month');
-      
+           
+        $this->assign('title',$info['type_name']);
         
         return $this->fetch( mac_tpl_fetch('vod',$info['type_tpl'],'type') );
     }
@@ -43,17 +72,10 @@ class Vod extends Base
     {
         $info = $this->label_type();
     
-   
-    
-        $this->assign('obj',$info);
-       
+        $this->assign('obj',$info);       
         
-        //var_dump(111);
-        //$info = $this->label_type();
-        //var_dump(mac_tpl_fetch('vod',$info['type_tpl_list'],'show') );
-        //$t = mac_tpl_fetch('vod',$info['type_tpl_list'],'show');
         $tpl = 'vod/show';
-        //var_dump($vo);
+      
         return $this->fetch( $tpl );
     }
 
@@ -65,11 +87,13 @@ class Vod extends Base
 
     public function search()
     {
-        $param = mac_param_url();
-        
+        $param = $this->assign_param();        
         
         $this->check_search($param);
         $this->assign('param',$param);
+        
+        $this->assign('title',$param['wd']);
+        
         return $this->fetch('vod/search');
     }
 
@@ -98,6 +122,7 @@ class Vod extends Base
     public function play()
     {
         
+        $this->assign('videoplay',true);
         $info = $this->label_vod_play('play');        
                 
         return $this->fetch( mac_tpl_fetch('vod',$info['vod_tpl_play'],'play') );
@@ -119,6 +144,43 @@ class Vod extends Base
     {
         $info = $this->label_vod_detail();
         return $this->fetch('vod/rss');
+    }
+    
+    /**
+     * 获取影片 的 上一部，下一部
+     */
+    public function ajax_front_after(){
+        
+        if (Request::instance()->isAjax()){
+            
+            $res['code'] = 0;
+            $res['front'] = '';
+            $res['after'] = '';
+            
+            $input = input() ;
+            
+            $vod_id = intval($input['id']);
+            
+            //获取上一条
+            $where['vod_id'] = ['<',$vod_id];
+            $front = model('Vod')->findData($where,'vod_id');
+            if($front['code'] === 1){
+                $res['front'] = $front['info']['vod_id'];
+            }
+            
+            //获取下一条
+            $where['vod_id'] = ['>',$vod_id];
+            $after = model('Vod')->findData($where,'vod_id','vod_id asc');
+            if($after['code'] === 1){
+                $res['after'] = $after['info']['vod_id'];
+            }
+            
+            return json($res);
+            
+        }
+        
+        
+        
     }
    
     

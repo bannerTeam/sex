@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>会员中心</title>
+		{include file="public/include_user" /}
+	</head>
+
+	<body>
+		<div class="main">
+			<div class="user-head">
+				<div class="user-info">
+					<div class="am-fl thumb">
+					</div>
+					<span class="user-name">{$user.user_name}</span><br>					
+				</div>
+				<div class="statistics">
+					<ul>
+						<li>会员级别<span>注册会员</span></li>
+						<li>帐户余额<span>0.00 元</span></li>
+						<li class="integral">积分<span>0 点</span></li>
+						<li>
+							<a href="">
+								<i class="am-icon-pencil-square-o"></i>我的资料</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="weui-cells">
+				<a class="weui-cell weui-cell_access" href="javascript:;">
+					<div class="weui-cell__hd">
+						<i class="iconfont icon-qia"></i>
+					</div>
+					<div class="weui-cell__bd">
+						<p>cell standard</p>
+					</div>
+					<div class="weui-cell__ft">
+					</div>
+				</a>
+				<a class="weui-cell weui-cell_access" href="javascript:;">
+					<div class="weui-cell__bd">
+						<p>cell standard</p>
+					</div>
+					<div class="weui-cell__ft">
+					</div>
+				</a>
+			</div>
+			
+			<a href="/user/logout" class="weui-btn weui-btn_warn">退出</a>
+
+		</div>
+		
+		{include file="public/foot" /}
+	</body>
+
+</html>

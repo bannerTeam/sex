@@ -1086,6 +1086,8 @@ function mac_param_url(){
     $param['name'] = htmlspecialchars(urldecode(trim($input['name'])));
     $param['url'] = htmlspecialchars(urldecode(trim($input['url'])));
     $param['type'] = htmlspecialchars(urldecode(trim($input['type'])));
+    
+    $param['timeadd'] = intval($input['timeadd']);
 
     return $param;
 }

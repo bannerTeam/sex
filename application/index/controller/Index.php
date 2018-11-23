@@ -10,7 +10,10 @@ class Index extends Base
 //         header('Location: /index.php/vod/show/page/1/id/1.html');
 //         exit;
 //         $param = mac_param_url();
-
+        
+        
+        $this->assign('pageHome',true);
+        
         return $this->fetch( 'index/index');
     }
 

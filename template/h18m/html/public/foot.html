@@ -1,0 +1,23 @@
+<link href="{$maccms.path_tpl}/css/foot.css" rel="stylesheet">
+<footer id="footer" class="ui-footer ui-footer-stable ui-border-t">
+	<ul class="ui-tiled ui-border-t">
+		<li data-url="/" {if $pageHome}class="active" {/if}><i class="ui-icon-index"></i>视频</li>
+		<!--<li ><i class="ui-icon-tp"></i>名人堂</li>-->
+		<li data-url="{:mac_url('/vod/index',['by'=>'hits','timeadd'=>7])}" {if $vodindex}class="active" {/if}><i class="ui-icon-tp4"></i>发现</li>
+		<li id="footer_favs" data-url="/user/favs" {if $pageFavs}class="active" {/if}><i class="ui-icon-vip"></i>收藏</li>
+		<li id="footer_user" data-url="/user" {if $pageUser}class="active" {/if}><i class="ui-icon-user"></i>我的</li>
+	</ul>
+</footer>
+<script>
+	$("#footer li").click(function() {
+		location.href = $(this).data('url');
+	});
+	$("#footer").after("<div style='height:" + $("#footer").height() + "px;clear: both;'></div>");
+	if(Number(h18.userid) == 0){
+		$("#footer_favs").data('url','/user/login');
+		$("#footer_user").data('url','/user/login');
+	}
+</script>
+<!--<div style="height: 0; width: 0;">
+	<div style="height: 0;font-size: 0;display: none;">{$maccms.site_tj}</div>
+</div>-->

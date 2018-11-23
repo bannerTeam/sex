@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="cache-control" content="no-siteapp">
+		<title>{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索结果 - {$maccms.site_name}</title>
+
+		<meta name="keywords" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索结果" />
+    <meta name="description" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索结果" />
+		{include file="public/include"}
+		
+		
+	</head>
+
+	<body>
+		{include file="public/header_min"}
+		
+		<div class="liebiao">
+			<div class="left"><i></i>共有<span id="videos_total"></span>个</div>
+			<div class="right">				
+					
+				<a href="{:mac_url('/vod/search',['wd'=>$wd])}" class="ui-link">
+					<span {if $sort=='time' }class="cur" {/if}>最新</span></a>
+				<a href="{:mac_url('/vod/search',['by'=>'hits','wd'=>$wd])}" class="ui-link">
+					<span {if $sort=='hits' }class="cur" {/if}>人气</span></a>
+				<a href="{:mac_url('/vod/search',['by'=>'up','wd'=>$wd])}" class="ui-link">
+					<span {if $sort=='up' }class="cur" {/if}>点赞</span></a>
+				<a href="{:mac_url('/vod/search',['by'=>'score','wd'=>$wd])}" class="ui-link">
+					<span {if $sort=='score' }class="cur" {/if}>综合</span></a>
+				
+			</div>
+		</div>
+		<section class="ui-panel">
+			<h2 class="ui-arrowlink"></h2>
+			<ul class="ui-grid-trisect" id="vlist">
+				{maccms:vod num="20" paging="yes" pageurl="vod/search" type="current" order="desc" by="'.$sort.'" }
+				<li style="width: 49.5%;">
+					<a href="{:mac_url_vod_detail($vo)}">
+						<div class="ui-grid-trisect-img" style="padding-top: 54.47%;"><span style="background-image:url('{:mac_url_img($vo.vod_pic)}')"></span>
+							<div class="cnl-tag tag">
+								{$vo.vod_duration}
+							</div>
+						</div>
+					</a>
+					<h4 class="ui-nowrap" style="font-size: 100%;font-weight: 400;text-align:center"><a href="{:mac_url_vod_detail($vo)}" >{$vo.vod_name}</a></h4>
+				</li>
+				{/maccms:vod}
+
+			</ul>
+			<div class="loading" id="loading" style="display: block;"><span><img src="{$maccms.path_tpl}img/m_loading.gif"  height="16" align="absmiddle"></span></div>
+		</section>
+		<script type="text/javascript">
+			 $('#videos_total').html('{$__PAGING__.record_total}');
+			var s = {
+				tid: "{$typeid}",
+				by:"{$sort}",
+				wd:"{$wd}",
+				limit:20
+			};
+			pagination(s);
+		</script>
+
+
+		{include file="public/foot"}
+		 <script>
+	        $('.mac_total').html('{$__PAGING__.record_total}');
+	    </script>
+	</body>
+
+</html>

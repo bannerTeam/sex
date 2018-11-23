@@ -32,6 +32,8 @@ class User extends Base
             */
             $this->assign('obj',$GLOBALS['user']);
         }
+        
+        $this->assign('pageUser',true);
     }
 
     public function ajax_login()
@@ -43,9 +45,156 @@ class User extends Base
     {
         return $this->fetch('user/ajax_info');
     }
+    
+    /**
+     * yh:收藏
+     */
+    public function ajax_collection(){
+        $param = input();
+        if($param['ac']=='set') {
+            $data = [];
+            $data['ulog_mid'] = 1;
+            //视频id
+            $data['ulog_rid'] = intval($param['id']);
+            $data['ulog_type'] = 2;
+            $data['ulog_sid'] = 0;
+            $data['ulog_nid'] = 0;
+            $data['ulog_points'] = 0;
+            $data['user_id'] = $GLOBALS['user']['user_id'];
+            
+            $res = model('Ulog')->infoData($data);
+            if($res['code']==1){
+                $res['code'] = 1;
+                $res['msg'] = '已收藏';
+                return json($res);
+            }
+            $res = model('Ulog')->saveData($data);
+            return json($res);            
+        }else if($param['ac']=='del'){
+            $where = [];
+            $where['user_id'] = $GLOBALS['user']['user_id'];
+            $where['ulog_type'] = 2;
+            $where['ulog_id'] = intval($param['id']);            
+            $return = model('Ulog')->delData($where);
+            return json($return);
+        }else if($param['ac']=='get'){
+            
+            $where = [];
+            //判断用户是否已经操作
+            $uwhere['user_id'] = $GLOBALS['user']['user_id'];
+            $uwhere['ulog_rid'] = intval($param['id']);            
+            $uwhere['ulog_type'] = 2;
+            $res = model('Ulog')->infoData($uwhere,'ulog_id');
+            
+            
+            return json($res);
+        }
+    }
+    
+    /**
+     * yh: 顶数/顶数
+     * type 包含1浏览;2收藏;3想看（顶）;4点播;5下载; 6.不想看（踩）
+     */
+    public function ajax_up_down(){
+        $param = input();
+        if($param['ac']=='get') {
+            
+            $vod_id = intval($param['id']);
+            
+            $res['up'] = 0;
+            $res['down'] = 0;
+            
+            
+            //判断用户是否已经操作
+            $uwhere['user_id'] = $GLOBALS['user']['user_id'];
+            $uwhere['ulog_rid'] = $vod_id;
+            
+            $uwhere['ulog_type'] = 3;            
+            $res1 = model('Ulog')->infoData($uwhere,'ulog_id');
+            if($res1['code'] === 1){
+                $res['up'] = 1;
+            }
+            $uwhere['ulog_type'] = 6;
+            $res2 = model('Ulog')->infoData($uwhere,'ulog_id');
+            if($res2['code'] === 1){
+                $res['down'] = 1;
+            }            
+            
+            return json($res);
+        }
+        else if($param['ac']=='set') {
+            
+            $res['code'] = 0;
+            
+            $vod_id = intval($param['id']);
+            
+            $type = $param['type'];            
+            if(!in_array($type, [3,6])){               
+                $res['msg'] = '参数错误';
+                return json($res);
+            }
+                       
+            $vwhere['vod_id'] = $vod_id;
+            $vres = model('Vod')->findData($vwhere,'vod_up,vod_down');
+            if($vres['code'] > 1){
+                $res['msg'] = '视频不存在';
+                return json($res);
+            }
+            
+            $vod_info = $vres['info'];
+            $vod_up = $vod_info['vod_up'];
+            $vod_down = $vod_info['vod_down'];
+                                    
+            $data = [];
+            $data['ulog_mid'] = 1;
+            //视频id
+            $data['ulog_rid'] = $vod_id;
+            $data['ulog_type'] = $type;
+            $data['ulog_sid'] = 0;
+            $data['ulog_nid'] = 0;
+            $data['ulog_points'] = 0;
+            $data['user_id'] = $GLOBALS['user']['user_id'];
+            
+            
+            //判断用户是否已经操作
+            $uwhere['ulog_rid'] = $vod_id;
+            $uwhere['ulog_type'] = $type;
+            $uwhere['user_id'] = $GLOBALS['user']['user_id'];
+            $res = model('Ulog')->infoData($uwhere);
+            
+            
+            if($res['code'] === 1){
+                $res['code'] = 2;
+                $res['msg'] = '已有记录';
+                return json($res);
+            }else if($res['code'] == 1002){   
+                
+                //不存在数据 就行插入
+                $ret2 = model('Ulog')->saveData($data);                
+                
+                if($type == 3){
+                    $col = 'vod_up';
+                    $val = $vod_up + 1;
+                }else {
+                    $col = 'vod_down';
+                    $val = $vod_down + 1;
+                }
+                //更新视频数据
+                model('Vod')->fieldData($vwhere,$col,$val);
+                
+                $res['code'] = 1;
+                $res['msg'] = '成功';
+                return json($res);
+            }            
+           
+            return json($res);
+        }
+    }
 
     public function ajax_ulog()
     {
+        //type 包含1浏览;2收藏;3想看（顶）;4点播;5下载; 6.不想看（踩）
+        
         $param = input();
         if($param['ac']=='set') {
             $data = [];
@@ -565,6 +714,10 @@ class User extends Base
 		return $this->fetch('user/downs');
     }
 
+    /**
+     * 收藏
+     * @return mixed|string
+     */
     public function favs()
     {
 		$param = input();
@@ -579,9 +732,14 @@ class User extends Base
 
 
         $this->assign('list',$res['list']);
+        
         $this->assign('title','我的收藏');
 		$pages = mac_page_param($res['total'], $param['limit'], $param['page'], url('user/favs',['page' => 'PAGELINK']));
 		$this->assign('__PAGING__', $pages);
+		
+				
+		$this->assign('pageFavs',1);
+		
 		return $this->fetch('user/favs');
     }
 	

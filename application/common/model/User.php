@@ -233,13 +233,19 @@ class User extends Base
         $data['user_name'] = htmlspecialchars(urldecode(trim($param['user_name'])));
         $data['user_pwd'] = htmlspecialchars(urldecode(trim($param['user_pwd'])));
         $data['verify'] = $param['verify'];
-
+        
+        //传递参数，可以不要验证码
+        $is_verify = $param['iverify'];
+        if($is_verify){
+            $data['verify'] = '1';
+        }
+        
         if (empty($data['openid'])) {
             if (empty($data['user_name']) || empty($data['user_pwd']) || empty($data['verify'])) {
                 return ['code' => 1001, 'msg' => '请填写必填项'];
             }
 
-            if (!captcha_check($data['verify'])) {
+            if (empty($is_verify) && !captcha_check($data['verify'])) {
                 return ['code' => 1002, 'msg' => '验证码错误'];
             }
 

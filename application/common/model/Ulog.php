@@ -15,6 +15,8 @@ class Ulog extends Base {
     protected $insert     = [];
     protected $update     = [];
 
+    
+    //type 包含1浏览;2收藏;3想看（顶）;4点播;5下载; 6.不想看（踩）
 
     public function listData($where,$order,$page=1,$limit=20,$start=0)
     {
@@ -24,7 +26,7 @@ class Ulog extends Base {
         $limit_str = ($limit * ($page-1) + $start) .",".$limit;
         $total = $this->where($where)->count();
         $list = Db::name('Ulog')->where($where)->order($order)->limit($limit_str)->select();
-
+        
         $user_ids=[];
         foreach($list as $k=>&$v){
             if($v['user_id'] >0){
@@ -32,6 +34,8 @@ class Ulog extends Base {
             }
 
             if($v['ulog_mid']==1){
+                             
+                
                 $vod_info = model('Vod')->infoData(['vod_id'=>['eq',$v['ulog_rid']]],'*',1);
 
                 if($v['ulog_sid']>0 && $v['ulog_nid']>0){
@@ -45,11 +49,13 @@ class Ulog extends Base {
                 else{
                     $vod_info['info']['link'] = mac_url_vod_detail($vod_info['info']);
                 }
+               
                 $v['data'] = [
                     'id'=>$vod_info['info']['vod_id'],
                     'name'=>$vod_info['info']['vod_name'],
                     'pic'=>mac_url_img($vod_info['info']['vod_pic']),
-                    'link'=>$vod_info['info']['link'],
+                    'link'=>$vod_info['info']['link'],                    
+                    'timeadd'=>date('m-d',$vod_info['info']['vod_time_add']),
                     'type'=>[
                         'type_id'=>$vod_info['info']['type']['type_id'],
                         'type_name'=>$vod_info['info']['type']['type_name'],
@@ -86,18 +92,17 @@ class Ulog extends Base {
                 ];
             }
         }
-
-        if(!empty($user_ids)){
-            $where2=[];
-            $where['user_id'] = ['in', $user_ids];
-            $user_list = model('User')->listData($where2);
-            $user_list = mac_array_rekey($user_list['list'],'user_id');
-
-            foreach($list as $k=>$v){
-                $list[$k]['user_name'] = $user_list[$v['user_id']]['user_name'];
-            }
-        }
-
+      
+//         if(!empty($user_ids)){
+//             $where2=[];
+//             $where['user_id'] = ['in', $user_ids];
+//             $user_list = model('User')->listData($where2);
+//             $user_list = mac_array_rekey($user_list['list'],'user_id');           
+//             foreach($list as $k=>$v){
+//                 $list[$k]['user_name'] = $user_list[$v['user_id']]['user_name'];
+//             }
+//         }
+       
         return ['code'=>1,'msg'=>'数据列表','page'=>$page,'pagecount'=>ceil($total/$limit),'limit'=>$limit,'total'=>$total,'list'=>$list];
     }
 
@@ -126,8 +131,8 @@ class Ulog extends Base {
             return ['code'=>1001,'msg'=>'参数错误：'.$validate->getError() ];
         }
 
-        if($data['user_id']==0 || !in_array($data['ulog_mid'],['1','2','3']) || !in_array($data['ulog_type'],['1','2','3','4','5']) ) {
-            return json(['code'=>1002,'msg'=>'参数非法']);
+        if($data['user_id']==0 || !in_array($data['ulog_mid'],['1','2','3']) || !in_array($data['ulog_type'],['1','2','3','4','5','6']) ) {
+            return ['code'=>1002,'msg'=>'参数非法'];
         }
 
         if(!empty($data['ulog_id'])){

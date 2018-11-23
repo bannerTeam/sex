@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>会员注册</title>
+		<meta name="keywords" content="{$maccms.site_keywords}" />
+		<meta name="description" content="{$maccms.site_description}" /> {include file="public/include" /}
+		<style>
+			body{   color: #000000;}
+		</style>
+	</head>
+
+	<body style="background: #FFFFFF;">
+		<div id="head">
+			<div class="fixtop">
+				<span id="home"><a href="/" rel="external"><i class="ico08"><img src="{$maccms.path_tpl}img/homepage.png" width="30px"></i></a></span>
+				<i class="ico21">会员注册</i>
+
+			</div>
+
+		</div>
+		<section class="register" style="padding:40px 0 40px 0;">
+			<form id="RegForm" class="RegForm" action="" method="post" onsubmit="return CheckForm();" target="msgubotj">
+				<div class="form_up">
+					<div class="username"><span style="float:left;">用&nbsp;&nbsp;户&nbsp;&nbsp;名：</span>
+						<input type="text" id="user_name" name="user_name" autocomplete="off" placeholder="请输入您的用户名" class="input1">
+
+					</div>
+
+					<div class="username"><span style="float:left;">输入密码：</span><input type="password" name="user_pwd" id="user_pwd" placeholder="请输入您的密码" class="input1"></div>
+					<div class="username"><span style="float:left;">确认密码：</span>
+						<input name="user_pwd2" type="password" id="user_pwd2" placeholder="请再次输入您的密码" class="input1">
+					</div>
+
+					<div class="username"><span style="float:left;">验&nbsp;&nbsp;证&nbsp;&nbsp;码：</span>
+						<input autocomplete="off" type="text" id="verify" name="verify" placeholder="请输入验证码" class="input1">
+						<img style="background: transparent;width: 90px;" class="user_reg_but" id="verify_img" src="/verify/index.html" onclick="this.src=this.src+'?'" alt="单击刷新">
+					</div>
+
+				</div>
+				<div class="botton">
+					<input name="reg" type="button" class="user_reg_but" id="btn_submit" value="立即注册">
+				</div>
+				<br>
+				<div class="botton">
+					<input type="button" class="user_reg_but" value="已有会员,马上登录" onclick="location.href='/user/login';">
+				</div>
+
+				<br><br>
+			</form>
+		</section>
+
+		<script type="text/javascript">
+			$(function() {
+				$("body").bind('keyup', function(event) {
+					if(event.keyCode == 13) {
+						$('#btn_submit').click();
+						return false;
+					}
+				});
+				$('#btn_submit').click(function() {
+
+					if($('#user_name').val() == '') {
+						tips('请输入用户！');
+						$("#user_name").focus();
+						return false;
+					}
+					if($('#user_pwd').val() == '') {
+						tips('请输入密码！');
+						$("#user_pwd").focus();
+						return false;
+					}
+					if($('#user_pwd').val() != $('#user_pwd2').val()) {
+						tips('两次密码不一致！');
+						$("#user_pwd2").focus();
+						return false;
+					}
+
+					if($('#verify').val() == '') {
+						tips('请输入验证码！');
+						$("#verify").focus();
+						return false;
+					}
+					var index = layer.open({
+						type: 2
+					});
+					$.ajax({
+						url: "/user/reg",
+						type: "post",
+						dataType: "json",
+						data: {
+							user_name: $.trim($('#user_name').val()),
+							user_pwd: $.trim($('#user_pwd').val()),
+							user_pwd2: $.trim($('#user_pwd2').val()),
+							verify: $.trim($('#verify').val()),
+							iverify: true
+						},
+						success: function(r) {
+							layer.close(index);
+							if(r.code == 1) {
+
+								//信息框
+								layer.open({
+									content: '注册成功',
+									btn: '确定',
+									yes: function() {
+										location.href = "/user/login.html";
+									}
+								});
+
+							} else {
+								tips(r.msg);
+								$("#verify_img").click();
+								$('#verify').val("");
+							}
+						}
+					});
+
+				});
+
+				function tips(msg) {
+					layer.open({
+						content: msg,
+						skin: 'msg',
+						time: 2
+					});
+				}
+			});
+		</script>
+
+		{include file="public/foot" /}
+	</body>
+
+</html>

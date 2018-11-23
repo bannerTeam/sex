@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>用户登录</title>
+		<meta name="keywords" content="{$maccms.site_keywords}" />
+		<meta name="description" content="{$maccms.site_description}" /> {include file="public/include" /}
+	</head>
+
+	<body style="background: #FFFFFF;">
+		<div id="head">
+			<div class="fixtop">
+				<span id="home"><a href="/" rel="external"><i class="ico08"><img src="{$maccms.path_tpl}img/homepage.png" width="30px"></i></a></span>
+				<i class="ico21">会员登录</i>
+
+			</div>
+
+		</div>
+		<section class="register" style="padding:40px 0 40px 0;">
+			<form id="LoginForm" class="LoginForm" method="post" >
+				<div class="form_up">
+					<div class="username"><span style="float:left;margin-left:7px;">用 户 名：</span>
+						<input type="text" id="user_name" name="user_name" placeholder="请输入您的用户名" class="input1">
+					</div>
+					<div class="username"><span style="float:left;margin-left:5px;">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</span><input type="password" name="user_pwd" id="user_pwd" placeholder="请输入您的密码" class="input1"></div>
+				</div>
+				<div class="botton">
+					<input name="reg" type="button" class="user_reg_but" id="btn_submit" value="登 录">
+				</div><br>
+				<div class="botton">
+					<input type="button" class="user_reg_but"  value="注册会员" onclick="location.href='/user/reg';">
+				</div>
+				<br><br>
+			</form>
+		</section>
+
+		<script type="text/javascript">
+			$(function() {
+				$("body").bind('keyup', function(event) {
+					if(event.keyCode == 13) {
+						$('#btn_submit').click();
+						return false;
+					}
+				});
+				$('#btn_submit').click(function() {
+
+					if($('#user_name').val() == '') {
+						tips('请输入用户！');
+						$("#user_name").focus();
+						return false;
+					}
+					if($('#user_pwd').val() == '') {
+						tips('请输入密码！');
+						$("#user_pwd").focus();
+						return false;
+					}
+					//if ($('#verify').val()  == '') { alert('请输入验证码！'); $("#verify").focus(); return false; }
+					var index = layer.open({
+						type: 2
+					});
+					$.ajax({
+						url: "/user/login.html",
+						type: "post",
+						dataType: "json",
+						data: {
+							user_name: $.trim($('#user_name').val()),
+							user_pwd: $.trim($('#user_pwd').val()),
+							iverify: true
+						},
+						success: function(r) {
+							layer.close(index);
+							if(r.code == 1) {								
+								jump();
+							} else {
+								tips(r.msg);
+							}
+						}
+					});
+
+				});
+				
+				function jump(){
+					var re = document.referrer;
+					if(re.indexOf('/reg') > 0 || re.indexOf('/login') > 0){
+						location.href = "/user/index.html";
+					}else{
+						location.href = re;
+					}
+				}
+
+				function tips(msg) {
+					layer.open({
+						content: msg,
+						skin: 'msg',
+						time: 2
+					});
+				}
+			});
+		</script>
+
+		{include file="public/foot" /}
+	</body>
+
+</html>

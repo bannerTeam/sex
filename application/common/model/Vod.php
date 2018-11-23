@@ -306,7 +306,7 @@ class Vod extends Base {
             $start_time = strtotime('-'.$timeadd.' day');            
             $where['vod_time_add'] = ['gt', $start_time];
             
-        }        
+        }
         
         if(!in_array($order, ['asc', 'desc'])) {
             $order = 'desc';
@@ -364,6 +364,21 @@ class Vod extends Base {
             }
             Cache::set($key,$info);
         }
+        return ['code'=>1,'msg'=>'获取成功','info'=>$info];
+    }
+    
+    public function findData($where,$field='*',$order='vod_id desc')
+    {
+        if(empty($where) || !is_array($where)){
+            return ['code'=>1001,'msg'=>'参数错误'];
+        }
+        
+        $info = $this->field($field)->where($where)->order($order)->find();
+        
+        if (empty($info)) {
+            return ['code' => 1002, 'msg' => '获取数据失败'];
+        }
+        
         return ['code'=>1,'msg'=>'获取成功','info'=>$info];
     }
 

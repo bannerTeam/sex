@@ -1,0 +1,62 @@
+<link href="{$maccms.path_tpl}css/video.css" rel="stylesheet">
+
+{if $videoplay}
+<script>
+	var player_data = {
+		"flag": "play",
+		"encrypt": 0,
+		"trysee": 0,
+		"points": 0,
+		"link": "{$obj.player_info.link}",
+		"link_next": "{$obj.player_info.link_next}",
+		"link_pre": "{$obj.player_info.link_pre}",
+		"url": "{$obj.player_info.url}",
+		"url_next": "{$obj.player_info.url_next}",
+		"from": "{$obj.player_info.from}",
+		"server": "{$obj.player_info.server}",
+		"note": "{$obj.player_info.note}"
+	}
+</script>
+<script type="text/javascript" src="/static/player/ckplayer/ckplayer.js"></script>
+<div class="video-container" id="video-container">
+	<div id="video" class="vidvid" style="width: 100%;"></div>
+	<div id="video_adv" style="background: #000000;text-align: center;position: relative;">
+	</div>	
+</div>
+<script type="text/javascript">
+		var videoObject = {
+			container: '#video', //容器的ID或className
+			variable: 'player',//播放函数名称
+			flashplayer:false,
+			autoplay:true,
+			poster:'',//封面图片
+			advertisements:'/Adv/get_adv',//广告动态获取
+			uvip:'',//广告动态获取
+			video: "{$obj.player_info.url}"
+		};		
+	</script>
+
+<script type="text/javascript" src="{$maccms.path_tpl}js/my_video.js"></script>
+{else}
+<div class="video-container" id="video-container" style="background: #000; padding: 10px 0;">
+	<div class="video-plan1">
+		<div class="video-plan1-name">看完整版并解锁全站视频</div>
+		<ul class="video-plan1-box">
+			
+			<li class="data-collapse can-click">
+				<div class="clearfix">
+					<a href="#">
+						<div class="plan-time"> <span class="plan-txt"><!--{$vips[i].name}--></span></div>
+						<div class="plan-price">
+							<span class="price-ntd"><!--{$vips[i].cost}--></span>
+						</div>
+					</a>
+				</div>
+			</li>			
+			<li class="can-click" style="padding:0">
+				<a class="btn-blue btn-light" href="/recharge.php">加入VIP免费看</a>
+			</li>
+		</ul>
+	</div>
+</div>
+{/if}

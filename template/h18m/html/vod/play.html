@@ -1,0 +1,72 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="cache-control" content="no-siteapp">
+
+		<title>在线播放{$obj.vod_name} {$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']} - 高清资源 - {$maccms.site_name}</title>
+		<meta name="keywords" content=">在线播放{$obj.vod_name} {$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']} - 高清资源 - {$maccms.site_name}">
+		<meta name="description" content=">在线播放{$obj.vod_name} {$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']} - 高清资源 - {$maccms.site_name}"> {include file="public/include"}
+
+		
+
+		<script src="{$maccms.path_tpl}js/play.js"></script>
+	</head>
+
+	<body>
+		{include file="public/header"}
+
+		<div class="container" id="container" style="margin-top: 45px;">
+			<div class="video-title">
+				{$obj.vod_name}
+			</div>
+			<div>
+				{include file="vod/player"}
+			</div>
+			<div id="change">
+				<ul>
+					<li style="background: transparent;border: 0 none;">&nbsp;</li>
+					<span style="float: right; margin-right: .5rem;font-size: .8rem;">播放次数：<font id="shits">3277</font></span>
+				</ul>
+			</div>
+			<div id="playTip2">
+				<div class="ck1">
+					<a title="喜欢" class="j-up" style="color:#fff;" rel="external" >顶(<span id="up">{$obj.vod_up}</span>)</a>
+				</div>
+				<div class="ck1">
+					<a title="不喜欢" class="j-down" style="color:#fff;" rel="external" >踩(<span id="down">{$obj.vod_down}</span>)</a>
+				</div>
+				<div class="ck1">
+					<a id="collection" title="收藏" style="color:#fff;" rel="external" >
+						<span class="left">收藏</a>
+				</div>				
+				<div class="ck2">
+					<a id="front_after" rel="external" style="color:#fff;">下一部</a>
+				</div>
+			</div>
+			<div id="hotVideo">
+				<h2>猜你喜欢</h2>
+				<ul class="ui-grid-trisect" id="rlist">
+				</ul>
+				<div class="loading" id="loading" style="display: block;"><span><img src="{$maccms.path_tpl}img/m_loading.gif"  height="16" align="absmiddle"></span></div>
+			</div>
+			
+		</div>
+
+		<script type="text/javascript">
+			pageInit({
+				"id":"{$obj.vod_id}",
+				"tid": "{$obj.type_id}"
+			});
+		</script>
+
+		{include file="public/foot"}
+
+	</body>
+
+</html>

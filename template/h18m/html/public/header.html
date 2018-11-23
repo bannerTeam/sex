@@ -1,0 +1,46 @@
+<div id="head">
+	<div class="fixtop">
+		<span id="home"><a href="/" rel="external"><i class="ico08"><img src="{$maccms.path_tpl}img/homepage.png" width="30px"></i></a></span>
+		<span id="index"><i class="ico07"><img src="{$maccms.path_tpl}img/logo.png" width="88px" class="h"></i></span>
+		<i class="ico21">{$title}</i>
+		<span id="find"><i class="ico08"><img src="{$maccms.path_tpl}img/ss1.png" width="29px" /></i></span>
+	</div>
+	<div class="m-nav-head">
+		<div class="naviBar">
+			<ul class="head-nav" id="head-nav">				
+				<li {if $pageHome}class="active"{/if}>									
+					<a href="/">首页</a>
+					<i></i>
+				</li>							
+				{maccms:type parent="menu-itema" order="asc" by="sort"}
+				<li {if condition=" ($vo.type_id eq MAC_TYPE_ID || $vo.type_id eq MAC_TYPE_PID) "} class="active"{/if}>
+					<a href="{:mac_url_type($vo,[],'type')}"  title="{$vo.type_name}">					
+						{$vo.type_name}
+					</a>
+					<i></i>
+				</li>
+				{/maccms:type}
+			</ul>
+		</div>
+	</div>
+	<div id="nav" class="view currents out ">
+		<div id="search-box">
+			<form method="get" action="{:mac_url('vod/search')}" id="search-form">
+				<div class="box-search">
+					<span class="icon-search icon"></span>
+					<input type="text" placeholder="请输入视频名称" autocomplete="off" value="" name="wd" id="search_query">
+				</div>
+				<div class="search_submit">
+					<button type="submit"><i class="ico01"></i>搜索</button>
+				</div>
+			</form>
+		</div>
+		<ul class="nav-list">
+			{maccms:type parent="menu-itema" order="asc" by="sort"}	
+			<a href="{:mac_url_type($vo,[],'type')}" >
+				<li>{$vo.type_name}</li>
+			</a>
+			{/maccms:type}	
+		</ul>
+	</div>
+</div>

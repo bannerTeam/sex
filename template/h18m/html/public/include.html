@@ -1,0 +1,33 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta http-equiv="cache-control" content="no-siteapp">
+
+<link href="{$maccms.path_tpl}/css/frozen.min.css" rel="stylesheet">
+<link href="{$maccms.path_tpl}css/style.min.css" rel="stylesheet">
+<script src="{$maccms.path_tpl}js/jquery.min.js"></script>
+<!--[if lt IE 9]>
+	<script src="{$maccms.path_tpl}js/html5shiv.min.js"></script>
+	<script src="{$maccms.path_tpl}js/respond.min.js"></script>
+<![endif]-->
+<script src="{$maccms.path_tpl}js/common.js"></script>
+<script src="/static/layer.mobile/layer.js"></script>
+<script type="text/javascript">
+	var tpl_url ="{$maccms.path_tpl}";
+	var h18 = {
+		"path": "__ROOT__",
+		"userid": "{$user.user_id}",
+		login:function(jump){
+			if(Number(h18.userid) == 0){
+				if(jump){
+					location.href = "/user/login";		
+				}
+				return false;
+			}
+			return true;
+		}
+	};
+</script>
+
+
