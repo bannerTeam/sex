@@ -4461,8 +4461,12 @@ footer .container .footer-r .contact-us .cs-online a .icon-cs{width:18px;height:
 }
 
 .fpb{ float: left; margin-top: 12px; margin-left: 30px;}
-.fpb a{    background: #1db69a; padding: 0 12px; font-weight: bold;
+.fpb a,.header .map a{    background: #1db69a; padding: 0 12px; font-weight: bold;
 color: #fff; display: inline-block; height: 32px; line-height: 32px;}
+
+.header .map{float: left; margin-top: 12px; margin-left: 30px;}
+.header .map a{ background: #ff0097; }
+
 @media (max-width: 768px) {
     .rollbar {
         right: -100px
@@ -4478,6 +4482,10 @@ color: #fff; display: inline-block; height: 32px; line-height: 32px;}
     
     .fpb{ position: absolute; left: 0; top: 0; margin-top: 8px !important; margin-left: 12px !important;}
     .searchform-active .fpb{ display: none;}
+    .header .map{ position: absolute; left: 100px; top: 0; margin-left: 0;  margin-top: 8px !important;}
+    
+    .logo{ position: absolute; right:60px; margin-left: 0; margin-right: 0; }
+    
 }
 
 .homesobtn {
