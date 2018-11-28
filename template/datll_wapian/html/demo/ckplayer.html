@@ -62,26 +62,29 @@
 		            controlBar : false
 		      },function(){		       		
 					//暂停
-					this.on('pause', function() {
-					   $("#ad_pause").show();
-					   //alert('暂停')
-					});
-					//播放
-					this.on('play', function() {
-					   $("#ad_pause").show();
-					   //alert('播放')
-					});
+//					this.on('pause', function() {
+//					   $("#ad_pause").show();
+//					   //alert('暂停')
+//					});
+//					//播放
+//					this.on('play', function() {
+//					   $("#ad_pause").show();
+//					   //alert('播放')
+//					});
 		       });
-		       myPlayer.src('http:\/\/videocdn2.quweikm.com:8091\/20181131\/JZIW8KFE513\/index.m3u8');
+		       //http://v.medialaba.com:2280/media/videos//m3u8/20181109/d51c3614aca1303546a1b8ef32b6bc06/index.m3u8
+	
+	//http:\/\/videocdn2.quweikm.com:8091\/20181131\/JZIW8KFE513\/index.m3u8
+		       myPlayer.src('http://v.medialaba.com:2280/media/videos/m3u8/20181109/d51c3614aca1303546a1b8ef32b6bc06/index.m3u8');
 		       
-		       var myPlayer2 = videojs('roomVideo2',{
-		            bigPlayButton : true,
-		            textTrackDisplay : false,
-		            posterImage: false,
-		            errorDisplay : false,
-		            controlBar : false
-		       });
-		       myPlayer2.src('http://sly.loko.pw/video/KTV事件/20180904/过生日在ktv找个公主口一下/过生日在ktv找个公主口一下.mp4');
+//		       var myPlayer2 = videojs('roomVideo2',{
+//		            bigPlayButton : true,
+//		            textTrackDisplay : false,
+//		            posterImage: false,
+//		            errorDisplay : false,
+//		            controlBar : false
+//		       });
+//		       myPlayer2.src('http://v.medialaba.com:2280/media/videos/m3u8/20181109/d51c3614aca1303546a1b8ef32b6bc06/index.m3u8');
 		      
 			});
 			
@@ -131,7 +134,7 @@
 					}); 
 			}
 			
-			getPlayerAdv();
+			//getPlayerAdv();
 			
 		</script>
 		
@@ -146,24 +149,24 @@
 		
 		<script type="text/javascript">
 			
-			var videoObject = {
-		        container: '#video1', //容器的ID或className
-		        variable: 'player',//播放函数名称
-		        autoplay:false,		       
-		        video: "http:\/\/videocdn2.quweikm.com:8091\/20181131\/JZIW8KFE513\/index.m3u8",
-		        advertisements:'/Adv/get_adv'
-		    };
-		    var player = new ckplayer(videoObject);
-			
-			var videoObject2 = {
-		        container: '#video2', //容器的ID或className
-		        variable: 'player',//播放函数名称
-		        autoplay:false,		       
-		        video: "http://sly.loko.pw/video/KTV事件/20180904/过生日在ktv找个公主口一下/过生日在ktv找个公主口一下.mp4",
-		        advertisements:'/Adv/get_adv'
-		    };
-		   
-		    var player = new ckplayer(videoObject2);
+//			var videoObject = {
+//		        container: '#video1', //容器的ID或className
+//		        variable: 'player',//播放函数名称
+//		        autoplay:false,		       
+//		        video: "http://v.medialaba.com:2280/media/videos/m3u8/20181109/d51c3614aca1303546a1b8ef32b6bc06/index.m3u8",
+//		        advertisements:'/Adv/get_adv'
+//		    };
+//		    var player = new ckplayer(videoObject);
+//			
+//			var videoObject2 = {
+//		        container: '#video2', //容器的ID或className
+//		        variable: 'player',//播放函数名称
+//		        autoplay:false,		       
+//		        video: "http://sly.loko.pw/video/KTV事件/20180904/过生日在ktv找个公主口一下/过生日在ktv找个公主口一下.mp4",
+//		        advertisements:'/Adv/get_adv'
+//		    };
+//		   
+//		    var player = new ckplayer(videoObject2);
 		    
 		    
 		    

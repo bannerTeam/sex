@@ -696,5 +696,16 @@ class Ajax extends Base
         
         return (json($r));
     }
+    
+    /**
+     * 获取播放器的广告
+     * @return \think\response\Json
+     */
+    public function get_playbanner(){
+        
+        $res = file_get_contents('./data/adv.txt');        
+        
+        return json(json_decode($res));
+    }
 
 }

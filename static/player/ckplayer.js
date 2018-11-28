@@ -64,7 +64,7 @@ function loadCkPlayer(){
 	        //flashplayer:true,
 	        autoplay:true,
 	        video: MacPlayer.PlayUrl,
-	    	advertisements:'/Adv/get_adv'
+	    	advertisements:'/Ajax/get_playbanner'
 	    };
 	    var player = new ckplayer(videoObject); 
 	    
@@ -82,7 +82,7 @@ function getCkPlayerAdv(){
 	
 	$.ajax({
 		type:"get",
-		url:"/Adv/get_adv",
+		url:"/Ajax/get_playbanner",
 		success:function(ret){
 			MacPlayer.Adv = {
 				front:ret.front[0],
