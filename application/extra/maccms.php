@@ -26,10 +26,10 @@ return array (
     'site_qq' => '875731383,654551320',
     'site_email' => '875731383@qq.com',
     'install_dir' => '/',
-    'template_dir' => 'datll_wapian',//datll_wapian
+    'template_dir' => '4vtb',//datll_wapian
     'html_dir' => 'html',
     'mob_status' => '2',
-    'mob_template_dir' => 'datll_wapian',
+    'mob_template_dir' => '4vtb',
     'mob_html_dir' => 'html',
     'site_tj' => '<script>
 var _hmt = _hmt || [];

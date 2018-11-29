@@ -27,7 +27,13 @@
 
 	<body>
 		{include file="public/head"}
-
+		<div class="ads">
+		{maccms:ad flag='d_banner'}
+			<a href="{$d_banner.link}" target="_blank">
+		        <img style="width:100%;min-height: 60px;" src="{$d_banner.img}">
+		     </a>
+		{/maccms:ad}
+		</div>
 		<div class="videobox">
 			<div class="main">
 				<div class="f-l video-player">

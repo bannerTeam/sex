@@ -30,6 +30,13 @@
 
 		<div class="container container-item">
 			
+			<div class="ads">
+			{maccms:ad flag='d_banner'}
+				<a href="{$d_banner.link}" target="_blank">
+			        <img style="width:100%;min-height: 60px;" src="{$d_banner.img}">
+			     </a>
+			{/maccms:ad}
+			</div>
 			
 			<div id="video" class="row">
 				<h2>{$obj.vod_name}</h2>
@@ -47,12 +54,8 @@
 				<div class="left content content-video">
 					<div class="players">
 						{$player_data}
-    					{$player_js}			
-
+    					{$player_js}
 					</div>
-
-					
-					
 				</div>
 				
 			</div>

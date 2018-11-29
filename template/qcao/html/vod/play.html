@@ -32,6 +32,15 @@
 			
 			
 			<div id="video" class="row">
+				
+				<div class="ads">
+				{maccms:ad flag='d_banner'}
+					<a href="{$d_banner.link}" target="_blank">
+				        <img style="width:100%;min-height: 60px;" src="{$d_banner.img}">
+				     </a>
+				{/maccms:ad}
+				</div>
+				
 				<h2>{$obj.vod_name}</h2>
 				<div class="right hidden-xs hidden-sm">
 					<div class="content">
@@ -53,12 +62,13 @@
 				
 			</div>
 			<div class="clearfix"></div>
+			<div>
 			{maccms:ad flag='d_foot'}
-				<a href="{$d_foot.link}" target="_blank">
-			        <img  src="{$d_foot.img}" class="card-img">
+				<a href="{$d_foot.link}" style="" target="_blank">
+			        <img  src="{$d_foot.img}" class="card-img" style="min-height: 60px;width: 100%;">
 			     </a>
 			 {/maccms:ad}
-			
+			</div>
 			<div class="clearfix"></div>
 			<div role="tabpanel" class="thumbnail" style="margin: 10px 0;">
 				<ul class="nav nav-tabs" role="tablist">
