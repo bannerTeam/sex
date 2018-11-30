@@ -27,6 +27,9 @@ if(getMobileBrowser()){
 			width:w,
 			height:h
 		});	
+		$(".MacPlayer").css({
+			height:h
+		});	
 		getCkPlayerAdv();
 		$("#buffer").hide();
 		$("#install").hide();
@@ -90,7 +93,7 @@ function getCkPlayerAdv(){
 			};
 			
 			if(MacPlayer.Adv.front){
-				pl.append(`<div id="ad_front" style="" class="ad_box">
+				pl.append(`<div id="ad_front" style="text-align: center;" class="ad_box">
 					<div><span id="adv_count_down" style="position: absolute; right: 10px;top: 10px; background: #000000; color: #FFFFFF;padding:5px 15px;font-size:14px;" class="adv_count_down"></span><a target="_blank" href="${MacPlayer.Adv.front.link}"><img src="${MacPlayer.Adv.front.file}" /></a></div>					
 				</div>`);
 				var ti = parseInt(MacPlayer.Adv.front.time);
@@ -107,7 +110,7 @@ function getCkPlayerAdv(){
 			}
 			
 			if(MacPlayer.Adv.pause){
-				pl.append(`<div id="ad_pause" style="display: none;" class="ad_box">
+				pl.append(`<div id="ad_pause" style="display: none; text-align: center;" class="ad_box">
 					<div><a target="_blank" href="${MacPlayer.Adv.pause.link}"><img src="${MacPlayer.Adv.pause.file}" /></a></div>
 				</div>`);
 			}			

@@ -398,7 +398,7 @@ class Vod extends Base {
         $data['type_id_1'] = $type_info['type_pid'];
 
         if(empty($data['vod_en'])){
-            $data['vod_en'] = Pinyin::get($data['vod_name']);
+            $data['vod_en'] =  substr(Pinyin::get($data['vod_name']),0,250);
         }
 
         if(empty($data['vod_letter'])){

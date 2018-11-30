@@ -55,5 +55,7 @@ return array (
   'selaba_14' => 20,
   'selaba_12' => 1,
   'selaba_6' => 6,
+  '9czx_1' => 6,
+  '9czx_2' => 6,
 );
 ?>

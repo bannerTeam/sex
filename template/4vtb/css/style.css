@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+﻿2@charset "utf-8";
 body{background: #F1F1F1;}
 h1{padding: 0;margin: 0 0 10px 6px;}
 h1.well-title{font-size: 20px;margin-bottom: 20px;}
@@ -19,7 +19,7 @@ footer span{font-size: 11px;}
 .names{width:80%;height:30px;color:#FF0000;font-size:20px;font-weight: bold;margin-left: 280px;overflow: hidden;margin-top: -55px;margin-bottom: 30px;}
 @media (max-width:767px){ .names{visibility: hidden;} .urls{visibility: hidden; width:0px;}}
 
-.search{width: 30%;float: right;padding-top: 15px;}
+.search{width: 40%;float: right;padding-top: 15px;}
 #search-form{margin-top: 5px;}
 ul.videos, ul.thumbs, ul.users, ul.categories,
 ul.albums, ul.photos, ul.models, ul.channels, ul.playlists{list-style-type: none;margin:0;padding: 0;}
@@ -46,14 +46,14 @@ ul.albums li div.album-thumb img, ul.photos li div.photo-thumb img, ul.models li
 .navigation li.subcategory a{padding-left: 30px;}
 .transparent{-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";filter: alpha(opacity=90);-moz-opacity:0.9;-khtml-opacity: 0.9;opacity: 0.9;}
 .btn-float{float: right;margin-right: 10px;}
-.ads, .ads-responsive{width: 100%;text-align: center;padding: 0 0 5px 0;overflow: hidden;}
+.ads, .ads-responsive,.lucaowan{width: 100%;text-align: center;padding: 0 0 5px 0;overflow: hidden;}
 .ads-square{width: 310px;height: 100%;float: right;text-align: center;overflow: hidden;}
 .ads-footer{text-align: center;max-height: 250px;max-width: 1220px;margin: 0 auto;overflow: hidden;}
 .adv-footer{width: 300px;height: 250px;float: left;margin-right: 5px;}
 .ads-player{width: 100%;text-align: center;}
 .ads-center{display: inline-block;}
 .ads img, .ads-square img,
-.ads-footer img, .ads-player img{max-width: 100%;height: auto;}
+.ads-footer img, .ads-player img,.lucaowan img{max-width: 100%;height: auto;}
 .ads-player iframe{max-width: 100%;}
 .profile-item{width: 100%;display: block;}
 .profile-item span{font-weight: bold;}
@@ -116,3 +116,13 @@ ner{padding: 0 5px;}
 .photo-private{}
 .video-private{padding-top: 18%;padding-bottom: 30%;}
 .denglu{width:120px;height:24px;color: #FFFFFF;text-decoration: none;float: left;margin-top: -4px;}
+
+.fldh{ float: left; margin-top: 8px; margin-right: 10px;}
+.fldh a{    background: #ff0097;
+    padding: 0 12px;
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+    height: 46px;
+    line-height: 46px; color: #FFFFFF;}
+ .fldh a:hover{color: #FFFFFF; text-decoration: none;}   

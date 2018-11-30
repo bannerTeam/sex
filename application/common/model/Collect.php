@@ -401,7 +401,8 @@ class Collect extends Base {
                 unset($v['vod_id']);
 
                 $v['type_id_1'] = intval($type_list[$v['type_id']]['type_pid']);
-                $v['vod_en'] = Pinyin::get($v['vod_name']);
+                $v['vod_en'] = substr(Pinyin::get($v['vod_name']),0,250);                
+                
                 $v['vod_letter'] = strtoupper(substr($v['vod_en'],0,1));
                 $v['vod_time_add'] = time();
                 $v['vod_time'] = time();

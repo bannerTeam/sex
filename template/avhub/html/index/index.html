@@ -31,27 +31,6 @@
 
 				
 				<div class="col-xs col-sm-12 col-md-12">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h2 class="panel-title">热播推荐</h2>
-						</div>
-						<div class="panel-body panel-padding">
-							<ul class="videos">
-								{maccms:vod num="10" type="all" by="hits_day" order="desc" timeadd="7" }
-								
-								<li>
-									<div class="video"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" class="thumbnail">
-<div class="video-thumb"><img src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" ></div>
-<span class="video-title">{$vo.vod_name}</span><span class="video-overlay badge transparent">{$vo.vod_time_add|mac_time_range}</span>
-<div class="video-details hidden-xs hidden-sm"><span class="pull-right text-right">{$vo.vod_hits} </span></div></a></div>
-								</li>
-								
-								{/maccms:vod}
-							</ul>
-							<div class="clearfix"></div>
-							<div class="clearfix"></div>
-						</div>
-					</div>
 					
 					<div class="panel panel-default">
 						<div class="panel-heading">
@@ -77,6 +56,30 @@
 							<div class="clearfix"></div>
 						</div>
 					</div>
+					
+					
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h2 class="panel-title">热播推荐</h2>
+						</div>
+						<div class="panel-body panel-padding">
+							<ul class="videos">
+								{maccms:vod num="10" type="all" by="hits_day" order="desc" timeadd="7" }
+								
+								<li>
+									<div class="video"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" class="thumbnail">
+<div class="video-thumb"><img src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" ></div>
+<span class="video-title">{$vo.vod_name}</span><span class="video-overlay badge transparent">{$vo.vod_time_add|mac_time_range}</span>
+<div class="video-details hidden-xs hidden-sm"><span class="pull-right text-right">{$vo.vod_hits} </span></div></a></div>
+								</li>
+								
+								{/maccms:vod}
+							</ul>
+							<div class="clearfix"></div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					
 					
 					
 					<div class="panel panel-default">

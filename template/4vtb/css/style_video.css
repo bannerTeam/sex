@@ -22,7 +22,7 @@
 }
 
 .players{ height:530px;width: 100%;}
-@media (max-width: 767px){.players{ height:440px;width: 100%;}}
+@media (max-width: 767px){.players{ height:auto;width: 100%;}}
 #player {width: 100%; height: 100%; position: absolute; background-color: #000000; background-repeat: no-repeat; background-size: 100% auto;}
 #player > span {width: 100%; margin-top: 20%; text-align: center; font-weight: bold; font-size: 16px; display: block;}
 #player-advertising {position: absolute; z-index: 999999;}

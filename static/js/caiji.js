@@ -96,7 +96,7 @@ var list = {
 			},
 			{
 				'status': 'ok',
-				'name': 's520ziyuancom【iframe】',
+				'name': '520ziyuan.com，cao2018.com【iframe】',
 				'apiurl': 'http://api.cao2018.com/inc/api.php',
 				'flag': '520ziyuancom_',
 				'xt': '1',
@@ -168,9 +168,9 @@ var list = {
 			},
 			{
 				'status': 'ok',
-				'name': '久草-不能用（没有播放地址）',
+				'name': '久草（https://www.ikdyf.com/）',
 				'apiurl': 'http://9ccj8.com/api',
-				'flag': '9ccj8',
+				'flag': '9czx',
 				'xt': '1',
 				'group': '',
 				'ct': '',
