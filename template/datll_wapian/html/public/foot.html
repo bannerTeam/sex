@@ -53,19 +53,36 @@
 	<h3>版权所有©<script> document.write(location.host);</script> </h3>
 </div>
 
-
 <style>
 @media screen and (min-width:750px){
 	.fix_foot_bann,.fix_foot_line{ display: none; height: 0; overflow: hidden;}	
 }
 .fix_foot_line{ height: 80px; clear: both;}
 </style>
-<div class="fix_foot_line"></div>
-<div class="fix_foot_bann" style="position: fixed;bottom: 0;left: 0; right: 0;">
-	<a href="http://777.9182012.com" target="_blank">
-		<img style="width: 100%; min-height: 60px;"  src="https://i.loli.net/2018/11/30/5c01186301514.gif"/>
-	</a>
+<div id="fix_foot_line" class="fix_foot_line"></div>
+<div id="fix_foot_bann" class="fix_foot_bann" style="position: fixed;bottom: 0;left: 0; right: 0;">
+{maccms:ad flag='global_bottom'}	
+	<a href="{$global_bottom.link}" target="_blank">
+        <img style="width: 100%; min-height: 50px;" src="{$global_bottom.img}">
+     </a>    
+{/maccms:ad}
 </div>
+<script type="text/javascript">
+	$(function(){		
+		if($("#fix_foot_bann a").length == 0){
+			$("#fix_foot_line").remove();
+			$("#fix_foot_bann").remove();
+		}
+	})
+</script>
+
+{maccms:ad flag='global_top_code' id='tc'}	
+{$tc.textcode}
+{/maccms:ad}
+{maccms:ad flag='global_bottom_code' id='bc'}	
+{$bc.textcode}
+{/maccms:ad}
+
 
 <!--tongji-->
 <div style="height: 0;font-size: 0;display: none;">{$maccms.site_tj}</div>
