@@ -61,11 +61,11 @@
 </style>
 <div id="fix_foot_line" class="fix_foot_line"></div>
 <div id="fix_foot_bann" class="fix_foot_bann" style="position: fixed;bottom: 0;left: 0; right: 0;">
-{maccms:ad flag='global_bottom'}	
+{maccms:adv type='4' id='global_bottom'}	
 	<a href="{$global_bottom.link}" target="_blank">
         <img style="width: 100%; min-height: 50px;" src="{$global_bottom.img}">
      </a>    
-{/maccms:ad}
+{/maccms:adv}
 </div>
 <script type="text/javascript">
 	$(function(){		
@@ -76,12 +76,10 @@
 	})
 </script>
 
-{maccms:ad flag='global_top_code' id='tc'}	
-{$tc.textcode}
-{/maccms:ad}
-{maccms:ad flag='global_bottom_code' id='bc'}	
-{$bc.textcode}
-{/maccms:ad}
+
+{maccms:adv type='7' id='bc'}	
+{$bc.content}
+{/maccms:adv}
 
 
 <!--tongji-->

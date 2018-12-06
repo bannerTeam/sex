@@ -57,5 +57,9 @@ return array (
   'selaba_6' => 6,
   '9czx_1' => 6,
   '9czx_2' => 6,
+  '90hzyzapi_1' => 6,
+  '90hzyzapi_2' => 10,
+  '90hzyzapi_4' => 9,
+  '605zyw_1' => 6,
 );
 ?>

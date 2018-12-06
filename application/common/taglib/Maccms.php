@@ -25,6 +25,7 @@ class Maccms extends Taglib {
         'foreach' => ['attr'=>'name,id,key'],
         'for' => ['attr'=>'start,end,comparison,step,name'],
 	    'ad' => ['attr'=>'flag'],
+	    'adv' => ['order,by,type,ids'],
     ];
 
     public function tagFor($tag,$content)
@@ -476,6 +477,31 @@ class Maccms extends Taglib {
         
         $parse .= ' ?>';
         $parse .= '{volist name="__LIST__" id="'.$id.'" }';
+        $parse .= $content;
+        $parse .= '{/volist}';
+        
+        return $parse;
+    }
+    
+     public function tagAdv($tag,$content)
+    {
+        $id = $tag['id'];
+        $key = $tag['key'];
+        if(empty($id)){
+            $id = 'vo';
+        }
+        if(empty($tag['key'])){
+            $key = 'key';
+        }
+        
+        $parse = '<?php ';
+        $parse .= '$__TAG__ = \'' . json_encode($tag) . '\';';
+        $parse .= '$__LIST__ = model("Adv")->listCacheData($__TAG__);';
+        if($tag['paging']=='yes'){
+            $parse .= '$__PAGING__ = mac_page_param($__LIST__[\'total\'],$__LIST__[\'limit\'],$__LIST__[\'page\'],$__LIST__[\'pageurl\'],$__LIST__[\'half\']);';
+        }
+        $parse .= ' ?>';
+        $parse .= '{volist name="__LIST__[\'list\']" id="'.$id.'" key="'.$key.'"}';
         $parse .= $content;
         $parse .= '{/volist}';
         

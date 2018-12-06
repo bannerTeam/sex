@@ -26,7 +26,7 @@ return array (
     'site_qq' => '875731383,654551320',
     'site_email' => '875731383@qq.com',
     'install_dir' => '/',
-    'template_dir' => 'datll_wapian',//datll_wapian
+    'template_dir' => 'datll_wapian',
     'html_dir' => 'html',
     'mob_status' => '2',
     'mob_template_dir' => 'datll_wapian',
@@ -368,7 +368,14 @@ art/search => art/search
 
 label/:file => label/index',
   ),
-  'email' => NULL,
+  'email' => 
+  array (
+    'host' => 'smtp.office365.com',
+    'port' => '587',
+    'username' => 'h18av@outlook.com',
+    'password' => '1qaz2WSX3edc',
+    'test' => 'lucaowan@outlook.com',
+  ),
   'play' => 
   array (
     'width' => '0',

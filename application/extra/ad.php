@@ -52,6 +52,21 @@ return array (
       'title' => '顶飘广告代码',
       'key' => 'global_top_code',
     ),
+	 11 => 
+    array (
+      'title' => '头部两边固定广告',
+      'key' => 'global_top_slide',
+    ),
+	 12 => 
+    array (
+      'title' => '中部两边固定广告',
+      'key' => 'global_middle_slide',
+    ),
+	 13 => 
+    array (
+      'title' => '底部两边固定广告',
+      'key' => 'global_bottom_slide',
+    ),
   ),
   'list' => 
   array (

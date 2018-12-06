@@ -5,6 +5,26 @@ var list = {
 		'des': '',
 		'rows': [
 		{
+			'status': 'ok',
+			'name': '90后资源站',
+			'apiurl': 'http://cj.90hzyzapi.com/inc/zyapimac.php',
+			'flag': '90hzyzapi',
+			'xt': '1',
+			'group': '',
+			'ct': '',
+			'cjurl': ''
+		},
+		{
+			'status': 'ok',
+			'name': '605资源网',
+			'apiurl': 'http://www.605zyw.net/inc/api.php',
+			'flag': '605zyw',
+			'xt': '1',
+			'group': '',
+			'ct': '',
+			'cjurl': ''
+		},
+		{
 				'status': 'ok',
 				'name': '色喇叭',
 				'apiurl': 'http://www.zy.com/api.php',
