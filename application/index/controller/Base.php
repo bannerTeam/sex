@@ -10,8 +10,8 @@ class Base extends All
 
     public function __construct()
     {
-        parent::__construct();
-        $this->check_site_status();
+        parent::__construct();        
+        $this->check_site_status();       
         $this->label_maccms();
         $this->label_user();
     }

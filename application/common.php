@@ -750,7 +750,7 @@ function mac_get_mid_text($data)
 function mac_get_mid($controller)
 {
     $controller=strtolower($controller);
-    $arr = ['vod'=>1,'art'=>2,'topic'=>3,'comment'=>4,'gbook'=>5,'user'=>6];
+    $arr = ['vod'=>1,'art'=>2,'topic'=>3,'comment'=>4,'gbook'=>5,'user'=>6,'ajax'=>'','index'=>''];
     return $arr[$controller];
 }
 function mac_get_aid($controller,$action='')
@@ -759,7 +759,7 @@ function mac_get_aid($controller,$action='')
     $action=strtolower($action);
     $key = $controller.'/'.$action;
 
-    $arr=['index'=>1,'map'=>2,'rss'=>3,'gbook'=>4,'comment'=>5,'user'=>6,'label'=>7,'vod'=>10,'art'=>20,'topic'=>30];
+    $arr=['index'=>1,'map'=>2,'rss'=>3,'gbook'=>4,'comment'=>5,'user'=>6,'label'=>7,'vod'=>10,'art'=>20,'topic'=>30,'ajax'=>''];
     $res = $arr[$controller];
 
     $arr=['vod/type'=>11,'vod/show'=>12,'vod/search'=>13,'vod/detail'=>14,'vod/play'=>15,'vod/down'=>16,'art/type'=>21,'art/show'=>22,'art/search'=>23,'art/detail'=>24,'topic/detail'=>31];
@@ -1055,39 +1055,41 @@ function mac_param_url(){
     $param = [];
     $input = array_merge($input,$_REQUEST);
     //$param['id'] = intval($input['id']);
-    $param['page'] = intval($input['page']) <1 ? 1 : intval($input['page']);
-    $param['ajax'] = intval($input['ajax']);
-    $param['tid'] = intval($input['tid']);
-    $param['mid'] = intval($input['mid']);
-    $param['rid'] = intval($input['rid']);
-    $param['pid'] = intval($input['pid']);
-    $param['sid'] = intval($input['sid']);
-    $param['nid'] = intval($input['nid']);
-    $param['uid'] = intval($input['uid']);
-    $param['level'] = intval($input['level']);
-    $param['score'] = intval($input['score']);
-    $param['limit'] = intval($input['limit']);
-
-    $param['id'] = htmlspecialchars(urldecode(trim($input['id'])));
-    $param['wd'] = htmlspecialchars(urldecode(trim($input['wd'])));
-    $param['en'] = htmlspecialchars(urldecode(trim($input['en'])));
-    $param['state'] = htmlspecialchars(urldecode(trim($input['state'])));
-    $param['area'] = htmlspecialchars(urldecode(trim($input['area'])));
-    $param['year'] = htmlspecialchars(urldecode(trim($input['year'])));
-    $param['lang'] = htmlspecialchars(urldecode(trim($input['lang'])));
-    $param['letter'] = htmlspecialchars(trim($input['letter']));
-    $param['actor'] = htmlspecialchars(urldecode(trim($input['actor'])));
-    $param['director'] = htmlspecialchars(urldecode(trim($input['director'])));
-    $param['tag'] = htmlspecialchars(urldecode(trim($input['tag'])));
-    $param['class'] = htmlspecialchars(urldecode(trim($input['class'])));
-    $param['order'] = htmlspecialchars(urldecode(trim($input['order'])));
-    $param['by'] = htmlspecialchars(urldecode(trim($input['by'])));
-    $param['file'] = htmlspecialchars(urldecode(trim($input['file'])));
-    $param['name'] = htmlspecialchars(urldecode(trim($input['name'])));
-    $param['url'] = htmlspecialchars(urldecode(trim($input['url'])));
-    $param['type'] = htmlspecialchars(urldecode(trim($input['type'])));
     
-    $param['timeadd'] = intval($input['timeadd']);
+    $param['page'] = isset($input['page']) ? (intval($input['page']) <1 ? 1 : intval($input['page'])) : 0; 
+    
+    $param['ajax'] = isset($input['ajax']) ? intval($input['ajax']) : 0;
+    $param['tid'] = isset($input['tid']) ? intval($input['tid']) : 0;
+    $param['mid'] = isset($input['mid']) ? intval($input['mid']) : 0;
+    $param['rid'] = isset($input['rid']) ? intval($input['rid']) : 0;
+    $param['pid'] = isset($input['pid']) ? intval($input['pid']) : 0;
+    $param['sid'] = isset($input['sid']) ? intval($input['sid']) : 0;
+    $param['nid'] = isset($input['nid']) ? intval($input['nid']) : 0;
+    $param['uid'] = isset($input['uid']) ? intval($input['uid']) : 0;
+    $param['level'] = isset($input['level']) ? intval($input['level']) : 0;
+    $param['score'] = isset($input['score']) ? intval($input['score']) : 0;
+    $param['limit'] = isset($input['limit']) ? intval($input['limit']) : 0;
+
+    $param['id'] = isset($input['id']) ?  htmlspecialchars(urldecode(trim($input['id']))) : '';
+    $param['wd'] = isset($input['wd']) ?  htmlspecialchars(urldecode(trim($input['wd']))) : '';
+    $param['en'] = isset($input['en']) ?  htmlspecialchars(urldecode(trim($input['en']))) : '';
+    $param['state'] = isset($input['state']) ?  htmlspecialchars(urldecode(trim($input['state']))) : '';
+    $param['area'] = isset($input['area']) ?  htmlspecialchars(urldecode(trim($input['area']))) : '';
+    $param['year'] = isset($input['year']) ?  htmlspecialchars(urldecode(trim($input['year']))) : '';
+    $param['lang'] = isset($input['lang']) ?  htmlspecialchars(urldecode(trim($input['lang']))) : '';
+    $param['letter'] = isset($input['letter']) ?  htmlspecialchars(trim($input['letter'])) : '';
+    $param['actor'] = isset($input['actor']) ?  htmlspecialchars(urldecode(trim($input['actor']))) : '';
+    $param['director'] = isset($input['director']) ?  htmlspecialchars(urldecode(trim($input['director']))) : '';
+    $param['tag'] = isset($input['tag']) ?  htmlspecialchars(urldecode(trim($input['tag']))) : '';
+    $param['class'] = isset($input['class']) ?  htmlspecialchars(urldecode(trim($input['class']))) : '';
+    $param['order'] = isset($input['order']) ?  htmlspecialchars(urldecode(trim($input['order']))) : '';
+    $param['by'] = isset($input['by']) ?  htmlspecialchars(urldecode(trim($input['by']))) : '';
+    $param['file'] = isset($input['file']) ?  htmlspecialchars(urldecode(trim($input['file']))) : '';
+    $param['name'] = isset($input['name']) ?  htmlspecialchars(urldecode(trim($input['name']))) : '';
+    $param['url'] = isset($input['url']) ?  htmlspecialchars(urldecode(trim($input['url']))) : '';
+    $param['type'] = isset($input['type']) ?  htmlspecialchars(urldecode(trim($input['type']))) : '';
+    
+    $param['timeadd'] = isset($input['timeadd']) ? intval($input['timeadd']) : 0;
 
     return $param;
 }

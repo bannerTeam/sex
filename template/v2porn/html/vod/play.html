@@ -24,11 +24,11 @@
 		<div class="play-advertise v-container clearfix">
 	        <div class="v-advertise">
 			    <div class="v-advertise-one">
-		            {maccms:ad flag='d_banner'}
+		            {maccms:adv type='3' id='d_banner'}			
 						<a href="{$d_banner.link}" target="_blank">
 					        <img style="width:100%;" src="{$d_banner.img}">
 					     </a>
-					{/maccms:ad}
+					{/maccms:adv}
 			    </div>	    
 	    
 			</div>
@@ -62,11 +62,12 @@
                 <div class="pull-right col-xs-5 xvideo-panel-video-list nopadding" style="">
                     
                     <div class="advertise">
-                    	{maccms:ad flag='d_right'}
+                    	
+                    	 {maccms:adv type='5' id='d_right'}			
 							<a href="{$d_right.link}" target="_blank">
 						        <img style="width:460px;" src="{$d_right.img}">
 						     </a>
-						 {/maccms:ad}                                     
+						 {/maccms:adv}                                     
                     </div>
                     
                 </div>
@@ -75,11 +76,12 @@
             	<div style="clear: both;height: 1px;width: 100%;"></div>
             	
             	<div class="play-advertise v-container clearfix">
-            		{maccms:ad flag='d_foot'}
+            		
+            		 {maccms:adv type='11' id='d_foot'}		
 						<a href="{$d_foot.link}" target="_blank">
 					        <img  src="{$d_foot.img}" class="card-img">
 					     </a>
-					 {/maccms:ad} 
+					 {/maccms:adv} 
             	</div>
             	<div class="play-recommend">
             		<div class="xvideo-panel xvideo-panel-guessulike">
@@ -121,11 +123,12 @@
 				</style>
 				<div class="" style="clear: both; margin-top: 20px; margin-bottom: 20px;">
 				    <div class="advs">
-				    	{maccms:ad flag='d_bottom'}
+				    
+				    	 {maccms:adv type='6' id='d_bottom'}		
 							<a href="{$d_bottom.link}" target="_blank">
 						        <img  src="{$d_bottom.img}" >
 						     </a>
-						{/maccms:ad}         
+						{/maccms:adv}         
 				    </div>
 				</div>
             	

@@ -707,5 +707,36 @@ class Ajax extends Base
         
         return json(json_decode($res));
     }
+    
+    /**
+     * 获取广告
+     */
+    public function get_bfixed(){
+        
+        $param = input();
+        
+        
+        $where['adv_group_id'] = [
+            'in',
+            [8,9,10]
+        ];
+        $where['status'] = ['eq',1];
+        $where['start_time'] = ['<',time()];
+        $where['end_time'] = ['>',time()];
+        
+        
+        $res = model("Adv")->listData($where, 'adv_group_id asc');
+        
+        $datas = $res['list'];
+        
+        
+        $r = [
+            'code' => 1,
+            'msg' => '',
+            'list' => $datas
+        ];
+        
+        return (json($r));
+    }
 
 }

@@ -19,16 +19,19 @@ class All extends Controller
         $maccms['path_ads'] = MAC_PATH_ADS;
         $maccms['user_status'] = $GLOBALS['config']['user']['status'];
         $maccms['search_hot'] = $GLOBALS['config']['app']['search_hot'];
-
+       
+        
         $controller = request()->controller();
         $action = request()->action();
-
+                
+       
         if(!empty($GLOBALS['mid'])) {
             $maccms['mid'] = $GLOBALS['mid'];
         }
         else{
             $maccms['mid'] = mac_get_mid($controller);
-        }
+        }        
+       
         if(!empty($GLOBALS['aid'])) {
             $maccms['aid'] = $GLOBALS['aid'];
         }

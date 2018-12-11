@@ -38,39 +38,17 @@
 				</div>
 			</div>
 			<!--公告弹窗-->
-			<div class="banner100" style="text-align: center;">
-				{maccms:ad flag='i_banner'}
+			<div class="banner100" style="text-align: center;">				
+				{maccms:adv type='1' id='i_banner'}
 				<a href="{$i_banner.link}" target="_blank">
 					<img src="{$i_banner.img}"  border="0">
 				</a>
-				{/maccms:ad}
+				{/maccms:adv}
 			</div>
 			<div class="content">
 				<!--左边模块-->
 				<div class="left-box">
-					<div class="mod-new">
-						<div class="title">
-							<h2>推荐视频</h2></div>
-						<div class="mod-row">
-							{maccms:vod num="15" type="all"  order="desc" timeadd="7" level="1"}
-							<div class="mod-col">
-								<a href="{:mac_url_vod_detail($vo)}">
-									<div class="view-layer">
-										<img src="{:mac_url_img($vo.vod_pic)}">
-										
-										<div class="play-bg"><span><i></i></span></div>
-									</div>
-								</a>
-								<p class="col-title">{$vo.vod_name}</p>
-								<div class="subtitle">
-									<i class="btn fn-see"></i>{$vo.vod_hits}
-									
-									<!--<span><i class="btn fn-zan2"></i>23</span>-->
-								</div>
-							</div>
-							{/maccms:vod}
-						</div>
-					</div>
+					
 					
 					{maccms:type parent="current" order="asc" by="sort" mid="1" id="vo1"}					
 					<div class="mod-new">
@@ -108,8 +86,7 @@
 						</div>
 					</div>	
 					
-					{include file="index/lradv"}
-					
+				
 
 				</div>
 				<!--右边模块-->

@@ -17,14 +17,14 @@
 	<body>
 		<div class="wrap-head-spots">
 			<div class="container">
-				<div class="v-advertise">				
-					{maccms:ad flag='i_banner'}
+				<div class="v-advertise">
+					{maccms:adv type='1' id='i_banner'}
 						{if condition="($key < 5)"}
 						<a href="{$i_banner.link}" target="_blank" data-key = "{$key}">
 					        <img style="width:100%;" src="{$i_banner.img}">
 					    </a>
 					    {/if}
-					{/maccms:ad}
+					{/maccms:adv}
 				</div>
 			</div>
 		</div>
@@ -37,13 +37,13 @@
 					
 					<div class="v-advertise">
 						
-						{maccms:ad flag='i_banner'}
+						{maccms:adv type='1' id='i_banner'}
 							{if condition="($key > 4)"}
 							<a href="{$i_banner.link}" target="_blank" data-key = "{$key}">
 						        <img style="width:100%;" alt="src="{$i_banner.img}">
 						    </a>
 						    {/if}
-						{/maccms:ad}
+						{/maccms:adv}
 					</div>
 					
 					<div class="sidebar">
@@ -185,14 +185,6 @@
 		{include file="public/foot"}
 		
 		
-			<div class="fixediv1 leftadv" style=" top: 30%;">
-<a href="https://88535b.com/register/?a=12046" target="_blank"><img src="https://wx1.sinaimg.cn/large/006UFkbtgy1ftfhgunfgbg305005076u.gif"></a>
-<a class="close" href="javascript:void(0);" onclick="$(this).parent().remove()"><img src="{$maccms.path_tpl}images/close.png" style="width:24px;height:24px"></a>
-</div>
-<div class="fixediv1 rightadv" style="top: 30%;">
-<a href="https://ooo88w.com/" target="_blank"><img src="http://v.medialaba.com:2280/ad/88w180X180.gif"></a>
-<a class="close" href="javascript:void(0);" onclick="$(this).parent().remove()"><img src="{$maccms.path_tpl}images/close.png" style="width:24px;height:24px"></a>
-</div>
 
 		
 	</body>

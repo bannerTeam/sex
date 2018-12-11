@@ -31,11 +31,11 @@
 		<div class="videobox">
 			<div class="main">
 				<div class="ads">
-				{maccms:ad flag='d_banner'}
+				{maccms:adv type='3' id='d_banner'}
 					<a href="{$d_banner.link}" target="_blank">
 				        <img style="width:100%;min-height: 60px;" src="{$d_banner.img}">
 				     </a>
-				{/maccms:ad}
+				{/maccms:adv}
 				</div>
 				<div class="video-main">
 					<div class="f-l video-player">					
@@ -59,21 +59,22 @@
 					</div>
 	
 					<div class="f-l video-player-ad">
-						{maccms:ad flag='d_right'}
+						
+						{maccms:adv type='5' id='d_right'}
 							<a href="{$d_right.link}" target="_blank">
 						        <img style="width:100%;" src="{$d_right.img}">
 						     </a>
-						 {/maccms:ad}
+						 {/maccms:adv}
 					</div>
 					
 				</div>
 				
 				<div style="clear: both;">
-					{maccms:ad flag='d_foot'}
+					{maccms:adv type='11' id='d_foot'}
 					<a href="{$d_foot.link}" target="_blank">
 						<img src="{$d_foot.img}" class="card-img">
 					</a>
-					{/maccms:ad}
+					{/maccms:adv}
 				</div>
 
 				
@@ -113,12 +114,12 @@
 
 				</div>
 
-				<div>
-					{maccms:ad flag='d_bottom'}
+				<div>				
+					{maccms:adv type='6' id='d_bottom'}
 					<a href="{$d_bottom.link}" target="_blank">
 						<img src="{$d_bottom.img}">
 					</a>
-					{/maccms:ad}
+					{/maccms:adv}
 				</div>
 
 		</div>

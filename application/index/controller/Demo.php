@@ -11,8 +11,9 @@ class Demo extends Base
     }
 
     public function index(){
-                
+          
         
+        //require './application/cc.php';
         header("Cache-Control: no-store, no-cache, must-revalidate");//强制不缓存
         header("Cache-Control: post-check=0, pre-check=0", false);
         header("Pragma: no-cache");//禁止本页被缓存
@@ -60,5 +61,45 @@ class Demo extends Base
     }
     public function ajax(){
     	return $this->fetch('demo/ajax');
+    }
+    
+    public function cc(){
+        set_time_limit(0);        
+        
+        for ($i = 0; $i < 50; $i++) {
+            echo date('Y-m-d H:i:s').'\r\n';
+            self::get_url("http://www.lucaowan.com/demo/index?t=".time());
+        }
+        echo 'cc';        
+    }
+    
+    public function cc1(){
+        set_time_limit(0);
+        
+        for ($i = 0; $i < 50; $i++) {
+            echo date('Y-m-d H:i:s').'\r\n';
+            self::get_url("http://www.lucaowan.com/demo/index?t=".time());
+        }
+        echo 'cc';
+    }
+    
+    public function cc2(){
+        set_time_limit(0);
+        
+        for ($i = 0; $i < 50; $i++) {
+            echo date('Y-m-d H:i:s').'\r\n';
+            self::get_url("http://www.lucaowan.com/demo/index?t=".time());
+        }
+        echo 'cc';
+    }
+    
+    private function get_url($url){       
+        $ch = curl_init();
+        $timeout = 5;
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+        $contents = curl_exec($ch);
+        curl_close($ch);
     }
 }

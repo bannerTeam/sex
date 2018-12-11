@@ -19,6 +19,15 @@
 		{include file="public/head"}
 
 		<div class="main">
+			
+			<div class="clearfix"></div>
+			
+			{maccms:adv type='1' id='i_banner'}
+				<a href="{$i_banner.link}" target="_blank">
+					<img style="width:100%;min-height: 50px;" src="{$i_banner.img}">
+				</a>
+			{/maccms:adv}
+			<div class="clearfix"></div>
 			<div class="panel panel-default">
 				<div style="height:5px;"></div>
 				<div class="panel-head">					
@@ -45,13 +54,7 @@
 					
 				</div>
 
-			</div>
-			<div class="clearfix"></div>
-			{maccms:ad flag='i_banner'}
-				<a href="{$i_banner.link}" target="_blank">
-					<img style="width:100%;min-height: 50px;" src="{$i_banner.img}">
-				</a>
-			{/maccms:ad}
+			</div>			
 			<div class="clearfix"></div>
 			{maccms:type parent="current" order="asc" by="sort" mid="1" id="vo1"}
 			

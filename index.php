@@ -9,6 +9,7 @@
 '--------------------------------------------------------
 */
 header('Content-Type:text/html;charset=utf-8');
+
 // 检测PHP环境
 if(version_compare(PHP_VERSION,'5.6.0','<'))  die('PHP版本过低，最少需要PHP5.6，请升级PHP版本！');
 //超时时间
@@ -34,6 +35,7 @@ if(!is_file('./application/data/install/install.lock')) {
 if (!@mb_check_encoding($_SERVER['PATH_INFO'], 'utf-8')){
     $_SERVER['PATH_INFO']=@mb_convert_encoding($_SERVER['PATH_INFO'], 'UTF-8', 'GBK');
 }
+//去掉尾巴斜杠
+$_SERVER['REQUEST_URI'] = trim($_SERVER['REQUEST_URI'], '/');
 // 加载框架引导文件
 require __DIR__ . '/thinkphp/start.php';
-

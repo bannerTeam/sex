@@ -49,11 +49,12 @@
 			<div class="content">
 				
 				<div class="ads">
-				{maccms:ad flag='d_banner'}
+				
+				{maccms:adv type='3' id='d_banner'}
 					<a href="{$d_banner.link}" target="_blank">
 				        <img style="width:100%;min-height: 60px;" src="{$d_banner.img}">
 				     </a>
-				{/maccms:ad}
+				{/maccms:adv}
 				</div>
 				
 				<!--视频标题和广告-->
@@ -73,18 +74,18 @@
 						
 					</div>
 					<div class="list-box">
-					{maccms:ad flag='d_right'}
+					{maccms:adv type='5' id='d_right'}
 						<a href="{$d_right.link}" target="_blank">
 					        <img style="width:100%;" src="{$d_right.img}">
 					     </a>
-					 {/maccms:ad}
+					 {/maccms:adv}
 					</div>
 					<div class="interact">
-		                {maccms:ad flag='d_foot'}
+		               {maccms:adv type='11' id='d_foot'}
 						<a href="{$d_foot.link}" target="_blank">
 							<img src="{$d_foot.img}" >
 						</a>
-						{/maccms:ad}                
+						{/maccms:adv}                
            			 </div>
 				</div>
 				<!--评论和推荐-->
@@ -118,11 +119,11 @@
 				
 				
 				<div style="clear: both;">
-					{maccms:ad flag='d_bottom'}
+					{maccms:adv type='6' id='d_bottom'}
 					<a href="{$d_bottom.link}" target="_blank">
 						<img src="{$d_bottom.img}">
 					</a>
-					{/maccms:ad}
+					{/maccms:adv}
 				</div>
 				
 			</div>

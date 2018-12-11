@@ -45,11 +45,11 @@
 		<div class="container container-item">
 			
 			<div class="ads">
-			{maccms:ad flag='d_banner'}
+			{maccms:adv type='3' id='d_banner'}
 				<a href="{$d_banner.link}" target="_blank">
 			        <img style="width:100%;min-height: 60px;" src="{$d_banner.img}">
 			     </a>
-			{/maccms:ad}
+			{/maccms:adv}
 			</div>
 			<div id="video" class="row">
 				<h2>{$obj.vod_name}</h2>
@@ -62,11 +62,11 @@
 				<div class=" hidden-xs hidden-sm">
 					<div class="content">
 						<div class="ads">
-							{maccms:ad flag='d_right'}
+							{maccms:adv type='5' id='d_right'}
 							<a href="{$d_right.link}" target="_blank">
 						        <img style="width:100%;" src="{$d_right.img}">
 						     </a>
-						 {/maccms:ad}
+						 {/maccms:adv}
 						</div>
 					</div>
 				</div>
@@ -74,11 +74,11 @@
 				
 			</div>
 			<div class="clearfix"></div>
-			{maccms:ad flag='d_foot'}
+			{maccms:adv type='11' id='d_foot'}
 				<a href="{$d_foot.link}" target="_blank">
 			        <img  width="100%" src="{$d_foot.img}" class="card-img">
 			     </a>
-			 {/maccms:ad}
+			 {/maccms:adv}
 			
 			<div class="clearfix"></div>
 			<div role="tabpanel" class="thumbnail" style="margin: 10px 0;">
@@ -108,11 +108,12 @@
 		
 			<div class="clearfix"></div>
 			<div>
-				{maccms:ad flag='d_bottom'}
+				
+				{maccms:adv type='6' id='d_bottom'}
 					<a href="{$d_bottom.link}" target="_blank">
 				        <img src="{$d_bottom.img}" >
 				     </a>
-				{/maccms:ad}  
+				{/maccms:adv}  
 			</div>
 			 
 			

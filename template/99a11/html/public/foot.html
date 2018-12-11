@@ -10,4 +10,35 @@
         </div>
     </div>
 </footer>
+
+<style>
+@media screen and (min-width:750px){
+	.fix_foot_bann,.fix_foot_line{ display: none; height: 0; overflow: hidden;}	
+}
+.fix_foot_line{ height: 80px; clear: both;}
+</style>
+<div id="fix_foot_line" class="fix_foot_line"></div>
+<div id="fix_foot_bann" class="fix_foot_bann" style="position: fixed;bottom: 0;left: 0; right: 0;">
+{maccms:adv type='4' id='global_bottom'}	
+	<a href="{$global_bottom.link}" target="_blank">
+        <img style="width: 100%; min-height: 50px;" src="{$global_bottom.img}">
+     </a>    
+{/maccms:adv}
+</div>
+<script type="text/javascript">
+	$(function(){		
+		if($("#fix_foot_bann a").length == 0){
+			$("#fix_foot_line").remove();
+			$("#fix_foot_bann").remove();
+		}
+	})
+</script>
+
+{maccms:adv type='7' id='bc'}	
+{$bc.content}
+{/maccms:adv}
+
+<script type="text/javascript" src="{$maccms.path_tpl}js/bfixed.js"></script>
+
+
 <div style="height: 0; width: 0;"><div style="height: 0;font-size: 0;display: none;">{$maccms.site_tj}</div></div>
