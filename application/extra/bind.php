@@ -61,5 +61,13 @@ return array (
   '90hzyzapi_2' => 10,
   '90hzyzapi_4' => 9,
   '605zyw_1' => 6,
+  'selaba_18' => 6,
+  'selaba_13' => 6,
+  'xhgcjym_6' => 6,
+  'xhgcjym_5' => 6,
+  'ofozyz_1' => 6,
+  '303zy_12' => 6,
+  'xhgcjym_7' => 6,
+  'selaba_7' => 10,
 );
 ?>

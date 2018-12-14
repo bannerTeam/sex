@@ -17,7 +17,7 @@ class Adv extends Base
         
         
         $where=[];
-        $res = model('Adv')->listData($where);        
+        $res = model('Adv')->listData($where,'id desc',1,100);        
         $this->assign('list',$res['list']);
         $this->assign('total',$res['total']);
        

@@ -39,6 +39,8 @@ class Adv extends Base {
         if($totalshow==1) {
             $total = $this->where($where)->count();
         }
+        
+        
         $list = Db::name('Adv')->field($field)->where($where)->order($order)->limit($limit_str)->select();
         
 

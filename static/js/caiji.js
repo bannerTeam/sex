@@ -3,7 +3,47 @@ var h = d.getHours();
 var list = {
 	'ads': {
 		'des': '',
-		'rows': [
+		'rows': [	
+		{
+			'status': 'ok',
+			'name': '303视频资源',
+			'apiurl': 'http://api.303zy.com/inc/api.php',
+			'flag': '303zy',
+			'xt': '1',
+			'group': '',
+			'ct': '',
+			'cjurl': ''
+		},
+		{
+			'status': 'ok',
+			'name': 'ofo资源站-有资源水印',
+			'apiurl': 'http://api.ofozyz.com/api.php',
+			'flag': 'ofozyz',
+			'xt': '1',
+			'group': '',
+			'ct': '',
+			'cjurl': ''
+		},
+		{
+			'status': 'ok',
+			'name': '小黄瓜',
+			'apiurl': 'http://cj.xhgcjym.com/inc/api.php',
+			'flag': 'xhgcjym',
+			'xt': '1',
+			'group': '',
+			'ct': '',
+			'cjurl': ''
+		},
+		{
+			'status': 'ok',
+			'name': '色喇叭',
+			'apiurl': 'http://www.zy.com/api',//http://www.zy.com/api  dlbet33.com/index.php/api
+			'flag': 'selaba',
+			'xt': '1',
+			'group': '',
+			'ct': '',
+			'cjurl': ''
+		},
 		{
 			'status': 'ok',
 			'name': '90后资源站',
