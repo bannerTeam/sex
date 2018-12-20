@@ -23,17 +23,18 @@
 			</div>
 			<div class="contact-us uk-float-left">
 				<h3>联系我们</h3>
-				<div class="cs-qq">
-					<div class="cs-pic"></div>
-					
+				<div class="cs-qq">					
 					{maccms:foreach name="$maccms.site_qq_arr" id="qqs"}
 					<a class="uk-display-block cs-qq-btn cs-qq-btn-{$key + 1}" href="tencent://message/?uin={$qqs}&amp;Site=qq&amp;Menu=yes">
 						<span class="uk-display-block uk-float-left icon-cs-qq"></span>
-						<span>{$qqs}</span>
+						&nbsp;
+						<span>
+							{if $key === 0}客服:{/if}
+							{if $key === 1}招商:{/if}
+							{if $key === 2}反馈:{/if}
+							{$qqs}</span>
 					</a>
 					{/maccms:foreach}
-					
-					
 				</div>
 			</div>
 		</div>
@@ -46,7 +47,9 @@
 	{maccms:foreach name="$maccms.site_qq_arr" id="qqs"}
 	<h4>
 		<a style="color:#1db69a; padding: 10px 0 5px;" class="btn-qq-cs" href="tencent://message/?uin={$qqs}&amp;Site=qq&amp;Menu=yes">
-			<span>联系QQ:{$qqs}</span>
+			<span>{if $key === 0}客服:{/if}
+							{if $key === 1}招商:{/if}
+							{if $key === 2}反馈:{/if}QQ:{$qqs}</span>
 		</a>
 	</h4>
 	{/maccms:foreach}
@@ -87,7 +90,3 @@
 
 <!--tongji-->
 <div style="height: 0;font-size: 0;display: none;">{$maccms.site_tj}</div>
-
-
-
-

@@ -44,7 +44,7 @@
 									<div class="video">
 										<a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" class="thumbnail">
 											<div class="video-thumb"> <img onerror="this.src='{$maccms.path_tpl}images/nopic.gif'" src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}" width="200" height="135"> </div> <span class="video-title">{$vo.vod_name}</span>
-											<div class="video-details hidden-xs hidden-sm"> <span class="pull-left">{$vo.vod_time_add|mac_time_range}</span> <span class="pull-right text-right">{$vo.vod_hits} 次播放</span> </div>
+											<div class="video-details hidden-xs hidden-sm"> <span class="pull-left">{$vo.vod_time|mac_time_range}</span> <span class="pull-right text-right">{$vo.vod_hits} 次播放</span> </div>
 										</a>
 									</div>
 								</li>

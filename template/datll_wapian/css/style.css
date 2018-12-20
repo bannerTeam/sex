@@ -834,16 +834,16 @@ footer .container .footer-r .vip ul li a{color:#fff;font-size:14px}
 footer .container .footer-r .vip ul li{margin:10px 0 0}
 footer .container .footer-r .contact-us{width:216px;text-align:center}
 footer .container .footer-r .contact-us h3{margin-bottom:20px;color:#fff;font-size:17px;font-weight:700}
-footer .container .footer-r .contact-us .cs-qq{width:216px;height:68px;position:relative}
+footer .container .footer-r .contact-us .cs-qq{width:216px;height:68px;position:relative;text-align: left;}
 footer .container .footer-r .contact-us .cs-qq a{font-size:14px}
 footer .container .footer-r .contact-us .cs-qq .cs-pic{width:54px;height:54px;background:url(../css/images/sprite.png) no-repeat;background-position:0 -45px;position:absolute;top:0;left:45px;z-index:2}
-footer .container .footer-r .contact-us .cs-qq .cs-qq-btn{background:#ff9604;width:150px;height:24px;line-height:24px;border-radius:5px;color:#fff;position:absolute;left:65px;transition:.5s;-moz-transition:.5s;-webkit-transition:.5s;-o-transition:.5s}
+footer .container .footer-r .contact-us .cs-qq .cs-qq-btn{background:#ff9604;width:170px;height:24px;line-height:24px;border-radius:5px;color:#fff;margin-left:65px; margin-top: 10px;transition:.5s;-moz-transition:.5s;-webkit-transition:.5s;-o-transition:.5s}
 footer .container .footer-r .contact-us .cs-qq .cs-qq-btn:hover{background:#ffaa35;text-decoration:none}
-footer .container .footer-r .contact-us .cs-qq .cs-qq-btn .icon-cs-qq{width:16px;height:17px;margin:3px 0 0 40px;background:url(../css/images/sprite.png) no-repeat;background-position:-253px -23px}
+footer .container .footer-r .contact-us .cs-qq .cs-qq-btn .icon-cs-qq{width:16px;height:17px;margin:3px 0 0 10px;background:url(../css/images/sprite.png) no-repeat;background-position:-253px -23px}
 footer .container .footer-r .contact-us .cs-qq .cs-qq-btn-2{top:30px}
 footer .container .footer-r .contact-us .cs-online a{width:172px;height:33px;line-height:33px;margin-left:43px;border-radius:5px;background:#ff9604;color:#fff;transition:.5s;-moz-transition:.5s;-webkit-transition:.5s;-o-transition:.5s;font-size:14px}
 footer .container .footer-r .contact-us .cs-online a:hover{background:#ffaa35}
-footer .container .footer-r .contact-us .cs-online a .icon-cs{width:18px;height:16px;margin:8px 6px 0 7px;background:url(../css/images/sprite.png) no-repeat;background-position:-230px -24px}
+footer .container .footer-r .contact-us .cs-online a .icon-cs{width:18px;height:16px;margin:8px 6px 0 7px;background:url(../css/images/qq.png) no-repeat;}
 .footer-right{height:30px;background:#ebebeb}
 .footer-right .container{height:30px;background:#ebebeb}
 .footer-right .container p{height:30px;line-height:30px;color:#858585;font-size:13px}
