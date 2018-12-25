@@ -928,6 +928,6 @@ input,select{-webkit-appearance:none}
 .bfixed_top1,.bfixed_top2{top: 0; display: none;}
 .bfixed_middle1,.bfixed_middle2{ top: 40%; display: none;}
 .bfixed_bottom1,.bfixed_bottom2{ bottom: 0;display: none;}
-@media (min-width:720px){
+@media (max-width:720px){
 	.bfixed{display:none; height: 0; width: 0;}
 }
