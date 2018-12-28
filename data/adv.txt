@@ -4,7 +4,7 @@
         {
             "file": "/upload/banner/yy/YY-360x240b.gif",
             "type": "gif",
-            "link": "http://23.101.2.204:5577/index.php?s=/WebPublic/register/code/3dc492e0eb8df42051a518f0d0d69274/plf/link/",
+            "link": "http://888.yyate.com/index.php?s=/WebPublic/register/code/2c45f558e0d41d6e6a5dcfd8a2382f03/plf/link/",
             "time": 8,
             "exhibitionMonitor": "/adv/exhibitionMonitor",
             "clickMonitor": "/adv/clickMonitor"
@@ -14,7 +14,7 @@
         {
             "file": "/upload/banner/yy/YY-360x240b.gif",
             "type": "gif",
-            "link": "http://23.101.2.204:5577/index.php?s=/WebPublic/register/code/3dc492e0eb8df42051a518f0d0d69274/plf/link/",
+            "link": "http://888.yyate.com/index.php?s=/WebPublic/register/code/2c45f558e0d41d6e6a5dcfd8a2382f03/plf/link/",
             "time": 3,
             "exhibitionMonitor": "/adv/exhibitionMonitor",
             "clickMonitor": "/adv/clickMonitor"
@@ -24,7 +24,7 @@
         {
             "file": "/upload/banner/yy/YY-360x240b.gif",
             "type": "gif",
-            "link": "http://23.101.2.204:5577/index.php?s=/WebPublic/register/code/3dc492e0eb8df42051a518f0d0d69274/plf/link/",
+            "link": "http://888.yyate.com/index.php?s=/WebPublic/register/code/2c45f558e0d41d6e6a5dcfd8a2382f03/plf/link/",
             "time": 5,
             "exhibitionMonitor": "/adv/exhibitionMonitor",
             "clickMonitor": "/adv/clickMonitor"
