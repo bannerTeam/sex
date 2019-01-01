@@ -1,0 +1,81 @@
+{include file="../../../application/admin/view/public/head" /}
+<div class="page-container p10">
+    <div class="my-toolbar-box">
+
+        <div class="layui-btn-group">
+            <a data-href="{:url('generate')}" class="layui-btn layui-btn-primary j-iframe"><i class="layui-icon">&#xe654;</i>生成</a>
+        </div>
+
+    </div>
+
+    <form class="layui-form " method="post" id="pageListForm">
+        <table class="layui-table" lay-size="sm">
+            <thead>
+            <tr>
+                <th width="80">机器人</th>
+                <th width="80">状态</th>
+                <th width="80">类型</th>
+                <th >预计发送时间</th>  
+                <th >实际发送时间</th>   
+                <th>图片</th>
+                <th>链接</th>
+                <th width="60">操作</th>
+            </tr>
+            </thead>
+
+            {volist name="list" id="vo" key="k"}
+            <tr>
+                <td>{$vo.bot_username}</td>
+                <td>
+                	{if condition="$vo.send_status eq 1"}
+                	<span class="layui-badge layui-bg-green">成功</span>
+                	{elseif condition="$vo.send_status eq 2"}
+                	<span class="layui-badge">失败</span>
+                	{else}
+                	<span class="layui-badge layui-bg-orange">等待</span>
+                	{/if}                	       
+                </td>               
+               <td>       
+               	{if condition="$vo.send_type eq 2"}
+               	图片                	
+                	{elseif condition="$vo.send_type eq 3"}
+                	视频
+                	{else}
+                	文字
+                	{/if}          
+                </td>
+                <td>                	
+                	{:date('Y-m-d H:i:s',$vo.timer_time)}           
+                </td>
+                <td>    
+                	{if $vo.send_time}
+                	{:date('Y-m-d H:i:s',$vo.send_time)}
+                	{/if}
+                </td>
+                <td>     
+                	{if $vo.send_photo}
+                	<img src="{$vo.send_photo}" width="100" />   
+                	{/if}
+                </td>
+                <td>
+                	<a href="{$vo.weburl}" target="_blank">
+                		访问链接>>
+                	</a>                	           
+                </td>
+                <td>                    
+                    <a class="layui-badge-rim j-tr-del" data-href="{:url('del?id='.$vo.id)}" href="javascript:;" title="删除">删除</a>
+                </td>
+            </tr>
+            {/volist}
+            </tbody>
+        </table>
+
+    </form>
+</div>
+{include file="../../../application/admin/view/public/foot" /}
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

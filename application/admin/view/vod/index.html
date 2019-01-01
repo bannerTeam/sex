@@ -137,6 +137,9 @@
             <a data-href="{:url('index/select')}?tab=vod&col=vod_lock&tpl=select_lock&url=vod/field" data-width="270" data-height="100" data-checkbox="1" class="layui-btn layui-btn-primary j-select"><i class="layui-icon">&#xe620;</i>锁定</a>
             <a class="layui-btn layui-btn-primary j-iframe" data-href="{:url('images/opt?tab=vod')}" href="javascript:;" title="同步远程图片"><i class="layui-icon">&#xe620;</i>同步图片</a>
             <a class="layui-btn layui-btn-primary j-iframe" data-checkbox="true" data-href="{:url('make/make?ac=info&tab=vod')}" href="javascript:;" title="生成页面"><i class="layui-icon">&#xe620;</i>生成页面</a>
+            
+            
+            
             {if condition="$param.select eq 1"}
             <a data-href="" onclick="parent.onSelectResult('{$param.input}',$('.checkbox-ids:checked'))" class="layui-btn layui-btn-normal">选择返回</a>
             {/if}

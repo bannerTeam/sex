@@ -66,7 +66,8 @@ return array(
         '36' => array("show"=>1,'name' => '附件管理', 'controller' => 'images',		'action' => 'index'),
         '3601' => array("show"=>0,'name' => '--附件删除', 'controller' => 'images',		'action' => 'del'),
         
-         '38' => array("show"=>1,'name' => '广告管理.', 'controller' => 'adv',		'action' => 'index'),
+         '38' => array("show"=>1,'name' => '广告管理', 'controller' => 'adv',		'action' => 'index'),
+         '39' => array("show"=>1,'name' => 'Telegram定时器', 'controller' => 'telegram',		'action' => 'index'),
     )),
 
     '4' => array('name' => '视频', 'icon' => 'xe639', 'sub' => array(
