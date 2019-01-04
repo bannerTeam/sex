@@ -69,13 +69,31 @@
             {/volist}
             </tbody>
         </table>
-
+		<div id="pages" class="center"></div>
     </form>
 </div>
 {include file="../../../application/admin/view/public/foot" /}
 
 <script type="text/javascript">
+    var curUrl="{:url('telegram/index',$param)}";
+    layui.use(['laypage', 'layer'], function() {
+        var laypage = layui.laypage
+                , layer = layui.layer
 
+        laypage.render({
+            elem: 'pages'
+            ,count: {$total}
+            ,limit: {$limit}
+            ,curr: {$page}
+            ,layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
+            ,jump: function(obj,first){
+                if(!first){
+                    location.href = curUrl.replace('%7Bpage%7D',obj.curr).replace('%7Blimit%7D',obj.limit);
+                }
+            }
+        });
+
+    });
 </script>
 </body>
 </html>
