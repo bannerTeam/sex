@@ -43,7 +43,6 @@ class Adv extends Base {
         
         $list = Db::name('Adv')->field($field)->where($where)->order($order)->limit($limit_str)->select();
         
-
         return ['code'=>1,'msg'=>'数据列表','page'=>$page,'pagecount'=>ceil($total/$limit),'limit'=>$limit,'total'=>$total,'list'=>$list];
     }
     

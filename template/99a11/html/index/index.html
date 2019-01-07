@@ -106,9 +106,19 @@
 						{/maccms:type}
 
 					</div>
-
+					
+					
+					<div style="clear: both; margin-top: 25px;">
+						友情链接：			
+						{maccms:link type="font" by="sort"}
+			<a href="{$vo.link_url}" target="_blank"  title="{$vo.vod_name}" class="margin-bottom-5">{$vo.link_name}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						{/maccms:link}
+					</div>
+					
 				</div>
-			</div>
+			
+		
+		</div>
 		</div>
 
 		
@@ -180,7 +190,9 @@
 			
 		</script>
 		
-	
+		
+		
+		
 
 		{include file="public/foot"}
 		

@@ -110,18 +110,21 @@ class Telegram extends Base
      */
     private function timer($v, $timer_time)
     {
+        
+        //JUFD-905 情色旅馆中，美女用手淫让男人勃起并射精了 桐谷奈绪 (http://lcw8.xyz/vod/detail/id/8886.html)
+        
         //群组、频道
         $chat_ids = ['-1001136791211','-1001432841135'];
         
         $model = model('Telegram');
         
         $weburl = 'http://lcw8.xyz/vod/detail/id/' . $v['vod_id'] . '.html';
-        
+                
         $data['bot_chat_id'] = '616302550';
         $data['bot_api_key'] = '616302550:AAER7vQwRYWk3A_pz0xOCGXAmGJq1dl1OWw';
         $data['bot_username'] = 'Lucaowan_Bot';
         $data['send_type'] = '2';
-        $data['send_text'] = '<a href="' . $weburl . '">' . $v['vod_name'] . '</a>
+        $data['send_text'] = '<a href="' . $weburl . '">' . mac_substring($v['vod_name'],60) . '</a>
 [撸草湾网址] http://lcw8.xyz/
 [撸草湾频道] https://t.me/lucaowan
 [撸草湾群组] https://t.me/luluwan2018';

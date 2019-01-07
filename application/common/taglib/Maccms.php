@@ -245,7 +245,9 @@ class Maccms extends Taglib {
         if(empty($tag['key'])){
             $key = 'key';
         }
-
+        
+        $tag['num'] = 50;
+        
         $parse = '<?php ';
         $parse .= '$__TAG__ = \'' . json_encode($tag) . '\';';
         $parse .= '$__LIST__ = model("Link")->listCacheData($__TAG__);';
