@@ -82,12 +82,23 @@
 					</div>
 					<div class="interact">
 		               {maccms:adv type='11' id='d_foot'}
+		               {if condition="($key == 1)"}
 						<a href="{$d_foot.link}" target="_blank">
 							<img src="{$d_foot.img}" >
 						</a>
-						{/maccms:adv}                
+						 {/if}
+						{/maccms:adv}       
            			 </div>
 				</div>
+				<div class="interact">
+	               {maccms:adv type='11' id='d_foot'}
+	               {if condition="($key > 1)"}
+					<a href="{$d_foot.link}" target="_blank">
+						<img src="{$d_foot.img}" >
+					</a>
+					 {/if}
+					{/maccms:adv}       
+       			 </div>
 				<!--评论和推荐-->
 				<link rel='stylesheet' href='{$maccms.path_tpl}css/video-sort.css' type='text/css' />
 
